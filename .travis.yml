@@ -1,0 +1,18 @@
+language: php
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+
+install:
+  - travis_retry composer install --no-interaction --prefer-source
+
+script:
+  - phpunit
+
+after_script:
+  - travis_retry php vendor/bin/coveralls -v
+
+cache:
+  directories:
+    - $HOME/.composer/cache
