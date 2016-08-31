@@ -7,8 +7,6 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
-use pimax\Messages\Message as ApiMessage;
-
 /**
  * Class TextMessage
  * @package Casperlaitw\LaravelFbMessenger\Messages
@@ -37,6 +35,6 @@ class TextMessage extends Message
      */
     public function toData()
     {
-        return new ApiMessage($this->getSender(), $this->message);
+        return new \pimax\Messages\Message($this->getSender(), $this->message);
     }
 }
