@@ -8,6 +8,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
 use Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection;
+use Casperlaitw\LaravelFbMessenger\Messages\Deletable;
 use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
 
@@ -45,10 +46,17 @@ abstract class BaseHandler implements Handler
 
     /**
      * @param Message $message
+     *
+     * @return array
      */
     public function sendThreadSetting(Message $message)
     {
-        $this->bot->sendThreadSetting($message);
+        $arguments = [$message];
+        if (in_array(Deletable::class, class_uses($message))) {
+            $arguments[] = $message->getCurlType();
+        }
+
+        return call_user_func_array([$this->bot, 'sendThreadSetting'], $arguments);
     }
 
     /**
@@ -67,4 +75,16 @@ abstract class BaseHandler implements Handler
      * @return mixed
      */
     abstract public function handle(ReceiveMessage $message);
+
+    /**
+     * @param ReceiveMessageCollection $messages
+     *
+     * @return BaseHandler
+     */
+    public function setMessages($messages)
+    {
+        $this->messages = $messages;
+
+        return $this;
+    }
 }

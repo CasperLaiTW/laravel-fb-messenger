@@ -2,6 +2,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger;
 
+use Casperlaitw\LaravelFbMessenger\Commands\GreetingTextCommand;
 use Casperlaitw\LaravelFbMessenger\Providers\RouteServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
@@ -37,5 +38,13 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom($this->configPath, 'fb-messenger');
         $this->app->register(RouteServiceProvider::class);
+        $this->registerCommands();
+    }
+
+    private function registerCommands()
+    {
+        $this->commands([
+           GreetingTextCommand::class,
+        ]);
     }
 }
