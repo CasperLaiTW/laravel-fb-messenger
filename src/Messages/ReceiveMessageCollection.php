@@ -16,12 +16,13 @@ use Illuminate\Support\Collection;
 class ReceiveMessageCollection extends Collection
 {
     /**
-     * ReceiveMessageCollection constructor.
-     *
-     * @param array|mixed $items
+     * Filter messages
+     * @return ReceiveMessageCollection
      */
-    public function __construct($items)
+    public function filterSkip() : ReceiveMessageCollection
     {
-        parent::__construct($items);
+        return $this->filter(function (ReceiveMessage $message) {
+            return !$message->isSkip();
+        });
     }
 }

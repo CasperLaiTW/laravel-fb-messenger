@@ -35,22 +35,8 @@ abstract class BaseHandler implements Handler
      */
     public function __construct(ReceiveMessageCollection $messages)
     {
-        $this->filterMessages($messages);
+        $this->messages = $messages->filterSkip();
         $this->app = new FbBotApp(config('fb-messenger.app_token'));
-    }
-
-    /**
-     * Filter messages
-     *
-     * Remove the skip items
-     *
-     * @param ReceiveMessageCollection $messages
-     */
-    private function filterMessages(ReceiveMessageCollection $messages)
-    {
-        $this->messages = $messages->filter(function (ReceiveMessage $message) {
-            return !$message->isSkip();
-        });
     }
 
     /**
