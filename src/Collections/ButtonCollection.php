@@ -23,7 +23,7 @@ class ButtonCollection extends BaseCollection
      *
      * @return ButtonCollection
      */
-    public function addPostBackButton($text, $key = '') : ButtonCollection
+    public function addPostBackButton($text, $key = '')
     {
         $this->elements[] = new MessageButton(MessageButton::TYPE_POSTBACK, $text, $key);
         return $this;
@@ -35,7 +35,7 @@ class ButtonCollection extends BaseCollection
      *
      * @return ButtonCollection
      */
-    public function addWebButton($text, $url) : ButtonCollection
+    public function addWebButton($text, $url)
     {
         $this->elements[] = new MessageButton(MessageButton::TYPE_WEB, $text, $url);
         return $this;
@@ -48,7 +48,7 @@ class ButtonCollection extends BaseCollection
      * @return bool
      * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException
      */
-    public function validator($elements) : bool
+    public function validator($elements)
     {
         if (!$elements instanceof MessageButton) {
             throw new ValidatorStructureException(

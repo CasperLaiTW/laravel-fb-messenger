@@ -7,10 +7,6 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
-/**
- * Class StructuredMessage
- * @package Casperlaitw\LaravelFbMessenger\Messages
- */
 use Casperlaitw\LaravelFbMessenger\Collections\BaseCollection;
 
 /**
@@ -81,7 +77,7 @@ abstract class Structured extends Message
     /**
      * @return BaseCollection
      */
-    public function getCollections() : BaseCollection
+    public function getCollections()
     {
         return $this->collections;
     }

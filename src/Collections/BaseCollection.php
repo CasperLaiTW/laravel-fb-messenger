@@ -25,7 +25,7 @@ abstract class BaseCollection
     /**
      * @return array
      */
-    public function getElements() : array
+    public function getElements()
     {
         return $this->elements;
     }
@@ -45,5 +45,5 @@ abstract class BaseCollection
      *
      * @return bool
      */
-    abstract public function validator($element) : bool;
+    abstract public function validator($element);
 }

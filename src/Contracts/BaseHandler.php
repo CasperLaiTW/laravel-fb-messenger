@@ -19,7 +19,7 @@ use pimax\FbBotApp;
 abstract class BaseHandler implements Handler
 {
     /**
-     * @var \Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection
+     * @var ReceiveMessageCollection
      */
     protected $messages;
 
@@ -31,7 +31,7 @@ abstract class BaseHandler implements Handler
     /**
      * Receiver constructor.
      *
-     * @param \Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection $messages
+     * @param ReceiveMessageCollection $messages
      *
      */
     public function __construct(ReceiveMessageCollection $messages)

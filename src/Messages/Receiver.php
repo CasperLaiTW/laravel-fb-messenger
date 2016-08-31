@@ -70,7 +70,7 @@ class Receiver
     /**
      * @return ReceiveMessageCollection
      */
-    public function getMessages() : ReceiveMessageCollection
+    public function getMessages()
     {
         return $this->collection;
     }

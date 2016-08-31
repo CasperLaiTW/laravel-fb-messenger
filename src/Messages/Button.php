@@ -51,7 +51,7 @@ class Button extends Structured
      *
      * @return Button
      */
-    public function setText(string $text): Button
+    public function setText(string $text)
     {
         $this->text = $text;
 
@@ -61,7 +61,7 @@ class Button extends Structured
     /**
      * @return string
      */
-    public function getText(): string
+    public function getText()
     {
         return $this->text;
     }

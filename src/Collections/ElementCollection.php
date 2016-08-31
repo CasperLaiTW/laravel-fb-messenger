@@ -36,7 +36,7 @@ class ElementCollection extends BaseCollection
     /**
      * @return array
      */
-    public function toArray() : array
+    public function toArray()
     {
         $elements = [];
 
@@ -53,7 +53,7 @@ class ElementCollection extends BaseCollection
      * @return bool
      * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException
      */
-    public function validator($elements) : bool
+    public function validator($elements)
     {
         if (!$elements instanceof Element) {
             throw new ValidatorStructureException(

@@ -20,7 +20,7 @@ class ReceiveMessageCollection extends Collection
      * Filter messages
      * @return ReceiveMessageCollection
      */
-    public function filterSkip() : ReceiveMessageCollection
+    public function filterSkip()
     {
         return $this->filter(function (ReceiveMessage $message) {
             return !$message->isSkip();

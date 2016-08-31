@@ -17,6 +17,9 @@ interface Handler
 {
     /**
      * Handle the chatbot message
+     *
+     * @param ReceiveMessage $message
+     *
      * @return mixed
      */
     public function handle(ReceiveMessage $message);
