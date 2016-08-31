@@ -1,11 +1,12 @@
 {
     "name": "casperlaitw/laravel-fb-messenger",
     "type": "library",
-    "description": "Laravel facebook messenger chatbot provider",
+    "description": "A Laravel Package to integrate Facebook Messenger API",
     "keywords": [
         "facebook",
+        "messenger",
         "chatbot",
-        "messenger"
+        "laravel"
     ],
     "homepage": "https://github.com/casperlaitw/laravel-fb-messenger",
     "license": "MIT",
@@ -20,13 +21,13 @@
         "illuminate/support": "~5.1",
         "illuminate/routing": "~5.1",
         "php": ">=5.6.4",
-        "pimax/fb-messenger-php": "dev-master",
-        "mockery/mockery": "^0.9.5",
-        "satooshi/php-coveralls": "^1.0"
+        "pimax/fb-messenger-php": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~5.0",
-        "nesbot/carbon": "^1.21"
+        "nesbot/carbon": "^1.21",
+        "satooshi/php-coveralls": "^1.0",
+        "mockery/mockery": "^0.9.5"
     },
     "autoload": {
         "psr-4": {
