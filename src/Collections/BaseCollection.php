@@ -5,11 +5,11 @@
  * Time: 下午5:15
  */
 
-namespace Casperlaitw\LaravelFbMessenger\Messages;
+namespace Casperlaitw\LaravelFbMessenger\Collections;
 
 /**
  * Class BaseCollection
- * @package Casperlaitw\LaravelFbMessenger\Messages
+ * @package Casperlaitw\LaravelFbMessenger\Collections
  */
 class BaseCollection
 {

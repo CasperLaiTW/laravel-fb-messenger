@@ -7,6 +7,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
+use Casperlaitw\LaravelFbMessenger\Collections\ButtonCollection;
 use pimax\Messages\MessageElement;
 
 /**

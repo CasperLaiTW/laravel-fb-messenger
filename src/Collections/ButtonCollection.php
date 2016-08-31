@@ -5,13 +5,13 @@
  * Time: 下午4:59
  */
 
-namespace Casperlaitw\LaravelFbMessenger\Messages;
+namespace Casperlaitw\LaravelFbMessenger\Collections;
 
 use pimax\Messages\MessageButton;
 
 /**
  * Class ButtonCollection
- * @package Casperlaitw\LaravelFbMessenger\Messages
+ * @package Casperlaitw\LaravelFbMessenger\Collections
  */
 class ButtonCollection extends BaseCollection
 {
