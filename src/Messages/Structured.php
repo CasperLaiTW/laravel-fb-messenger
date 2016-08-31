@@ -73,7 +73,7 @@ abstract class Structured extends Message
     {
         if (method_exists($this, $name)) {
             return call_user_func_array([$this, $name], $arguments);
-        } else if(method_exists($this->collections, $name)) {
+        } elseif (method_exists($this->collections, $name)) {
             return call_user_func_array([$this->collections, $name], $arguments);
         }
     }
