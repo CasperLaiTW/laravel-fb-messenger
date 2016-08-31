@@ -8,6 +8,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
+use Casperlaitw\LaravelFbMessenger\Messages\TextMessage;
 use pimax\Messages\Message;
 
 /**
@@ -23,7 +24,7 @@ class DefaultHandler extends BaseHandler
     public function handle()
     {
         $this->messages->each(function (ReceiveMessage $message) {
-            $this->app->send(new Message($message->getSender(), "Default Handler: {$message->getMessage()}"));
+            $this->send(new TextMessage($message->getSender(), "Default Handler: {$message->getMessage()}"));
         });
     }
 }

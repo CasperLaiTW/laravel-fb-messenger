@@ -19,21 +19,28 @@ class Receiver
     /**
      * @var array|string
      */
-    protected $messaging = [];
+    private $messaging = [];
 
     /**
      * @var ReceiveMessageCollection
      */
-    protected $collection;
+    private $collection;
+
+    /**
+     * @var bool
+     */
+    private $filterSkip;
 
     /**
      * Receiver constructor.
      *
      * @param Request $request
+     * @param bool    $filterSkip
      */
-    public function __construct(Request $request)
+    public function __construct(Request $request, $filterSkip = true)
     {
         $this->messaging = $request->input('entry.0.messaging');
+        $this->filterSkip = $filterSkip;
         $this->boot();
     }
 
@@ -53,6 +60,10 @@ class Receiver
             );
         }
         $this->collection = new ReceiveMessageCollection($messages);
+
+        if ($this->filterSkip) {
+            $this->collection = $this->collection->filterSkip();
+        }
     }
 
     /**

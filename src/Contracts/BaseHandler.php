@@ -7,7 +7,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
-use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
+use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessageCollection;
 use pimax\FbBotApp;
 
@@ -35,8 +35,16 @@ abstract class BaseHandler implements Handler
      */
     public function __construct(ReceiveMessageCollection $messages)
     {
-        $this->messages = $messages->filterSkip();
+        $this->messages = $messages;
         $this->app = new FbBotApp(config('fb-messenger.app_token'));
+    }
+
+    /**
+     * @param Message $message
+     */
+    public function send(Message $message)
+    {
+        $this->app->send($message->toData());
     }
 
     /**
