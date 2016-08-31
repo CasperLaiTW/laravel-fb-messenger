@@ -1,4 +1,4 @@
-# Laravel Facebook Messenger API
+# Laravel Facebook Messenger Provider
 
 ### Installation
 
