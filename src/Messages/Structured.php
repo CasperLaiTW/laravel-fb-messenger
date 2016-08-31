@@ -13,13 +13,13 @@ use Casperlaitw\LaravelFbMessenger\Transformers\Factory;
 use Illuminate\Support\Arr;
 use pimax\Messages\MessageButton;
 use pimax\Messages\MessageElement;
-use pimax\Messages\StructuredMessage as Structure;
+use pimax\Messages\StructuredMessage;
 
 /**
  * Class StructuredMessage
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class StructuredMessage extends Message
+class Structured extends Message
 {
     /**
      * @var string
@@ -40,7 +40,7 @@ class StructuredMessage extends Message
      * StructuredMessage constructor.
      *
      * @param        $sender
-     * @param string $type (Structure::$TYPE_BUTTON, Structure::$TYPE_GENERIC, Structure::$TYPE_RECEIPT)
+     * @param string $type
      * @param array  $elements
      */
     public function __construct($sender, string $type, $elements = [])
@@ -84,21 +84,21 @@ class StructuredMessage extends Message
     private function validator($item)
     {
         switch ($this->type) {
-            case Structure::TYPE_BUTTON:
+            case StructuredMessage::TYPE_BUTTON:
                 if (!$item instanceof MessageButton) {
                     throw new ValidatorStructureException(
                         'The `button` structure item should be instance of `\\pimax\\Messages\\MessageButton`'
                     );
                 }
                 break;
-            case Structure::TYPE_GENERIC:
+            case StructuredMessage::TYPE_GENERIC:
                 if (!$item instanceof MessageElement) {
                     throw new ValidatorStructureException(
                         'The `generic` structure item should be instance of `\\pimax\\Messages\\MessageElement`'
                     );
                 }
                 break;
-            case Structure::TYPE_RECEIPT:
+            case StructuredMessage::TYPE_RECEIPT:
                 if (!Arr::has($item, [
                     'recipient_name',
                     'order_number',
@@ -118,9 +118,9 @@ class StructuredMessage extends Message
     /**
      * @param string $text
      *
-     * @return StructuredMessage
+     * @return Structured
      */
-    public function setText(string $text): StructuredMessage
+    public function setText(string $text): Structured
     {
         $this->text = $text;
 

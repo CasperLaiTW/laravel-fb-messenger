@@ -7,11 +7,13 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
+use pimax\Messages\ImageMessage;
+
 /**
  * Class ImageMessage
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class ImageMessage extends Message
+class Image extends Message
 {
     /**
      * Image path/url
@@ -37,6 +39,6 @@ class ImageMessage extends Message
      */
     public function toData()
     {
-        return new \pimax\Messages\ImageMessage($this->getSender(), $this->image);
+        return new ImageMessage($this->getSender(), $this->image);
     }
 }

@@ -11,7 +11,7 @@ namespace Casperlaitw\LaravelFbMessenger\Messages;
  * Class TextMessage
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class TextMessage extends Message
+class Text extends Message
 {
     /**
      * @var
