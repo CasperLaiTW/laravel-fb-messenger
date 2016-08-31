@@ -28,7 +28,7 @@ class ElementCollection extends BaseCollection
     public function addElement($title, $description, $image = '', $url = '')
     {
         $element = new Element($title, $description, $image, $url);
-        $this->elements[] = $element;
+        $this->add($element);
 
         return $element;
     }
@@ -55,7 +55,7 @@ class ElementCollection extends BaseCollection
      */
     public function validator($elements) : bool
     {
-        if (!$elements instanceof MessageElement) {
+        if (!$elements instanceof Element) {
             throw new ValidatorStructureException(
                 'The `generic` structure item should be instance of `\\pimax\\Messages\\MessageElement`'
             );
