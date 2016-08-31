@@ -26,8 +26,6 @@ class WebhookController extends Controller
      */
     public function index(Request $request)
     {
-
-
         if ($request->get('hub_mode') === 'subscribe'
             && $request->get('hub_verify_token') === config('fb-messenger.verify_token')) {
             return response($request->get('hub_challenge'));
