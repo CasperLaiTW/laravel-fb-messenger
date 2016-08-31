@@ -15,5 +15,4 @@ use Exception;
  */
 class NeedImplementHandlerException extends Exception
 {
-
 }
