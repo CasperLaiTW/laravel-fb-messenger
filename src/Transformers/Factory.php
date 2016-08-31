@@ -19,7 +19,7 @@ class Factory
     /**
      * @param string $type
      *
-     * @return ButtonStructuredMessage
+     * @return StructuredTransformer
      * @throws UnknownTypeException
      */
     public static function make(string $type)
@@ -28,6 +28,7 @@ class Factory
             case StructuredMessage::TYPE_BUTTON:
                 return new ButtonStructuredMessage;
             case StructuredMessage::TYPE_GENERIC:
+                return new GenericStructuredMessage;
                 break;
             case StructuredMessage::TYPE_RECEIPT:
                 break;
