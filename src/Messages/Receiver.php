@@ -47,7 +47,9 @@ class Receiver
             $messages[] = new ReceiveMessage(
                 Arr::get($message, 'message.text'),
                 Arr::get($message, 'sender.id'),
-                Arr::has($message, 'delivery') || Arr::has($message, 'message.is_echo')
+                Arr::has($message, 'delivery') ||
+                Arr::has($message, 'message.is_echo') ||
+                !Arr::has($message, 'message.text')
             );
         }
         $this->collection = new ReceiveMessageCollection($messages);
