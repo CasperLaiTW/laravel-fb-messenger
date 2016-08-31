@@ -1,7 +1,7 @@
 {
     "name": "casperlaitw/laravel-fb-messenger",
     "type": "library",
-    "description": "A Laravel Package to integrate Facebook Messenger API",
+    "description": "A Laravel Package to Integrate Facebook Messenger API",
     "keywords": [
         "facebook",
         "messenger",
