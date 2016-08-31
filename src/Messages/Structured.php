@@ -58,8 +58,14 @@ class Structured extends Message
      */
     public function add($item)
     {
-        if ($this->validator($item)) {
-            $this->elements[] = $item;
+        if (is_array($item)) {
+            foreach ($item as $value) {
+                $this->add($value);
+            }
+        } else {
+            if ($this->validator($item)) {
+                $this->elements[] = $item;
+            }
         }
 
         return $this;
@@ -87,7 +93,8 @@ class Structured extends Message
             case StructuredMessage::TYPE_BUTTON:
                 if (!$item instanceof MessageButton) {
                     throw new ValidatorStructureException(
-                        'The `button` structure item should be instance of `\\pimax\\Messages\\MessageButton`'
+                        'The `button` structure item should be instance of `\\pimax\\Messages\\MessageButton`'.
+                        json_encode($item)
                     );
                 }
                 break;
