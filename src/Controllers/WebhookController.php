@@ -44,7 +44,7 @@ class WebhookController extends Controller
     {
         $receive = new Receiver($request);
         $handleClassName = config('fb-messenger.handler');
-        $handle = new $handleClassName($receive->getMessages());
+        $handle = (new $handleClassName)->setMessages($receive->getMessages());
         if (!$handle instanceof BaseHandler) {
             throw new NeedImplementHandlerException();
         }

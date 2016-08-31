@@ -10,7 +10,6 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts;
 use Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection;
 use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
-use pimax\FbBotApp;
 
 /**
  * Class BaseHandler
@@ -24,20 +23,16 @@ abstract class BaseHandler implements Handler
     protected $messages;
 
     /**
-     * @var FbBotApp
+     * @var Bot
      */
-    protected $app;
+    protected $bot;
 
     /**
      * Receiver constructor.
-     *
-     * @param ReceiveMessageCollection $messages
-     *
      */
-    public function __construct(ReceiveMessageCollection $messages)
+    public function __construct()
     {
-        $this->messages = $messages;
-        $this->app = new FbBotApp(config('fb-messenger.app_token'));
+        $this->bot = new Bot(config('fb-messenger.app_token'));
     }
 
     /**
@@ -45,7 +40,15 @@ abstract class BaseHandler implements Handler
      */
     public function send(Message $message)
     {
-        $this->app->send($message->toData());
+        $this->bot->send($message->toData());
+    }
+
+    /**
+     * @param Message $message
+     */
+    public function sendThreadSetting(Message $message)
+    {
+        $this->bot->sendThreadSetting($message);
     }
 
     /**
