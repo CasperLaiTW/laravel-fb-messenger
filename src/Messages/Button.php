@@ -11,19 +11,29 @@ use Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException;
 use Casperlaitw\LaravelFbMessenger\Transformers\ButtonTransformer;
 use pimax\Messages\MessageButton;
 
+/**
+ * Class Button
+ * @package Casperlaitw\LaravelFbMessenger\Messages
+ */
 class Button extends Structured
 {
+    /**
+     * @var string
+     */
+    private $text;
 
     /**
      * Button constructor.
      *
-     * @param $sender
-     * @param $elements
+     * @param        $sender
+     * @param string $text
+     * @param array  $elements
      */
-    public function __construct($sender, $elements = [])
+    public function __construct($sender, $text = '', $elements = [])
     {
         parent::__construct($sender);
         $this->add($elements);
+        $this->text = $text;
     }
 
     /**
@@ -52,5 +62,25 @@ class Button extends Structured
         }
 
         return true;
+    }
+
+    /**
+     * @param string $text
+     *
+     * @return Button
+     */
+    public function setText(string $text): Button
+    {
+        $this->text = $text;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getText(): string
+    {
+        return $this->text;
     }
 }

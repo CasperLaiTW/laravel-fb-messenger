@@ -7,16 +7,12 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
-use Casperlaitw\LaravelFbMessenger\Exceptions\UnknownTypeException;
-use Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException;
-use Casperlaitw\LaravelFbMessenger\Transformers\Factory;
-use Illuminate\Support\Arr;
-use pimax\Messages\MessageButton;
-use pimax\Messages\MessageElement;
-use pimax\Messages\StructuredMessage;
-
 /**
  * Class StructuredMessage
+ * @package Casperlaitw\LaravelFbMessenger\Messages
+ */
+/**
+ * Class Structured
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
 abstract class Structured extends Message
@@ -45,6 +41,14 @@ abstract class Structured extends Message
         }
 
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getElements()
+    {
+        return $this->elements;
     }
 
     /**
