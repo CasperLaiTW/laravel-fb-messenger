@@ -34,7 +34,7 @@ class ButtonTransformer implements StructuredTransformer
             StructuredMessage::TYPE_BUTTON,
             [
                 'text' => $message->getText(),
-                'buttons' => $message->getElements(),
+                'buttons' => $message->getCollections()->getElements(),
             ]
         );
     }

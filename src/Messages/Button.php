@@ -7,9 +7,8 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
-use Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException;
+use Casperlaitw\LaravelFbMessenger\Collections\ButtonCollection;
 use Casperlaitw\LaravelFbMessenger\Transformers\ButtonTransformer;
-use pimax\Messages\MessageButton;
 
 /**
  * Class Button
@@ -36,6 +35,7 @@ class Button extends Structured
         $this->text = $text;
     }
 
+
     /**
      * Message to send object
      * @return \pimax\Messages\Message
@@ -44,24 +44,6 @@ class Button extends Structured
     public function toData()
     {
         return (new ButtonTransformer)->transform($this);
-    }
-
-    /**
-     * Valid the added element
-     * @param $elements
-     *
-     * @return mixed
-     * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException
-     */
-    public function validator($elements)
-    {
-        if (!$elements instanceof MessageButton) {
-            throw new ValidatorStructureException(
-                'The `button` structure item should be instance of `\\pimax\\Messages\\MessageButton`'
-            );
-        }
-
-        return true;
     }
 
     /**
@@ -82,5 +64,13 @@ class Button extends Structured
     public function getText(): string
     {
         return $this->text;
+    }
+
+    /**
+     * @return mixed
+     */
+    protected function collection()
+    {
+        return ButtonCollection::class;
     }
 }

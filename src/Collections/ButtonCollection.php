@@ -7,6 +7,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Collections;
 
+use Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException;
 use pimax\Messages\MessageButton;
 
 /**
@@ -38,5 +39,23 @@ class ButtonCollection extends BaseCollection
     {
         $this->elements[] = new MessageButton(MessageButton::TYPE_WEB, $text, $url);
         return $this;
+    }
+
+    /**
+     * Valid the added element
+     * @param $elements
+     *
+     * @return bool
+     * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException
+     */
+    public function validator($elements) : bool
+    {
+        if (!$elements instanceof MessageButton) {
+            throw new ValidatorStructureException(
+                'The `button` structure item should be instance of `\\pimax\\Messages\\MessageButton`'
+            );
+        }
+
+        return true;
     }
 }

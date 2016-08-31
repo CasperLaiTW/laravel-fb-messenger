@@ -17,22 +17,22 @@ use pimax\Messages\MessageElement;
 class Element
 {
     /**
-     * @var
+     * @var string
      */
     private $title;
 
     /**
-     * @var
+     * @var string
      */
     private $description;
 
     /**
-     * @var
+     * @var string
      */
     private $image;
 
     /**
-     * @var
+     * @var string
      */
     private $url;
 
@@ -49,7 +49,7 @@ class Element
      * @param $image
      * @param $url
      */
-    public function __construct($title, $description, $image, $url)
+    public function __construct($title, $description, $image = '', $url = '')
     {
         $this->title = $title;
         $this->description = $description;

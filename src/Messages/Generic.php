@@ -7,9 +7,8 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
-use Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException;
+use Casperlaitw\LaravelFbMessenger\Collections\ElementCollection;
 use Casperlaitw\LaravelFbMessenger\Transformers\GenericTransformer;
-use pimax\Messages\MessageElement;
 
 class Generic extends Structured
 {
@@ -35,19 +34,10 @@ class Generic extends Structured
     }
 
     /**
-     * @param $elements
-     *
      * @return mixed
-     * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException
      */
-    public function validator($elements)
+    protected function collection()
     {
-        if (!$elements instanceof MessageElement) {
-            throw new ValidatorStructureException(
-                'The `generic` structure item should be instance of `\\pimax\\Messages\\MessageElement`'
-            );
-        }
-
-        return true;
+        return ElementCollection::class;
     }
 }

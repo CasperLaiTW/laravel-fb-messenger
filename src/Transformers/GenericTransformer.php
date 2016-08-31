@@ -29,7 +29,7 @@ class GenericTransformer implements StructuredTransformer
             $message->getSender(),
             StructuredMessage::TYPE_GENERIC,
             [
-                'elements' => $message->getElements(),
+                'elements' => $message->getCollections()->toArray(),
             ]
         );
     }

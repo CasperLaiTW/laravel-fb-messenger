@@ -11,6 +11,10 @@ namespace Casperlaitw\LaravelFbMessenger\Collections;
  * Class BaseCollection
  * @package Casperlaitw\LaravelFbMessenger\Collections
  */
+/**
+ * Class BaseCollection
+ * @package Casperlaitw\LaravelFbMessenger\Collections
+ */
 abstract class BaseCollection
 {
     /**
@@ -25,4 +29,21 @@ abstract class BaseCollection
     {
         return $this->elements;
     }
+
+    /**
+     * @param $element
+     */
+    public function add($element)
+    {
+        if ($this->validator($element)) {
+            $this->elements[] = $element;
+        }
+    }
+
+    /**
+     * @param $element
+     *
+     * @return bool
+     */
+    abstract public function validator($element) : bool;
 }

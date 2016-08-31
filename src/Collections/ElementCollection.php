@@ -7,6 +7,10 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Collections;
 
+use Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException;
+use Casperlaitw\LaravelFbMessenger\Messages\Element;
+use pimax\Messages\MessageElement;
+
 /**
  * Class ElementCollection
  * @package Casperlaitw\LaravelFbMessenger\Collections
@@ -32,7 +36,7 @@ class ElementCollection extends BaseCollection
     /**
      * @return array
      */
-    public function getElements() : array
+    public function toArray() : array
     {
         $elements = [];
 
@@ -41,5 +45,22 @@ class ElementCollection extends BaseCollection
         }
 
         return $elements;
+    }
+
+    /**
+     * @param $elements
+     *
+     * @return bool
+     * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException
+     */
+    public function validator($elements) : bool
+    {
+        if (!$elements instanceof MessageElement) {
+            throw new ValidatorStructureException(
+                'The `generic` structure item should be instance of `\\pimax\\Messages\\MessageElement`'
+            );
+        }
+
+        return true;
     }
 }
