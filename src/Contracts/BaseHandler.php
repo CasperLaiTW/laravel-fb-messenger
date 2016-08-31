@@ -9,6 +9,7 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
 use Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection;
 use Casperlaitw\LaravelFbMessenger\Messages\Message;
+use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
 use pimax\FbBotApp;
 
 /**
@@ -48,8 +49,19 @@ abstract class BaseHandler implements Handler
     }
 
     /**
+     * @return ReceiveMessageCollection
+     */
+    public function getMessages()
+    {
+        return $this->messages;
+    }
+
+    /**
      * Handle the chatbot message
+     *
+     * @param ReceiveMessage $message
+     *
      * @return mixed
      */
-    abstract public function handle();
+    abstract public function handle(ReceiveMessage $message);
 }

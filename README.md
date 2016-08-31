@@ -41,6 +41,8 @@ The `DefaultHandler` will reply the same words to user.
 
 You can check out [DefaultHandler](https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/DefaultHandler.php)
 
+Handle **MUST BE** extends `BaseHandler`
+
 ```php
 <?php
 
@@ -52,14 +54,9 @@ class DefaultHandler extends BaseHandler
     /**
      *  handle method is required. 
      */
-    public function handle()
+    public function handle(ReceiveMessage $message)
     {
-        $this->messages->each(function (ReceiveMessage $message) {
-            /**
-             *  Condition to anything you want and reply message to user
-             */
-            $this->send(new Text($message->getSender(), "Default Handler: {$message->getMessage()}"));
-        });
+        $this->send(new Text($message->getSender(), "Default Handler: {$message->getMessage()}"));
     }
 }
 ```
