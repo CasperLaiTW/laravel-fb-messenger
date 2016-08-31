@@ -12,10 +12,10 @@ use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use pimax\Messages\StructuredMessage;
 
 /**
- * Class ButtonStructuredMessage
+ * Class ButtonTransformer
  * @package Casperlaitw\LaravelFbMessenger\Transformers
  */
-class ButtonStructuredMessage implements StructuredTransformer
+class ButtonTransformer implements StructuredTransformer
 {
     /**
      * @param Message $message

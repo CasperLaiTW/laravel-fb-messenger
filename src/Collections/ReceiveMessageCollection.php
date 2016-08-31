@@ -5,13 +5,14 @@
  * Time: 上午2:20
  */
 
-namespace Casperlaitw\LaravelFbMessenger\Messages;
+namespace Casperlaitw\LaravelFbMessenger\Collections;
 
+use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
 use Illuminate\Support\Collection;
 
 /**
  * Class ReceiveMessageCollection
- * @package Casperlaitw\LaravelFbMessenger\Messages
+ * @package Casperlaitw\LaravelFbMessenger\Collections
  */
 class ReceiveMessageCollection extends Collection
 {

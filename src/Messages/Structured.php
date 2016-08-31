@@ -19,52 +19,28 @@ use pimax\Messages\StructuredMessage;
  * Class StructuredMessage
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class Structured extends Message
+abstract class Structured extends Message
 {
-    /**
-     * @var string
-     */
-    private $type;
-
     /**
      * @var array
      */
     private $elements;
 
     /**
-     * @var string
-     */
-    private $text = '';
-
-    /**
-     * StructuredMessage constructor.
-     *
-     * @param        $sender
-     * @param string $type
-     * @param array  $elements
-     */
-    public function __construct($sender, string $type, $elements = [])
-    {
-        parent::__construct($sender);
-        $this->type = $type;
-        $this->elements = $elements;
-    }
-
-    /**
-     * @param $item
+     * Add elements
+     * @param $elements
      *
      * @return $this
-     * @throws ValidatorStructureException
      */
-    public function add($item)
+    public function add($elements)
     {
-        if (is_array($item)) {
-            foreach ($item as $value) {
-                $this->add($value);
+        if (is_array($elements)) {
+            foreach ($elements as $element) {
+                $this->add($element);
             }
         } else {
-            if ($this->validator($item)) {
-                $this->elements[] = $item;
+            if ($this->validator($elements)) {
+                $this->elements[] = $elements;
             }
         }
 
@@ -72,81 +48,9 @@ class Structured extends Message
     }
 
     /**
-     * Message to send object
-     * @return \pimax\Messages\Message
-     * @throws UnknownTypeException
-     */
-    public function toData()
-    {
-        return Factory::make($this->type)->transform($this);
-    }
-
-    /**
-     * @param $item
+     * @param $elements
      *
-     * @return bool
-     * @throws ValidatorStructureException
+     * @return mixed
      */
-    private function validator($item)
-    {
-        switch ($this->type) {
-            case StructuredMessage::TYPE_BUTTON:
-                if (!$item instanceof MessageButton) {
-                    throw new ValidatorStructureException(
-                        'The `button` structure item should be instance of `\\pimax\\Messages\\MessageButton`'.
-                        json_encode($item)
-                    );
-                }
-                break;
-            case StructuredMessage::TYPE_GENERIC:
-                if (!$item instanceof MessageElement) {
-                    throw new ValidatorStructureException(
-                        'The `generic` structure item should be instance of `\\pimax\\Messages\\MessageElement`'
-                    );
-                }
-                break;
-            case StructuredMessage::TYPE_RECEIPT:
-                if (!Arr::has($item, [
-                    'recipient_name',
-                    'order_number',
-                    'currency',
-                    'payment_method',
-                    'elements',
-                    'summary'
-                ])) {
-                    throw new ValidatorStructureException('The `receipt` structure miss something required');
-                }
-                break;
-        }
-
-        return true;
-    }
-
-    /**
-     * @param string $text
-     *
-     * @return Structured
-     */
-    public function setText(string $text): Structured
-    {
-        $this->text = $text;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getText(): string
-    {
-        return $this->text;
-    }
-
-    /**
-     * @return array
-     */
-    public function getElements(): array
-    {
-        return $this->elements;
-    }
+    abstract public function validator($elements);
 }

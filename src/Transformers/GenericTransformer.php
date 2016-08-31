@@ -11,10 +11,10 @@ use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use pimax\Messages\StructuredMessage;
 
 /**
- * Class GenericStructuredMessage
+ * Class GenericTransformer
  * @package Casperlaitw\LaravelFbMessenger\Transformers
  */
-class GenericStructuredMessage implements StructuredTransformer
+class GenericTransformer implements StructuredTransformer
 {
     /**
      * Transform structure

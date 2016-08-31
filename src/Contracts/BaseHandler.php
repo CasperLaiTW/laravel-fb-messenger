@@ -7,8 +7,8 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
+use Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection;
 use Casperlaitw\LaravelFbMessenger\Messages\Message;
-use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessageCollection;
 use pimax\FbBotApp;
 
 /**
@@ -18,7 +18,7 @@ use pimax\FbBotApp;
 abstract class BaseHandler implements Handler
 {
     /**
-     * @var ReceiveMessageCollection
+     * @var \Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection
      */
     protected $messages;
 
@@ -30,7 +30,7 @@ abstract class BaseHandler implements Handler
     /**
      * Receiver constructor.
      *
-     * @param ReceiveMessageCollection $messages
+     * @param \Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection $messages
      *
      */
     public function __construct(ReceiveMessageCollection $messages)

@@ -9,7 +9,6 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
 use Casperlaitw\LaravelFbMessenger\Messages\Text;
-use pimax\Messages\Message;
 
 /**
  * Class DefaultHandler
