@@ -13,7 +13,7 @@ use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
  * Interface Receiver
  * @package Casperlaitw\LaravelFbMessenger\Contracts
  */
-interface Handler
+interface HandlerInterface
 {
     /**
      * Handle the chatbot message

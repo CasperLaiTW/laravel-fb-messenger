@@ -11,13 +11,12 @@ use Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection;
 use Casperlaitw\LaravelFbMessenger\Messages\Deletable;
 use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
-use Casperlaitw\LaravelFbMessenger\Messages\ThreadInterface;
 
 /**
  * Class BaseHandler
  * @package Casperlaitw\LaravelFbMessenger\Contracts
  */
-abstract class BaseHandler implements Handler
+abstract class BaseHandler implements HandlerInterface
 {
     /**
      * @var ReceiveMessageCollection
