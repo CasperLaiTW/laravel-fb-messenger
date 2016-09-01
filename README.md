@@ -90,7 +90,10 @@ class DefaultHandler extends BaseHandler
 ```
 
 ### API
-[wiki](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki)
+WIP
+
+### Commands
+See the [document](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki/Commands)
 
 ### License
 
