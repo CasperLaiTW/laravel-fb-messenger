@@ -56,8 +56,10 @@ class WebhookHandler
     public function handle()
     {
         $this->handler->getMessages()->each(function (ReceiveMessage $message) {
-            if ($message->isPayload() && array_key_exists($message->getMessage(), $this->postbacks)) {
-                $this->postbacks[$message->getMessage()]->handle($message);
+            if ($message->isPayload()) {
+                if (array_key_exists($message->getMessage(), $this->postbacks)) {
+                    $this->postbacks[$message->getMessage()]->handle($message);
+                }
                 return;
             }
 
