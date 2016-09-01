@@ -52,6 +52,17 @@ class Receiver
     {
         $messages = [];
         foreach ($this->messaging as $message) {
+            // is payload
+            if (Arr::has($message, 'postback.payload')) {
+                $messages[] = new ReceiveMessage(
+                    Arr::get($message, 'postback.payload'),
+                    Arr::get($message, 'sender.id'),
+                    false,
+                    true
+                );
+                continue;
+            }
+
             $messages[] = new ReceiveMessage(
                 Arr::get($message, 'message.text'),
                 Arr::get($message, 'sender.id'),

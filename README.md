@@ -69,7 +69,7 @@ The `DefaultHandler` will reply the same words to user.
 
 You can check out [DefaultHandler](https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/DefaultHandler.php)
 
-Handle **MUST BE** extends `BaseHandler`.
+Handler **MUST BE** extends `BaseHandler`.
 
 ```php
 <?php
@@ -88,6 +88,51 @@ class DefaultHandler extends BaseHandler
     }
 }
 ```
+
+### Postback Handler
+
+1. Create your postback handler
+
+`$payload` is you setting that [fb:get-start](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki/Commands#fbget-start) command or [button message's postback button](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki/Example#button-message) etc.
+
+```php
+use Casperlaitw\LaravelFbMessenger\Contracts\PostbackHandler;
+use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
+use Casperlaitw\LaravelFbMessenger\Messages\Text;
+
+class StartupPostback extends PostbackHandler
+{
+    // If webhook get the $payload is `USER_DEFINED_PAYLOAD` will run this postback handler
+    protected $payload = 'USER_DEFINED_PAYLOAD';
+
+    /**
+     * Handle the chatbot message
+     *
+     * @param ReceiveMessage $message
+     *
+     * @return mixed
+     */
+    public function handle(ReceiveMessage $message)
+    {
+        $this->send(new Text($message->getSender(), "I got your payload"));
+    }
+}
+```
+
+2. Add to `fb-messenger.php` config
+
+```php
+return [
+    'verify_token' => env('MESSENGER_VERIFY_TOKEN'),
+    'app_token' => env('MESSENGER_APP_TOKEN'),
+    'handler' => App\YourHandler::class,
+    'postbacks' => [
+        App\StartupPostback::class,
+    ],
+];
+```
+
+[Example](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki/Example#postback-handler)
 
 ### API
 WIP

@@ -17,17 +17,22 @@ class ReceiveMessage
     /**
      * @var string
      */
-    protected $sender;
+    private $sender;
 
     /**
      * @var string
      */
-    protected $message;
+    private $message;
 
     /**
      * @var bool
      */
-    protected $skip;
+    private $skip;
+
+    /**
+     * @var bool
+     */
+    private $payload;
 
     /**
      * Receive constructor.
@@ -35,14 +40,16 @@ class ReceiveMessage
      * @param      $message
      * @param      $sender
      * @param bool $skip
+     * @param bool $payload
      *
      * @internal param bool $isDelivery
      */
-    public function __construct($message, $sender, $skip = false)
+    public function __construct($message, $sender, $skip = false, $payload = false)
     {
         $this->message = $message;
         $this->sender = $sender;
         $this->skip = $skip;
+        $this->payload = $payload;
     }
 
     /**
@@ -67,5 +74,13 @@ class ReceiveMessage
     public function getMessage()
     {
         return $this->message;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isPayload()
+    {
+        return $this->payload;
     }
 }

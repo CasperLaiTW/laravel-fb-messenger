@@ -12,7 +12,6 @@ use Exception;
 
 class CommandHandler extends BaseHandler
 {
-
     /**
      * Handle the chatbot message
      *

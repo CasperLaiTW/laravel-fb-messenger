@@ -9,7 +9,6 @@ namespace Casperlaitw\LaravelFbMessenger\Collections;
 
 use Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException;
 use Casperlaitw\LaravelFbMessenger\Messages\Element;
-use pimax\Messages\MessageElement;
 
 /**
  * Class ElementCollection
