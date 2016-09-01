@@ -11,7 +11,7 @@ namespace Casperlaitw\LaravelFbMessenger\Messages;
  * Class Greeting
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class Greeting extends Message
+class Greeting extends Message implements ThreadInterface
 {
     /**
      * @var string

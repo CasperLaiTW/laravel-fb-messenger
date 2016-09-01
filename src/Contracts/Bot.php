@@ -7,6 +7,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
+use Casperlaitw\LaravelFbMessenger\Messages\ThreadInterface;
 use pimax\FbBotApp;
 
 /**
@@ -17,14 +18,29 @@ class Bot extends FbBotApp
 {
 
     /**
+     * @param \pimax\Messages\Message $message
+     * @param string                  $type
+     *
+     * @return array
+     */
+    public function send($message, $type = self::TYPE_POST)
+    {
+        if ($message instanceof ThreadInterface) {
+            return $this->sendThreadSetting($message->toData(), $type);
+        }
+
+        return parent::send($message->toData());
+    }
+
+    /**
      * @param        $message
      * @param string $type
      *
      * @return array
      */
-    public function sendThreadSetting($message, $type = self::TYPE_POST)
+    protected function sendThreadSetting($message, $type = self::TYPE_POST)
     {
-        return $this->call('me/thread_settings', $message->toData(), $type);
+        return $this->call('me/thread_settings', $message, $type);
     }
 
     /**

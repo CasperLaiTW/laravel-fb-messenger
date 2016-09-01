@@ -11,6 +11,7 @@ use Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection;
 use Casperlaitw\LaravelFbMessenger\Messages\Deletable;
 use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
+use Casperlaitw\LaravelFbMessenger\Messages\ThreadInterface;
 
 /**
  * Class BaseHandler
@@ -38,25 +39,17 @@ abstract class BaseHandler implements Handler
 
     /**
      * @param Message $message
-     */
-    public function send(Message $message)
-    {
-        $this->bot->send($message->toData());
-    }
-
-    /**
-     * @param Message $message
      *
      * @return array
      */
-    public function sendThreadSetting(Message $message)
+    public function send(Message $message)
     {
         $arguments = [$message];
         if (in_array(Deletable::class, class_uses($message))) {
             $arguments[] = $message->getCurlType();
         }
 
-        return call_user_func_array([$this->bot, 'sendThreadSetting'], $arguments);
+        return call_user_func_array([$this->bot, 'send'], $arguments);
     }
 
     /**
