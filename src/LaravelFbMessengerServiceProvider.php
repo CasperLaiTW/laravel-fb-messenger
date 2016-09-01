@@ -2,6 +2,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger;
 
+use Casperlaitw\LaravelFbMessenger\Commands\GetStartButtonCommand;
 use Casperlaitw\LaravelFbMessenger\Commands\GreetingTextCommand;
 use Casperlaitw\LaravelFbMessenger\Providers\RouteServiceProvider;
 use Illuminate\Support\ServiceProvider;
@@ -45,6 +46,7 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
     {
         $this->commands([
            GreetingTextCommand::class,
+            GetStartButtonCommand::class,
         ]);
     }
 }
