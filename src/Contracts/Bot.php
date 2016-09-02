@@ -42,29 +42,4 @@ class Bot extends FbBotApp
     {
         return new HandleMessageResponse($this->call('me/thread_settings', $message, $type));
     }
-
-    /**
-     * @param $text
-     *
-     * @return array
-     */
-    public function setGreeting($text)
-    {
-        return $this->call('me/thread_settings', [
-            'setting_type' => 'greeting',
-            'greeting' => [
-                'text' => $text,
-            ],
-        ]);
-    }
-
-    /**
-     * @return array
-     */
-    public function deleteGreeting()
-    {
-        return $this->call([
-            'setting_type' => 'greeting',
-        ], self::TYPE_DELETE);
-    }
 }
