@@ -21,7 +21,7 @@ class Bot extends FbBotApp
      * @param \pimax\Messages\Message $message
      * @param string                  $type
      *
-     * @return array
+     * @return HandleMessageResponse
      */
     public function send($message, $type = self::TYPE_POST)
     {
@@ -29,18 +29,18 @@ class Bot extends FbBotApp
             return $this->sendThreadSetting($message->toData(), $type);
         }
 
-        return parent::send($message->toData());
+        return new HandleMessageResponse(parent::send($message->toData()));
     }
 
     /**
      * @param        $message
      * @param string $type
      *
-     * @return array
+     * @return HandleMessageResponse
      */
     protected function sendThreadSetting($message, $type = self::TYPE_POST)
     {
-        return $this->call('me/thread_settings', $message, $type);
+        return new HandleMessageResponse($this->call('me/thread_settings', $message, $type));
     }
 
     /**

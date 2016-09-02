@@ -40,6 +40,6 @@ class GreetingTextCommand extends Command
         $handler = new CommandHandler;
         $greeting = new Greeting($text);
 
-        $this->comment($handler->send($greeting)['result']);
+        $this->comment($handler->send($greeting)->getResponse());
     }
 }

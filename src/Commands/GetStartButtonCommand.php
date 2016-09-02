@@ -49,6 +49,6 @@ class GetStartButtonCommand extends Command
         }
 
         $handler = new CommandHandler;
-        $this->comment($handler->send($startButton)['result']);
+        $this->comment($handler->send($startButton)->getResponse());
     }
 }

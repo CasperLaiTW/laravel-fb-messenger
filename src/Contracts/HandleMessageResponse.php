@@ -1,0 +1,51 @@
+<?php
+/**
+ * User: casperlai
+ * Date: 2016/9/2
+ * Time: 下午9:44.
+ */
+
+namespace Casperlaitw\LaravelFbMessenger\Contracts;
+
+/**
+ * Class HandleMessageResponse
+ * @package Casperlaitw\LaravelFbMessenger\Contracts
+ */
+class HandleMessageResponse
+{
+    /**
+     * @var string
+     */
+    protected $response;
+
+    /**
+     * HandleMessageResponse constructor.
+     *
+     * @param $response
+     */
+    public function __construct($response)
+    {
+        $this->response = $response;
+    }
+
+    /**
+     * @return string
+     */
+    public function getResponse()
+    {
+        if (!empty($this->response['error'])) {
+            return $this->handleError($this->response['error']);
+        }
+        return $this->response['result'];
+    }
+
+    /**
+     * @param $error
+     *
+     * @return string
+     */
+    private function handleError($error)
+    {
+        return $error['message'];
+    }
+}
