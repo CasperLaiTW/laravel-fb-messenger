@@ -18,7 +18,8 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
      * Config path
      * @var string
      */
-    protected $configPath = __DIR__.'/../config/fb-messenger.php';
+    protected $configPath = __DIR__ . '/../config/fb-messenger.php';
+
     /**
      * Perform post-registration booting of services.
      *
@@ -46,7 +47,7 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
     private function registerCommands()
     {
         $this->commands([
-           GreetingTextCommand::class,
+            GreetingTextCommand::class,
             GetStartButtonCommand::class,
             PersistentMenuCommand::class,
         ]);
