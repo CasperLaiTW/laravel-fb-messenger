@@ -8,6 +8,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Collections\BaseCollection;
+use Illuminate\Container\Container;
 
 /**
  * Class Structured
@@ -28,7 +29,8 @@ abstract class Structured extends Message
     public function __construct($sender)
     {
         parent::__construct($sender);
-        $this->collections = app($this->collection());
+        $app = new Container();
+        $this->collections = $app->make($this->collection());
     }
 
 
