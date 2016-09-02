@@ -1,0 +1,52 @@
+<?php
+/**
+ * User: casperlai
+ * Date: 2016/9/2
+ * Time: 下午9:34
+ */
+
+namespace Casperlaitw\LaravelFbMessenger\Messages;
+
+use pimax\Messages\MessageButton;
+
+/**
+ * Class PersistentMenuMessage
+ * @package Casperlaitw\LaravelFbMessenger\Messages
+ */
+class PersistentMenuMessage extends Message implements ThreadInterface
+{
+    use Deletable;
+
+    /**
+     * @var
+     */
+    private $buttons;
+
+    /**
+     * PersistentMenuMessage constructor.
+     *
+     * @param $buttons
+     */
+    public function __construct($buttons = [])
+    {
+        parent::__construct(null);
+        $this->buttons = $buttons;
+    }
+
+
+    /**
+     * Message to send object
+     * @return array
+     */
+    public function toData()
+    {
+        $buttons = collect($this->buttons);
+        return [
+            'setting_type' => 'call_to_actions',
+            'thread_state' => 'existing_thread',
+            'call_to_actions' => $buttons->map(function (MessageButton $item) {
+                return $item->getData();
+            })->toArray(),
+        ];
+    }
+}
