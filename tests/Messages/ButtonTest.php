@@ -11,17 +11,17 @@ use pimax\Messages\StructuredMessage;
  */
 class ButtonTest extends PHPUnit_Framework_TestCase
 {
-    private $testSender;
+    private $sender;
 
-    private $testText;
+    private $text;
 
-    private $testCase;
+    private $case;
 
     public function setUp()
     {
-        $this->testSender = str_random();
-        $this->testText = 'abc';
-        $this->testCase = new Button($this->testSender, $this->testText);
+        $this->sender = str_random();
+        $this->text = 'abc';
+        $this->case = new Button($this->sender, $this->text);
     }
     public function tearDown()
     {
@@ -31,26 +31,26 @@ class ButtonTest extends PHPUnit_Framework_TestCase
     public function test_to_data()
     {
         $expected = new StructuredMessage(
-            $this->testSender,
+            $this->sender,
             StructuredMessage::TYPE_BUTTON,
             [
-                'text' => $this->testText,
+                'text' => $this->text,
                 'buttons' => [],
             ]
         );
-        $this->assertEquals($expected->getData(), $this->testCase->toData()->getData());
+        $this->assertEquals($expected->getData(), $this->case->toData()->getData());
     }
 
     public function test_get_text()
     {
-        $this->assertEquals($this->testText, $this->testCase->getText());
+        $this->assertEquals($this->text, $this->case->getText());
     }
 
     public function test_set_text()
     {
         $expected = 'change_text';
-        $this->testCase->setText($expected);
+        $this->case->setText($expected);
 
-        $this->assertEquals($expected, $this->testCase->getText());
+        $this->assertEquals($expected, $this->case->getText());
     }
 }
