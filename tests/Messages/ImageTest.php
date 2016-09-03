@@ -9,7 +9,6 @@ use pimax\Messages\ImageMessage;
  */
 class ImageTest extends PHPUnit_Framework_TestCase
 {
-
     public function test_to_data()
     {
         $sender = str_random();
