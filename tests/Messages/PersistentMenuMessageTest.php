@@ -11,7 +11,6 @@ use pimax\Messages\MessageButton;
  */
 class PersistentMenuMessageTest extends PHPUnit_Framework_TestCase
 {
-
     public function tearDown()
     {
         m::close();
