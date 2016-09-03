@@ -54,14 +54,6 @@ abstract class Structured extends Message
     }
 
     /**
-     * @return array
-     */
-    public function getElements()
-    {
-        return $this->elements;
-    }
-
-    /**
      * @param $name
      * @param $arguments
      *
@@ -69,9 +61,7 @@ abstract class Structured extends Message
      */
     public function __call($name, $arguments)
     {
-        if (method_exists($this, $name)) {
-            return call_user_func_array([$this, $name], $arguments);
-        } elseif (method_exists($this->collections, $name)) {
+        if (method_exists($this->collections, $name)) {
             return call_user_func_array([$this->collections, $name], $arguments);
         }
     }
