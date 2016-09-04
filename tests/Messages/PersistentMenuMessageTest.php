@@ -30,12 +30,11 @@ class PersistentMenuMessageTest extends PHPUnit_Framework_TestCase
 
     private function getMessageButtonStub()
     {
-        $stub = $this->createMock(MessageButton::class);
-        $stub
-            ->expects($this->any())
-            ->method('getData')
-            ->willReturn([]);
+        $mock = m::mock(MessageButton::class)
+            ->shouldReceive('getData')
+            ->andReturn([])
+            ->getMock();
 
-        return $stub;
+        return $mock;
     }
 }

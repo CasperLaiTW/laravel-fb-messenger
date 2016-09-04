@@ -39,7 +39,7 @@ class ButtonTransformerTest extends PHPUnit_Framework_TestCase
         );
 
         $transformer = new ButtonTransformer();
-        $actual = $transformer->transform($this->getMessageMock($testCase, $testSender, $testText));
+        $actual = $transformer->transform($this->createMessageMock($testCase, $testSender, $testText));
         $this->assertInstanceOf(StructuredMessage::class, $actual);
         $this->assertEquals($expected->getData(), $actual->getData());
     }
@@ -48,10 +48,10 @@ class ButtonTransformerTest extends PHPUnit_Framework_TestCase
     {
         $this->expectException(RequiredArgumentException::class);
         $transformer = new ButtonTransformer();
-        $transformer->transform($this->getMessageMock([], null, ''));
+        $transformer->transform($this->createMessageMock([], null, ''));
     }
 
-    private function getMessageMock($testCase, $testSender, $testText)
+    private function createMessageMock($testCase, $testSender, $testText)
     {
         $buttons = m::mock(ButtonCollection::class)
             ->shouldReceive('getElements')

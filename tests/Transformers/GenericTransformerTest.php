@@ -41,12 +41,12 @@ class GenericTransformerTest extends PHPUnit_Framework_TestCase
             ]
         );
 
-        $actual = $transformer->transform($this->getMessageMock($testCase, $testSender));
+        $actual = $transformer->transform($this->createMessageMock($testCase, $testSender));
         $this->assertInstanceOf(StructuredMessage::class, $actual);
         $this->assertEquals($expected->getData(), $actual->getData());
     }
 
-    private function getMessageMock($testCase, $testSender)
+    private function createMessageMock($testCase, $testSender)
     {
         $elements = m::mock(ElementCollection::class)
             ->shouldReceive('toArray')->andReturnUsing(function () use ($testCase) {

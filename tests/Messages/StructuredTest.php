@@ -2,6 +2,7 @@
 
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
 use pimax\Messages\MessageButton;
+use Mockery as m;
 
 /**
  * User: casperlai
@@ -18,6 +19,6 @@ class StructuredTest extends PHPUnit_Framework_TestCase
 
     private function getMessageButtonMock()
     {
-        return $this->createMock(MessageButton::class);
+        return m::mock(MessageButton::class)->makePartial();
     }
 }

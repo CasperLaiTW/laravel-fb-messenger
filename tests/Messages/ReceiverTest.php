@@ -17,7 +17,7 @@ class ReceiverTest extends PHPUnit_Framework_TestCase
     private static $messageJson = '{ "object": "page", "entry": [ { "id": "1266802133337776", "time": 1472653372870, "messaging": [ { "sender": { "id": "1031304140280126" }, "recipient": { "id": "1266802133337776" }, "timestamp": 1472653364156, "message": { "mid": "mid.1472653364072:a0567094fd740c2a63", "seq": 208, "text": "fsadfjojiwejf" } } ] } ] }';
     public function test_get_message()
     {
-        $receiver = new Receiver($this->getRequestStub(self::$messageJson));
+        $receiver = new Receiver($this->createRequestMock(self::$messageJson));
         $this->assertInstanceOf(ReceiveMessageCollection::class, $receiver->getMessages());
         $actual = $receiver->getMessages()->first();
         $this->assertEquals('fsadfjojiwejf', $actual->getMessage());
@@ -27,7 +27,7 @@ class ReceiverTest extends PHPUnit_Framework_TestCase
 
     public function test_postback_message()
     {
-        $receiver = new Receiver($this->getRequestStub(self::$postbackJson));
+        $receiver = new Receiver($this->createRequestMock(self::$postbackJson));
         $this->assertInstanceOf(ReceiveMessageCollection::class, $receiver->getMessages());
         $actual = $receiver->getMessages()->first();
         $this->assertEquals('USER_DEFINED_PAYLOAD', $actual->getMessage());
@@ -39,13 +39,14 @@ class ReceiverTest extends PHPUnit_Framework_TestCase
         m::close();
     }
 
-    private function getRequestStub($json)
+    private function createRequestMock($json)
     {
-        $stub = $this->createMock(Request::class);
-        $returnValue = Arr::get(json_decode($json, true), 'entry.0.messaging');
-        $stub->expects($this->any())
-            ->method('input')
-            ->willReturn($returnValue);
-        return $stub;
+        $mock = m::mock(Request::class)
+            ->shouldReceive('input')
+            ->andReturnUsing(function () use ($json) {
+                return Arr::get(json_decode($json, true), 'entry.0.messaging');
+            })
+            ->getMock();
+        return $mock;
     }
 }

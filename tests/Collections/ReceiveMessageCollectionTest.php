@@ -18,11 +18,10 @@ class ReceiveMessageCollectionTest extends PHPUnit_Framework_TestCase
 
     public function test_filter_skip()
     {
-        //dd($this->mockReceiveMessage(true));
         $messages = [
-            $this->mockReceiveMessage(true),
-            $this->mockReceiveMessage(false),
-            $this->mockReceiveMessage(true),
+            $this->createReceiveMessageMock(true),
+            $this->createReceiveMessageMock(false),
+            $this->createReceiveMessageMock(true),
         ];
 
         $collection = new ReceiveMessageCollection($messages);
@@ -32,7 +31,7 @@ class ReceiveMessageCollectionTest extends PHPUnit_Framework_TestCase
         $this->assertCount(1, $collection->filterSkip()->toArray());
     }
 
-    private function mockReceiveMessage($skip)
+    private function createReceiveMessageMock($skip)
     {
         $mock = m::mock(ReceiveMessage::class)->shouldReceive('isSkip')->andReturn($skip)->getMock();
         return $mock;
