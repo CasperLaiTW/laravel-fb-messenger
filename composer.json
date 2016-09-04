@@ -35,6 +35,9 @@
             "Casperlaitw\\LaravelFbMessenger\\": "src"
         }
     },
+    "autoload-dev": {
+        "classmap": ["tests/"]
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
