@@ -29,11 +29,14 @@ abstract class BaseHandler implements HandlerInterface
     protected $bot;
 
     /**
-     * Receiver constructor.
+     * @param $token
+     *
+     * @return $this
      */
-    public function __construct()
+    public function createBot($token)
     {
-        $this->bot = new Bot(config('fb-messenger.app_token'));
+        $this->bot = new Bot($token);
+        return $this;
     }
 
     /**

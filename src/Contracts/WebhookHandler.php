@@ -8,6 +8,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
+use Illuminate\Container\Container;
 
 /**
  * Class WebhookHandler
@@ -28,22 +29,24 @@ class WebhookHandler
     /**
      * WebhookHandler constructor.
      *
-     * @param       $handler
+     * @param BaseHandler $handler
+     * @param array       $postbacks
+     * @param             $token
      */
-    public function __construct(BaseHandler $handler)
+    public function __construct(BaseHandler $handler, $token, $postbacks = [])
     {
-        $this->handler = $handler;
-        $this->createPostbacks();
+        $this->handler = $handler->createBot($token);
+        $this->createPostbacks($postbacks);
     }
 
     /**
      * Create postbacks
      */
-    private function createPostbacks()
+    private function createPostbacks($postbacks)
     {
-        $postbacks = config('fb-messenger.postbacks');
+        $app = new Container();
         foreach ($postbacks as $item) {
-            $postback = app($item);
+            $postback = $app->make($item);
             if ($postback instanceof PostbackHandler) {
                 $this->postbacks[$postback->getPayload()] = $postback;
             }
