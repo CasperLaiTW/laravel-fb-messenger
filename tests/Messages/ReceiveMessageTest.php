@@ -6,7 +6,7 @@ use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
  * Date: 2016/9/3
  * Time: 下午4:33
  */
-class ReceiveMessageTest extends PHPUnit_Framework_TestCase
+class ReceiveMessageTest extends TestCase
 {
     private $sender;
 

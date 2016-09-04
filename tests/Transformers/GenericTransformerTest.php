@@ -12,7 +12,7 @@ use pimax\Messages\StructuredMessage;
  * Date: 2016/9/3
  * Time: 上午1:35
  */
-class GenericTransformerTest extends PHPUnit_Framework_TestCase
+class GenericTransformerTest extends TestCase
 {
     public function tearDown()
     {

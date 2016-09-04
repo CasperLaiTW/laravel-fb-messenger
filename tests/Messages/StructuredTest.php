@@ -9,7 +9,7 @@ use Mockery as m;
  * Date: 2016/9/4
  * Time: 上午12:55
  */
-class StructuredTest extends PHPUnit_Framework_TestCase
+class StructuredTest extends TestCase
 {
     public function test_call_method()
     {

@@ -10,7 +10,7 @@ use Mockery as m;
  * Date: 2016/9/1
  * Time: 上午12:26
  */
-class ElementCollectionTest extends PHPUnit_Framework_TestCase
+class ElementCollectionTest extends TestCase
 {
     public function tearDown()
     {

@@ -11,7 +11,7 @@ use Mockery as m;
  * Date: 2016/9/3
  * Time: 下午4:39
  */
-class ReceiverTest extends PHPUnit_Framework_TestCase
+class ReceiverTest extends TestCase
 {
     private static $postbackJson = '{ "object": "page", "entry": [ { "id": "1266802133337776", "time": 1472712592576, "messaging": [ { "recipient": { "id": "1266802133337776" }, "timestamp": 1472712592576, "sender": { "id": "1031304140280126" }, "postback": { "payload": "USER_DEFINED_PAYLOAD" } } ] } ] }';
     private static $messageJson = '{ "object": "page", "entry": [ { "id": "1266802133337776", "time": 1472653372870, "messaging": [ { "sender": { "id": "1031304140280126" }, "recipient": { "id": "1266802133337776" }, "timestamp": 1472653364156, "message": { "mid": "mid.1472653364072:a0567094fd740c2a63", "seq": 208, "text": "fsadfjojiwejf" } } ] } ] }';

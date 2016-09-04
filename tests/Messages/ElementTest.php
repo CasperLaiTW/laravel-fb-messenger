@@ -8,7 +8,7 @@ use Casperlaitw\LaravelFbMessenger\Messages\Element;
  * Time: 上午1:53
  */
 
-class ElementTest extends PHPUnit_Framework_TestCase
+class ElementTest extends TestCase
 {
     public function test_button()
     {

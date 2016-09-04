@@ -6,7 +6,7 @@ use Casperlaitw\LaravelFbMessenger\Messages\Greeting;
  * Date: 2016/9/3
  * Time: 下午4:59
  */
-class GreetingTest extends PHPUnit_Framework_TestCase
+class GreetingTest extends TestCase
 {
     public function test_to_data()
     {

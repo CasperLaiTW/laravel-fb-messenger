@@ -6,7 +6,7 @@ use Casperlaitw\LaravelFbMessenger\Messages\StartButton;
  * Date: 2016/9/3
  * Time: 下午4:57
  */
-class StartButtonTest extends PHPUnit_Framework_TestCase
+class StartButtonTest extends TestCase
 {
     public function test_to_data()
     {

@@ -9,7 +9,7 @@ use pimax\Messages\MessageButton;
  * Date: 2016/9/4
  * Time: 上午12:32
  */
-class PersistentMenuMessageTest extends PHPUnit_Framework_TestCase
+class PersistentMenuMessageTest extends TestCase
 {
     public function tearDown()
     {

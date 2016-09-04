@@ -13,7 +13,7 @@ use Mockery as m;
 use pimax\Messages\MessageButton;
 use pimax\Messages\StructuredMessage;
 
-class ButtonTransformerTest extends PHPUnit_Framework_TestCase
+class ButtonTransformerTest extends TestCase
 {
     public function tearDown()
     {

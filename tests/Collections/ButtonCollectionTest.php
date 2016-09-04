@@ -9,7 +9,7 @@ use pimax\Messages\MessageButton;
  * Date: 2016/8/31
  * Time: 下午11:57
  */
-class ButtonCollectionTest extends PHPUnit_Framework_TestCase
+class ButtonCollectionTest extends TestCase
 {
     public function tearDown()
     {

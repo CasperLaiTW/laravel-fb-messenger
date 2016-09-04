@@ -8,7 +8,7 @@ use pimax\Messages\Message;
  * Date: 2016/9/3
  * Time: 下午4:30
  */
-class TextTest extends PHPUnit_Framework_TestCase
+class TextTest extends TestCase
 {
     public function test_to_data()
     {

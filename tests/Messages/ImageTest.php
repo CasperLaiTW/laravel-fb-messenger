@@ -7,7 +7,7 @@ use pimax\Messages\ImageMessage;
  * Date: 2016/9/3
  * Time: 下午4:32
  */
-class ImageTest extends PHPUnit_Framework_TestCase
+class ImageTest extends TestCase
 {
     public function test_to_data()
     {

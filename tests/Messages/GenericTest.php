@@ -2,7 +2,6 @@
 
 use Casperlaitw\LaravelFbMessenger\Messages\Element;
 use Casperlaitw\LaravelFbMessenger\Messages\Generic;
-use Mockery as m;
 use pimax\Messages\StructuredMessage;
 
 /**
@@ -10,16 +9,11 @@ use pimax\Messages\StructuredMessage;
  * Date: 2016/9/4
  * Time: 上午12:45
  */
-class GenericTest extends PHPUnit_Framework_TestCase
+class GenericTest extends TestCase
 {
     private $sender;
 
     private $case;
-
-    public function tearDown()
-    {
-        m::close();
-    }
 
     public function setUp()
     {

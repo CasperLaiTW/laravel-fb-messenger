@@ -9,7 +9,7 @@ use pimax\Messages\StructuredMessage;
  * Date: 2016/9/3
  * Time: 上午1:58
  */
-class ButtonTest extends PHPUnit_Framework_TestCase
+class ButtonTest extends TestCase
 {
     private $sender;
 
