@@ -11,7 +11,6 @@ use Mockery as m;
  */
 class CommandHandlerTest extends PHPUnit_Framework_TestCase
 {
-
     public function tearDown()
     {
         m::close();

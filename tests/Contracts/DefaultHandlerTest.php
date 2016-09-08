@@ -11,7 +11,6 @@ use Mockery as m;
  */
 class DefaultHandlerTest extends TestCase
 {
-
     public function tearDown()
     {
         m::close();

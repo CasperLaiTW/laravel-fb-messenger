@@ -8,7 +8,6 @@ use Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse;
  */
 class HandleMessageResponseTest extends TestCase
 {
-
     public function test_get_error()
     {
         $response = [
