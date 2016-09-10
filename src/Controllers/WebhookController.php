@@ -11,6 +11,7 @@ use Casperlaitw\LaravelFbMessenger\Contracts\BaseHandler;
 use Casperlaitw\LaravelFbMessenger\Contracts\WebhookHandler;
 use Casperlaitw\LaravelFbMessenger\Exceptions\NeedImplementHandlerException;
 use Casperlaitw\LaravelFbMessenger\Messages\Receiver;
+use Illuminate\Container\Container;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -62,15 +63,17 @@ class WebhookController extends Controller
      */
     public function receive(Request $request)
     {
+        $app = new Container();
         $receive = new Receiver($request);
-        $handleClassName = $this->config->get('fb-messenger.handler');
+        $handlerClassName = $this->config->get('fb-messenger.handler');
         $token = $this->config->get('fb-messenger.app_token');
-        $handle = (new $handleClassName)
-            ->setMessages($receive->getMessages());
-        if (!$handle instanceof BaseHandler) {
+        $handler = $app->make($handlerClassName);
+        if (!$handler instanceof BaseHandler) {
             throw new NeedImplementHandlerException();
         }
-        $webhook = new WebhookHandler($handle, $token);
+
+        $handler->setMessages($receive->getMessages());
+        $webhook = new WebhookHandler($handler, $token);
         $webhook->handle();
     }
 }

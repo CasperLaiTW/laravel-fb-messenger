@@ -1,6 +1,7 @@
 <?php
 
 use Casperlaitw\LaravelFbMessenger\Controllers\WebhookController;
+use Casperlaitw\LaravelFbMessenger\Exceptions\NeedImplementHandlerException;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -61,4 +62,29 @@ class WebhookControllerTest extends PHPUnit_Framework_TestCase
         $controller = new WebhookController($config);
         $controller->index($request);
     }
+
+    public function test_receive_handle_not_extends_base_handler()
+    {
+        $this->expectException(NeedImplementHandlerException::class);
+        $config = m::mock(Repository::class)
+            ->shouldReceive('get')
+            ->with('fb-messenger.handler')
+            ->andReturn(HandlerNotExtendsBaseHandler::class)
+            ->shouldReceive('get')
+            ->with('fb-messenger.app_token')
+            ->getMock();
+
+        $request = m::mock(Request::class)
+            ->shouldReceive('input')
+            ->with('entry.0.messaging')
+            ->andReturn([])
+            ->getMock();
+
+        $controller = new WebhookController($config);
+        $controller->receive($request);
+    }
+}
+
+class HandlerNotExtendsBaseHandler
+{
 }
