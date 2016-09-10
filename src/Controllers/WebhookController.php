@@ -11,8 +11,11 @@ use Casperlaitw\LaravelFbMessenger\Contracts\BaseHandler;
 use Casperlaitw\LaravelFbMessenger\Contracts\WebhookHandler;
 use Casperlaitw\LaravelFbMessenger\Exceptions\NeedImplementHandlerException;
 use Casperlaitw\LaravelFbMessenger\Messages\Receiver;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Class WebhookController
@@ -21,18 +24,35 @@ use Illuminate\Routing\Controller;
 class WebhookController extends Controller
 {
     /**
+     * @var Repository
+     */
+    private $config;
+
+    /**
+     * WebhookController constructor.
+     *
+     * @param Repository $config
+     */
+    public function __construct(Repository $config)
+    {
+        $this->config = $config;
+    }
+
+    /**
      * @param Request $request
      *
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response|void
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     * @throws \InvalidArgumentException
      */
     public function index(Request $request)
     {
         if ($request->get('hub_mode') === 'subscribe'
-            && $request->get('hub_verify_token') === config('fb-messenger.verify_token')) {
-            return response($request->get('hub_challenge'));
+            && $request->get('hub_verify_token') === $this->config->get('fb-messenger.verify_token')) {
+            return new Response($request->get('hub_challenge'));
         }
 
-        return abort(404);
+        throw new NotFoundHttpException('Not found resources');
     }
 
     /**
@@ -49,7 +69,7 @@ class WebhookController extends Controller
         if (!$handle instanceof BaseHandler) {
             throw new NeedImplementHandlerException();
         }
-        $webhook = new WebhookHandler($handle);
+        $webhook = new WebhookHandler($handle, $token);
         $webhook->handle();
     }
 }
