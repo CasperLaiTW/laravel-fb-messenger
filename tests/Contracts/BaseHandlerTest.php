@@ -48,7 +48,6 @@ class BaseHandlerTest extends TestCase
         $message = new MessageStub(null);
         $handler->send($message);
     }
-
 }
 
 class MessageStub extends Message
