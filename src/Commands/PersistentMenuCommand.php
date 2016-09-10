@@ -7,18 +7,16 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Commands;
 
-use Casperlaitw\LaravelFbMessenger\Contracts\CommandHandler;
 use Casperlaitw\LaravelFbMessenger\Exceptions\NotOptionsException;
 use Casperlaitw\LaravelFbMessenger\Exceptions\OptionNotComparedException;
 use Casperlaitw\LaravelFbMessenger\Messages\PersistentMenuMessage;
-use Illuminate\Console\Command;
 use pimax\Messages\MessageButton;
 
 /**
  * Class PersistentMenuCommand
  * @package Casperlaitw\LaravelFbMessenger\Commands
  */
-class PersistentMenuCommand extends Command
+class PersistentMenuCommand extends BaseCommand
 {
     /**
      * The name and signature of the console command.
@@ -60,9 +58,6 @@ class PersistentMenuCommand extends Command
      */
     private $urls = [];
 
-    /**
-     *
-     */
     public function handle()
     {
         // If delete is true, skip to check or valid options.
@@ -95,8 +90,7 @@ class PersistentMenuCommand extends Command
     private function send()
     {
         $persistent = (new PersistentMenuMessage($this->buttons))->setDelete($this->option('delete'));
-        $handler = new CommandHandler;
-        $this->comment($handler->send($persistent)->getResponse());
+        $this->comment($this->handler->send($persistent)->getResponse());
     }
 
     /**

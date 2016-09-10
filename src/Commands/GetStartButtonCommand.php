@@ -7,15 +7,13 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Commands;
 
-use Casperlaitw\LaravelFbMessenger\Contracts\CommandHandler;
 use Casperlaitw\LaravelFbMessenger\Messages\StartButton;
-use Illuminate\Console\Command;
 
 /**
  * Class GetStartButtonCommand
  * @package Casperlaitw\LaravelFbMessenger\Commands
  */
-class GetStartButtonCommand extends Command
+class GetStartButtonCommand extends BaseCommand
 {
     /**
      * The name and signature of the console command.
@@ -38,7 +36,7 @@ class GetStartButtonCommand extends Command
     {
         $payload = $this->argument('payload');
         $deleteOption = $this->option('delete');
-        if ($deleteOption && empty($payload)) {
+        if (!$deleteOption && empty($payload)) {
             $this->error('If you want to add start button, please input the payload');
             return;
         }
@@ -48,7 +46,6 @@ class GetStartButtonCommand extends Command
             $startButton->setDelete(true);
         }
 
-        $handler = new CommandHandler;
-        $this->comment($handler->send($startButton)->getResponse());
+        $this->comment($this->handler->send($startButton)->getResponse());
     }
 }

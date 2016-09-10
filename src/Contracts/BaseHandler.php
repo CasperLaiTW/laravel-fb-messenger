@@ -8,6 +8,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
 use Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection;
+use Casperlaitw\LaravelFbMessenger\Exceptions\NotCreateBotException;
 use Casperlaitw\LaravelFbMessenger\Messages\Deletable;
 use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
@@ -46,11 +47,13 @@ abstract class BaseHandler implements HandlerInterface
      */
     public function send(Message $message)
     {
+        if ($this->bot === null) {
+            throw new NotCreateBotException;
+        }
         $arguments = [$message];
         if (in_array(Deletable::class, class_uses($message))) {
             $arguments[] = $message->getCurlType();
         }
-
         return call_user_func_array([$this->bot, 'send'], $arguments);
     }
 

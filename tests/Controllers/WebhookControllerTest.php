@@ -13,9 +13,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  * Date: 2016/9/10
  * Time: 下午3:27
  */
-class WebhookControllerTest extends PHPUnit_Framework_TestCase
+class WebhookControllerTest extends TestCase
 {
-    protected function tearDown()
+    public function tearDown()
     {
         m::close();
     }
@@ -69,7 +69,7 @@ class WebhookControllerTest extends PHPUnit_Framework_TestCase
         $config = m::mock(Repository::class)
             ->shouldReceive('get')
             ->with('fb-messenger.handler')
-            ->andReturn(HandlerNotExtendsBaseHandler::class)
+            ->andReturn(HandlerNotExtendsBaseHandlerStub::class)
             ->shouldReceive('get')
             ->with('fb-messenger.app_token')
             ->getMock();
@@ -85,6 +85,6 @@ class WebhookControllerTest extends PHPUnit_Framework_TestCase
     }
 }
 
-class HandlerNotExtendsBaseHandler
+class HandlerNotExtendsBaseHandlerStub
 {
 }

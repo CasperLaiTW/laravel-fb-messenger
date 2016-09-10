@@ -7,15 +7,13 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Commands;
 
-use Casperlaitw\LaravelFbMessenger\Contracts\CommandHandler;
 use Casperlaitw\LaravelFbMessenger\Messages\Greeting;
-use Illuminate\Console\Command;
 
 /**
  * Class SetGreetingTextCommand
  * @package Casperlaitw\LaravelFbMessenger\Commands
  */
-class GreetingTextCommand extends Command
+class GreetingTextCommand extends BaseCommand
 {
     /**
      * The name and signature of the console command.
@@ -37,9 +35,8 @@ class GreetingTextCommand extends Command
     public function handle()
     {
         $text = $this->argument('greeting');
-        $handler = new CommandHandler;
         $greeting = new Greeting($text);
 
-        $this->comment($handler->send($greeting)->getResponse());
+        $this->comment($this->handler->send($greeting)->getResponse());
     }
 }
