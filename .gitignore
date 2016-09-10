@@ -6,3 +6,6 @@
 /_ide_helper.php
 /.phpstorm.meta.php
 /composer.lock
+/scripts/sami/vendor/
+/scripts/sami/build/
+/scripts/sami/cache/

@@ -11,10 +11,6 @@ namespace Casperlaitw\LaravelFbMessenger\Collections;
  * Class BaseCollection
  * @package Casperlaitw\LaravelFbMessenger\Collections
  */
-/**
- * Class BaseCollection
- * @package Casperlaitw\LaravelFbMessenger\Collections
- */
 abstract class BaseCollection
 {
     /**

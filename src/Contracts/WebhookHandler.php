@@ -30,8 +30,8 @@ class WebhookHandler
      * WebhookHandler constructor.
      *
      * @param BaseHandler $handler
-     * @param array       $postbacks
      * @param             $token
+     * @param array       $postbacks
      */
     public function __construct(BaseHandler $handler, $token, $postbacks = [])
     {
