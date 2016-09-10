@@ -28,8 +28,8 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            $this->configPath => config_path('fb-messenger.php'),
-        ]);
+            $this->configPath => $this->app->configPath().'/fb-messenger.php',
+        ], 'config');
     }
 
     /**

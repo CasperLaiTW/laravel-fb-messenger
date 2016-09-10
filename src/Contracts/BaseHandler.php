@@ -44,6 +44,7 @@ abstract class BaseHandler implements HandlerInterface
      * @param Message $message
      *
      * @return array
+     * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\NotCreateBotException
      */
     public function send(Message $message)
     {

@@ -2,6 +2,7 @@
 
 use Casperlaitw\LaravelFbMessenger\Contracts\BaseHandler;
 use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
+use Casperlaitw\LaravelFbMessenger\Exceptions\NotCreateBotException;
 use Casperlaitw\LaravelFbMessenger\Messages\Deletable;
 use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use Mockery as m;
@@ -39,6 +40,15 @@ class BaseHandlerTest extends TestCase
         $message->setDelete(true);
         $handler->send($message);
     }
+
+    public function test_bot_not_create()
+    {
+        $this->expectException(NotCreateBotException::class);
+        $handler = $this->getMockForAbstractClass(BaseHandler::class);
+        $message = new MessageStub(null);
+        $handler->send($message);
+    }
+
 }
 
 class MessageStub extends Message
