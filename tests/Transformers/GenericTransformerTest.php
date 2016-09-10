@@ -14,11 +14,6 @@ use pimax\Messages\StructuredMessage;
  */
 class GenericTransformerTest extends TestCase
 {
-    public function tearDown()
-    {
-        m::close();
-    }
-
     public function test_transform()
     {
         $testSender = str_random();

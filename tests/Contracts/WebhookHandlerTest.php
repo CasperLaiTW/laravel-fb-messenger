@@ -13,11 +13,6 @@ use Mockery as m;
  */
 class WebhookHandlerTest extends TestCase
 {
-    public function tearDown()
-    {
-        m::close();
-    }
-
     public function test_postback()
     {
         $handler = m::mock(BaseHandler::class)->makePartial();

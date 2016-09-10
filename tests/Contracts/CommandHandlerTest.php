@@ -9,13 +9,8 @@ use Mockery as m;
  * Date: 2016/9/8
  * Time: 下午9:43
  */
-class CommandHandlerTest extends PHPUnit_Framework_TestCase
+class CommandHandlerTest extends TestCase
 {
-    public function tearDown()
-    {
-        m::close();
-    }
-
     public function test_handle_throw_exception()
     {
         $this->expectException(Exception::class);

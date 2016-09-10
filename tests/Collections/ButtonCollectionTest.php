@@ -11,11 +11,6 @@ use pimax\Messages\MessageButton;
  */
 class ButtonCollectionTest extends TestCase
 {
-    public function tearDown()
-    {
-        m::close();
-    }
-
     public function test_validator_fail()
     {
         $this->expectException(ValidatorStructureException::class);

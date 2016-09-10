@@ -15,11 +15,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class WebhookControllerTest extends TestCase
 {
-    public function tearDown()
-    {
-        m::close();
-    }
-
     public function test_index_token_verify_pass_response_challenge_token()
     {
         $verifyToken = 'MY_VERIFY_TOKEN';

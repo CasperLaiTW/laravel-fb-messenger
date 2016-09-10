@@ -23,10 +23,6 @@ class ButtonTest extends TestCase
         $this->text = 'abc';
         $this->case = new Button($this->sender, $this->text);
     }
-    public function tearDown()
-    {
-        m::close();
-    }
 
     public function test_to_data()
     {

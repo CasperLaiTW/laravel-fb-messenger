@@ -11,11 +11,6 @@ use pimax\Messages\MessageButton;
  */
 class PersistentMenuMessageTest extends TestCase
 {
-    public function tearDown()
-    {
-        m::close();
-    }
-
     public function test_to_data()
     {
         $persistent = new PersistentMenuMessage([$this->getMessageButtonStub()]);

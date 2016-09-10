@@ -11,11 +11,6 @@ use Mockery as m;
  */
 class DefaultHandlerTest extends TestCase
 {
-    public function tearDown()
-    {
-        m::close();
-    }
-
     public function test_handle()
     {
         $bot = m::mock(Bot::class)

@@ -13,11 +13,6 @@ use Mockery as m;
  */
 class BaseHandlerTest extends TestCase
 {
-    protected function tearDown()
-    {
-        m::close();
-    }
-
     public function test_get_messages()
     {
         $expected = [

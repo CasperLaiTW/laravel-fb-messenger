@@ -11,11 +11,6 @@ use Mockery as m;
  */
 class ReceiveMessageCollectionTest extends TestCase
 {
-    public function tearDown()
-    {
-        m::close();
-    }
-
     public function test_filter_skip()
     {
         $messages = [

@@ -1,4 +1,5 @@
 <?php
+
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 /**
@@ -8,6 +9,15 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
  */
 class TestCase extends BaseTestCase
 {
+    protected function tearDown()
+    {
+        if (class_exists('Mockery')) {
+            Mockery::close();
+        }
+
+        parent::tearDown();
+    }
+
     protected function getPrivateProperty($class, $propertyName)
     {
         $reflector = new ReflectionClass($class);

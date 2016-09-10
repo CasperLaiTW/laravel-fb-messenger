@@ -34,11 +34,6 @@ class ReceiverTest extends TestCase
         $this->assertTrue($actual->isPayload());
     }
 
-    protected function tearDown()
-    {
-        m::close();
-    }
-
     private function createRequestMock($json)
     {
         $mock = m::mock(Request::class)

@@ -12,11 +12,6 @@ use Mockery as m;
  */
 class ElementCollectionTest extends TestCase
 {
-    public function tearDown()
-    {
-        m::close();
-    }
-
     public function test_add_element()
     {
         $element = new ElementCollection();

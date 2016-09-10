@@ -15,11 +15,6 @@ use pimax\Messages\StructuredMessage;
 
 class ButtonTransformerTest extends TestCase
 {
-    public function tearDown()
-    {
-        m::close();
-    }
-
     public function test_transform()
     {
         $testSender = str_random();
