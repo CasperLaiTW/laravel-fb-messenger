@@ -63,7 +63,8 @@ class WebhookController extends Controller
     public function receive(Request $request)
     {
         $receive = new Receiver($request);
-        $handleClassName = config('fb-messenger.handler');
+        $handleClassName = $this->config->get('fb-messenger.handler');
+        $token = $this->config->get('fb-messenger.app_token');
         $handle = (new $handleClassName)
             ->setMessages($receive->getMessages());
         if (!$handle instanceof BaseHandler) {
