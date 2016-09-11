@@ -29,6 +29,7 @@ class HandleMessageResponse
     }
 
     /**
+     * Get API response message
      * @return string
      */
     public function getResponse()
@@ -40,6 +41,7 @@ class HandleMessageResponse
     }
 
     /**
+     * Get error message
      * @param $error
      *
      * @return string

@@ -38,6 +38,7 @@ class Button extends Structured
 
     /**
      * Message to send object
+     *
      * @return \pimax\Messages\Message
      * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\RequiredArgumentException
      */
@@ -47,6 +48,8 @@ class Button extends Structured
     }
 
     /**
+     * Set text
+     *
      * @param string $text
      *
      * @return Button
@@ -59,6 +62,8 @@ class Button extends Structured
     }
 
     /**
+     * Get text
+     *
      * @return string
      */
     public function getText()
@@ -67,6 +72,8 @@ class Button extends Structured
     }
 
     /**
+     * Get button collection
+     *
      * @return mixed
      */
     protected function collection()

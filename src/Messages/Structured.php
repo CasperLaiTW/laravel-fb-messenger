@@ -67,6 +67,8 @@ abstract class Structured extends Message
     }
 
     /**
+     * Get collection
+     *
      * @return BaseCollection
      */
     public function getCollections()
@@ -75,6 +77,8 @@ abstract class Structured extends Message
     }
 
     /**
+     * Collection class name
+     *
      * @return mixed
      */
     abstract protected function collection();

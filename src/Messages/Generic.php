@@ -10,6 +10,10 @@ namespace Casperlaitw\LaravelFbMessenger\Messages;
 use Casperlaitw\LaravelFbMessenger\Collections\ElementCollection;
 use Casperlaitw\LaravelFbMessenger\Transformers\GenericTransformer;
 
+/**
+ * Class Generic
+ * @package Casperlaitw\LaravelFbMessenger\Messages
+ */
 class Generic extends Structured
 {
     /**

@@ -16,9 +16,6 @@ abstract class BaseCollection
     /**
      * Elements
      *
-/**
- * Class BaseCollection
- * @package Casperlaitw\LaravelFbMessenger\Collections
      * @var array
      */
     protected $elements = [];

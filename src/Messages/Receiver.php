@@ -46,7 +46,7 @@ class Receiver
     }
 
     /**
-     *
+     * Boot to reorganize messages
      */
     private function boot()
     {
@@ -79,6 +79,8 @@ class Receiver
     }
 
     /**
+     * Get message collection
+     *
      * @return ReceiveMessageCollection
      */
     public function getMessages()

@@ -21,6 +21,8 @@ trait Deletable
     private $delete;
 
     /**
+     * Set delete flag
+     *
      * @param $value
      *
      * @return $this
@@ -32,6 +34,8 @@ trait Deletable
     }
 
     /**
+     * Transform to API http method
+     *
      * @return string
      */
     public function getCurlType()

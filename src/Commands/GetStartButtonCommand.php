@@ -30,7 +30,7 @@ class GetStartButtonCommand extends BaseCommand
     protected $description = 'Set start button';
 
     /**
-     *
+     * Execute command
      */
     public function handle()
     {

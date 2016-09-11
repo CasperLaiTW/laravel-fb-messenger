@@ -33,7 +33,6 @@ class PersistentMenuMessage extends Message implements ThreadInterface
         $this->buttons = $buttons;
     }
 
-
     /**
      * Message to send object
      * @return array

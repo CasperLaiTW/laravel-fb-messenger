@@ -12,7 +12,7 @@ class StartButton extends Message implements ThreadInterface
     use Deletable;
 
     /**
-     * @var
+     * @var string
      */
     private $payload;
 

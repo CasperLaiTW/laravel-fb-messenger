@@ -53,6 +53,8 @@ class ReceiveMessage
     }
 
     /**
+     * Is skip the message
+     *
      * @return bool
      */
     public function isSkip()
@@ -61,6 +63,8 @@ class ReceiveMessage
     }
 
     /**
+     * Get sender
+     *
      * @return string
      */
     public function getSender()
@@ -69,6 +73,8 @@ class ReceiveMessage
     }
 
     /**
+     * Get message
+     *
      * @return string
      */
     public function getMessage()
@@ -77,6 +83,8 @@ class ReceiveMessage
     }
 
     /**
+     * Is playload message
+     *
      * @return boolean
      */
     public function isPayload()

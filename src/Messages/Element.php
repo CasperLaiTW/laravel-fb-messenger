@@ -59,6 +59,8 @@ class Element
     }
 
     /**
+     * Get button collection
+     *
      * @return ButtonCollection
      */
     public function buttons()
@@ -67,6 +69,8 @@ class Element
     }
 
     /**
+     * Message to send object
+     *
      * @return MessageElement
      */
     public function toData()

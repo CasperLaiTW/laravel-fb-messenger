@@ -35,6 +35,7 @@ class Image extends Message
 
     /**
      * Message to send object
+     *
      * @return \pimax\Messages\Message
      */
     public function toData()

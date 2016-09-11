@@ -17,6 +17,8 @@ use Casperlaitw\LaravelFbMessenger\Messages\Element;
 class ElementCollection extends BaseCollection
 {
     /**
+     * Add element
+     *
      * @param        $title
      * @param        $description
      * @param string $image
@@ -33,6 +35,8 @@ class ElementCollection extends BaseCollection
     }
 
     /**
+     * Elements to array
+     *
      * @return array
      */
     public function toArray()
@@ -47,6 +51,8 @@ class ElementCollection extends BaseCollection
     }
 
     /**
+     * Valid the added element
+     *
      * @param $elements
      *
      * @return bool

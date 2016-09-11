@@ -41,6 +41,8 @@ class WebhookHandler
 
     /**
      * Create postbacks
+     *
+     * @param $postbacks
      */
     private function createPostbacks($postbacks)
     {

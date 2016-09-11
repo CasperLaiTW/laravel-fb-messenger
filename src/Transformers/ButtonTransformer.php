@@ -18,6 +18,8 @@ use pimax\Messages\StructuredMessage;
 class ButtonTransformer implements StructuredTransformer
 {
     /**
+     * Transform button message to StructuredMessage
+     *
      * @param Message $message
      *
      * @return mixed|StructuredMessage

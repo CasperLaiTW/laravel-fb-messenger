@@ -18,6 +18,10 @@ class Bot extends FbBotApp
 {
 
     /**
+     * Send message to API
+     *
+     * If instance of ThreadInterface, auto turn to thread_settings endpoint
+     *
      * @param \pimax\Messages\Message $message
      * @param string                  $type
      *
@@ -33,6 +37,8 @@ class Bot extends FbBotApp
     }
 
     /**
+     * Send thread_settings endpoint
+     *
      * @param        $message
      * @param string $type
      *

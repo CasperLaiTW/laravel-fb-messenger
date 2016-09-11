@@ -18,6 +18,7 @@ class ReceiveMessageCollection extends Collection
 {
     /**
      * Filter messages
+     *
      * @return ReceiveMessageCollection
      */
     public function filterSkip()

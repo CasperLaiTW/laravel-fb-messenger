@@ -30,6 +30,8 @@ abstract class BaseHandler implements HandlerInterface
     protected $bot;
 
     /**
+     * Create bot to send API
+     *
      * @param $token
      *
      * @return $this
@@ -41,6 +43,8 @@ abstract class BaseHandler implements HandlerInterface
     }
 
     /**
+     * Send message to api
+     *
      * @param Message $message
      *
      * @return array
@@ -59,6 +63,8 @@ abstract class BaseHandler implements HandlerInterface
     }
 
     /**
+     * Get messages
+     *
      * @return ReceiveMessageCollection
      */
     public function getMessages()
@@ -76,6 +82,8 @@ abstract class BaseHandler implements HandlerInterface
     abstract public function handle(ReceiveMessage $message);
 
     /**
+     * Set messages
+     *
      * @param ReceiveMessageCollection $messages
      *
      * @return BaseHandler

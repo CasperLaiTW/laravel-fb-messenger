@@ -30,7 +30,7 @@ class GreetingTextCommand extends BaseCommand
     protected $description = 'Set facebook messenger greeting text';
 
     /**
-     *
+     * Execute command
      */
     public function handle()
     {

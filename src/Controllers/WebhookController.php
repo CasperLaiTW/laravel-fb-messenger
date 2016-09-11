@@ -40,6 +40,7 @@ class WebhookController extends Controller
     }
 
     /**
+     * Webhook verify request
      * @param Request $request
      *
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response|void
@@ -57,6 +58,8 @@ class WebhookController extends Controller
     }
 
     /**
+     * Receive the webhook request
+     *
      * @param Request $request
      *
      * @throws NeedImplementHandlerException

@@ -17,7 +17,7 @@ use pimax\Messages\StructuredMessage;
 class GenericTransformer implements StructuredTransformer
 {
     /**
-     * Transform structure
+     * Transform generic message to StructuredMessage
      *
      * @param Message $message
      *

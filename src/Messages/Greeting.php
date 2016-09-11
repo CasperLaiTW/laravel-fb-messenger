@@ -30,6 +30,8 @@ class Greeting extends Message implements ThreadInterface
     }
 
     /**
+     * Message to send object
+     *
      * @return array
      */
     public function toData()

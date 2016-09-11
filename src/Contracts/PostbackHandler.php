@@ -19,6 +19,8 @@ abstract class PostbackHandler extends BaseHandler
     protected $payload;
 
     /**
+     * Get payload
+     *
      * @return mixed
      */
     public function getPayload()

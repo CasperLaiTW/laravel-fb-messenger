@@ -58,6 +58,9 @@ class PersistentMenuCommand extends BaseCommand
      */
     private $urls = [];
 
+    /**
+     * Execute command
+     */
     public function handle()
     {
         // If delete is true, skip to check or valid options.
@@ -94,6 +97,8 @@ class PersistentMenuCommand extends BaseCommand
     }
 
     /**
+     * Valid persistent menu's params
+     *
      * @return bool
      * @throws NotOptionsException
      * @throws OptionNotComparedException
