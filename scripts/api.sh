@@ -1,9 +1,9 @@
 #!/bin/bash
 set -o errexit -o nounset
 
-if [ "$TRAVIS_BRANCH" != "sami" ]
+if [ "$TRAVIS_BRANCH" != "master" ]
 then
-  echo "This commit was made against the $TRAVIS_BRANCH and not the sami! No deploy!"
+  echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!"
   exit 0
 fi
 
@@ -27,10 +27,6 @@ git checkout gh-pages
 
 cd ${sami}
 git clone https://github.com/CasperLaiTW/laravel-fb-messenger.git ${sami}/project
-
-cd ${sami}/project
-git checkout sami
-cd ${sami}
 
 ${sami}/vendor/bin/sami.php update ${sami}/sami.php
 

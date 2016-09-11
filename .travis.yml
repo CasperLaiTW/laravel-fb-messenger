@@ -4,7 +4,7 @@ sudo: false
 
 env:
   global:
-    - secure: "MWoj2wHyL2Go5FPMy/yJKAw5COaLk18j4NVRCBX3bT0ekibJmOpKtNZs4g8gSUqFOAhJEaoVHW5imZHFA5VHm/ROpTaMnXm4WdShwU44oqrfucu7xG71Grr+O1xiwauKwg9l9rNphfWaFkcQMFa70Krqe62oeCacbFKs8tChej5/LOQnC7h6EW8h2yPAMcczTFQMqO08mlfm4jcyvOeySOEXz4WIqrttcDpLqKsdyDAV8gxl9lOejPh+QPstPgqe1kSfNa06f57PWQTHfwFCN/UVYpwCfr3dRSMDWn7uhJ+J9eAqJc05LeyeWWPu8PF7AWNPkSNKbVrsv0js2gVw32xIhaD4hwfQt56az0GJtYN2SoZwaKhdRxAZ8j8NvOgLvxrHOmsnTzvlbityLTkndQJrPRAEjxMnLYjBsx7hDXh3COTlzAOBuYz+l00FC2AB+j9CWiy3Lkp+0RXCQ+UScBjx6LQC7SNR6bKGKXEzKjmVIquU5Tgd624f6AaICZArFuTuxkSumUHRb/4seNtNoSpxYSWhJN+TfYtSUpRsKvdWEhH0LR7PjXKiOiqnGCzTqhYPhuH0ZSdo2A9kuo/ypJgMtIFHgQ+kfRN/Cx+TiVMzpjEwiSkUFN2z6CW6hCqnMpDzB4P9QxoKSxV1fQu6R2sXVZY/aiephbyx+yWaxaA="
+    - secure: "n2DDk9sHbG/gYYVA/kPXZLa4Tgcy1HFV4JuBEMkVzQ6U/i178jA+pxG8eg9rTfIfTvmFXnbyURJH0aKeFvXd2kpnOzPwY/+DwY0gvJZGFlkEstpAVz4djMeXkltaYMzjKzKIk7uTwFRPPHG3/+L82eWJ8InaMp9OwfPTTsWOYgzoig3ZGzkUX7+vKxCh8zz8A5Hjp0b/kI0gPR7hYRfsYZ04u15UkTFjvq68ce730lHWHjYEVcQHTfdymDsXuHLKR2640TpXWBKGi5L6228cturj5MhA92zQZJ3xdFEFC2omXGB3++R9Qlk5zMlhVNylFqtbuCmUiKzAllQMRUPv7ueUGj5f/ENegNP0/RHz5XPzKNehPKkeCEQa6kuUt1l5p6S6oMk33yEEoGsGK541ID6Tctd1MPHjm/q+knP563SPHqRmZR07bOhdurwuc4DZIhFgnerzlAPfUPGugmm7YG8t0l0nwFNgZnQ9m2kNA8yi30NCk+Z81PTju7Nn0gSKLsnw7OZjebg5vKvuwjJnDpj0s84iT20KXIsn7EsvuzTABiPcH3nfOXxBROi67DHaoiWQJSeCO6+LXrolPUsMX7QjAZtCwalXFdVs+f+iTa0SmjcdQ8Cbfu7VPn+ZNyHakfdctt5bbjoVwRwLq7gCoBHHUmliLQc3X6hTM56/wXw="
 
 php:
   - 5.6
@@ -21,7 +21,7 @@ after_script:
   - travis_retry php vendor/bin/coveralls -v
 
 after_success:
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "sami" && test $TRAVIS_PHP_VERSION = "7.0" && bash ./scripts/api.sh
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && test $TRAVIS_PHP_VERSION = "7.0" && bash ./scripts/api.sh
 
 cache:
   directories:
