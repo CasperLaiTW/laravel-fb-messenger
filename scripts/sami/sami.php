@@ -14,15 +14,11 @@ use Symfony\Component\Finder\Finder;
 $iterator = Finder::create()
     ->files()
     ->name('*.php')
-    ->in($dir = __DIR__.'/../../src');
-
-$versions = GitVersionCollection::create($dir)
-    ->add('sami', 'sami');
+    ->in($dir = __DIR__.'/project/src');
 
 return new Sami($iterator, array(
-    'versions'             => $versions,
     'title'                => 'Laravel Facebook Messenger API',
-    'build_dir'            => __DIR__.'/build/sf2/%version%',
-    'cache_dir'            => __DIR__.'/cache/sf2/%version%',
-    'default_opened_level' => 2,
+    'build_dir'            => __DIR__.'/build/',
+    'cache_dir'            => __DIR__.'/cache/',
+    'default_opened_level' => 1,
 ));

@@ -9,3 +9,5 @@
 /scripts/sami/vendor/
 /scripts/sami/build/
 /scripts/sami/cache/
+/scripts/sami/project/
+.DS_Store

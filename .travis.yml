@@ -16,6 +16,9 @@ script:
 after_script:
   - travis_retry php vendor/bin/coveralls -v
 
+after_success:
+  - ./scripts/api.sh
+
 cache:
   directories:
     - $HOME/.composer/cache
