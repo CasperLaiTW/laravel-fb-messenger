@@ -17,7 +17,7 @@ after_script:
   - travis_retry php vendor/bin/coveralls -v
 
 after_success:
-  - ./scripts/api.sh
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "sami" && bash ./scripts/api.sh
 
 cache:
   directories:
