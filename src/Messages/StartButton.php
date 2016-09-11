@@ -7,6 +7,10 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
+/**
+ * Class StartButton
+ * @package Casperlaitw\LaravelFbMessenger\Messages
+ */
 class StartButton extends Message implements ThreadInterface
 {
     use Deletable;

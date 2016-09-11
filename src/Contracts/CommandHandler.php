@@ -10,6 +10,10 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
 use Exception;
 
+/**
+ * Class CommandHandler
+ * @package Casperlaitw\LaravelFbMessenger\Contracts
+ */
 class CommandHandler extends BaseHandler
 {
     /**

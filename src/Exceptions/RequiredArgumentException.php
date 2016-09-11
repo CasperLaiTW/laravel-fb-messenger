@@ -9,6 +9,10 @@ namespace Casperlaitw\LaravelFbMessenger\Exceptions;
 
 use Exception;
 
+/**
+ * Class RequiredArgumentException
+ * @package Casperlaitw\LaravelFbMessenger\Exceptions
+ */
 class RequiredArgumentException extends Exception
 {
 }
