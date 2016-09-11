@@ -17,8 +17,9 @@ use pimax\Messages\MessageButton;
 class ButtonCollection extends BaseCollection
 {
     /**
-     * @param $text
+     * Add postback button
      *
+     * @param $text
      * @param $key
      *
      * @return ButtonCollection
@@ -30,6 +31,8 @@ class ButtonCollection extends BaseCollection
     }
 
     /**
+     * Add web_url button
+     *
      * @param $text
      * @param $url
      *

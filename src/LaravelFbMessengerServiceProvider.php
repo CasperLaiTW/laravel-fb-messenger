@@ -44,6 +44,9 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
         $this->registerCommands();
     }
 
+    /**
+     * Register commands
+     */
     private function registerCommands()
     {
         $this->commands([

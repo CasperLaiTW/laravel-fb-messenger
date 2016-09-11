@@ -2,6 +2,10 @@ language: php
 
 sudo: false
 
+env:
+  global:
+    - secure: "MWoj2wHyL2Go5FPMy/yJKAw5COaLk18j4NVRCBX3bT0ekibJmOpKtNZs4g8gSUqFOAhJEaoVHW5imZHFA5VHm/ROpTaMnXm4WdShwU44oqrfucu7xG71Grr+O1xiwauKwg9l9rNphfWaFkcQMFa70Krqe62oeCacbFKs8tChej5/LOQnC7h6EW8h2yPAMcczTFQMqO08mlfm4jcyvOeySOEXz4WIqrttcDpLqKsdyDAV8gxl9lOejPh+QPstPgqe1kSfNa06f57PWQTHfwFCN/UVYpwCfr3dRSMDWn7uhJ+J9eAqJc05LeyeWWPu8PF7AWNPkSNKbVrsv0js2gVw32xIhaD4hwfQt56az0GJtYN2SoZwaKhdRxAZ8j8NvOgLvxrHOmsnTzvlbityLTkndQJrPRAEjxMnLYjBsx7hDXh3COTlzAOBuYz+l00FC2AB+j9CWiy3Lkp+0RXCQ+UScBjx6LQC7SNR6bKGKXEzKjmVIquU5Tgd624f6AaICZArFuTuxkSumUHRb/4seNtNoSpxYSWhJN+TfYtSUpRsKvdWEhH0LR7PjXKiOiqnGCzTqhYPhuH0ZSdo2A9kuo/ypJgMtIFHgQ+kfRN/Cx+TiVMzpjEwiSkUFN2z6CW6hCqnMpDzB4P9QxoKSxV1fQu6R2sXVZY/aiephbyx+yWaxaA="
+
 php:
   - 5.6
   - 7.0
@@ -15,6 +19,9 @@ script:
 
 after_script:
   - travis_retry php vendor/bin/coveralls -v
+
+after_success:
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "sami" && test $TRAVIS_PHP_VERSION = "7.0" && bash ./scripts/api.sh
 
 cache:
   directories:
