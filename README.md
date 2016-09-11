@@ -135,7 +135,7 @@ return [
 [Example](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki/Example#postback-handler)
 
 ### API
-WIP
+[API Document](https://casperlaitw.github.io/laravel-fb-messenger/)
 
 ### Commands
 See the [document](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki/Commands)
