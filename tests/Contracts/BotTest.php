@@ -9,7 +9,6 @@ use Casperlaitw\LaravelFbMessenger\Messages\Text;
  */
 class BotTest extends TestCase
 {
-
     public function test_parent_send()
     {
         $bot = new Bot(getenv('MESSENGER_APP_TOKEN'));
