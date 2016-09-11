@@ -17,17 +17,15 @@ rm -rf ${sami}/build
 rm -rf ${sami}/cache
 rm -rf ${sami}/project
 
-# create build directory
 mkdir -p ${sami}/build
-cd ${sami}/build
 git init
 git config user.name "Travis Auto Deploy"
 git config user.email "$GIT_AUTH_EMAIL"
 git remote add upstream "https://$GH_TOKEN@github.com/CasperLaiTW/laravel-fb-messenger.git"
 git fetch upstream
-git reset upstream/gh-pages
 git checkout gh-pages
 
+cd ${sami}
 git clone https://github.com/CasperLaiTW/laravel-fb-messenger.git ${sami}/project
 
 cd ${sami}/project
@@ -41,3 +39,8 @@ cd ${sami}/build
 git add -A .
 git commit -m "rebuild pages at ${rev}"
 git push -q upstream HEAD:gh-pages
+
+# cleanup
+rm -rf ${sami}/build
+rm -rf ${sami}/cache
+rm -rf ${sami}/project
