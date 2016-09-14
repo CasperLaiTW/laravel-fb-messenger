@@ -28,7 +28,8 @@
         "phpunit/phpunit": "~5.0",
         "nesbot/carbon": "^1.21",
         "satooshi/php-coveralls": "^1.0",
-        "mockery/mockery": "^0.9.5"
+        "mockery/mockery": "^0.9.5",
+        "fzaninotto/faker": "^1.6"
     },
     "autoload": {
         "psr-4": {
