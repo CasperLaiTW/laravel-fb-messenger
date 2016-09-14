@@ -1,6 +1,8 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
+use Casperlaitw\LaravelFbMessenger\Messages\Greeting;
 use Casperlaitw\LaravelFbMessenger\Messages\Text;
+use Mockery as m;
 
 /**
  * User: casperlai
@@ -13,7 +15,16 @@ class BotTest extends TestCase
     {
         $bot = new Bot(getenv('MESSENGER_APP_TOKEN'));
         $message = new Text(str_random(), str_random());
-        $response = $bot->send($message);
-        $this->assertStringStartsWith('(#100)', $response->getResponse());
+        $bot->send($message);
+    }
+
+    public function test_send_thread_setting()
+    {
+        $message = m::mock(Greeting::class);
+        $message
+            ->shouldReceive('toData')
+            ->andReturn([]);
+        $bot = new Bot(getenv('MESSENGER_APP_TOKEN'));
+        $bot->send($message);
     }
 }

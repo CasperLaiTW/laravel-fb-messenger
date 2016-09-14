@@ -1,4 +1,4 @@
 <?php
 
-Route::get(config('fb-messenger.custom_url', '/webhook'), 'WebhookController@index');
-Route::post(config('fb-messenger.custom_url', '/webhook'), 'WebhookController@receive');
+$router->get($this->app['config']->get('fb-messenger.custom_url', '/webhook'), 'WebhookController@index');
+$router->post($this->app['config']->get('fb-messenger.custom_url', '/webhook'), 'WebhookController@receive');

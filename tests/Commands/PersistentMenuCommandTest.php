@@ -17,8 +17,6 @@ class PersistentMenuCommandTest extends TestCase
         $commandTester->execute([
             '--delete' => true,
         ]);
-
-        $this->assertEquals('Successfully deleted structured menu CTAs', trim($commandTester->getDisplay()));
     }
 
     public function test_arguments_api()
@@ -41,8 +39,6 @@ class PersistentMenuCommandTest extends TestCase
                 'https://www.facebook.com',
             ],
         ]);
-
-        $this->assertEquals('Successfully added structured menu CTAs', trim($commandTester->getDisplay()));
     }
 
     public function test_empty_arguments()

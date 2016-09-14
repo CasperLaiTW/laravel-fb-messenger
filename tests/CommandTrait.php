@@ -1,5 +1,6 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Contracts\CommandHandler;
+use Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Config\Repository;
 use Symfony\Component\Console\Application;
@@ -21,8 +22,15 @@ trait CommandTrait
             ->with('fb-messenger.app_token')
             ->andReturn(getenv('MESSENGER_APP_TOKEN'))
             ->getMock();
+
+        $response = m::mock(HandleMessageResponse::class)->makePartial();
+        $handler = m::mock(CommandHandler::class.'[send]');
+        $handler
+            ->shouldReceive('send')
+            ->andReturn($response);
+
         $commandClass = $this->command();
-        $command = new $commandClass(new CommandHandler, $configMock);
+        $command = new $commandClass($handler, $configMock);
         $container = new Container();
         $command->setLaravel($container);
         $application->add($command);

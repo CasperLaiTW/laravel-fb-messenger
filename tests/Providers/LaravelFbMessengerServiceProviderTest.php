@@ -6,7 +6,6 @@ use Casperlaitw\LaravelFbMessenger\Providers\RouteServiceProvider;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Events\Dispatcher as Events;
 use Mockery as m;
-use phpmock\mockery\PHPMockery;
 
 /**
  * User: casperlai

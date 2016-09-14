@@ -10,15 +10,12 @@ class GetStartButtonCommandTest extends TestCase
 {
     use CommandTrait;
 
-
     public function test_set_get_start_api()
     {
         $commandTester = $this->createCommandTester('fb:get-start');
         $commandTester->execute([
             'payload' => 'GET_START',
         ]);
-
-        $this->assertEquals('Successfully added new_thread\'s CTAs', trim($commandTester->getDisplay()));
     }
 
     public function test_delete_get_start_api()
@@ -27,8 +24,6 @@ class GetStartButtonCommandTest extends TestCase
         $commandTester->execute([
             '--delete' => true,
         ]);
-
-        $this->assertEquals('Successfully deleted all new_thread\'s CTAs', trim($commandTester->getDisplay()));
     }
 
     public function test_empty_payload()
@@ -36,8 +31,6 @@ class GetStartButtonCommandTest extends TestCase
         $commandTester = $this->createCommandTester('fb:get-start');
         $commandTester->execute([
         ]);
-
-        $this->assertEquals('If you want to add start button, please input the payload', trim($commandTester->getDisplay()));
     }
 
     private function command()
