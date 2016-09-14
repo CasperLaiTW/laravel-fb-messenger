@@ -37,7 +37,7 @@ class Button extends Structured
 
 
     /**
-     * Message to send object
+     * Message to send
      *
      * @return \pimax\Messages\Message
      * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\RequiredArgumentException

@@ -69,7 +69,7 @@ class Element
     }
 
     /**
-     * Message to send object
+     * Message to send
      *
      * @return MessageElement
      */

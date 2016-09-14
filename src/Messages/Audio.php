@@ -33,7 +33,7 @@ class Audio extends Message
     }
 
     /**
-     * Message to send object
+     * Message to send
      * @return array
      */
     public function toData()

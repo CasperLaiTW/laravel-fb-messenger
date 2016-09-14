@@ -31,7 +31,7 @@ class Text extends Message
     }
 
     /**
-     * Message to send object
+     * Message to send
      *
      * @return \pimax\Messages\Message
      */

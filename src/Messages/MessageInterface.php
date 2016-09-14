@@ -14,7 +14,7 @@ namespace Casperlaitw\LaravelFbMessenger\Messages;
 interface MessageInterface
 {
     /**
-     * Message to send object
+     * Message to send
      * @return \pimax\Messages\Message
      */
     public function toData();

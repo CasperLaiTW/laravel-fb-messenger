@@ -10,7 +10,6 @@ use Faker\Factory;
  */
 class AudioTest extends TestCase 
 {
-
     public function test_to_data()
     {
         $faker = Factory::create();

@@ -34,7 +34,7 @@ class Image extends Message
     }
 
     /**
-     * Message to send object
+     * Message to send
      *
      * @return \pimax\Messages\Message
      */

@@ -37,7 +37,7 @@ abstract class Message implements MessageInterface
     }
 
     /**
-     * Message to send object
+     * Message to send
      * @return \pimax\Messages\Message|array
      */
     abstract public function toData();

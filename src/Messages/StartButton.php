@@ -33,7 +33,7 @@ class StartButton extends Message implements ThreadInterface
 
 
     /**
-     * Message to send object
+     * Message to send
      * @return array
      */
     public function toData()
