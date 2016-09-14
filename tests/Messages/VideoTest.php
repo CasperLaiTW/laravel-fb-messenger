@@ -7,7 +7,7 @@ use Faker\Factory;
  * Date: 2016/9/14
  * Time: 下午11:42
  */
-class VideoTest extends TestCase 
+class VideoTest extends TestCase
 {
     public function test_to_data()
     {
