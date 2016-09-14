@@ -18,7 +18,7 @@ class PersistentMenuCommandTest extends TestCase
             '--delete' => true,
         ]);
     }
-
+    
     public function test_arguments_api()
     {
         $commandTester = $this->createCommandTester('fb:menus');
@@ -40,7 +40,7 @@ class PersistentMenuCommandTest extends TestCase
             ],
         ]);
     }
-
+    
     public function test_empty_arguments()
     {
         $commandTester = $this->createCommandTester('fb:menus');
@@ -49,7 +49,7 @@ class PersistentMenuCommandTest extends TestCase
             'interactive' => false,
         ]);
     }
-
+    
     public function test_arguments_not_compare()
     {
         $commandTester = $this->createCommandTester('fb:menus');
@@ -67,7 +67,7 @@ class PersistentMenuCommandTest extends TestCase
         ]);
         $this->assertEquals('The options did not compare.', trim($commandTester->getDisplay()));
     }
-
+    
     public function test_limit_types()
     {
         $commandTester = $this->createCommandTester('fb:menus');
@@ -97,10 +97,10 @@ class PersistentMenuCommandTest extends TestCase
                 'GET_FOOD_TEST_3',
             ],
         ]);
-
+    
         $this->assertEquals('The menu buttons is limitd to 5', trim($commandTester->getDisplay()));
     }
-
+    
     public function test_button_type_error()
     {
         $commandTester = $this->createCommandTester('fb:menus');
@@ -115,7 +115,7 @@ class PersistentMenuCommandTest extends TestCase
                 'GET_FOOD_MENU',
             ],
         ]);
-
+    
         $this->assertEquals('Please check type, type only postback|web_url', trim($commandTester->getDisplay()));
     }
 
@@ -123,9 +123,9 @@ class PersistentMenuCommandTest extends TestCase
     {
         $commandTester = $this->createCommandTester('fb:menus');
         $commandTester->execute([
+            '--quiet' => true
         ], [
             'interactive' => false,
-            'quiet' => true
         ]);
     }
 

@@ -22,7 +22,7 @@ class StructuredTest extends TestCase
     public function test_non_collection_method()
     {
         $button = new Button(str_random(), str_random());
-        $this->assertInstanceOf(ButtonCollection::class, $button->getCollections());
+        $button->getError();
     }
 
     private function getMessageButtonMock()
