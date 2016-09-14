@@ -139,7 +139,7 @@ class PersistentMenuCommand extends BaseCommand
      */
     private function interactiveMode()
     {
-        $exit = true;
+        $exit = !$this->option('quiet');
         $count = 0;
         while ($exit) {
             if ($count === 5) {

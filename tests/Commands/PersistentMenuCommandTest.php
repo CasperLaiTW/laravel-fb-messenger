@@ -119,6 +119,16 @@ class PersistentMenuCommandTest extends TestCase
         $this->assertEquals('Please check type, type only postback|web_url', trim($commandTester->getDisplay()));
     }
 
+    public function test_quiet_mode()
+    {
+        $commandTester = $this->createCommandTester('fb:menus');
+        $commandTester->execute([
+        ], [
+            'interactive' => false,
+            'quiet' => true
+        ]);
+    }
+
     private function command()
     {
         return PersistentMenuCommand::class;
