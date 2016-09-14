@@ -22,7 +22,7 @@ class Bot extends FbBotApp
      *
      * If instance of ThreadInterface, auto turn to thread_settings endpoint
      *
-     * @param \pimax\Messages\Message $message
+     * @param \pimax\Messages\Message|array $message
      * @param string                  $type
      *
      * @return HandleMessageResponse
@@ -31,6 +31,10 @@ class Bot extends FbBotApp
     {
         if ($message instanceof ThreadInterface) {
             return $this->sendThreadSetting($message->toData(), $type);
+        }
+
+        if (is_array($message)) {
+            return new HandleMessageResponse($this->call('me/messages', $message));
         }
 
         return new HandleMessageResponse(parent::send($message->toData()));
