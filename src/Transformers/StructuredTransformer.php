@@ -16,11 +16,11 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 interface StructuredTransformer
 {
     /**
-     * Transform structure
+     * Transform payload
      *
      * @param Message $message
      *
-     * @return mixed
+     * @return array
      */
     public function transform(Message $message);
 }

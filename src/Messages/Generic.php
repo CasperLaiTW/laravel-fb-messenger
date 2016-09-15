@@ -8,14 +8,14 @@
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Collections\ElementCollection;
-use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Structured;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template;
 use Casperlaitw\LaravelFbMessenger\Transformers\GenericTransformer;
 
 /**
  * Class Generic
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class Generic extends Structured
+class Generic extends Template
 {
     /**
      * Generic constructor.

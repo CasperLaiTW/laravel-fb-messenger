@@ -18,11 +18,11 @@ use pimax\Messages\StructuredMessage;
 class ButtonTransformer implements StructuredTransformer
 {
     /**
-     * Transform button message to StructuredMessage
+     * Transform payload
      *
      * @param Message $message
      *
-     * @return mixed|StructuredMessage
+     * @return array
      * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\RequiredArgumentException
      */
     public function transform(Message $message)
@@ -31,13 +31,10 @@ class ButtonTransformer implements StructuredTransformer
             throw new RequiredArgumentException('Text is required');
         }
 
-        return new StructuredMessage(
-            $message->getSender(),
-            StructuredMessage::TYPE_BUTTON,
-            [
-                'text' => $message->getText(),
-                'buttons' => $message->getCollections()->getElements(),
-            ]
-        );
+        return [
+            'template_type' => 'button',
+            'text' => $message->getText(),
+            'buttons' => $message->getCollections()->toData(),
+        ];
     }
 }

@@ -14,29 +14,34 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts\Messages;
 abstract class Attachment extends Message
 {
     /**
-     *
+     * Image type
      */
     const TYPE_IMAGE = 'image';
 
     /**
-     *
+     * Audio type
      */
     const TYPE_AUDIO = 'audio';
 
     /**
-     *
+     * Video type
      */
     const TYPE_VIDEO = 'video';
 
     /**
-     *
+     * File type
      */
     const TYPE_FILE = 'file';
 
     /**
-     *
+     * Location type
      */
     const TYPE_LOCATION = 'location';
+
+    /**
+     * Template type
+     */
+    const TYPE_TEMPLATE = 'template';
 
     /**
      * @var

@@ -1,8 +1,8 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Collections\ButtonCollection;
 use Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException;
+use Casperlaitw\LaravelFbMessenger\Messages\Button;
 use Mockery as m;
-use pimax\Messages\MessageButton;
 
 /**
  * User: casperlai
@@ -22,7 +22,7 @@ class ButtonCollectionTest extends TestCase
     public function test_pass_validator()
     {
         $collection = new ButtonCollection();
-        $button = m::mock(MessageButton::class);
+        $button = m::mock(Button::class);
         $this->assertTrue($collection->validator($button));
     }
 
@@ -32,7 +32,7 @@ class ButtonCollectionTest extends TestCase
         $text = 'test';
         $url = 'abc';
         $collection->addPostBackButton('test', 'abc');
-        $expected = new MessageButton(MessageButton::TYPE_POSTBACK, $text, $url);
+        $expected = new Button(Button::TYPE_POSTBACK, $text, $url);
 
         $this->assertEquals($expected, $collection->getElements()[0]);
     }
@@ -44,7 +44,7 @@ class ButtonCollectionTest extends TestCase
         $url = 'abc';
         $collection->addWebButton($text, $url);
 
-        $expected = new MessageButton(MessageButton::TYPE_WEB, $text, $url);
+        $expected = new Button(Button::TYPE_WEB, $text, $url);
         $this->assertEquals($expected, $collection->getElements()[0]);
     }
 }
