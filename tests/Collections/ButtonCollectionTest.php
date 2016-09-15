@@ -61,5 +61,12 @@ class ButtonCollectionTest extends TestCase
         $this->assertEquals($expected, $collection->getElements()[0]);
     }
 
+    public function test_add_share_button()
+    {
+        $collection = new ButtonCollection();
+        $collection->addShareButton();
+        $expected = new Button(Button::TYPE_SHARE, '');
 
+        $this->assertEquals($expected, $collection->getElements()[0]);
+    }
 }

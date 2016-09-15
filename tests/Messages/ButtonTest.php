@@ -11,10 +11,9 @@ class ButtonTest extends TestCase
     public function test_share_button()
     {
         $title = str_random();
-        $button = new Button(Button::TYPE_SHARE, $title);
+        $button = new Button(Button::TYPE_SHARE, '');
         $expected = [
             'type' => 'element_share',
-            'title' => $title,
         ];
         $this->assertEquals($expected, $button->toData());
     }

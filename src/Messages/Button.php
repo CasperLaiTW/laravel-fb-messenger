@@ -74,6 +74,12 @@ class Button implements MessageInterface
      */
     public function toData()
     {
+        if ($this->type === self::TYPE_SHARE) {
+            return [
+                'type' => $this->type,
+            ];
+        }
+
         return [
             'type' => $this->type,
             'title' => $this->title,
@@ -96,7 +102,6 @@ class Button implements MessageInterface
             case self::TYPE_WEB:
                 $payload = ['url' => $this->payload];
                 break;
-            case self::TYPE_SHARE:
             default:
                 break;
         }

@@ -57,7 +57,8 @@ class ButtonCollection extends BaseCollection
     }
 
     /**
-     *  Add phone call button
+     * Add phone call button
+     *
      * @param $title
      * @param $phone
      *
@@ -67,6 +68,14 @@ class ButtonCollection extends BaseCollection
     {
         $this->add(new Button(Button::TYPE_CALL, $title, $phone));
         return $this;
+    }
+
+    /**
+     * Add share button
+     */
+    public function addShareButton()
+    {
+        $this->add(new Button(Button::TYPE_SHARE, ''));
     }
 
     /**
