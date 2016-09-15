@@ -2,6 +2,7 @@
 use Casperlaitw\LaravelFbMessenger\Collections\ButtonCollection;
 use Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException;
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
+use Faker\Factory;
 use Mockery as m;
 
 /**
@@ -47,4 +48,18 @@ class ButtonCollectionTest extends TestCase
         $expected = new Button(Button::TYPE_WEB, $text, $url);
         $this->assertEquals($expected, $collection->getElements()[0]);
     }
+
+    public function test_add_call_button()
+    {
+        $fake = Factory::create();
+        $collection = new ButtonCollection();
+        $title = str_random();
+        $phone = $fake->phoneNumber;
+        $collection->addCallButton($title, $phone);
+
+        $expected = new Button(Button::TYPE_CALL, $title, $phone);
+        $this->assertEquals($expected, $collection->getElements()[0]);
+    }
+
+
 }

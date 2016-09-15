@@ -43,7 +43,7 @@ class ButtonCollection extends BaseCollection
     }
 
     /**
-     * Add web_url button
+     * Add web url button
      *
      * @param $text
      * @param $url
@@ -53,6 +53,19 @@ class ButtonCollection extends BaseCollection
     public function addWebButton($text, $url)
     {
         $this->add(new Button(Button::TYPE_WEB, $text, $url));
+        return $this;
+    }
+
+    /**
+     *  Add phone call button
+     * @param $title
+     * @param $phone
+     *
+     * @return $this
+     */
+    public function addCallButton($title, $phone)
+    {
+        $this->add(new Button(Button::TYPE_CALL, $title, $phone));
         return $this;
     }
 
