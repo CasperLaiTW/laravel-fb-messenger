@@ -34,7 +34,7 @@ class ElementCollectionTest extends TestCase
         foreach ($elementMessages as $message) {
             $element->add($message);
         }
-        foreach ($element->toArray() as $key => $value) {
+        foreach ($element->toData() as $key => $value) {
             $this->assertEquals($elementMessages[$key]->toData(), $value);
         }
     }

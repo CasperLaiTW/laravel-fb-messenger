@@ -12,10 +12,10 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template;
 use Casperlaitw\LaravelFbMessenger\Transformers\GenericTransformer;
 
 /**
- * Class Generic
+ * Class GenericTemplate
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class Generic extends Template
+class GenericTemplate extends Template
 {
     /**
      * Generic constructor.
@@ -30,12 +30,15 @@ class Generic extends Template
     }
 
     /**
-     * Message to send
-     * @return \pimax\Messages\Message
+     * To array for send api
+     *
+     * @return array
      */
     public function toData()
     {
-        return (new GenericTransformer)->transform($this);
+        $payload = (new GenericTransformer)->transform($this);
+        $this->setPayload($payload);
+        return parent::toData();
     }
 
     /**

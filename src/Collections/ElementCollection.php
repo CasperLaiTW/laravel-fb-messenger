@@ -17,6 +17,18 @@ use Casperlaitw\LaravelFbMessenger\Messages\Element;
 class ElementCollection extends BaseCollection
 {
     /**
+     * ElementCollection constructor.
+     *
+     * @param array $elements
+     */
+    public function __construct(array $elements = [])
+    {
+        foreach ($elements as $element) {
+            $this->add($element);
+        }
+    }
+
+    /**
      * Add element
      *
      * @param        $title
@@ -35,22 +47,6 @@ class ElementCollection extends BaseCollection
     }
 
     /**
-     * Elements to array
-     *
-     * @return array
-     */
-    public function toArray()
-    {
-        $elements = [];
-
-        foreach ($this->elements as $element) {
-            $elements[] = $element->toData();
-        }
-
-        return $elements;
-    }
-
-    /**
      * Valid the added element
      *
      * @param $elements
@@ -62,7 +58,7 @@ class ElementCollection extends BaseCollection
     {
         if (!$elements instanceof Element) {
             throw new ValidatorStructureException(
-                'The `generic` structure item should be instance of `\\pimax\\Messages\\MessageElement`'
+                'The `generic` structure item should be instance of `Casperlaitw\LaravelFbMessenger\Messages\Element`'
             );
         }
 

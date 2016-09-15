@@ -23,36 +23,26 @@ class GenericTransformerTest extends TestCase
             new Element('title2', 'description2', 'image_url', 'url'),
         ];
 
+        $expectedCase = [];
         foreach ($testCase as $case) {
             $expectedCase[] = $case->toData();
         }
 
         $transformer = new GenericTransformer;
-        $expected = new StructuredMessage(
-            $testSender,
-            StructuredMessage::TYPE_GENERIC,
-            [
-                'elements' => $expectedCase,
-            ]
-        );
+
+        $expected = [
+            'template_type' => 'generic',
+            'elements' => $expectedCase,
+        ];
+
 
         $actual = $transformer->transform($this->createMessageMock($testCase, $testSender));
-        $this->assertInstanceOf(StructuredMessage::class, $actual);
-        $this->assertEquals($expected->getData(), $actual->getData());
+        $this->assertEquals($expected, $actual);
     }
 
     private function createMessageMock($testCase, $testSender)
     {
-        $elements = m::mock(ElementCollection::class)
-            ->shouldReceive('toArray')->andReturnUsing(function () use ($testCase) {
-                $data = [];
-                foreach ($testCase as $case) {
-                    $data[] = $case->toData();
-                }
-
-                return $data;
-            })
-            ->getMock();
+        $elements = new ElementCollection($testCase);
 
         $message = m::mock(Message::class)
             ->shouldReceive('getSender')->andReturn($testSender)
