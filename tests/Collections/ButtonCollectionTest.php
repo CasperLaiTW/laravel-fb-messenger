@@ -1,5 +1,6 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Collections\ButtonCollection;
+use Casperlaitw\LaravelFbMessenger\Exceptions\OnlyUseByItselfException;
 use Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException;
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
 use Faker\Factory;
@@ -59,6 +60,18 @@ class ButtonCollectionTest extends TestCase
 
         $expected = new Button(Button::TYPE_CALL, $title, $phone);
         $this->assertEquals($expected, $collection->getElements()[0]);
+    }
+
+    public function test_more_than_one_buttons_with_call_button()
+    {
+        $this->expectException(OnlyUseByItselfException::class);
+
+        $fake = Factory::create();
+        $collection = new ButtonCollection();
+        $title = str_random();
+        $phone = $fake->phoneNumber;
+        $collection->addPostBackButton('POSTBACK');
+        $collection->addCallButton($title, $phone);
     }
 
     public function test_add_share_button()
