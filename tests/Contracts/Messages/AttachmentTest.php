@@ -58,5 +58,4 @@ class AttachmentTest extends TestCase
 
 class AttachmentStub extends Attachment
 {
-
 }

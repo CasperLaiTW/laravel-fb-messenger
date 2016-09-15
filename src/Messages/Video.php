@@ -9,7 +9,6 @@ namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment;
 
-
 /**
  * Class Video
  * @package Casperlaitw\LaravelFbMessenger\Messages

@@ -88,8 +88,7 @@ class Button implements MessageInterface
     private function makePayload()
     {
         $payload = [];
-        switch ($this->type)
-        {
+        switch ($this->type) {
             case self::TYPE_POSTBACK:
             case self::TYPE_CALL:
                 $payload = ['payload' => $this->payload];
