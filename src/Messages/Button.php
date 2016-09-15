@@ -1,83 +1,106 @@
 <?php
 /**
  * User: casperlai
- * Date: 2016/8/31
- * Time: 下午9:13
+ * Date: 2016/9/16
+ * Time: 上午12:19
  */
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
-use Casperlaitw\LaravelFbMessenger\Collections\ButtonCollection;
-use Casperlaitw\LaravelFbMessenger\Transformers\ButtonTransformer;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\MessageInterface;
 
 /**
  * Class Button
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class Button extends Structured
+class Button implements MessageInterface
 {
     /**
+     * Web url button type
+     */
+    const TYPE_WEB = 'web_url';
+
+    /**
+     * Postback button type
+     */
+    const TYPE_POSTBACK = 'postback';
+
+    /**
+     * Phone call button type
+     */
+    const TYPE_CALL = 'phone_number';
+
+    /**
+     * Share button type
+     */
+    const TYPE_SHARE = 'element_share';
+
+    /**
+     * Button type
      * @var string
      */
-    private $text;
+    private $type;
+
+    /**
+     * Button title
+     * @var string
+     */
+    private $title;
+
+    /**
+     * Button postback or web url
+     * @var string
+     */
+    private $payload;
 
     /**
      * Button constructor.
      *
-     * @param        $sender
-     * @param string $text
-     * @param array  $elements
+     * @param $type
+     * @param $title
+     * @param $payload
      */
-    public function __construct($sender, $text = '', $elements = [])
+    public function __construct($type, $title, $payload = '')
     {
-        parent::__construct($sender);
-        $this->add($elements);
-        $this->text = $text;
+        $this->type = $type;
+        $this->title = $title;
+        $this->payload = empty($payload) ? $title : $payload;
     }
 
-
     /**
-     * Message to send
+     * To array for send api
      *
-     * @return \pimax\Messages\Message
-     * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\RequiredArgumentException
+     * @return array
      */
     public function toData()
     {
-        return (new ButtonTransformer)->transform($this);
+        return [
+            'type' => $this->type,
+            'title' => $this->title,
+        ] + $this->makePayload();
     }
 
     /**
-     * Set text
+     * Make payload by type
      *
-     * @param string $text
-     *
-     * @return Button
+     * @return array
      */
-    public function setText($text)
+    private function makePayload()
     {
-        $this->text = $text;
+        $payload = [];
+        switch ($this->type) {
+            case self::TYPE_POSTBACK:
+            case self::TYPE_CALL:
+                $payload = ['payload' => $this->payload];
+                break;
+            case self::TYPE_WEB:
+                $payload = ['url' => $this->payload];
+                break;
+            case self::TYPE_SHARE:
+            default:
+                break;
+        }
 
-        return $this;
-    }
-
-    /**
-     * Get text
-     *
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->text;
-    }
-
-    /**
-     * Get button collection
-     *
-     * @return mixed
-     */
-    protected function collection()
-    {
-        return ButtonCollection::class;
+        return $payload;
     }
 }

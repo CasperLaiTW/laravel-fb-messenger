@@ -18,18 +18,20 @@ class AudioTest extends TestCase
 
         $actual = new Audio($sender, $url);
 
-        $expect = [
+        $expected = [
             'recipient' => [
                 'id' => $sender,
             ],
-            'attachment' => [
-                'type' => 'audio',
-                'payload' => [
-                    'url' => $url,
+            'message' => [
+                'attachment' => [
+                    'type' => 'audio',
+                    'payload' => [
+                        'url' => $url,
+                    ],
                 ],
             ],
         ];
 
-        $this->assertEquals($expect, $actual->toData());
+        $this->assertEquals($expected, $actual->toData());
     }
 }

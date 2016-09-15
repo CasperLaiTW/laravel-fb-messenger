@@ -7,19 +7,14 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
-use pimax\Messages\Attachment;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment;
 
 /**
  * Class File
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class File extends Message
+class File extends Attachment
 {
-    /**
-     * @var Attachment
-     */
-    private $file;
-
     /**
      * File constructor.
      *
@@ -28,21 +23,6 @@ class File extends Message
      */
     public function __construct($sender, $file)
     {
-        parent::__construct($sender);
-        $this->file = new Attachment(Attachment::TYPE_FILE, ['url' => $file]);
-    }
-
-
-    /**
-     * Message to send
-     * @return array
-     */
-    public function toData()
-    {
-        return [
-            'recipient' =>  [
-                'id' => $this->getSender()
-            ],
-        ] + $this->file->getData();
+        parent::__construct($sender, self::TYPE_FILE, ['url' => $file]);
     }
 }

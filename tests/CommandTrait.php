@@ -3,8 +3,8 @@ use Casperlaitw\LaravelFbMessenger\Contracts\CommandHandler;
 use Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Config\Repository;
-use Symfony\Component\Console\Application;
 use Mockery as m;
+use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

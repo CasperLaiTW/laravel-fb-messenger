@@ -7,6 +7,8 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
 use pimax\Messages\MessageButton;
 
 /**

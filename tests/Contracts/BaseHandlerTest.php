@@ -2,9 +2,9 @@
 
 use Casperlaitw\LaravelFbMessenger\Contracts\BaseHandler;
 use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Exceptions\NotCreateBotException;
 use Casperlaitw\LaravelFbMessenger\Messages\Deletable;
-use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use Mockery as m;
 
 /**

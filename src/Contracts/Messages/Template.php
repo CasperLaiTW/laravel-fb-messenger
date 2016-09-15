@@ -5,16 +5,16 @@
  * Time: 下午3:41
  */
 
-namespace Casperlaitw\LaravelFbMessenger\Messages;
+namespace Casperlaitw\LaravelFbMessenger\Contracts\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Collections\BaseCollection;
 use Illuminate\Container\Container;
 
 /**
  * Class Structured
- * @package Casperlaitw\LaravelFbMessenger\Messages
+ * @package Casperlaitw\LaravelFbMessenger\Contracts\Messages
  */
-abstract class Structured extends Message
+abstract class Template extends Attachment
 {
     /**
      * @var BaseCollection
@@ -28,7 +28,7 @@ abstract class Structured extends Message
      */
     public function __construct($sender)
     {
-        parent::__construct($sender);
+        parent::__construct($sender, self::TYPE_TEMPLATE);
         $app = new Container();
         $this->collections = $app->make($this->collection());
     }

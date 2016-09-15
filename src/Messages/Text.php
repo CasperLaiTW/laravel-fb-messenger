@@ -7,6 +7,8 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
+
 /**
  * Class TextMessage
  * @package Casperlaitw\LaravelFbMessenger\Messages
@@ -31,12 +33,19 @@ class Text extends Message
     }
 
     /**
-     * Message to send
+     * To array for send api
      *
-     * @return \pimax\Messages\Message
+     * @return array
      */
     public function toData()
     {
-        return new \pimax\Messages\Message($this->getSender(), $this->message);
+        return [
+            'recipient' =>  [
+                'id' => $this->getSender(),
+            ],
+            'message' => [
+                'text' => $this->message,
+            ],
+        ];
     }
 }

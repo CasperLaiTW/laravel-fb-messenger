@@ -69,18 +69,18 @@ class Element
     }
 
     /**
-     * Message to send
+     * To array for send api
      *
-     * @return MessageElement
+     * @return array
      */
     public function toData()
     {
-        return new MessageElement(
-            $this->title,
-            $this->description,
-            $this->image,
-            $this->buttons->getElements(),
-            $this->url
-        );
+        return [
+            'title' => $this->title,
+            'subtitle' => $this->description,
+            'item_url' => $this->url,
+            'image_url' => $this->image,
+            'buttons' => $this->buttons->toData(),
+        ];
     }
 }

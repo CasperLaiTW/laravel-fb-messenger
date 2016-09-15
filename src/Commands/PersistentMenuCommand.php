@@ -9,8 +9,8 @@ namespace Casperlaitw\LaravelFbMessenger\Commands;
 
 use Casperlaitw\LaravelFbMessenger\Exceptions\NotOptionsException;
 use Casperlaitw\LaravelFbMessenger\Exceptions\OptionNotComparedException;
+use Casperlaitw\LaravelFbMessenger\Messages\Button;
 use Casperlaitw\LaravelFbMessenger\Messages\PersistentMenuMessage;
-use pimax\Messages\MessageButton;
 
 /**
  * Class PersistentMenuCommand
@@ -36,7 +36,7 @@ class PersistentMenuCommand extends BaseCommand
     /**
      * @var array
      */
-    private $typeList = [MessageButton::TYPE_POSTBACK, MessageButton::TYPE_WEB];
+    private $typeList = [Button::TYPE_POSTBACK, Button::TYPE_WEB];
 
     /**
      * @var array
@@ -130,7 +130,7 @@ class PersistentMenuCommand extends BaseCommand
     private function createButton()
     {
         foreach ($this->types as $key => $type) {
-            $this->buttons[] =new MessageButton($type, $this->names[$key], $this->urls[$key]);
+            $this->buttons[] =new Button($type, $this->names[$key], $this->urls[$key]);
         }
     }
 

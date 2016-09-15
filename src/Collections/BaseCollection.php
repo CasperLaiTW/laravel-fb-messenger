@@ -43,6 +43,21 @@ abstract class BaseCollection
     }
 
     /**
+     * Get all elements array data
+     *
+     * @return array
+     */
+    public function toData()
+    {
+        $data = [];
+        foreach ($this->elements as $element) {
+            $data[] = $element->toData();
+        }
+
+        return $data;
+    }
+
+    /**
      * Validate collection item
      *
      * @param $element
