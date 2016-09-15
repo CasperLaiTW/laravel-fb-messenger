@@ -14,7 +14,14 @@ class TextTest extends TestCase
     {
         $sender = str_random();
         $message = str_random();
-        $expected = new Message($sender, $message);
+        $expected = [
+            'recipient' =>  [
+                'id' => $sender,
+            ],
+            'message' => [
+                'text' => $message,
+            ],
+        ];
 
         $this->assertEquals($expected, (new Text($sender, $message))->toData());
     }
