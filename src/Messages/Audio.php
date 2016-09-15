@@ -7,20 +7,14 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
-use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
-use pimax\Messages\Attachment;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment;
 
 /**
  * Class Audio
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class Audio extends Message
+class Audio extends Attachment
 {
-    /**
-     * @var Attachment
-     */
-    private $audio;
-
     /**
      * Audio constructor.
      *
@@ -29,20 +23,6 @@ class Audio extends Message
      */
     public function __construct($sender, $audio)
     {
-        parent::__construct($sender);
-        $this->audio = new Attachment(Attachment::TYPE_AUDIO, ['url' => $audio]);
-    }
-
-    /**
-     * Message to send
-     * @return array
-     */
-    public function toData()
-    {
-        return [
-            'recipient' =>  [
-                'id' => $this->getSender()
-            ],
-        ] + $this->audio->getData();
+        parent::__construct($sender, self::TYPE_AUDIO, ['url' => $audio]);
     }
 }

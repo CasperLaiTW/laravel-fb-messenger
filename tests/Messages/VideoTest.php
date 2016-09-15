@@ -17,18 +17,20 @@ class VideoTest extends TestCase
 
         $actual = new Video($sender, $url);
 
-        $expect = [
+        $expected = [
             'recipient' => [
                 'id' => $sender,
             ],
-            'attachment' => [
-                'type' => 'video',
-                'payload' => [
-                    'url' => $url,
+            'message' => [
+                'attachment' => [
+                    'type' => 'video',
+                    'payload' => [
+                        'url' => $url,
+                    ],
                 ],
             ],
         ];
 
-        $this->assertEquals($expect, $actual->toData());
+        $this->assertEquals($expected, $actual->toData());
     }
 }

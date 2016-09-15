@@ -7,20 +7,15 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
-use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
-use pimax\Messages\Attachment;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment;
+
 
 /**
  * Class Video
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class Video extends Message
+class Video extends Attachment
 {
-    /**
-     * @var Attachment
-     */
-    private $video;
-
     /**
      * Video constructor.
      *
@@ -29,21 +24,6 @@ class Video extends Message
      */
     public function __construct($sender, $video)
     {
-        parent::__construct($sender);
-        $this->video = new Attachment(Attachment::TYPE_VIDEO, ['url' => $video]);
-    }
-
-
-    /**
-     * Message to send
-     * @return array
-     */
-    public function toData()
-    {
-        return [
-            'recipient' =>  [
-                'id' => $this->getSender()
-            ],
-        ] + $this->video->getData();
+        parent::__construct($sender, self::TYPE_VIDEO, ['url' => $video]);
     }
 }

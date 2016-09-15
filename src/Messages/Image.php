@@ -7,21 +7,14 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
-use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
-use pimax\Messages\ImageMessage;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment;
 
 /**
  * Class ImageMessage
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class Image extends Message
+class Image extends Attachment
 {
-    /**
-     * Image path/url
-     * @var string
-     */
-    private $image;
-
     /**
      * ImageMessage constructor.
      *
@@ -30,17 +23,6 @@ class Image extends Message
      */
     public function __construct($sender, $image)
     {
-        parent::__construct($sender);
-        $this->image = $image;
-    }
-
-    /**
-     * Message to send
-     *
-     * @return \pimax\Messages\Message
-     */
-    public function toData()
-    {
-        return new ImageMessage($this->getSender(), $this->image);
+        parent::__construct($sender, self::TYPE_IMAGE, ['url' => $image]);
     }
 }

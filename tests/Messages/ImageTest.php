@@ -1,6 +1,5 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Messages\Image;
-use pimax\Messages\ImageMessage;
 
 /**
  * User: casperlai
@@ -13,8 +12,19 @@ class ImageTest extends TestCase
     {
         $sender = str_random();
         $image = str_random();
-        $expected = new ImageMessage($sender, $image);
-
+        $expected = [
+            'recipient' => [
+                'id' => $sender,
+            ],
+            'message' => [
+                'attachment' => [
+                    'type' => 'image',
+                    'payload' => [
+                        'url' => $image,
+                    ],
+                ],
+            ],
+        ];
         $this->assertEquals($expected, (new Image($sender, $image))->toData());
     }
 }

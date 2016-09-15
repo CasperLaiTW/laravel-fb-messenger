@@ -17,18 +17,20 @@ class FileTest extends TestCase
 
         $actual = new File($sender, $url);
 
-        $expect = [
+        $expected = [
             'recipient' => [
                 'id' => $sender,
             ],
-            'attachment' => [
-                'type' => 'file',
-                'payload' => [
-                    'url' => $url,
+            'message' => [
+                'attachment' => [
+                    'type' => 'file',
+                    'payload' => [
+                        'url' => $url,
+                    ],
                 ],
             ],
         ];
 
-        $this->assertEquals($expect, $actual->toData());
+        $this->assertEquals($expected, $actual->toData());
     }
 }
