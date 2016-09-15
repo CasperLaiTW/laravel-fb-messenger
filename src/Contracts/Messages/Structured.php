@@ -5,14 +5,14 @@
  * Time: 下午3:41
  */
 
-namespace Casperlaitw\LaravelFbMessenger\Messages;
+namespace Casperlaitw\LaravelFbMessenger\Contracts\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Collections\BaseCollection;
 use Illuminate\Container\Container;
 
 /**
  * Class Structured
- * @package Casperlaitw\LaravelFbMessenger\Messages
+ * @package Casperlaitw\LaravelFbMessenger\Contracts\Messages
  */
 abstract class Structured extends Message
 {

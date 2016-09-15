@@ -7,7 +7,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
-use Casperlaitw\LaravelFbMessenger\Messages\ThreadInterface;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
 use pimax\FbBotApp;
 
 /**

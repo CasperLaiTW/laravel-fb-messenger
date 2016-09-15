@@ -1,10 +1,8 @@
 <?php
 
-use Casperlaitw\LaravelFbMessenger\Collections\ButtonCollection;
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
-use Casperlaitw\LaravelFbMessenger\Messages\Structured;
-use pimax\Messages\MessageButton;
 use Mockery as m;
+use pimax\Messages\MessageButton;
 
 /**
  * User: casperlai

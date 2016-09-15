@@ -8,8 +8,8 @@
 namespace Casperlaitw\LaravelFbMessenger\Commands;
 
 use Casperlaitw\LaravelFbMessenger\Contracts\CommandHandler;
-use Illuminate\Contracts\Config\Repository;
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Config\Repository;
 
 /**
  * Class BaseCommand

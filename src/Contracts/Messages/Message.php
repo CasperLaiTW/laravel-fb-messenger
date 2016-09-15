@@ -5,11 +5,11 @@
  * Time: 下午2:41
  */
 
-namespace Casperlaitw\LaravelFbMessenger\Messages;
+namespace Casperlaitw\LaravelFbMessenger\Contracts\Messages;
 
 /**
  * Class Message
- * @package Casperlaitw\LaravelFbMessenger\Messages
+ * @package Casperlaitw\LaravelFbMessenger\Contracts\Messages
  */
 abstract class Message implements MessageInterface
 {

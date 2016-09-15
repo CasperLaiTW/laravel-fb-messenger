@@ -7,7 +7,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Transformers;
 
-use Casperlaitw\LaravelFbMessenger\Messages\Message;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use pimax\Messages\StructuredMessage;
 
 /**

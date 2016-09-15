@@ -7,8 +7,8 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Transformers;
 
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Exceptions\RequiredArgumentException;
-use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use pimax\Messages\StructuredMessage;
 
 /**

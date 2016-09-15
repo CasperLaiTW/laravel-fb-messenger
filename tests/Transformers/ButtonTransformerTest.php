@@ -6,8 +6,8 @@
  */
 
 use Casperlaitw\LaravelFbMessenger\Collections\ButtonCollection;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Exceptions\RequiredArgumentException;
-use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Transformers\ButtonTransformer;
 use Mockery as m;
 use pimax\Messages\MessageButton;

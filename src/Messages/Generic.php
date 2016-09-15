@@ -8,6 +8,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Collections\ElementCollection;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Structured;
 use Casperlaitw\LaravelFbMessenger\Transformers\GenericTransformer;
 
 /**

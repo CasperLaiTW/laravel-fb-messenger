@@ -1,6 +1,5 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
-use Casperlaitw\LaravelFbMessenger\Messages\Audio;
 use Casperlaitw\LaravelFbMessenger\Messages\Greeting;
 use Casperlaitw\LaravelFbMessenger\Messages\Text;
 use Mockery as m;

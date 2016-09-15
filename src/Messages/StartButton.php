@@ -7,6 +7,9 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
+
 /**
  * Class StartButton
  * @package Casperlaitw\LaravelFbMessenger\Messages

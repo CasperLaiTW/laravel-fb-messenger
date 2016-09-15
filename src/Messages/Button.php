@@ -8,6 +8,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Collections\ButtonCollection;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Structured;
 use Casperlaitw\LaravelFbMessenger\Transformers\ButtonTransformer;
 
 /**

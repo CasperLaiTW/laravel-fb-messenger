@@ -7,6 +7,8 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
+
 /**
  * Class TextMessage
  * @package Casperlaitw\LaravelFbMessenger\Messages

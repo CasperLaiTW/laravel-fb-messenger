@@ -1,8 +1,8 @@
 <?php
 
 use Casperlaitw\LaravelFbMessenger\Collections\ElementCollection;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Messages\Element;
-use Casperlaitw\LaravelFbMessenger\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Transformers\GenericTransformer;
 use Mockery as m;
 use pimax\Messages\StructuredMessage;

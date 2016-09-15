@@ -7,6 +7,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use pimax\Messages\Attachment;
 
 /**
