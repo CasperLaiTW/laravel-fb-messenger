@@ -50,6 +50,26 @@ MESSENGER_APP_TOKEN="Page Access Token"
 ...
 ```
 
+#### Auto Typing
+
+![Typing](https://cdn.rawgit.com/CasperLaiTW/laravel-fb-messenger/master/docs/images/typing.png)
+
+Auto typing is enabled by default.
+
+If you don't want to enable, set `auto_typing` to `false`
+
+```php
+return [
+    'verify_token' => env('MESSENGER_VERIFY_TOKEN'),
+    'app_token' => env('MESSENGER_APP_TOKEN'),
+    'auto_typing' => false,  // disabled
+    'handlers' => [App\YourHandler::class],
+    'postbacks' => [
+        App\StartupPostback::class,
+    ],
+];    
+```
+
 #### Custom Url
 If you want to custom url, replace `/webhook` to you want.
 
@@ -59,8 +79,10 @@ Finally, you can run `php artisan route:list` to check.
  return [
      'verify_token' => env('MESSENGER_VERIFY_TOKEN'),
      'app_token' => env('MESSENGER_APP_TOKEN'),
-     'handler' => App\YourHandler::class,
+     'auto_typing' => true,
+     'handlers' => [App\YourHandler::class],
      'custom_url' => '/chatbot', // like this
+     'postbacks' => [],
  ];
 ```
 
@@ -125,7 +147,8 @@ class StartupPostback extends PostbackHandler
 return [
     'verify_token' => env('MESSENGER_VERIFY_TOKEN'),
     'app_token' => env('MESSENGER_APP_TOKEN'),
-    'handler' => App\YourHandler::class,
+    'auto_typing' => true,
+    'handlers' => [App\YourHandler::class],
     'postbacks' => [
         App\StartupPostback::class,
     ],
