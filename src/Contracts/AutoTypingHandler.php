@@ -10,6 +10,10 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
 use Casperlaitw\LaravelFbMessenger\Messages\Typing;
 
+/**
+ * Class AutoTypingHandler
+ * @package Casperlaitw\LaravelFbMessenger\Contracts
+ */
 class AutoTypingHandler extends BaseHandler
 {
     /**

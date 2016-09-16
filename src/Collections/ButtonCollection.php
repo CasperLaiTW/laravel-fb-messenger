@@ -69,7 +69,9 @@ class ButtonCollection extends BaseCollection
     public function addCallButton($title, $phone)
     {
         if (count($this->getElements()) > 0) {
-            throw new OnlyUseByItselfException('The collection has more than one button, call button only use by itself.');
+            throw new OnlyUseByItselfException(
+                'The collection has more than one button, call button only use by itself.'
+            );
         }
         $this->add(new Button(Button::TYPE_CALL, $title, $phone));
         return $this;
