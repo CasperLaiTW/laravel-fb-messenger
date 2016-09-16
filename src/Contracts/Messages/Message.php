@@ -14,7 +14,7 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts\Messages;
 abstract class Message implements MessageInterface
 {
     /**
-     * @var
+     * @var string
      */
     private $sender;
 
@@ -29,6 +29,7 @@ abstract class Message implements MessageInterface
     }
 
     /**
+     * Get sender id
      * @return mixed
      */
     public function getSender()
