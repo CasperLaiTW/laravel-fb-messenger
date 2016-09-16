@@ -20,11 +20,6 @@ use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
 abstract class BaseHandler implements HandlerInterface
 {
     /**
-     * @var ReceiveMessageCollection
-     */
-    protected $messages;
-
-    /**
      * @var Bot
      */
     protected $bot;
@@ -63,16 +58,6 @@ abstract class BaseHandler implements HandlerInterface
     }
 
     /**
-     * Get messages
-     *
-     * @return ReceiveMessageCollection
-     */
-    public function getMessages()
-    {
-        return $this->messages;
-    }
-
-    /**
      * Handle the chatbot message
      *
      * @param ReceiveMessage $message
@@ -80,18 +65,4 @@ abstract class BaseHandler implements HandlerInterface
      * @return mixed
      */
     abstract public function handle(ReceiveMessage $message);
-
-    /**
-     * Set messages
-     *
-     * @param ReceiveMessageCollection $messages
-     *
-     * @return BaseHandler
-     */
-    public function setMessages($messages)
-    {
-        $this->messages = $messages;
-
-        return $this;
-    }
 }

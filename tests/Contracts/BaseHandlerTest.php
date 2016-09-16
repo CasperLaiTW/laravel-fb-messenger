@@ -14,18 +14,6 @@ use Mockery as m;
  */
 class BaseHandlerTest extends TestCase
 {
-    public function test_get_messages()
-    {
-        $expected = [
-            'test',
-            'test2'
-        ];
-        $handler = $this->getMockForAbstractClass(BaseHandler::class);
-        $handler->setMessages($expected);
-
-        $this->assertEquals($expected, $handler->getMessages());
-    }
-
     public function test_send()
     {
         $bot = m::mock(Bot::class)
@@ -56,7 +44,7 @@ class MessageStub extends Message
 
     /**
      * Message to send object
-     * @return \pimax\Messages\Message|array
+     * @return array
      */
     public function toData()
     {

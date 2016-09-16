@@ -2,7 +2,6 @@
 
 use Casperlaitw\LaravelFbMessenger\Contracts\DefaultHandler;
 use Casperlaitw\LaravelFbMessenger\Controllers\WebhookController;
-use Casperlaitw\LaravelFbMessenger\Exceptions\NeedImplementHandlerException;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -59,36 +58,21 @@ class WebhookControllerTest extends TestCase
         $controller->index($request);
     }
 
-    public function test_receive_handle_not_extends_base_handler()
-    {
-        $this->expectException(NeedImplementHandlerException::class);
-        $config = m::mock(Repository::class)
-            ->shouldReceive('get')
-            ->with('fb-messenger.handler')
-            ->andReturn(HandlerNotExtendsBaseHandlerStub::class)
-            ->shouldReceive('get')
-            ->with('fb-messenger.app_token')
-            ->getMock();
-
-        $request = m::mock(Request::class)
-            ->shouldReceive('input')
-            ->with('entry.0.messaging')
-            ->andReturn([])
-            ->getMock();
-
-        $controller = new WebhookController($config);
-        $controller->receive($request);
-    }
-
     public function test_receive()
     {
-        $config = m::mock(Repository::class)
+        $config = m::mock(Repository::class);
+        $config
             ->shouldReceive('get')
-            ->with('fb-messenger.handler')
-            ->andReturn(DefaultHandler::class)
+            ->with('fb-messenger.handlers')
+            ->andReturn([DefaultHandler::class])
             ->shouldReceive('get')
             ->with('fb-messenger.app_token')
-            ->getMock();
+            ->shouldReceive('get')
+            ->with('fb-messenger.postbacks')
+            ->andReturn([])
+            ->shouldReceive('get')
+            ->with('fb-messenger.auto_typing')
+            ->andReturn(false);
 
         $request = m::mock(Request::class)
             ->shouldReceive('input')

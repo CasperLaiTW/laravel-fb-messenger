@@ -7,8 +7,10 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
+use Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
 use Illuminate\Container\Container;
+use Illuminate\Contracts\Config\Repository;
 
 /**
  * Class WebhookHandler
@@ -17,9 +19,9 @@ use Illuminate\Container\Container;
 class WebhookHandler
 {
     /**
-     * @var BaseHandler
+     * @var array
      */
-    private $handler;
+    private $handlers;
 
     /**
      * @var array
@@ -27,30 +29,83 @@ class WebhookHandler
     private $postbacks;
 
     /**
+     * Access token
+     * @var string
+     */
+    private $token;
+
+    /**
+     * @var ReceiveMessageCollection
+     */
+    private $messages;
+
+    /**
+     * @var Container
+     */
+    private $app;
+
+    /**
+     * @var Repository
+     */
+    private $config;
+
+    /**
      * WebhookHandler constructor.
      *
-     * @param BaseHandler $handler
-     * @param             $token
-     * @param array       $postbacks
+     * @param ReceiveMessageCollection $messages
+     * @param Repository               $config
+     *
      */
-    public function __construct(BaseHandler $handler, $token, $postbacks = [])
-    {
-        $this->handler = $handler->createBot($token);
-        $this->createPostbacks($postbacks);
+    public function __construct(
+        ReceiveMessageCollection $messages,
+        Repository $config
+    ) {
+        $this->app = new Container();
+        $this->messages = $messages;
+        $this->config = $config;
+        $this->token = $this->config->get('fb-messenger.app_token');
     }
 
     /**
+     * Boot to initialize process
+     *
+     * @return $this
+     */
+    public function boot()
+    {
+        $this->createHandler();
+        $this->createPostbacks();
+        return $this;
+    }
+
+    /**
+     * Create handlers
+     */
+    private function createHandler()
+    {
+        $handlers = $this->config->get('fb-messenger.handlers');
+        $autoTyping = $this->config->get('fb-messenger.auto_typing');
+        if ($autoTyping) {
+            $handlers[] = AutoTypingHandler::class;
+        }
+        foreach ($handlers as $item) {
+            $handler = $this->app->make($item);
+            if ($handler instanceof BaseHandler) {
+                $this->handlers[] = $handler->createBot($this->token);
+            }
+        }
+    }
+    /**
      * Create postbacks
      *
-     * @param $postbacks
      */
-    private function createPostbacks($postbacks)
+    private function createPostbacks()
     {
-        $app = new Container();
+        $postbacks = $this->config->get('fb-messenger.postbacks');
         foreach ($postbacks as $item) {
-            $postback = $app->make($item);
+            $postback = $this->app->make($item);
             if ($postback instanceof PostbackHandler) {
-                $this->postbacks[$postback->getPayload()] = $postback;
+                $this->postbacks[$postback->getPayload()] = $postback->createBot($this->token);
             }
         }
     }
@@ -60,7 +115,8 @@ class WebhookHandler
      */
     public function handle()
     {
-        $this->handler->getMessages()->each(function (ReceiveMessage $message) {
+        $this->boot();
+        $this->messages->each(function (ReceiveMessage $message) {
             if ($message->isPayload()) {
                 if (array_key_exists($message->getMessage(), $this->postbacks)) {
                     $this->postbacks[$message->getMessage()]->handle($message);
@@ -68,7 +124,9 @@ class WebhookHandler
                 return;
             }
 
-            $this->handler->handle($message);
+            foreach ($this->handlers as $handler) {
+                $handler->handle($message);
+            }
         });
     }
 }
