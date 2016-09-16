@@ -1,4 +1,5 @@
 <?php
+use Casperlaitw\LaravelFbMessenger\Exceptions\UnknownTypeException;
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
 
 /**
@@ -15,5 +16,13 @@ class ButtonTest extends TestCase
             'type' => 'element_share',
         ];
         $this->assertEquals($expected, $button->toData());
+    }
+
+    public function test_unknown_type_button()
+    {
+        $this->expectException(UnknownTypeException::class);
+
+        $button = new Button('unknown', '');
+        $button->toData();
     }
 }

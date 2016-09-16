@@ -8,6 +8,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\MessageInterface;
+use Casperlaitw\LaravelFbMessenger\Exceptions\UnknownTypeException;
 
 /**
  * Class Button
@@ -90,6 +91,7 @@ class Button implements MessageInterface
      * Make payload by type
      *
      * @return array
+     * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\UnknownTypeException
      */
     private function makePayload()
     {
@@ -103,7 +105,7 @@ class Button implements MessageInterface
                 $payload = ['url' => $this->payload];
                 break;
             default:
-                break;
+                throw new UnknownTypeException;
         }
 
         return $payload;
