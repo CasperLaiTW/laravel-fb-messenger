@@ -1,6 +1,7 @@
 <?php
 
 use Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection;
+use Casperlaitw\LaravelFbMessenger\Contracts\AutoTypingHandler;
 use Casperlaitw\LaravelFbMessenger\Contracts\BaseHandler;
 use Casperlaitw\LaravelFbMessenger\Contracts\PostbackHandler;
 use Casperlaitw\LaravelFbMessenger\Contracts\WebhookHandler;
@@ -104,6 +105,9 @@ class WebhookHandlerTest extends TestCase
 
         $webhook = new WebhookHandler($collection, $config);
         $webhook->handle();
+
+        $actual = $this->getPrivateProperty(WebhookHandler::class, 'handlers')->getValue($webhook);
+        $this->assertInstanceOf(AutoTypingHandler::class, $actual[0]);
     }
 }
 

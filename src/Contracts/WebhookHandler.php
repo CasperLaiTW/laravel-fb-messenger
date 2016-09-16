@@ -86,7 +86,7 @@ class WebhookHandler
         $handlers = $this->config->get('fb-messenger.handlers');
         $autoTyping = $this->config->get('fb-messenger.auto_typing');
         if ($autoTyping) {
-            $handlers[] = AutoTypingHandler::class;
+            array_unshift($handlers, AutoTypingHandler::class);
         }
         foreach ($handlers as $item) {
             $handler = $this->app->make($item);
