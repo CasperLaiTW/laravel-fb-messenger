@@ -16,27 +16,30 @@ composer install
 rm -rf ${sami}/build
 rm -rf ${sami}/cache
 rm -rf ${sami}/project
+rm -rf ${sami}/gh-pages
 
-mkdir -p ${sami}/build
-git init
-git config user.name "Travis Auto Deploy"
-git config user.email "$GIT_AUTH_EMAIL"
-git remote add upstream "https://$GH_TOKEN@github.com/CasperLaiTW/laravel-fb-messenger.git"
-git fetch upstream
-git checkout gh-pages
-
-cd ${sami}
+# compile
 git clone https://github.com/CasperLaiTW/laravel-fb-messenger.git ${sami}/project
-
 ${sami}/vendor/bin/sami.php update ${sami}/sami.php
 
+# copy to gh-pages
+git clone "https://$GH_TOKEN@github.com/CasperLaiTW/laravel-fb-messenger.git" ${sami}/gh-pages
+cd ${sami}/gh-pages
+git config user.name "Travis Auto Deploy"
+git config user.email "$GIT_AUTH_EMAIL"
+git checkout gh-pages || git checkout --orphan gh-pages
+git rm -rf .
+
+cp -R ${sami}/build/* ${sami}/gh-pages/
+
 # Deploy to gh-page
-cd ${sami}/build
+cd ${sami}/gh-pages
 git add -A .
 git commit -m "rebuild pages at ${rev}"
-git push -q upstream HEAD:gh-pages
+git push origin gh-pages -q
 
 # cleanup
 rm -rf ${sami}/build
 rm -rf ${sami}/cache
 rm -rf ${sami}/project
+rm -rf ${sami}/gh-pages

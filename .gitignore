@@ -10,4 +10,5 @@
 /scripts/sami/build/
 /scripts/sami/cache/
 /scripts/sami/project/
+/scripts/sami/gh-pages/
 .DS_Store
