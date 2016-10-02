@@ -15,6 +15,8 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment;
  */
 class Image extends Attachment
 {
+    use Quickable;
+
     /**
      * ImageMessage constructor.
      *
@@ -24,5 +26,16 @@ class Image extends Attachment
     public function __construct($sender, $image)
     {
         parent::__construct($sender, self::TYPE_IMAGE, ['url' => $image]);
+        $this->bootQuick();
+    }
+
+    /**
+     * To array for send api
+     *
+     * @return array
+     */
+    public function toData()
+    {
+        return $this->makeQuickReply(parent::toData());
     }
 }
