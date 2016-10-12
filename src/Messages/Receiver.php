@@ -53,9 +53,10 @@ class Receiver
         $messages = [];
         foreach ($this->messaging as $message) {
             // is payload
-            if (Arr::has($message, 'postback.payload')) {
+            if (Arr::has($message, 'postback.payload') || Arr::has($message, 'message.quick_reply.payload')) {
                 $messages[] = new ReceiveMessage(
-                    Arr::get($message, 'postback.payload'),
+                    Arr::get($message, 'message.text'),
+                    Arr::get($message, 'postback.payload', Arr::get($message, 'message.quick_reply.payload')),
                     Arr::get($message, 'sender.id'),
                     false,
                     true
@@ -65,12 +66,14 @@ class Receiver
 
             $messages[] = new ReceiveMessage(
                 Arr::get($message, 'message.text'),
+                '',
                 Arr::get($message, 'sender.id'),
                 Arr::has($message, 'delivery') ||
                 Arr::has($message, 'message.is_echo') ||
                 !Arr::has($message, 'message.text')
             );
         }
+
         $this->collection = new ReceiveMessageCollection($messages);
 
         if ($this->filterSkip) {

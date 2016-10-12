@@ -35,18 +35,24 @@ class ReceiveMessage
     private $payload;
 
     /**
+     * @var string
+     */
+    private $postback;
+
+    /**
      * Receive constructor.
      *
-     * @param      $message
-     * @param      $sender
-     * @param bool $skip
-     * @param bool $payload
+     * @param string     $message
+     * @param string     $sender
+     * @param bool       $skip
+     * @param bool       $payload
      *
      * @internal param bool $isDelivery
      */
-    public function __construct($message, $sender, $skip = false, $payload = false)
+    public function __construct($message, $postback, $sender, $skip = false, $payload = false)
     {
         $this->message = $message;
+        $this->postback = $postback;
         $this->sender = $sender;
         $this->skip = $skip;
         $this->payload = $payload;
@@ -82,6 +88,13 @@ class ReceiveMessage
         return $this->message;
     }
 
+    /**
+     * @return string
+     */
+    public function getPostback()
+    {
+        return $this->postback;
+    }
     /**
      * Is playload message
      *

@@ -56,7 +56,7 @@ class WebhookHandlerTest extends TestCase
         $message = m::mock(ReceiveMessage::class)
             ->shouldReceive('isPayload')
             ->andReturn(true)
-            ->shouldReceive('getMessage')
+            ->shouldReceive('getPostback')
             ->andReturn('MY_TEST_PAYLOAD')
             ->getMock();
 
