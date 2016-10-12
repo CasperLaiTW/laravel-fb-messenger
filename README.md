@@ -14,7 +14,7 @@ Easy to making your facebook messenger chatbot.
 ### Composer
 
 ```shell
-composer require casperlaitw/laravel-fb-messenger dev-master
+composer require casperlaitw/laravel-fb-messenger
 ```
 
 ### Laravel
