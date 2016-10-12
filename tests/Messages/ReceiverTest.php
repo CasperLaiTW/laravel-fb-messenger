@@ -30,7 +30,7 @@ class ReceiverTest extends TestCase
         $receiver = new Receiver($this->createRequestMock(self::$postbackJson));
         $this->assertInstanceOf(ReceiveMessageCollection::class, $receiver->getMessages());
         $actual = $receiver->getMessages()->first();
-        $this->assertEquals('USER_DEFINED_PAYLOAD', $actual->getMessage());
+        $this->assertEquals('USER_DEFINED_PAYLOAD', $actual->getPostback());
         $this->assertTrue($actual->isPayload());
     }
 
