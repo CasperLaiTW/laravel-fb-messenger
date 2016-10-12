@@ -17,6 +17,8 @@ use Casperlaitw\LaravelFbMessenger\Transformers\ButtonTransformer;
  */
 class ButtonTemplate extends Template
 {
+    use Quickable;
+
     /**
      * @var string
      */
@@ -34,6 +36,7 @@ class ButtonTemplate extends Template
         parent::__construct($sender);
         $this->add($elements);
         $this->text = $text;
+        $this->bootQuick();
     }
 
 
@@ -47,7 +50,8 @@ class ButtonTemplate extends Template
     {
         $payload = (new ButtonTransformer)->transform($this);
         $this->setPayload($payload);
-        return parent::toData();
+
+        return $this->makeQuickReply(parent::toData());
     }
 
     /**

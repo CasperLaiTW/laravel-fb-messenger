@@ -15,6 +15,8 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
  */
 class Text extends Message
 {
+    use Quickable;
+
     /**
      * @var
      */
@@ -30,6 +32,7 @@ class Text extends Message
     {
         parent::__construct($sender);
         $this->message = $message;
+        $this->bootQuick();
     }
 
     /**
@@ -39,13 +42,13 @@ class Text extends Message
      */
     public function toData()
     {
-        return [
+        return $this->makeQuickReply([
             'recipient' =>  [
                 'id' => $this->getSender(),
             ],
             'message' => [
                 'text' => $this->message,
             ],
-        ];
+        ]);
     }
 }
