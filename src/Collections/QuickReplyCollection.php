@@ -7,7 +7,6 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Collections;
 
-
 use Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException;
 use Casperlaitw\LaravelFbMessenger\Messages\QuickReply;
 
