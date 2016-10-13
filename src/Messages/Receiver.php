@@ -72,7 +72,7 @@ class Receiver
                 '',
                 Arr::get($message, 'recipient.id'),
                 Arr::get($message, 'sender.id'),
-                Arr::has($message, 'delivery') || Arr::has($message, 'message.is_echo') || !Arr::has($message, 'message.text'),
+                Arr::has($message, 'delivery') || Arr::has($message, 'message.is_echo') || !Arr::has($message, 'message.text') || !Arr::has($message, 'message.attachments'),
                 false,
                 Arr::has($message, 'message.attachments') ? Arr::get($message, 'message.attachments') : false
             );
