@@ -11,6 +11,10 @@ namespace Casperlaitw\LaravelFbMessenger\Messages;
  * Class ReceiveMessage
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
+/**
+ * Class ReceiveMessage
+ * @package Casperlaitw\LaravelFbMessenger\Messages
+ */
 class ReceiveMessage
 {
 
@@ -40,19 +44,27 @@ class ReceiveMessage
     private $postback;
 
     /**
+     * @var string
+     */
+    private $recipient;
+
+    /**
      * Receive constructor.
      *
-     * @param string     $message
-     * @param string     $sender
-     * @param bool       $skip
-     * @param bool       $payload
+     * @param string $message
+     * @param string $postback
+     * @param string $recipient
+     * @param string $sender
+     * @param bool $skip
+     * @param bool $payload
      *
      * @internal param bool $isDelivery
      */
-    public function __construct($message, $postback, $sender, $skip = false, $payload = false)
+    public function __construct($message, $postback, $recipient, $sender, $skip = false, $payload = false)
     {
         $this->message = $message;
         $this->postback = $postback;
+        $this->recipient = $recipient;
         $this->sender = $sender;
         $this->skip = $skip;
         $this->payload = $payload;
@@ -89,6 +101,7 @@ class ReceiveMessage
     }
 
     /**
+     * Get postback payload
      * @return string
      */
     public function getPostback()
@@ -103,5 +116,14 @@ class ReceiveMessage
     public function isPayload()
     {
         return $this->payload;
+    }
+
+    /**
+     * Get recipient id
+     * @return string
+     */
+    public function getRecipient()
+    {
+        return $this->recipient;
     }
 }

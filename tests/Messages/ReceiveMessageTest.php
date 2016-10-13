@@ -18,9 +18,12 @@ class ReceiveMessageTest extends TestCase
 
     private $postback;
 
+    private $recipient;
+
     public function setUp()
     {
         $this->message = str_random();
+        $this->recipient = str_random();
         $this->sender = str_random();
         $this->postback = str_random();
         $this->skip = true;
@@ -57,8 +60,14 @@ class ReceiveMessageTest extends TestCase
         $this->assertEquals($this->postback, $actual->getPostback());
     }
 
+    public function test_get_recipient()
+    {
+        $actual = $this->getReceiveMessage();
+        $this->assertEquals($this->recipient, $actual->getRecipient());
+    }
+
     private function getReceiveMessage()
     {
-        return new ReceiveMessage($this->message, $this->postback, $this->sender, $this->skip, $this->payload);
+        return new ReceiveMessage($this->message, $this->postback, $this->recipient, $this->sender, $this->skip, $this->payload);
     }
 }
