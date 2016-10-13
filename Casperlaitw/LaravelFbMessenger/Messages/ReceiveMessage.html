@@ -100,7 +100,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>($message, $postback, $sender, $skip = false, $payload = false)
+                    <a href="#method___construct">__construct</a>(string $message, string $postback, string $recipient, string $sender, bool $skip = false, bool $payload = false)
         
                                             <p>Receive constructor.</p>                </div>
                 <div class="col-md-2"></div>
@@ -142,8 +142,7 @@
                 <div class="col-md-8 type">
                     <a href="#method_getPostback">getPostback</a>()
         
-                                            <p class="no-description">No description</p>
-                                    </div>
+                                            <p>Get postback payload</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -156,6 +155,16 @@
                                             <p>Is playload message</p>                </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRecipient">getRecipient</a>()
+        
+                                            <p>Get recipient id</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -164,9 +173,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         line 52</div>
+        <div class="location">at line         line 63</div>
         <code>                    
-    <strong>__construct</strong>($message, $postback, $sender, $skip = false, $payload = false)
+    <strong>__construct</strong>(string $message, string $postback, string $recipient, string $sender, bool $skip = false, bool $payload = false)
         </code>
     </h3>
     <div class="details">
@@ -180,27 +189,32 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td></td>
+                <td>string</td>
                 <td>$message</td>
                 <td></td>
             </tr>
                     <tr>
-                <td></td>
+                <td>string</td>
                 <td>$postback</td>
                 <td></td>
             </tr>
                     <tr>
+                <td>string</td>
+                <td>$recipient</td>
                 <td></td>
+            </tr>
+                    <tr>
+                <td>string</td>
                 <td>$sender</td>
                 <td></td>
             </tr>
                     <tr>
-                <td></td>
+                <td>bool</td>
                 <td>$skip</td>
                 <td></td>
             </tr>
                     <tr>
-                <td></td>
+                <td>bool</td>
                 <td>$payload</td>
                 <td></td>
             </tr>
@@ -215,7 +229,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_isSkip">
-        <div class="location">at line         line 66</div>
+        <div class="location">at line         line 78</div>
         <code>                    bool
     <strong>isSkip</strong>()
         </code>
@@ -245,7 +259,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getSender">
-        <div class="location">at line         line 76</div>
+        <div class="location">at line         line 88</div>
         <code>                    string
     <strong>getSender</strong>()
         </code>
@@ -275,7 +289,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getMessage">
-        <div class="location">at line         line 86</div>
+        <div class="location">at line         line 98</div>
         <code>                    string
     <strong>getMessage</strong>()
         </code>
@@ -305,7 +319,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getPostback">
-        <div class="location">at line         line 94</div>
+        <div class="location">at line         line 107</div>
         <code>                    string
     <strong>getPostback</strong>()
         </code>
@@ -314,6 +328,8 @@
             
     
 
+                    <div class="method-description">
+                                    <p>Get postback payload</p>                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -333,7 +349,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_isPayload">
-        <div class="location">at line         line 103</div>
+        <div class="location">at line         line 116</div>
         <code>                    boolean
     <strong>isPayload</strong>()
         </code>
@@ -351,6 +367,36 @@
                     <table class="table table-condensed">
         <tr>
             <td>boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRecipient">
+        <div class="location">at line         line 125</div>
+        <code>                    string
+    <strong>getRecipient</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get recipient id</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
             <td></td>
         </tr>
     </table>
