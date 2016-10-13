@@ -40,7 +40,7 @@ class Receiver
      */
     public function __construct(Request $request, $filterSkip = true)
     {
-        $this->messaging = $request->input('entry.0.messaging');
+        $this->messaging = $request->input('entry.0.messaging') ? $request->input('entry.0.messaging') : [];
         $this->filterSkip = $filterSkip;
         $this->boot();
     }
