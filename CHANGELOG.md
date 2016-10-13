@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.0.0...v1.1.0) (2016-10-13)
+
+
+### Features
+
+* Added recipient id in ReceiveMessage ([4e72ebd](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/4e72ebd))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2016-10-12)
 
