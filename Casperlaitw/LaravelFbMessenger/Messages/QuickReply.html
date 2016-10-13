@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Casperlaitw\LaravelFbMessenger\Messages\Receiver | Laravel Facebook Messenger API</title>
+    <title>Casperlaitw\LaravelFbMessenger\Messages\QuickReply | Laravel Facebook Messenger API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Casperlaitw_LaravelFbMessenger_Messages_Receiver" data-root-path="../../../">
+    <body id="class" data-name="class:Casperlaitw_LaravelFbMessenger_Messages_QuickReply" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -67,27 +67,27 @@
                                         <li><a href="../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li>
                                         <li><a href="../../../Casperlaitw/LaravelFbMessenger/Messages.html">Messages</a></li>
     
-                <li>Receiver</li>
+                <li>QuickReply</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            Receiver
+            QuickReply
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>Receiver</strong>
+    <strong>QuickReply</strong>        extends <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a>
 </p>
 
         
     
 
             <div class="description">
-            <p>Class Receiver</p>                    </div>
+            <p>Class QuickReply</p>                    </div>
     
     
     
@@ -100,19 +100,29 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<abbr title="Illuminate\Http\Request">Request</abbr> $request, bool $filterSkip = true)
+                    <a href="#method___construct">__construct</a>($title, $payload)
         
-                                            <p>Receiver constructor.</p>                </div>
+                                            <p>QuickReply constructor.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/ReceiveMessageCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection">ReceiveMessageCollection</abbr></a>
+                    mixed
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getMessages">getMessages</a>()
+                    <a href="#method_getSender">getSender</a>()
         
-                                            <p>Get message collection</p>                </div>
+                                            <p>Get sender id</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html#method_getSender"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toData">toData</a>()
+        
+                                            <p>To array for send api</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -123,9 +133,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         line 41</div>
+        <div class="location">at line         line 34</div>
         <code>                    
-    <strong>__construct</strong>(<abbr title="Illuminate\Http\Request">Request</abbr> $request, bool $filterSkip = true)
+    <strong>__construct</strong>($title, $payload)
         </code>
     </h3>
     <div class="details">
@@ -133,19 +143,19 @@
     
 
                     <div class="method-description">
-                                    <p>Receiver constructor.</p>                                </div>
+                                    <p>QuickReply constructor.</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="Illuminate\Http\Request">Request</abbr></td>
-                <td>$request</td>
+                <td></td>
+                <td>$title</td>
                 <td></td>
             </tr>
                     <tr>
-                <td>bool</td>
-                <td>$filterSkip</td>
+                <td></td>
+                <td>$payload</td>
                 <td></td>
             </tr>
             </table>
@@ -158,10 +168,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getMessages">
-        <div class="location">at line         line 89</div>
-        <code>                    <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/ReceiveMessageCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection">ReceiveMessageCollection</abbr></a>
-    <strong>getMessages</strong>()
+                    <h3 id="method_getSender">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html#method_getSender"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a> at line         line 35</div>
+        <code>                    mixed
+    <strong>getSender</strong>()
         </code>
     </h3>
     <div class="details">
@@ -169,14 +179,44 @@
     
 
                     <div class="method-description">
-                                    <p>Get message collection</p>                                </div>
+                                    <p>Get sender id</p>                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../../Casperlaitw/LaravelFbMessenger/Collections/ReceiveMessageCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection">ReceiveMessageCollection</abbr></a></td>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toData">
+        <div class="location">at line         line 45</div>
+        <code>                    array
+    <strong>toData</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>To array for send api</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
             <td></td>
         </tr>
     </table>

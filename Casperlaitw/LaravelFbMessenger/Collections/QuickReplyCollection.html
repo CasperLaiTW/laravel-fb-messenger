@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage | Laravel Facebook Messenger API</title>
+    <title>Casperlaitw\LaravelFbMessenger\Collections\QuickReplyCollection | Laravel Facebook Messenger API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Casperlaitw_LaravelFbMessenger_Messages_ReceiveMessage" data-root-path="../../../">
+    <body id="class" data-name="class:Casperlaitw_LaravelFbMessenger_Collections_QuickReplyCollection" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -65,29 +65,29 @@
                 <li><span class="label label-default">class</span></li>
                                                             <li><a href="../../../Casperlaitw.html">Casperlaitw</a></li>
                                         <li><a href="../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li>
-                                        <li><a href="../../../Casperlaitw/LaravelFbMessenger/Messages.html">Messages</a></li>
+                                        <li><a href="../../../Casperlaitw/LaravelFbMessenger/Collections.html">Collections</a></li>
     
-                <li>ReceiveMessage</li>
+                <li>QuickReplyCollection</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            ReceiveMessage
+            QuickReplyCollection
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>ReceiveMessage</strong>
+    <strong>QuickReplyCollection</strong>        extends <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/BaseCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\BaseCollection">BaseCollection</abbr></a>
 </p>
 
         
     
 
             <div class="description">
-            <p>Class ReceiveMessage</p>                    </div>
+            <p>Class QuickReplyCollection</p>                    </div>
     
     
     
@@ -97,12 +97,42 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getElements">getElements</a>()
+        
+                                            <p>Get elements</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Collections/BaseCollection.html#method_getElements"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\BaseCollection">BaseCollection</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>($message, $postback, $sender, $skip = false, $payload = false)
+                    <a href="#method_add">add</a>($element)
         
-                                            <p>Receive constructor.</p>                </div>
+                                            <p>Add item to collection</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Collections/BaseCollection.html#method_add"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\BaseCollection">BaseCollection</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toData">toData</a>()
+        
+                                            <p>Get all elements array data</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Collections/BaseCollection.html#method_toData"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\BaseCollection">BaseCollection</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_validator">validator</a>($element)
+        
+                                            <p>Validate collection item</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -110,50 +140,10 @@
                     bool
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_isSkip">isSkip</a>()
-        
-                                            <p>Is skip the message</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    string
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getSender">getSender</a>()
-        
-                                            <p>Get sender</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    string
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getMessage">getMessage</a>()
-        
-                                            <p>Get message</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    string
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getPostback">getPostback</a>()
+                    <a href="#method_isEmpty">isEmpty</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    boolean
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_isPayload">isPayload</a>()
-        
-                                            <p>Is playload message</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -163,10 +153,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at line         line 52</div>
-        <code>                    
-    <strong>__construct</strong>($message, $postback, $sender, $skip = false, $payload = false)
+                    <h3 id="method_getElements">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/BaseCollection.html#method_getElements"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\BaseCollection">BaseCollection</abbr></a> at line         line 28</div>
+        <code>                    array
+    <strong>getElements</strong>()
         </code>
     </h3>
     <div class="details">
@@ -174,34 +164,44 @@
     
 
                     <div class="method-description">
-                                    <p>Receive constructor.</p>                                </div>
+                                    <p>Get elements</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_add">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/BaseCollection.html#method_add"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\BaseCollection">BaseCollection</abbr></a> at line         line 38</div>
+        <code>                    
+    <strong>add</strong>($element)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Add item to collection</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td></td>
-                <td>$message</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td></td>
-                <td>$postback</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td></td>
-                <td>$sender</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td></td>
-                <td>$skip</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td></td>
-                <td>$payload</td>
+                <td>$element</td>
                 <td></td>
             </tr>
             </table>
@@ -214,10 +214,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_isSkip">
-        <div class="location">at line         line 66</div>
-        <code>                    bool
-    <strong>isSkip</strong>()
+                    <h3 id="method_toData">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/BaseCollection.html#method_toData"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\BaseCollection">BaseCollection</abbr></a> at line         line 50</div>
+        <code>                    array
+    <strong>toData</strong>()
         </code>
     </h3>
     <div class="details">
@@ -225,8 +225,48 @@
     
 
                     <div class="method-description">
-                                    <p>Is skip the message</p>                                </div>
+                                    <p>Get all elements array data</p>                                </div>
                 <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_validator">
+        <div class="location">at line         line 35</div>
+        <code>                    bool
+    <strong>validator</strong>($element)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Validate collection item</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$element</td>
+                <td></td>
+            </tr>
+            </table>
+
             
                             <h4>Return Value</h4>
 
@@ -238,76 +278,25 @@
     </table>
 
             
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getSender">
-        <div class="location">at line         line 76</div>
-        <code>                    string
-    <strong>getSender</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Get sender</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
+                            <h4>Exceptions</h4>
 
                     <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td></td>
-        </tr>
-    </table>
+                    <tr>
+                <td><a href="../../../Casperlaitw/LaravelFbMessenger/Exceptions/ValidatorStructureException.html"><abbr title="Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException">ValidatorStructureException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
 
-            
             
                     </div>
     </div>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getMessage">
-        <div class="location">at line         line 86</div>
-        <code>                    string
-    <strong>getMessage</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Get message</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getPostback">
-        <div class="location">at line         line 94</div>
-        <code>                    string
-    <strong>getPostback</strong>()
+                    <h3 id="method_isEmpty">
+        <div class="location">at line         line 22</div>
+        <code>                    bool
+    <strong>isEmpty</strong>()
         </code>
     </h3>
     <div class="details">
@@ -320,37 +309,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_isPayload">
-        <div class="location">at line         line 103</div>
-        <code>                    boolean
-    <strong>isPayload</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Is playload message</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>boolean</td>
+            <td>bool</td>
             <td></td>
         </tr>
     </table>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Casperlaitw\LaravelFbMessenger\Messages\Receiver | Laravel Facebook Messenger API</title>
+    <title>Casperlaitw\LaravelFbMessenger\Messages\Quickable | Laravel Facebook Messenger API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Casperlaitw_LaravelFbMessenger_Messages_Receiver" data-root-path="../../../">
+    <body id="class" data-name="class:Casperlaitw_LaravelFbMessenger_Messages_Quickable" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -62,32 +62,32 @@
 
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
-                <li><span class="label label-default">class</span></li>
+                <li><span class="label label-default">trait</span></li>
                                                             <li><a href="../../../Casperlaitw.html">Casperlaitw</a></li>
                                         <li><a href="../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li>
                                         <li><a href="../../../Casperlaitw/LaravelFbMessenger/Messages.html">Messages</a></li>
     
-                <li>Receiver</li>
+                <li>Quickable</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            Receiver
+            Quickable
                 
         </h1>
     </div>
 
-    <p>    class
-    <strong>Receiver</strong>
+    <p>    trait
+    <strong>Quickable</strong>
 </p>
 
         
     
 
             <div class="description">
-            <p>Class Receiver</p>                    </div>
+            <p>Class Quickable</p>                    </div>
     
     
     
@@ -100,19 +100,42 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<abbr title="Illuminate\Http\Request">Request</abbr> $request, bool $filterSkip = true)
+                    <a href="#method_bootQuick">bootQuick</a>()
         
-                                            <p>Receiver constructor.</p>                </div>
+                                            <p>Boot quick</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/ReceiveMessageCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection">ReceiveMessageCollection</abbr></a>
+                    <abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getMessages">getMessages</a>()
+                    <a href="#method_addQuick">addQuick</a>($quick)
         
-                                            <p>Get message collection</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isEmpty">isEmpty</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_makeQuickReply">makeQuickReply</a>($data = array())
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -122,10 +145,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at line         line 41</div>
+                    <h3 id="method_bootQuick">
+        <div class="location">at line         line 26</div>
         <code>                    
-    <strong>__construct</strong>(<abbr title="Illuminate\Http\Request">Request</abbr> $request, bool $filterSkip = true)
+    <strong>bootQuick</strong>()
         </code>
     </h3>
     <div class="details">
@@ -133,23 +156,8 @@
     
 
                     <div class="method-description">
-                                    <p>Receiver constructor.</p>                                </div>
+                                    <p>Boot quick</p>                                </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><abbr title="Illuminate\Http\Request">Request</abbr></td>
-                <td>$request</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>bool</td>
-                <td>$filterSkip</td>
-                <td></td>
-            </tr>
-            </table>
-
             
             
             
@@ -158,25 +166,99 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getMessages">
-        <div class="location">at line         line 89</div>
-        <code>                    <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/ReceiveMessageCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection">ReceiveMessageCollection</abbr></a>
-    <strong>getMessages</strong>()
+                    <h3 id="method_addQuick">
+        <div class="location">at line         line 36</div>
+        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr>
+    <strong>addQuick</strong>($quick)
         </code>
     </h3>
     <div class="details">
             
     
 
-                    <div class="method-description">
-                                    <p>Get message collection</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$quick</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isEmpty">
+        <div class="location">at line         line 46</div>
+        <code>                    bool
+    <strong>isEmpty</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
                 <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../../Casperlaitw/LaravelFbMessenger/Collections/ReceiveMessageCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection">ReceiveMessageCollection</abbr></a></td>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_makeQuickReply">
+        <div class="location">at line         line 56</div>
+        <code>                    array
+    <strong>makeQuickReply</strong>($data = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$data</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
             <td></td>
         </tr>
     </table>
