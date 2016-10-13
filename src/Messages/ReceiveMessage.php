@@ -49,6 +49,11 @@ class ReceiveMessage
     private $recipient;
 
     /**
+     * @var array
+     */
+    private $attachment;
+
+    /**
      * Receive constructor.
      *
      * @param string $message
@@ -60,7 +65,7 @@ class ReceiveMessage
      *
      * @internal param bool $isDelivery
      */
-    public function __construct($message, $postback, $recipient, $sender, $skip = false, $payload = false)
+    public function __construct($message, $postback, $recipient, $sender, $skip = false, $payload = false, $attachment = false)
     {
         $this->message = $message;
         $this->postback = $postback;
@@ -68,6 +73,7 @@ class ReceiveMessage
         $this->sender = $sender;
         $this->skip = $skip;
         $this->payload = $payload;
+        $this->attachment = $attachment;
     }
 
     /**

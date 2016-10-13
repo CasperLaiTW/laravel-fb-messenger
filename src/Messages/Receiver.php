@@ -56,11 +56,13 @@ class Receiver
             if (Arr::has($message, 'postback.payload') || Arr::has($message, 'message.quick_reply.payload')) {
                 $messages[] = new ReceiveMessage(
                     Arr::get($message, 'message.text'),
-                    Arr::get($message, 'postback.payload', Arr::get($message, 'message.quick_reply.payload')),
+                    Arr::get($message, 'postback.payload', 
+                    //Arr::get($message, 'message.quick_reply.payload')),
                     Arr::get($message, 'recipient.id'),
                     Arr::get($message, 'sender.id'),
                     false,
-                    true
+                    true,
+                    false
                 );
                 continue;
             }
@@ -70,9 +72,9 @@ class Receiver
                 '',
                 Arr::get($message, 'recipient.id'),
                 Arr::get($message, 'sender.id'),
-                Arr::has($message, 'delivery') ||
-                Arr::has($message, 'message.is_echo') ||
-                !Arr::has($message, 'message.text')
+                Arr::has($message, 'delivery') || Arr::has($message, 'message.is_echo') || !Arr::has($message, 'message.text'),
+                false,
+                Arr::has($message, 'attachments') ? Arr::get($message, 'attachments') : false
             );
         }
 
