@@ -57,7 +57,7 @@ class Receiver
                 $messages[] = new ReceiveMessage(
                     Arr::get($message, 'message.text'),
                     Arr::get($message, 'postback.payload', 
-                    //Arr::get($message, 'message.quick_reply.payload')),
+                    Arr::get($message, 'message.quick_reply.payload')),
                     Arr::get($message, 'recipient.id'),
                     Arr::get($message, 'sender.id'),
                     false,
