@@ -137,7 +137,7 @@ class ReceiveMessage
      * Get attachements
      * @return array
      */
-    public function getAttachments() 
+    public function getAttachments()
     {
         return $this->attachments;
     }
