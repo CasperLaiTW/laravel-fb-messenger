@@ -83,6 +83,32 @@ class WebhookControllerTest extends TestCase
         $controller = new WebhookController($config);
         $controller->receive($request);
     }
+
+    public function test_receive_request_is_empty()
+    {
+        $config = m::mock(Repository::class);
+        $config
+            ->shouldReceive('get')
+            ->with('fb-messenger.handlers')
+            ->andReturn([DefaultHandler::class])
+            ->shouldReceive('get')
+            ->with('fb-messenger.app_token')
+            ->shouldReceive('get')
+            ->with('fb-messenger.postbacks')
+            ->andReturn([])
+            ->shouldReceive('get')
+            ->with('fb-messenger.auto_typing')
+            ->andReturn(false);
+
+        $request = m::mock(Request::class)
+            ->shouldReceive('input')
+            ->with('entry.0.messaging')
+            ->andReturnNull()
+            ->getMock();
+
+        $controller = new WebhookController($config);
+        $controller->receive($request);
+    }
 }
 
 class HandlerNotExtendsBaseHandlerStub
