@@ -68,6 +68,12 @@ class ReceiveMessageTest extends TestCase
 
     private function getReceiveMessage()
     {
-        return new ReceiveMessage($this->message, $this->postback, $this->recipient, $this->sender, $this->skip, $this->payload);
+        $message = new ReceiveMessage($this->recipient, $this->sender);
+        $message
+            ->setMessage($this->message)
+            ->setPostback($this->postback)
+            ->setSkip($this->skip)
+            ->setPayload($this->payload);
+        return $message;
     }
 }

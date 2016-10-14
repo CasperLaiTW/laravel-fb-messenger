@@ -52,30 +52,31 @@ class Receiver
     {
         $messages = [];
         foreach ($this->messaging as $message) {
+            $receiveMessage = new ReceiveMessage(Arr::get($message, 'recipient.id'), Arr::get($message, 'sender.id'));
             // is payload
             if (Arr::has($message, 'postback.payload') || Arr::has($message, 'message.quick_reply.payload')) {
-                $messages[] = new ReceiveMessage(
-                    Arr::get($message, 'message.text'),
-                    Arr::get($message, 'postback.payload',
-                    Arr::get($message, 'message.quick_reply.payload')),
-                    Arr::get($message, 'recipient.id'),
-                    Arr::get($message, 'sender.id'),
-                    false,
-                    true,
-                    false
-                );
-                continue;
+                $receiveMessage
+                    ->setMessage(Arr::get($message, 'message.text'))
+                    ->setPostback(Arr::get(
+                        $message,
+                        'postback.payload',
+                        Arr::get(
+                            $message,
+                            'message.quick_reply.payload'
+                        )
+                    ))
+                    ->setPayload(true);
+            } else {
+                $receiveMessage
+                    ->setMessage(Arr::get($message, 'message.text'))
+                    ->setSkip(Arr::has($message, 'delivery') ||
+                        Arr::has($message, 'message.is_echo') ||
+                        (!Arr::has($message, 'message.text') && !Arr::has($message, 'message.attachments'))
+                    )
+                    ->setAttachments(Arr::get($message, 'message.attachments', []));
             }
 
-            $messages[] = new ReceiveMessage(
-                Arr::get($message, 'message.text'),
-                '',
-                Arr::get($message, 'recipient.id'),
-                Arr::get($message, 'sender.id'),
-                Arr::has($message, 'delivery') || Arr::has($message, 'message.is_echo') || (!Arr::has($message, 'message.text') && !Arr::has($message, 'message.attachments')),
-                false,
-                Arr::has($message, 'message.attachments') ? Arr::get($message, 'message.attachments') : false
-            );
+            $messages[] = $receiveMessage;
         }
 
         $this->collection = new ReceiveMessageCollection($messages);
