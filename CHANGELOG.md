@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.2"></a>
+# [1.1.2](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.1...v1.1.2) (2016-10-24)
+
+
+### Features
+
+* Support regex payload ([a02fd1d](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/a02fd1d)), closes [#35](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/35)
+
+
+
 <a name="1.1.1"></a>
 # [1.1.1](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.0...v1.1.1) (2016-10-14)
 
