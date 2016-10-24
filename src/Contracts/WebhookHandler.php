@@ -26,7 +26,7 @@ class WebhookHandler
     /**
      * @var array
      */
-    private $postbacks;
+    private $postbacks = [];
 
     /**
      * Access token
@@ -116,10 +116,14 @@ class WebhookHandler
     public function handle()
     {
         $this->boot();
-        $this->messages->each(function (ReceiveMessage $message) {
+        $postbackKeys = array_keys($this->postbacks);
+        $this->messages->each(function (ReceiveMessage $message) use ($postbackKeys) {
             if ($message->isPayload()) {
-                if (array_key_exists($message->getPostback(), $this->postbacks)) {
-                    $this->postbacks[$message->getPostback()]->handle($message);
+                foreach ($postbackKeys as $postbackKey) {
+                    if (preg_match("/$postbackKey/", $message->getPostback())) {
+                        $this->postbacks[$postbackKey]->handle($message);
+                        break;
+                    }
                 }
                 return;
             }
