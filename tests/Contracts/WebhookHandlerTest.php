@@ -30,7 +30,7 @@ class WebhookHandlerTest extends TestCase
             ->with('fb-messenger.app_token')
             ->shouldReceive('get')
             ->with('fb-messenger.postbacks')
-            ->andReturn([PostbackHandlerStub::class])
+            ->andReturn([PostbackHandlerStub::class, RegexPayloadPostbackHandlerStub::class])
             ->shouldReceive('get')
             ->with('fb-messenger.auto_typing')
             ->andReturn(false);
@@ -51,7 +51,7 @@ class WebhookHandlerTest extends TestCase
         $this->assertEquals('MY_TEST_PAYLOAD', $actual['MY_TEST_PAYLOAD']->getPayload());
     }
 
-    public function test_postback_handler_and_run()
+    public function test_postback_handler_and_string_payload()
     {
         $message = m::mock(ReceiveMessage::class)
             ->shouldReceive('isPayload')
@@ -64,6 +64,24 @@ class WebhookHandlerTest extends TestCase
 
         $webhook = new WebhookHandler($collection, $this->config);
         $webhook->handle();
+    }
+
+    public function test_postback_handler_and_regex_payload()
+    {
+        $message = m::mock(ReceiveMessage::class)
+            ->shouldReceive('isPayload')
+            ->andReturn(true)
+            ->shouldReceive('getPostback')
+            ->andReturn('MY_RED_1')
+            ->getMock();
+
+        $collection = new ReceiveMessageCollection([$message]);
+
+        $webhook = new WebhookHandler($collection, $this->config);
+        $webhook->handle();
+
+        $actual = $this->getPrivateProperty(WebhookHandler::class, 'postbacks')->getValue($webhook);
+        $this->assertTrue($actual['^MY_RED_\d+$']->success);
     }
 
     public function test_base_handler_and_run()
@@ -141,5 +159,24 @@ class PostbackHandlerStub extends PostbackHandler
     public function handle(ReceiveMessage $message)
     {
         // TODO: Implement handle() method.
+    }
+}
+
+class RegexPayloadPostbackHandlerStub extends PostbackHandler
+{
+    protected $payload = '^MY_RED_\d+$';
+
+    public $success = false;
+
+    /**
+     * Handle the chatbot message
+     *
+     * @param ReceiveMessage $message
+     *
+     * @return mixed
+     */
+    public function handle(ReceiveMessage $message)
+    {
+        $this->success = true;
     }
 }
