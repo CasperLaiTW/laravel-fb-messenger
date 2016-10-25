@@ -36,4 +36,12 @@ class RouteServiceProvider extends ServiceProvider
             });
         }
     }
+
+    /**
+     * Stub required to satisfy Laravel 5.1's ServiceProvider
+     */
+    public function register()
+    {
+        //
+    }
 }
