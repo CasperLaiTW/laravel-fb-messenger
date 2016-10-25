@@ -50,15 +50,18 @@ class RouteServiceProviderTest extends TestCase
                 $closure($this->router);
             })
             ->shouldReceive('get')
-            ->once()
             ->andReturnNull()
             ->shouldReceive('post')
-            ->once()
             ->andReturnNull();
     }
 
     public function test_boot()
     {
         $this->assertNull($this->serviceProvider->boot($this->router));
+    }
+
+    public function test_register()
+    {
+        $this->assertNull($this->serviceProvider->register());
     }
 }
