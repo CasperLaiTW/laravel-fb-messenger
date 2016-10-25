@@ -45,14 +45,23 @@ class AttachmentTest extends TestCase
 
     public function test_enable_reuse()
     {
-        $this->attachment->setEnableReuse();
+        $this->attachment->enableReuse();
         $this->assertArraySubset(['is_reusable' => true], $this->attachment->getPayload());
     }
 
     public function test_disable_reuse()
     {
-        $this->attachment->setDisableReuse();
+        $this->attachment->disableReuse();
         $this->assertArrayNotHasKey('is_reusable', $this->attachment->getPayload());
+    }
+
+    public function test_set_attachment_id()
+    {
+        $id = str_random();
+        $this->attachment->setAttachmentId($id);
+
+        $this->assertEquals(['attachment_id' => $id], $this->attachment->getPayload());
+        $this->assertArrayNotHasKey('url', $this->attachment->getPayload());
     }
 }
 

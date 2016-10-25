@@ -97,7 +97,7 @@ abstract class Attachment extends Message
      *
      * @return $this
      */
-    public function setEnableReuse()
+    public function enableReuse()
     {
         $this->payload['is_reusable'] = true;
         return $this;
@@ -108,9 +108,24 @@ abstract class Attachment extends Message
      *
      * @return $this
      */
-    public function setDisableReuse()
+    public function disableReuse()
     {
         unset($this->payload['is_reusable']);
+        return $this;
+    }
+
+    /**
+     * Set attachment id
+     *
+     * @param $id
+     *
+     * @return $this
+     */
+    public function setAttachmentId($id)
+    {
+        $this->payload['attachment_id'] = $id;
+        unset($this->payload['url']);
+
         return $this;
     }
 

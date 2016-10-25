@@ -37,7 +37,7 @@ class HandleMessageResponse
         if (!empty($this->response['error'])) {
             return $this->handleError($this->response['error']);
         }
-        return $this->response['result'];
+        return array_get($this->response, 'result', $this->response);
     }
 
     /**
