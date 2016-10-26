@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.3"></a>
+## [1.1.3](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.2...v1.1.3) (2016-10-26)
+
+### Enhancement
+
+* Relax guzzle requirement ([53759b9](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/53759b9)), closes [#38](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/38)
+
+
 <a name="1.1.2"></a>
 # [1.1.2](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.1...v1.1.2) (2016-10-24)
 
