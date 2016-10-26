@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Casperlaitw\LaravelFbMessenger\Messages\GenericTemplate | Laravel Facebook Messenger API</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/sami.css">
+        <script src="../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Casperlaitw_LaravelFbMessenger_Messages_GenericTemplate" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                    <form action="#" method="GET">
+                <select id="version-switcher" name="version">
+                                            <option value="../../../../1.1/index.html" selected>1.1</option>
+                                            <option value="../../../../master/index.html">Master</option>
+                                    </select>
+            </form>
+                <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">Laravel Facebook Messenger API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                                                            <li><a href="../../../Casperlaitw.html">Casperlaitw</a></li>
+                                        <li><a href="../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li>
+                                        <li><a href="../../../Casperlaitw/LaravelFbMessenger/Messages.html">Messages</a></li>
+    
+                <li>GenericTemplate</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            GenericTemplate
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>GenericTemplate</strong>        extends <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/GenericTemplate.php">View source</a>)
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Class GenericTemplate</p>                    </div>
+    
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Class Quickable
+                </div>
+            </div>
+            </div>
+    
+            <h2>Constants</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td>TYPE_IMAGE</td>
+                <td class="last">
+                    <p><em>Image type</em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>TYPE_AUDIO</td>
+                <td class="last">
+                    <p><em>Audio type</em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>TYPE_VIDEO</td>
+                <td class="last">
+                    <p><em>Video type</em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>TYPE_FILE</td>
+                <td class="last">
+                    <p><em>File type</em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>TYPE_LOCATION</td>
+                <td class="last">
+                    <p><em>Location type</em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>TYPE_TEMPLATE</td>
+                <td class="last">
+                    <p><em>Template type</em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>($sender, $elements = array())
+        
+                                            <p>Generic constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSender">getSender</a>()
+        
+                                            <p>Get sender id</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html#method_getSender"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toData">toData</a>()
+        
+                                            <p>To array for send api</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getPayload">getPayload</a>()
+        
+                                            <p>Get payload</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_getPayload"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setPayload">setPayload</a>(array $payload)
+        
+                                            <p>Set Payload</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_setPayload"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setEnableReuse">setEnableReuse</a>()
+        
+                                            <p>Enable reuse</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_setEnableReuse"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDisableReuse">setDisableReuse</a>()
+        
+                                            <p>Disable reuse</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_setDisableReuse"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_add">add</a>($elements)
+        
+                                            <p>Add elements</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#method_add"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___call">__call</a>($name, $arguments)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#method___call"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/BaseCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\BaseCollection">BaseCollection</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getCollections">getCollections</a>()
+        
+                                            <p>Get collection</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#method_getCollections"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_bootQuick">bootQuick</a>()
+        
+                                            <p>Boot quick</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_bootQuick"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addQuick">addQuick</a>($quick)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_addQuick"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isEmpty">isEmpty</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_isEmpty"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_makeQuickReply">makeQuickReply</a>($data = array())
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_makeQuickReply"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a></small></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/GenericTemplate.php#L28">line 28</a></div>
+        <code>                    
+    <strong>__construct</strong>($sender, $elements = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Generic constructor.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$sender</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$elements</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSender">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html#method_getSender"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Message.php#L35">line 35</a></div>
+        <code>                    mixed
+    <strong>getSender</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get sender id</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toData">
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/GenericTemplate.php#L40">line 40</a></div>
+        <code>                    array
+    <strong>toData</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>To array for send api</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPayload">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_getPayload"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Attachment.php#L77">line 77</a></div>
+        <code>                    array
+    <strong>getPayload</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get payload</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setPayload">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_setPayload"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Attachment.php#L89">line 89</a></div>
+        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+    <strong>setPayload</strong>(array $payload)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set Payload</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$payload</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setEnableReuse">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_setEnableReuse"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Attachment.php#L100">line 100</a></div>
+        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+    <strong>setEnableReuse</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Enable reuse</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setDisableReuse">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_setDisableReuse"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Attachment.php#L111">line 111</a></div>
+        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+    <strong>setDisableReuse</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Disable reuse</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_add">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#method_add"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Template.php#L43">line 43</a></div>
+        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+    <strong>add</strong>($elements)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Add elements</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$elements</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___call">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#method___call"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Template.php#L62">line 62</a></div>
+        <code>                    mixed
+    <strong>__call</strong>($name, $arguments)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$arguments</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCollections">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#method_getCollections"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Template.php#L74">line 74</a></div>
+        <code>                    <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/BaseCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\BaseCollection">BaseCollection</abbr></a>
+    <strong>getCollections</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get collection</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Casperlaitw/LaravelFbMessenger/Collections/BaseCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\BaseCollection">BaseCollection</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_bootQuick">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_bootQuick"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Quickable.php#L26">line 26</a></div>
+        <code>                    
+    <strong>bootQuick</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Boot quick</p>                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addQuick">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_addQuick"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Quickable.php#L36">line 36</a></div>
+        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr>
+    <strong>addQuick</strong>($quick)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$quick</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isEmpty">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_isEmpty"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Quickable.php#L46">line 46</a></div>
+        <code>                    bool
+    <strong>isEmpty</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_makeQuickReply">
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_makeQuickReply"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Quickable.php#L56">line 56</a></div>
+        <code>                    array
+    <strong>makeQuickReply</strong>($data = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$data</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
