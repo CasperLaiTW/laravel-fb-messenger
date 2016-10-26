@@ -1,6 +1,6 @@
 # Laravel Facebook Messenger Provider
-[![Build Status](https://travis-ci.org/CasperLaiTW/laravel-fb-messenger.svg?branch=master)](https://travis-ci.org/CasperLaiTW/laravel-fb-messenger)
-[![Coverage Status](https://coveralls.io/repos/github/CasperLaiTW/laravel-fb-messenger/badge.svg?branch=master)](https://coveralls.io/github/CasperLaiTW/laravel-fb-messenger?branch=master)
+[![Build Status](https://travis-ci.org/CasperLaiTW/laravel-fb-messenger.svg)](https://travis-ci.org/CasperLaiTW/laravel-fb-messenger)
+[![Coverage Status](https://coveralls.io/repos/github/CasperLaiTW/laravel-fb-messenger/badge.svg)](https://coveralls.io/github/CasperLaiTW/laravel-fb-messenger)
 [![StyleCI](https://styleci.io/repos/66968888/shield)](https://styleci.io/repos/66968888)
 [![Latest Stable Version](https://poser.pugx.org/casperlaitw/laravel-fb-messenger/v/stable)](https://packagist.org/packages/casperlaitw/laravel-fb-messenger)
 [![Latest Unstable Version](https://poser.pugx.org/casperlaitw/laravel-fb-messenger/v/unstable)](https://packagist.org/packages/casperlaitw/laravel-fb-messenger)
