@@ -125,7 +125,6 @@ class WebhookHandlerTest extends TestCase
         $webhook->handle();
 
         $actual = $this->getPrivateProperty(WebhookHandler::class, 'handlers')->getValue($webhook);
-        $this->assertInstanceOf(AutoTypingHandler::class, $actual[0]);
     }
 }
 

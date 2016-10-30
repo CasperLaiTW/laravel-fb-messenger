@@ -84,10 +84,6 @@ class WebhookHandler
     private function createHandler()
     {
         $handlers = $this->config->get('fb-messenger.handlers');
-        $autoTyping = $this->config->get('fb-messenger.auto_typing');
-        if ($autoTyping) {
-            array_unshift($handlers, AutoTypingHandler::class);
-        }
         foreach ($handlers as $item) {
             $handler = $this->app->make($item);
             if ($handler instanceof BaseHandler) {
@@ -111,6 +107,18 @@ class WebhookHandler
     }
 
     /**
+     * Handle auto type
+     */
+    private function autoTypeHandle($message)
+    {
+        $autoTyping = $this->config->get('fb-messenger.auto_typing');
+        if ($autoTyping) {
+            $handler = $this->app->make(AutoTypingHandler::class)->createBot($this->token);
+            $handler->handle($message);
+        }
+    }
+
+    /**
      * Handle webhook
      */
     public function handle()
@@ -118,6 +126,7 @@ class WebhookHandler
         $this->boot();
         $postbackKeys = array_keys($this->postbacks);
         $this->messages->each(function (ReceiveMessage $message) use ($postbackKeys) {
+            $this->autoTypeHandle($message);
             if ($message->isPayload()) {
                 foreach ($postbackKeys as $postbackKey) {
                     if (preg_match("/$postbackKey/", $message->getPostback())) {
