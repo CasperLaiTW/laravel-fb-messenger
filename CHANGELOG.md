@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.5"></a>
+## [1.1.5](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.4...v1.1.5) (2016-11-06)
+
+
+### Bug Fixes
+
+* Fix persisten menu command fail. ([fe23ac1](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/fe23ac1))
+
+
+
 <a name="1.1.4"></a>
 ## [1.1.4](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.3...v1.1.4) (2016-10-30)
 
