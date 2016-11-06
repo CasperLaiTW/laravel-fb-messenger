@@ -2,7 +2,6 @@
 use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Messages\Greeting;
-use Casperlaitw\LaravelFbMessenger\Messages\Text;
 use Casperlaitw\LaravelFbMessenger\Messages\User;
 use Mockery as m;
 
