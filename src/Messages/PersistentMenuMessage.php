@@ -9,7 +9,6 @@ namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
-use pimax\Messages\MessageButton;
 
 /**
  * Class PersistentMenuMessage
@@ -45,8 +44,8 @@ class PersistentMenuMessage extends Message implements ThreadInterface
         return [
             'setting_type' => 'call_to_actions',
             'thread_state' => 'existing_thread',
-            'call_to_actions' => $buttons->map(function (MessageButton $item) {
-                return $item->getData();
+            'call_to_actions' => $buttons->map(function (Button $item) {
+                return $item->toData();
             })->toArray(),
         ];
     }
