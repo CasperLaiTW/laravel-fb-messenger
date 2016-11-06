@@ -1,8 +1,8 @@
 <?php
 
+use Casperlaitw\LaravelFbMessenger\Messages\Button;
 use Casperlaitw\LaravelFbMessenger\Messages\PersistentMenuMessage;
 use Mockery as m;
-use pimax\Messages\MessageButton;
 
 /**
  * User: casperlai
@@ -25,8 +25,8 @@ class PersistentMenuMessageTest extends TestCase
 
     private function getMessageButtonStub()
     {
-        $mock = m::mock(MessageButton::class)
-            ->shouldReceive('getData')
+        $mock = m::mock(Button::class)
+            ->shouldReceive('toData')
             ->andReturn([])
             ->getMock();
 
