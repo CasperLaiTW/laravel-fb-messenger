@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.6"></a>
+# [1.1.6](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.5...v1.1.6) (2016-11-06)
+
+
+### Features
+
+* Added get user info api ([b7e36bc](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/b7e36bc))
+
+
+
 <a name="1.1.5"></a>
 ## [1.1.5](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.4...v1.1.5) (2016-11-06)
 
