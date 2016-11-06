@@ -7,6 +7,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\UserInterface;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
 use GuzzleHttp\Client;
@@ -93,14 +94,19 @@ class Bot
      * If instance of ThreadInterface, auto turn to thread_settings endpoint
      *
      * @param Message $message
-     * @param string                  $type
+     * @param string $type
      *
-     * @return HandleMessageResponse
+     * @return HandleMessageResponse|array
+     * @throws \RuntimeException
      */
     public function send($message, $type = self::TYPE_POST)
     {
         if ($message instanceof ThreadInterface) {
             return $this->sendThreadSetting($message->toData(), $type);
+        }
+
+        if ($message instanceof UserInterface) {
+            return $this->sendUserApi($message);
         }
 
         return $this->sendMessage($message->toData());
@@ -127,5 +133,17 @@ class Bot
     protected function sendThreadSetting($message, $type = self::TYPE_POST)
     {
         return new HandleMessageResponse($this->call('me/thread_settings', $message, $type));
+    }
+
+    /**
+     * Send user endpoint
+     *
+     * @param $message
+     * @return array
+     * @throws \RuntimeException
+     */
+    protected function sendUserApi($message)
+    {
+        return $this->call($message->getSender(), [], self::TYPE_GET);
     }
 }

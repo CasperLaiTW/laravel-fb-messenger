@@ -3,6 +3,7 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Messages\Greeting;
 use Casperlaitw\LaravelFbMessenger\Messages\Text;
+use Casperlaitw\LaravelFbMessenger\Messages\User;
 use Mockery as m;
 
 /**
@@ -24,14 +25,12 @@ class BotTest extends TestCase
         $this->bot->send($message);
     }
 
-    //public function test_send_thread_setting()
-    //{
-    //    $message = m::mock(Greeting::class);
-    //    $message
-    //        ->shouldReceive('toData')
-    //        ->andReturn([]);
-    //    $this->bot->send($message);
-    //}
+    public function test_get_user()
+    {
+        $user = new User('1031304140280126');
+        $response = $this->bot->send($user);
+        $this->assertEquals('Casper', $response['first_name']);
+    }
 
     public function test_send_array_message()
     {
