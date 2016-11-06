@@ -14,5 +14,4 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts\Messages;
  */
 interface UserInterface
 {
-
 }
