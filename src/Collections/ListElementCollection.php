@@ -5,7 +5,7 @@
  * Date: 2016/11/9
  * Time: 上午9:43
  */
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Casperlaitw\LaravelFbMessenger\Collections;
 
