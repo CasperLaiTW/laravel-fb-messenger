@@ -58,6 +58,16 @@ abstract class BaseCollection
     }
 
     /**
+     * Collection is empty
+     *
+     * @return bool
+     */
+    public function isEmpty()
+    {
+        return count($this->elements) === 0;
+    }
+
+    /**
      * Validate collection item
      *
      * @param $elements

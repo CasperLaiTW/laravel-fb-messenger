@@ -75,12 +75,12 @@ class Element
      */
     public function toData()
     {
-        return [
+        $button = $this->buttons()->isEmpty() ? [] : ['buttons' => $this->buttons->toData()];
+        return array_merge([
             'title' => $this->title,
             'subtitle' => $this->description,
             'item_url' => $this->url,
             'image_url' => $this->image,
-            'buttons' => $this->buttons->toData(),
-        ];
+        ], $button);
     }
 }
