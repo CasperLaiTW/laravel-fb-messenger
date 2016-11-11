@@ -56,9 +56,12 @@ class ListElement extends Element
     public function toData()
     {
         $data = parent::toData();
-        $defaultActionData = $this->defaultAction->toData();
-        unset($defaultActionData['title'], $data['item_url']);
-        $data['default_action'] = $defaultActionData;
+
+        if ($this->defaultAction) {
+            $defaultActionData = $this->defaultAction->toData();
+            unset($defaultActionData['title'], $data['item_url']);
+            $data['default_action'] = $defaultActionData;
+        }
 
         return $data;
     }
