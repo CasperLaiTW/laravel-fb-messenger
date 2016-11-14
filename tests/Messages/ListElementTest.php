@@ -11,7 +11,6 @@ use Casperlaitw\LaravelFbMessenger\Messages\ListElement;
  */
 class ListElementTest extends TestCase
 {
-
     public function test_set_default_action()
     {
         $button = new Button(Button::TYPE_WEB, 'title', 'http://www.google.com');
