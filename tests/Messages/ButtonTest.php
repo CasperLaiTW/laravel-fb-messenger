@@ -40,4 +40,12 @@ class ButtonTest extends TestCase
 
         $this->assertEquals($expected, $button->toData());
     }
+
+    public function test_get_type()
+    {
+        $button = new Button(Button::TYPE_POSTBACK, 'title', 'payload');
+
+        $this->assertEquals('postback' ,$button->getType());
+    }
+
 }
