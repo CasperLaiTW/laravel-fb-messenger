@@ -5,7 +5,6 @@
  * Date: 2016/11/9
  * Time: 上午8:49
  */
-declare(strict_types=1);
 
 namespace Casperlaitw\LaravelFbMessenger\Exceptions;
 
