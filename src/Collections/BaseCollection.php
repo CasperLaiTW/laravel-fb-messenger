@@ -70,9 +70,9 @@ abstract class BaseCollection
     /**
      * Validate collection item
      *
-     * @param $element
+     * @param $elements
      *
      * @return bool
      */
-    abstract public function validator($element);
+    abstract public function validator($elements);
 }
