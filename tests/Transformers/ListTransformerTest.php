@@ -15,7 +15,6 @@ use Mockery as m;
 
 class ListTransformerTest extends TestCase
 {
-
     public function test_transform()
     {
         $testSender = str_random();
