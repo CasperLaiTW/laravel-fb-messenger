@@ -17,6 +17,8 @@ use Casperlaitw\LaravelFbMessenger\Exceptions\DefaultActionInvalidTypeException;
 class ListElement extends Element
 {
     /**
+     * Default action
+     *
      * @var Button
      */
     private $defaultAction;
@@ -33,15 +35,14 @@ class ListElement extends Element
     }
 
     /**
-     * @param Button $button
+     * Set default action button
+     *
+     * @param UrlButton $button
      * @return $this
      * @throws DefaultActionInvalidTypeException
      */
-    public function setDefaultAction(Button $button)
+    public function setDefaultAction(UrlButton $button)
     {
-        if ($button->getType() !== Button::TYPE_WEB) {
-            throw new DefaultActionInvalidTypeException('Default action button must be `URL Button`');
-        }
         $this->defaultAction = $button;
 
         return $this;

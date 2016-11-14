@@ -2,6 +2,7 @@
 use Casperlaitw\LaravelFbMessenger\Exceptions\DefaultActionInvalidTypeException;
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
 use Casperlaitw\LaravelFbMessenger\Messages\ListElement;
+use Casperlaitw\LaravelFbMessenger\Messages\UrlButton;
 
 /**
  * Created by PhpStorm.
@@ -13,7 +14,7 @@ class ListElementTest extends TestCase
 {
     public function test_set_default_action()
     {
-        $button = new Button(Button::TYPE_WEB, 'title', 'http://www.google.com');
+        $button = new UrlButton('title', 'http://www.google.com');
 
         $list = new ListElement('title', 'description', 'image');
         $list->setDefaultAction($button);
@@ -23,19 +24,9 @@ class ListElementTest extends TestCase
         $this->assertEquals($button, $actual);
     }
 
-    public function test_set_default_action_fail()
-    {
-        $this->expectException(DefaultActionInvalidTypeException::class);
-
-        $button = new Button(Button::TYPE_POSTBACK, 'title', 'PAYLOAD');
-
-        $list = new ListElement('title', 'description', 'image');
-        $list->setDefaultAction($button);
-    }
-
     public function test_to_data()
     {
-        $button = new Button(Button::TYPE_WEB, 'title', 'http://www.google.com');
+        $button = new UrlButton('title', 'http://www.google.com');
 
         $list = new ListElement('title', 'description', 'image');
         $list->setDefaultAction($button);
