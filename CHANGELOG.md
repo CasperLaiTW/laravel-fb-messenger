@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.8"></a>
+# [1.1.8](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.7...v1.1.8) (2016-11-14)
+
+
+### Features
+
+* Added list template ([ce25be4](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/ce25be4))
+
+
+
+<a name="1.1.7"></a>
+## [1.1.7](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.6...v1.1.7) (2016-11-11)
+
+
+### Bug Fixes
+
+* Element buttons not required ([4251590](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/4251590))
+
+
+
 <a name="1.1.6"></a>
 # [1.1.6](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.5...v1.1.6) (2016-11-06)
 

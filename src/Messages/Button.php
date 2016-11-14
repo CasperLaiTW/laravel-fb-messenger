@@ -55,6 +55,12 @@ class Button implements MessageInterface
     private $payload;
 
     /**
+     * Button extra property
+     * @var array
+     */
+    private $extra = [];
+
+    /**
      * Button constructor.
      *
      * @param $type
@@ -108,6 +114,30 @@ class Button implements MessageInterface
                 throw new UnknownTypeException;
         }
 
-        return $payload;
+        return array_merge($payload, $this->extra);
+    }
+
+    /**
+     * Get button type.
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set button extra
+     *
+     * @param array $value
+     *
+     * @return $this
+     */
+    public function setExtra(array $value)
+    {
+        $this->extra = $value;
+
+        return $this;
     }
 }

@@ -25,4 +25,19 @@ class ButtonTest extends TestCase
         $button = new Button('unknown', '');
         $button->toData();
     }
+
+    public function test_set_extra()
+    {
+        $button = new Button(Button::TYPE_WEB, 'title', 'url');
+        $button->setExtra(['extra' => 'test']);
+
+        $expected = [
+            'type' => 'web_url',
+            'title' => 'title',
+            'url' => 'url',
+            'extra' => 'test',
+        ];
+
+        $this->assertEquals($expected, $button->toData());
+    }
 }
