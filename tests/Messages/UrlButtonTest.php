@@ -7,9 +7,8 @@ use Casperlaitw\LaravelFbMessenger\Messages\UrlButton;
  * Date: 2016/11/14
  * Time: 下午11:39
  */
-class UrlButtonTest extends TestCase 
+class UrlButtonTest extends TestCase
 {
-
     public function test_use_messenger_extensions()
     {
         $button = new UrlButton('title', 'url');
