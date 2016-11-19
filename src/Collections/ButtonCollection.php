@@ -40,6 +40,7 @@ class ButtonCollection extends BaseCollection
     public function addPostBackButton($text, $payload = '')
     {
         $this->add(new Button(Button::TYPE_POSTBACK, $text, $payload));
+
         return $this;
     }
 
@@ -54,6 +55,21 @@ class ButtonCollection extends BaseCollection
     public function addWebButton($text, $url)
     {
         $this->add(new Button(Button::TYPE_WEB, $text, $url));
+
+        return $this;
+    }
+
+    /**
+     * Add account link button
+     *
+     * @param $url
+     *
+     * @return $this
+     */
+    public function addAccountLinkButton($url)
+    {
+        $this->add(new Button(Button::TYPE_ACCOUNT_LINK, null, $url));
+
         return $this;
     }
 
@@ -74,15 +90,20 @@ class ButtonCollection extends BaseCollection
             );
         }
         $this->add(new Button(Button::TYPE_CALL, $title, $phone));
+
         return $this;
     }
 
     /**
      * Add share button
+     *
+     * @return $this
      */
     public function addShareButton()
     {
         $this->add(new Button(Button::TYPE_SHARE, ''));
+
+        return $this;
     }
 
     /**

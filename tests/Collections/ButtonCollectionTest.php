@@ -82,4 +82,14 @@ class ButtonCollectionTest extends TestCase
 
         $this->assertEquals($expected, $collection->getElements()[0]);
     }
+
+    public function test_add_account_link_button()
+    {
+        $url = str_random();
+        $collection = new ButtonCollection();
+        $collection->addAccountLinkButton($url);
+        $expected = new Button(Button::TYPE_ACCOUNT_LINK, null, $url);
+
+        $this->assertEquals($expected, $collection->getElements()[0]);
+    }
 }
