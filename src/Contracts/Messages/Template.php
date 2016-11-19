@@ -8,6 +8,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Contracts\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Collections\BaseCollection;
+use Casperlaitw\LaravelFbMessenger\Messages\Quickable;
 use Illuminate\Container\Container;
 
 /**
@@ -16,6 +17,8 @@ use Illuminate\Container\Container;
  */
 abstract class Template extends Attachment
 {
+    use Quickable;
+
     /**
      * @var BaseCollection
      */
@@ -31,6 +34,7 @@ abstract class Template extends Attachment
         parent::__construct($sender, self::TYPE_TEMPLATE);
         $app = new Container();
         $this->collections = $app->make($this->collection());
+        $this->bootQuick();
     }
 
 
@@ -75,6 +79,17 @@ abstract class Template extends Attachment
     {
         return $this->collections;
     }
+
+    /**
+     * To array for send api
+     *
+     * @return array
+     */
+    public function toData()
+    {
+        return $this->makeQuickReply(parent::toData());
+    }
+
 
     /**
      * Collection class name

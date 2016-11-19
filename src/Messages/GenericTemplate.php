@@ -17,8 +17,6 @@ use Casperlaitw\LaravelFbMessenger\Transformers\GenericTransformer;
  */
 class GenericTemplate extends Template
 {
-    use Quickable;
-
     /**
      * Generic constructor.
      *
@@ -29,7 +27,6 @@ class GenericTemplate extends Template
     {
         parent::__construct($sender);
         $this->add($elements);
-        $this->bootQuick();
     }
 
     /**
@@ -42,7 +39,7 @@ class GenericTemplate extends Template
         $payload = (new GenericTransformer)->transform($this);
         $this->setPayload($payload);
 
-        return $this->makeQuickReply(parent::toData());
+        return parent::toData();
     }
 
     /**
