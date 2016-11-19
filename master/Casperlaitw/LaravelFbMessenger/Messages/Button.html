@@ -25,8 +25,8 @@
                 <div id="control-panel">
                     <form action="#" method="GET">
                 <select id="version-switcher" name="version">
-                                            <option value="../../../../1.1/index.html" selected>1.1</option>
-                                            <option value="../../../../master/index.html">Master</option>
+                                            <option value="../../../../1.1/index.html">1.1</option>
+                                            <option value="../../../../master/index.html" selected>Master</option>
                                     </select>
             </form>
                 <form id="search-form" action="../../../search.html" method="GET">
@@ -87,7 +87,7 @@
 
     <p>    class
     <strong>Button</strong>        implements
-        <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/MessageInterface.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\MessageInterface">MessageInterface</abbr></a>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Button.php">View source</a>)
+        <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/MessageInterface.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\MessageInterface">MessageInterface</abbr></a>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Messages/Button.php">View source</a>)
 </p>
 
         
@@ -125,6 +125,13 @@
                 <td>TYPE_SHARE</td>
                 <td class="last">
                     <p><em>Share button type</em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>TYPE_ACCOUNT_LINK</td>
+                <td class="last">
+                    <p><em>Account link</em></p>
                     <p></p>
                 </td>
             </tr>
@@ -183,7 +190,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Button.php#L70">line 70</a></div>
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Messages/Button.php#L75">line 75</a></div>
         <code>                    
     <strong>__construct</strong>($type, $title, $payload = &#039;&#039;)
         </code>
@@ -224,7 +231,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_toData">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Button.php#L82">line 82</a></div>
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Messages/Button.php#L88">line 88</a></div>
         <code>                    array
     <strong>toData</strong>()
         </code>
@@ -247,6 +254,15 @@
     </table>
 
             
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Casperlaitw/LaravelFbMessenger/Exceptions/UnknownTypeException.html"><abbr title="Casperlaitw\LaravelFbMessenger\Exceptions\UnknownTypeException">UnknownTypeException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
             
                     </div>
     </div>
@@ -254,7 +270,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getType">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Button.php#L125">line 125</a></div>
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Messages/Button.php#L137">line 137</a></div>
         <code>                    string
     <strong>getType</strong>()
         </code>
@@ -284,7 +300,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setExtra">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Button.php#L137">line 137</a></div>
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Messages/Button.php#L149">line 149</a></div>
         <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr>
     <strong>setExtra</strong>(array $value)
         </code>
