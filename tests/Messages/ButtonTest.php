@@ -47,4 +47,16 @@ class ButtonTest extends TestCase
 
         $this->assertEquals('postback', $button->getType());
     }
+
+    public function test_account_type_button()
+    {
+        $url = 'https://www.example.com/authorize';
+        $button = new Button(Button::TYPE_ACCOUNT_LINK, null, $url);
+        $expected = [
+            'type' => 'account_link',
+            'url' => $url,
+        ];
+
+        $this->assertEquals($expected, $button->toData());
+    }
 }

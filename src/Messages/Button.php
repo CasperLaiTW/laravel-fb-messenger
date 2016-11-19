@@ -37,6 +37,11 @@ class Button implements MessageInterface
     const TYPE_SHARE = 'element_share';
 
     /**
+     * Account link
+     */
+    const TYPE_ACCOUNT_LINK = 'account_link';
+
+    /**
      * Button type
      * @var string
      */
@@ -78,19 +83,26 @@ class Button implements MessageInterface
      * To array for send api
      *
      * @return array
+     * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\UnknownTypeException
      */
     public function toData()
     {
-        if ($this->type === self::TYPE_SHARE) {
-            return [
-                'type' => $this->type,
-            ];
+        switch ($this->type) {
+            case self::TYPE_SHARE:
+                return [
+                    'type' => $this->type,
+                ];
+            case self::TYPE_ACCOUNT_LINK:
+                return [
+                    'type' => $this->type,
+                    'url' => $this->payload,
+                ];
+            default:
+                return [
+                    'type' => $this->type,
+                    'title' => $this->title,
+                ] + $this->makePayload();
         }
-
-        return [
-            'type' => $this->type,
-            'title' => $this->title,
-        ] + $this->makePayload();
     }
 
     /**
