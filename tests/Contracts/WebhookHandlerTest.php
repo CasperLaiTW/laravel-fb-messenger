@@ -4,6 +4,7 @@ use Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection;
 use Casperlaitw\LaravelFbMessenger\Contracts\BaseHandler;
 use Casperlaitw\LaravelFbMessenger\Contracts\PostbackHandler;
 use Casperlaitw\LaravelFbMessenger\Contracts\WebhookHandler;
+use Casperlaitw\LaravelFbMessenger\Debug;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Events\Dispatcher;
@@ -17,7 +18,7 @@ use Mockery as m;
 class WebhookHandlerTest extends TestCase
 {
     private $config;
-    private $dispatch;
+    private $debug;
 
     public function setUp()
     {
@@ -38,10 +39,11 @@ class WebhookHandlerTest extends TestCase
             ->shouldReceive('get')
             ->with('fb-messenger.debug')
             ->andReturn(false);
-        $this->dispatch = m::mock(Dispatcher::class);
-        $this->dispatch
+        $dispatch = m::mock(Dispatcher::class);
+        $dispatch
             ->shouldReceive('fire')
             ->andReturnNull();
+        $this->debug = new Debug($dispatch);
     }
 
     public function test_postback()
@@ -51,7 +53,7 @@ class WebhookHandlerTest extends TestCase
             ->shouldReceive('each')
             ->andReturn([]);
 
-        $webhook = new WebhookHandler($collection, $this->config, $this->dispatch);
+        $webhook = new WebhookHandler($collection, $this->config, $this->debug);
         $webhook->handle();
         $actual = $this->getPrivateProperty(WebhookHandler::class, 'postbacks')->getValue($webhook);
 
@@ -70,7 +72,7 @@ class WebhookHandlerTest extends TestCase
 
         $collection = new ReceiveMessageCollection([$message]);
 
-        $webhook = new WebhookHandler($collection, $this->config, $this->dispatch);
+        $webhook = new WebhookHandler($collection, $this->config, $this->debug);
         $webhook->handle();
     }
 
@@ -85,7 +87,7 @@ class WebhookHandlerTest extends TestCase
 
         $collection = new ReceiveMessageCollection([$message]);
 
-        $webhook = new WebhookHandler($collection, $this->config, $this->dispatch);
+        $webhook = new WebhookHandler($collection, $this->config, $this->debug);
         $webhook->handle();
 
         $actual = $this->getPrivateProperty(WebhookHandler::class, 'postbacks')->getValue($webhook);
@@ -101,7 +103,7 @@ class WebhookHandlerTest extends TestCase
 
         $collection = new ReceiveMessageCollection([$message]);
 
-        $webhook = new WebhookHandler($collection, $this->config, $this->dispatch);
+        $webhook = new WebhookHandler($collection, $this->config, $this->debug);
         $webhook->handle();
     }
 
@@ -132,7 +134,7 @@ class WebhookHandlerTest extends TestCase
 
         $collection = new ReceiveMessageCollection([$message]);
 
-        $webhook = new WebhookHandler($collection, $config, $this->dispatch);
+        $webhook = new WebhookHandler($collection, $config, $this->debug);
         $webhook->handle();
 
         $actual = $this->getPrivateProperty(WebhookHandler::class, 'handlers')->getValue($webhook);

@@ -40,12 +40,12 @@ abstract class BaseHandler implements HandlerInterface
     }
 
     /**
-     * @param $dispatch
+     * @param $debug
      * @return $this
      */
-    public function debug($dispatch)
+    public function debug($debug)
     {
-        $this->bot->setDispatch($dispatch);
+        $this->bot->setDebug($debug);
 
         return $this;
     }

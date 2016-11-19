@@ -77,7 +77,9 @@ class LaravelFbMessengerServiceProviderTest extends TestCase
             ->shouldReceive('offsetGet')
             ->zeroOrMoreTimes()
             ->with('view')
-            ->andReturn($this->viewMock);
+            ->andReturn($this->viewMock)
+            ->shouldReceive('singleton')
+            ->andReturnNull();
 
     }
 
@@ -98,10 +100,6 @@ class LaravelFbMessengerServiceProviderTest extends TestCase
 
     public function test_boot()
     {
-        $kernel = m::mock(Kernel::class)
-            ->shouldReceive('pushMiddleware')
-            ->andReturnNull()
-            ->getMock();
-        $this->assertNull($this->serviceProvider->boot($kernel));
+        $this->assertNull($this->serviceProvider->boot());
     }
 }

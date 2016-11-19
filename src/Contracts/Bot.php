@@ -52,7 +52,7 @@ class Bot
     /**
      * @var null
      */
-    private $dispatch = null;
+    private $debug = null;
 
     /**
      * FbBotApp constructor.
@@ -65,11 +65,11 @@ class Bot
     }
 
     /**
-     * @param $dispatch
+     * @param $debug
      */
-    public function setDispatch($dispatch)
+    public function setDebug($debug)
     {
-        $this->dispatch = $dispatch;
+        $this->debug = $debug;
     }
 
     /**
@@ -98,6 +98,7 @@ class Bot
                     ],
                 ]
             );
+
             $this->debug($data, $response->getBody(), $response->getStatusCode());
 
             return json_decode($response->getBody(), true);
@@ -174,10 +175,9 @@ class Bot
      */
     protected function debug($request, $response, $status)
     {
-        if ($this->dispatch === null) {
+        if ($this->debug === null) {
             return;
         }
-
-        $this->dispatch->fire(new SendRequest($request, $response, $status));
+        $this->debug->setRequest($request)->setResponse(json_decode($response))->setStatus($status)->broadcast();
     }
 }

@@ -8,8 +8,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Middleware;
 
-use Casperlaitw\LaravelFbMessenger\Events\RequestReceived as RequestReceivedEvent;
-use Illuminate\Events\Dispatcher;
+use Casperlaitw\LaravelFbMessenger\Debug;
 
 /**
  * Class RequestReceived
@@ -18,17 +17,17 @@ use Illuminate\Events\Dispatcher;
 class RequestReceived
 {
     /**
-     * @var Dispatcher
+     * @var
      */
-    private $dispatcher;
+    private $debug;
 
     /**
      * RequestReceived constructor.
-     * @param Dispatcher $dispatcher
+     * @param Debug $debug
      */
-    public function __construct(Dispatcher $dispatcher)
+    public function __construct(Debug $debug)
     {
-        $this->dispatcher = $dispatcher;
+        $this->debug = $debug;
     }
 
     /**
@@ -39,7 +38,7 @@ class RequestReceived
      */
     public function handle($request , $next)
     {
-        $this->dispatcher->fire(new RequestReceivedEvent($request->all()));
+        $this->debug->setWebhook($request->all());
 
         return $next($request);
     }

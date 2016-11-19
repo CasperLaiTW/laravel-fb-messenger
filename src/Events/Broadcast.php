@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: casperlai
- * Date: 2016/11/19
- * Time: 下午11:50
+ * Date: 2016/11/20
+ * Time: 上午3:37
  */
 
 namespace Casperlaitw\LaravelFbMessenger\Events;
@@ -11,7 +11,7 @@ namespace Casperlaitw\LaravelFbMessenger\Events;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Queue\SerializesModels;
 
-class RequestReceived implements ShouldBroadcast
+class Broadcast implements ShouldBroadcast
 {
     use SerializesModels;
 
@@ -19,14 +19,36 @@ class RequestReceived implements ShouldBroadcast
      * @var array
      */
     private $request;
+    /**
+     * @var
+     */
+    private $response;
+
+    private $status;
+    /**
+     * @var
+     */
+    private $webhook;
+    /**
+     * @var
+     */
+    private $id;
 
     /**
      * RequestReceived constructor.
+     * @param $id
+     * @param $webhook
      * @param $request
+     * @param $response
+     * @param $status
      */
-    public function __construct($request)
+    public function __construct($id, $webhook, $request, $response, $status)
     {
         $this->request = $request;
+        $this->response = $response;
+        $this->status = $status;
+        $this->webhook = $webhook;
+        $this->id = $id;
     }
 
     /**
@@ -37,7 +59,11 @@ class RequestReceived implements ShouldBroadcast
     public function broadcastWith()
     {
         return [
+            'id' => $this->id,
+            'webhook' => $this->webhook,
             'request' => $this->request,
+            'response' => $this->response,
+            'status' => $this->status,
         ];
     }
 

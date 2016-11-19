@@ -2,6 +2,7 @@
 
 use Casperlaitw\LaravelFbMessenger\Contracts\DefaultHandler;
 use Casperlaitw\LaravelFbMessenger\Controllers\WebhookController;
+use Casperlaitw\LaravelFbMessenger\Debug;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;
@@ -37,9 +38,9 @@ class WebhookControllerTest extends TestCase
             ->andReturn($verifyToken)
             ->getMock();
 
-        $dispatch = m::mock(Dispatcher::class);
+        $debug = m::mock(Debug::class);
 
-        $controller = new WebhookController($config, $dispatch);
+        $controller = new WebhookController($config, $debug);
         $response = $controller->index($request);
         $this->assertInstanceOf(Response::class, $response);
         $this->assertEquals($challenge, $response->getContent());
@@ -56,9 +57,9 @@ class WebhookControllerTest extends TestCase
             ->shouldReceive('get')
             ->andReturn(str_random())
             ->getMock();
-        $dispatch = m::mock(Dispatcher::class);
+        $debug = m::mock(Debug::class);
 
-        $controller = new WebhookController($config, $dispatch);
+        $controller = new WebhookController($config, $debug);
         $controller->index($request);
     }
 
@@ -87,9 +88,9 @@ class WebhookControllerTest extends TestCase
             ->andReturn([])
             ->getMock();
 
-        $dispatch = m::mock(Dispatcher::class);
+        $debug = m::mock(Debug::class);
 
-        $controller = new WebhookController($config, $dispatch);
+        $controller = new WebhookController($config, $debug);
         $controller->receive($request);
     }
 
@@ -118,9 +119,9 @@ class WebhookControllerTest extends TestCase
             ->andReturnNull()
             ->getMock();
 
-        $dispatch = m::mock(Dispatcher::class);
+        $debug = m::mock(Debug::class);
 
-        $controller = new WebhookController($config, $dispatch);
+        $controller = new WebhookController($config, $debug);
         $controller->receive($request);
     }
 }

@@ -8,6 +8,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
 use Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection;
+use Casperlaitw\LaravelFbMessenger\Debug;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Config\Repository;
@@ -50,27 +51,26 @@ class WebhookHandler
      */
     private $config;
     /**
-     * @var Dispatcher
+     * @var Debug
      */
-    private $dispatcher;
+    private $debug;
 
     /**
      * WebhookHandler constructor.
      *
      * @param ReceiveMessageCollection $messages
      * @param Repository $config
-     * @param Dispatcher $dispatcher
      */
     public function __construct(
         ReceiveMessageCollection $messages,
         Repository $config,
-        Dispatcher $dispatcher
+        Debug $debug
     ) {
         $this->app = new Container();
         $this->messages = $messages;
         $this->config = $config;
         $this->token = $this->config->get('fb-messenger.app_token');
-        $this->dispatcher = $dispatcher;
+        $this->debug = $debug;
     }
 
     /**
@@ -147,6 +147,7 @@ class WebhookHandler
             foreach ($this->handlers as $handler) {
                 $handler->handle($message);
             }
+            $this->debug->clear();
         });
     }
 
@@ -160,7 +161,7 @@ class WebhookHandler
     {
         $bot = $handler->createBot($this->token);
         if ($this->config->get('fb-messenger.debug')) {
-            $bot->debug($this->dispatcher);
+            $bot->debug($this->debug);
         }
 
         return $bot;

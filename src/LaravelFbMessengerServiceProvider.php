@@ -25,18 +25,13 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
     /**
      * Perform post-registration booting of services.
      *
-     * @param Kernel $kernel
      */
-    public function boot(Kernel $kernel)
+    public function boot()
     {
         $this->publishes([
             $this->configPath => $this->app->configPath().'/fb-messenger.php',
         ], 'config');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laravel-fb-messenger');
-
-        if ($this->app['config']->get('fb-messenger.debug')) {
-            $kernel->pushMiddleware(RequestReceived::class);
-        }
     }
 
     /**
@@ -48,6 +43,7 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom($this->configPath, 'fb-messenger');
         $this->app->register(RouteServiceProvider::class);
+        $this->app->singleton(Debug::class, Debug::class);
         $this->registerCommands();
     }
 

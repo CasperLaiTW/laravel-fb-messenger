@@ -1,6 +1,7 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
+use Casperlaitw\LaravelFbMessenger\Debug;
 use Casperlaitw\LaravelFbMessenger\Messages\Greeting;
 use Casperlaitw\LaravelFbMessenger\Messages\User;
 use Illuminate\Events\Dispatcher;
@@ -47,7 +48,8 @@ class BotTest extends TestCase
         $dispatch
             ->shouldReceive('fire')
             ->andReturnNull();
-        $this->bot->setDispatch($dispatch);
+        $debug = new Debug($dispatch);
+        $this->bot->setDebug($debug);
         $message = m::mock(Message::class);
         $message
             ->shouldReceive('toData')

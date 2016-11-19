@@ -41,7 +41,7 @@ class BaseHandlerTest extends TestCase
     public function test_debug()
     {
         $bot = m::mock(Bot::class)
-            ->shouldReceive('setDispatch')
+            ->shouldReceive('setDebug')
             ->withAnyArgs()
             ->andReturnSelf()
             ->getMock();
