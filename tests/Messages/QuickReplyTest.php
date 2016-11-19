@@ -22,4 +22,29 @@ class QuickReplyTest extends TestCase
 
         $this->assertEquals($expected, (new QuickReply($title, $payload))->toData());
     }
+
+    public function test_set_location()
+    {
+        $expected = [
+            'content_type' => 'location',
+        ];
+
+        $this->assertEquals($expected, (new QuickReply(null, null))->setLocation()->toData());
+    }
+
+    public function test_set_image()
+    {
+        $title = 'Red';
+        $payload = 'PAYLOAD_RED';
+        $image = str_random();
+
+        $expected = [
+            'content_type' => 'text',
+            'title' => $title,
+            'payload' => $payload,
+            'image_url' => $image,
+        ];
+
+        $this->assertEquals($expected, (new QuickReply($title, $payload))->setImage($image)->toData());
+    }
 }
