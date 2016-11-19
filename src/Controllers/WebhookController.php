@@ -10,6 +10,7 @@ namespace Casperlaitw\LaravelFbMessenger\Controllers;
 use Casperlaitw\LaravelFbMessenger\Contracts\WebhookHandler;
 use Casperlaitw\LaravelFbMessenger\Messages\Receiver;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -27,13 +28,20 @@ class WebhookController extends Controller
     private $config;
 
     /**
+     * @var Dispatcher
+     */
+    private $dispatcher;
+
+    /**
      * WebhookController constructor.
      *
      * @param Repository $config
+     * @param Dispatcher $dispatcher
      */
-    public function __construct(Repository $config)
+    public function __construct(Repository $config, Dispatcher $dispatcher)
     {
         $this->config = $config;
+        $this->dispatcher = $dispatcher;
     }
 
     /**
@@ -58,12 +66,11 @@ class WebhookController extends Controller
      * Receive the webhook request
      *
      * @param Request $request
-     *
      */
     public function receive(Request $request)
     {
         $receive = new Receiver($request);
-        $webhook = new WebhookHandler($receive->getMessages(), $this->config);
+        $webhook = new WebhookHandler($receive->getMessages(), $this->config, $this->dispatcher);
         $webhook->handle();
     }
 }

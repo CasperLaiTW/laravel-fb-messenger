@@ -3,6 +3,7 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Messages\Greeting;
 use Casperlaitw\LaravelFbMessenger\Messages\User;
+use Illuminate\Events\Dispatcher;
 use Mockery as m;
 
 /**
@@ -33,6 +34,20 @@ class BotTest extends TestCase
 
     public function test_send_array_message()
     {
+        $message = m::mock(Message::class);
+        $message
+            ->shouldReceive('toData')
+            ->andReturn([]);
+        $this->bot->send($message);
+    }
+
+    public function test_debug_mode()
+    {
+        $dispatch = m::mock(Dispatcher::class);
+        $dispatch
+            ->shouldReceive('fire')
+            ->andReturnNull();
+        $this->bot->setDispatch($dispatch);
         $message = m::mock(Message::class);
         $message
             ->shouldReceive('toData')

@@ -5,6 +5,7 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Exceptions\NotCreateBotException;
 use Casperlaitw\LaravelFbMessenger\Messages\Deletable;
+use Illuminate\Events\Dispatcher;
 use Mockery as m;
 
 /**
@@ -35,6 +36,18 @@ class BaseHandlerTest extends TestCase
         $handler = $this->getMockForAbstractClass(BaseHandler::class);
         $message = new MessageStub(null);
         $handler->send($message);
+    }
+
+    public function test_debug()
+    {
+        $bot = m::mock(Bot::class)
+            ->shouldReceive('setDispatch')
+            ->withAnyArgs()
+            ->andReturnSelf()
+            ->getMock();
+        $handler = $this->getMockForAbstractClass(BaseHandler::class);
+        $this->getPrivateProperty(BaseHandler::class, 'bot')->setValue($handler, $bot);
+        $handler->debug(new Dispatcher());
     }
 }
 

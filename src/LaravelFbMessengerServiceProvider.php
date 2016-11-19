@@ -5,7 +5,9 @@ namespace Casperlaitw\LaravelFbMessenger;
 use Casperlaitw\LaravelFbMessenger\Commands\GetStartButtonCommand;
 use Casperlaitw\LaravelFbMessenger\Commands\GreetingTextCommand;
 use Casperlaitw\LaravelFbMessenger\Commands\PersistentMenuCommand;
+use Casperlaitw\LaravelFbMessenger\Middleware\RequestReceived;
 use Casperlaitw\LaravelFbMessenger\Providers\RouteServiceProvider;
+use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -23,13 +25,18 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
     /**
      * Perform post-registration booting of services.
      *
-     * @return void
+     * @param Kernel $kernel
      */
-    public function boot()
+    public function boot(Kernel $kernel)
     {
         $this->publishes([
             $this->configPath => $this->app->configPath().'/fb-messenger.php',
         ], 'config');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laravel-fb-messenger');
+
+        if ($this->app['config']->get('fb-messenger.debug')) {
+            $kernel->pushMiddleware(RequestReceived::class);
+        }
     }
 
     /**

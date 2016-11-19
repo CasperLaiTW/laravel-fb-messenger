@@ -5,6 +5,8 @@ use Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider;
 use Casperlaitw\LaravelFbMessenger\Providers\RouteServiceProvider;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Events\Dispatcher as Events;
+use Illuminate\Contracts\Http\Kernel;
+use Illuminate\View\Factory as View;
 use Mockery as m;
 
 /**
@@ -21,6 +23,8 @@ class LaravelFbMessengerServiceProviderTest extends TestCase
     private $serviceProvider;
 
     private $configMock;
+
+    private $viewMock;
 
     public function setUp()
     {
@@ -47,11 +51,20 @@ class LaravelFbMessengerServiceProviderTest extends TestCase
             ->with('fb-messenger', [])
             ->andReturn([])
             ->shouldReceive('set')
+            ->andReturn(true)
+            ->shouldReceive('get')
+            ->with('fb-messenger.debug')
             ->andReturn(true);
+
+        $this->viewMock = m::mock(View::class);
+        $this->viewMock
+            ->shouldReceive('addNamespace');
 
         $this->applicationMock = m::mock(Application::class);
         $this->applicationMock
             ->shouldReceive('configPath')
+            ->andReturn(__DIR__)
+            ->shouldReceive('resourcePath')
             ->andReturn(__DIR__)
             ->shouldReceive('offsetGet')
             ->zeroOrMoreTimes()
@@ -60,7 +73,12 @@ class LaravelFbMessengerServiceProviderTest extends TestCase
             ->shouldReceive('offsetGet')
             ->zeroOrMoreTimes()
             ->with('config')
-            ->andReturn($this->configMock);
+            ->andReturn($this->configMock)
+            ->shouldReceive('offsetGet')
+            ->zeroOrMoreTimes()
+            ->with('view')
+            ->andReturn($this->viewMock);
+
     }
 
     public function test_can_be_constructed()
@@ -80,6 +98,10 @@ class LaravelFbMessengerServiceProviderTest extends TestCase
 
     public function test_boot()
     {
-        $this->assertNull($this->serviceProvider->boot());
+        $kernel = m::mock(Kernel::class)
+            ->shouldReceive('pushMiddleware')
+            ->andReturnNull()
+            ->getMock();
+        $this->assertNull($this->serviceProvider->boot($kernel));
     }
 }

@@ -10,8 +10,11 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\UserInterface;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
+use Casperlaitw\LaravelFbMessenger\Events\SendRequest;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
 
 /**
  * Class Bot
@@ -47,6 +50,11 @@ class Bot
     protected $token = null;
 
     /**
+     * @var null
+     */
+    private $dispatch = null;
+
+    /**
      * FbBotApp constructor.
      * @param string $token
      */
@@ -54,6 +62,14 @@ class Bot
     {
         $this->client = new Client(['base_uri' => $this->apiUrl]);
         $this->token = $token;
+    }
+
+    /**
+     * @param $dispatch
+     */
+    public function setDispatch($dispatch)
+    {
+        $this->dispatch = $dispatch;
     }
 
     /**
@@ -82,8 +98,12 @@ class Bot
                     ],
                 ]
             );
+            $this->debug($data, $response->getBody(), $response->getStatusCode());
+
             return json_decode($response->getBody(), true);
         } catch (ClientException $ex) {
+            $this->debug($data, $ex->getResponse()->getBody(), $ex->getResponse()->getStatusCode());
+
             return json_decode($ex->getResponse()->getBody(), true);
         }
     }
@@ -145,5 +165,19 @@ class Bot
     protected function sendUserApi($message)
     {
         return $this->call($message->getSender(), [], self::TYPE_GET);
+    }
+
+    /**
+     * @param $request
+     * @param $response
+     * @param $status
+     */
+    protected function debug($request, $response, $status)
+    {
+        if ($this->dispatch === null) {
+            return;
+        }
+
+        $this->dispatch->fire(new SendRequest($request, $response, $status));
     }
 }

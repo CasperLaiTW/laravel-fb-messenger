@@ -12,6 +12,7 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Exceptions\NotCreateBotException;
 use Casperlaitw\LaravelFbMessenger\Messages\Deletable;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
+use Illuminate\Events\Dispatcher;
 
 /**
  * Class BaseHandler
@@ -34,6 +35,18 @@ abstract class BaseHandler implements HandlerInterface
     public function createBot($token)
     {
         $this->bot = new Bot($token);
+
+        return $this;
+    }
+
+    /**
+     * @param $dispatch
+     * @return $this
+     */
+    public function debug($dispatch)
+    {
+        $this->bot->setDispatch($dispatch);
+
         return $this;
     }
 
@@ -54,6 +67,7 @@ abstract class BaseHandler implements HandlerInterface
         if (in_array(Deletable::class, class_uses($message))) {
             $arguments[] = $message->getCurlType();
         }
+
         return call_user_func_array([$this->bot, 'send'], $arguments);
     }
 
