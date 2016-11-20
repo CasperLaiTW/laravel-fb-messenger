@@ -17,7 +17,7 @@ after_script:
 after_success:
   - >-
     test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" &&
-    test $TRAVIS_PHP_VERSION = "7.0" && bash ./scripts/api.sh
+    test $TRAVIS_PHP_VERSION = "7" && bash ./scripts/api.sh
 cache:
   directories:
     - $HOME/.composer/cache
