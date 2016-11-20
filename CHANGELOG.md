@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.1"></a>
+# [1.2.1](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.8...v1.2.1) (2016-11-20)
+
+
+### Bug Fixes
+
+* Fix pusher connect fail will be broken ([51acfcb](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/51acfcb))
+* setDefaultAction change to UrlButton ([17e6b0a](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/17e6b0a))
+
+
+### Features
+
+* Add debug mode ([760c09b](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/760c09b))
+* Added account link button ([0c2c60a](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/0c2c60a)), closes [#42](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/42)
+* Added debug router ([9ea38b6](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/9ea38b6)), closes [#44](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/44)
+* ButtonCollection added account link button ([017857b](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/017857b)), closes [#42](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/42)
+* Quick reply support location and image_url ([2225d29](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/2225d29)), closes [#33](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/33)
+* Support attachment reusable ([fae9119](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/fae9119)), closes [#31](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/31)
+* Support url button parameters ([47c76f5](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/47c76f5)), closes [#32](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/32)
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.1.8...v1.2.0) (2016-11-20)
 
