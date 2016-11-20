@@ -10,11 +10,9 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\UserInterface;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
-use Casperlaitw\LaravelFbMessenger\Events\SendRequest;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
+use Illuminate\Broadcasting\BroadcastException;
 
 /**
  * Class Bot
@@ -178,6 +176,10 @@ class Bot
         if ($this->debug === null) {
             return;
         }
-        $this->debug->setRequest($request)->setResponse(json_decode($response))->setStatus($status)->broadcast();
+        try {
+            $this->debug->setRequest($request)->setResponse(json_decode($response))->setStatus($status)->broadcast();
+        } catch (BroadcastException $ex) {
+            return;
+        }
     }
 }
