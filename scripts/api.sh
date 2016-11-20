@@ -9,7 +9,7 @@ fi
 
 base=$(pwd)
 sami=${base}/scripts/sami
-default="master"
+default="1.2"
 rev=$(git rev-parse --short HEAD)
 
 cd ${sami}
@@ -38,7 +38,7 @@ cd ${sami}/gh-pages
 echo "<html><head><meta http-equiv=\"refresh\" content=\"0; url=${default}\" /></head></html>" > index.html
 git add -A .
 git commit -m "rebuild pages at ${rev}"
-git push origin gh-pages
+git push origin gh-pages -q
 
 # cleanup
 rm -rf ${sami}/build
