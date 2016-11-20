@@ -24,6 +24,7 @@ class RequestReceivedTest extends TestCase
         $debug = new Debug($dispatch);
 
         $received = new RequestReceived($debug);
-        $received->handle($request, function() {});
+        $received->handle($request, function () {
+        });
     }
 }

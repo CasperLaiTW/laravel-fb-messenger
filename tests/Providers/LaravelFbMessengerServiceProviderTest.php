@@ -82,7 +82,6 @@ class LaravelFbMessengerServiceProviderTest extends TestCase
             ->andReturn($this->viewMock)
             ->shouldReceive('singleton')
             ->andReturnNull();
-
     }
 
     public function test_can_be_constructed()
