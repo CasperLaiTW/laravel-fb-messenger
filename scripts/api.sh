@@ -38,7 +38,7 @@ cd ${sami}/gh-pages
 echo "<html><head><meta http-equiv=\"refresh\" content=\"0; url=${default}\" /></head></html>" > index.html
 git add -A .
 git commit -m "rebuild pages at ${rev}"
-git push origin gh-pages -q
+git push origin gh-pages
 
 # cleanup
 rm -rf ${sami}/build
