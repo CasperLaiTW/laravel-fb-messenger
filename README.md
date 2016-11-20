@@ -159,6 +159,30 @@ return [
 
 [Example](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki/Example#postback-handler)
 
+### Debug Route
+The debug route using [Pusher](https://pusher.com/)
+
+![debug-route](https://cdn.rawgit.com/CasperLaiTW/laravel-fb-messenger/master/docs/images/debug-route.gif)
+
+1. Configure your `.env`
+```
+  APP_DEBUG=true
+  BROADCAST_DRIVER=pusher
+  PUSHER_APP_ID=
+  PUSHER_KEY=
+  PUSHER_SECRET=
+```
+
+2. Publish script
+```shell
+php artisan vendor:publish --provider="Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider" --tag="public"
+```
+
+3. Open browser
+```url
+http://[your-site]/fb-messenger/debug
+```
+
 ### API
 [API Document](https://casperlaitw.github.io/laravel-fb-messenger/)
 
