@@ -9,6 +9,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Controllers;
 
 use Illuminate\Routing\Controller;
+use Illuminate\Contracts\View\Factory;
 
 /**
  * Class DebugController
@@ -17,10 +18,11 @@ use Illuminate\Routing\Controller;
 class DebugController extends Controller
 {
     /**
-     *
+     * @param Factory $factory
+     * @return \Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(Factory $factory)
     {
-        return view('laravel-fb-messenger::debug');
+        return $factory->make('laravel-fb-messenger::debug');
     }
 }

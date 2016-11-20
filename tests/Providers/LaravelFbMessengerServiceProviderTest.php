@@ -66,6 +66,8 @@ class LaravelFbMessengerServiceProviderTest extends TestCase
             ->andReturn(__DIR__)
             ->shouldReceive('resourcePath')
             ->andReturn(__DIR__)
+            ->shouldReceive('basePath')
+            ->andReturn(__DIR__)
             ->shouldReceive('offsetGet')
             ->zeroOrMoreTimes()
             ->with('events')
