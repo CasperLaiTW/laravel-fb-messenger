@@ -17,9 +17,9 @@ Easy to making your facebook messenger chatbot.
 composer require casperlaitw/laravel-fb-messenger
 ```
 
-### Laravel
+## Laravel
 
-#### Add Provider
+### Add Provider
 In your `config/app.php` add  `Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider::class` to the providers array:
 ```php
 'providers' => [
@@ -29,14 +29,14 @@ In your `config/app.php` add  `Casperlaitw\LaravelFbMessenger\LaravelFbMessenger
 ],
 ```
 
-#### Publish Configuration
+### Publish Configuration
 ```shell
 php artisan vendor:publish --provider="Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider"
 ```
 
-#### Configuration 
+## Configuration 
 
-#### Token
+### Token
 Add you token to `.env` file or modify `fb-messenger.php` config.
 
 *If you don't know how to get token, please checkout [Facebook Developer](https://developers.facebook.com/docs/messenger-platform/quickstart)*
@@ -50,7 +50,7 @@ MESSENGER_APP_TOKEN="Page Access Token"
 ...
 ```
 
-#### Auto Typing
+### Auto Typing
 
 ![Typing](https://cdn.rawgit.com/CasperLaiTW/laravel-fb-messenger/master/docs/images/typing.png)
 
@@ -70,7 +70,7 @@ return [
 ];    
 ```
 
-#### Custom Url
+### Custom Url
 If you want to custom url, replace `/webhook` to you want.
 
 Finally, you can run `php artisan route:list` to check.
@@ -86,7 +86,7 @@ Finally, you can run `php artisan route:list` to check.
  ];
 ```
 
-#### Custom Handler
+### Custom Handler
 The `DefaultHandler` will reply the same words to user.
 
 You can check out [DefaultHandler](https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/DefaultHandler.php)
@@ -111,9 +111,9 @@ class DefaultHandler extends BaseHandler
 }
 ```
 
-### Postback Handler
+## Postback Handler
 
-1. Create your postback handler
+### Create your postback handler
 
 `$payload` is you setting that [fb:get-start](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki/Commands#fbget-start) command or [button message's postback button](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki/Example#button-message) etc.
 
@@ -143,7 +143,7 @@ class StartupPostback extends PostbackHandler
 }
 ```
 
-2. Add to `fb-messenger.php` config
+### Add to `fb-messenger.php` config
 
 ```php
 return [
@@ -159,12 +159,12 @@ return [
 
 [Example](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki/Example#postback-handler)
 
-### Debug Route
+## Debug Route
 The debug route using [Pusher](https://pusher.com/)
 
 ![debug-route](https://cdn.rawgit.com/CasperLaiTW/laravel-fb-messenger/master/docs/images/debug-route.gif)
 
-1. Configure your `.env`
+### Configure your `.env`
 ```
   APP_DEBUG=true
   BROADCAST_DRIVER=pusher
@@ -173,22 +173,22 @@ The debug route using [Pusher](https://pusher.com/)
   PUSHER_SECRET=
 ```
 
-2. Publish script
+### Publish script
 ```shell
 php artisan vendor:publish --provider="Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider" --tag="public"
 ```
 
-3. Open browser
+### Open browser
 ```url
 http://[your-site]/fb-messenger/debug
 ```
 
-### API
+## API
 [API Document](https://casperlaitw.github.io/laravel-fb-messenger/)
 
-### Commands
+## Commands
 See the [document](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki/Commands)
 
-### License
+## License
 
 This package is licensed under the [MIT license](https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/LICENSE.md).
