@@ -5,9 +5,7 @@ namespace Casperlaitw\LaravelFbMessenger;
 use Casperlaitw\LaravelFbMessenger\Commands\GetStartButtonCommand;
 use Casperlaitw\LaravelFbMessenger\Commands\GreetingTextCommand;
 use Casperlaitw\LaravelFbMessenger\Commands\PersistentMenuCommand;
-use Casperlaitw\LaravelFbMessenger\Middleware\RequestReceived;
 use Casperlaitw\LaravelFbMessenger\Providers\RouteServiceProvider;
-use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -32,6 +30,7 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
             $this->configPath => $this->app->configPath().'/fb-messenger.php',
         ], 'config');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laravel-fb-messenger');
+        $this->publishes([__DIR__.'/../public' => $this->app->basePath().'/public/vendor'], 'public');
     }
 
     /**

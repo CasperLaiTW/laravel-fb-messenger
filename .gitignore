@@ -11,4 +11,3 @@
 /scripts/sami/project/
 /scripts/sami/gh-pages/
 .DS_Store
-/yarn.lock
