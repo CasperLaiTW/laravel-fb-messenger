@@ -36,7 +36,7 @@ class RequestReceived
      *
      * @return mixed
      */
-    public function handle($request , $next)
+    public function handle($request, $next)
     {
         $this->debug->setWebhook($request->all());
 
