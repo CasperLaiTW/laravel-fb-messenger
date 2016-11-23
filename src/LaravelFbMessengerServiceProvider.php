@@ -5,7 +5,10 @@ namespace Casperlaitw\LaravelFbMessenger;
 use Casperlaitw\LaravelFbMessenger\Commands\GetStartButtonCommand;
 use Casperlaitw\LaravelFbMessenger\Commands\GreetingTextCommand;
 use Casperlaitw\LaravelFbMessenger\Commands\PersistentMenuCommand;
+use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Debug;
+use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Handler;
 use Casperlaitw\LaravelFbMessenger\Providers\RouteServiceProvider;
+use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -23,6 +26,7 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
     /**
      * Perform post-registration booting of services.
      *
+     * @throws \InvalidArgumentException
      */
     public function boot()
     {
@@ -31,6 +35,13 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
         ], 'config');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laravel-fb-messenger');
         $this->publishes([__DIR__.'/../public' => $this->app->basePath().'/public/vendor'], 'public');
+
+        if ($this->app['config']->get('fb-messenger.debug')) {
+            $this->app->extend(ExceptionHandler::class, function ($exceptionHandler, $app) {
+                $debug = $app->make(Debug::class);
+                return $app->make(Handler::class, ['exceptionHandler' => $exceptionHandler, 'debug' => $debug]);
+            });
+        }
     }
 
     /**

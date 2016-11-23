@@ -16,7 +16,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-12">
+      <div class="col-sm-12" v-show="current.status !== 500">
         <div class="card">
           <div class="card-header">
             Message Request
@@ -28,7 +28,10 @@
       </div>
       <div class="col-sm-12">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header" v-show="current.status === 500">
+            Internal Server Error
+          </div>
+          <div class="card-header" v-show="current.status !== 500">
             Facebook Response
           </div>
           <div class="card-block">
@@ -49,6 +52,7 @@
         current: {
           request: null,
           response: null,
+          status: null,
         },
       };
     },
@@ -69,6 +73,7 @@
         this.current = {
           request: this.broadcast.request[key],
           response: this.broadcast.response[key],
+          status: this.broadcast.status[key],
         };
       },
       clear() {

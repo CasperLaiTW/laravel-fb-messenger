@@ -4,7 +4,7 @@ use Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection;
 use Casperlaitw\LaravelFbMessenger\Contracts\BaseHandler;
 use Casperlaitw\LaravelFbMessenger\Contracts\PostbackHandler;
 use Casperlaitw\LaravelFbMessenger\Contracts\WebhookHandler;
-use Casperlaitw\LaravelFbMessenger\Debug;
+use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Debug;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Events\Dispatcher;

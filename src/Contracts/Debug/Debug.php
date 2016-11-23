@@ -6,7 +6,7 @@
  * Time: 上午3:33
  */
 
-namespace Casperlaitw\LaravelFbMessenger;
+namespace Casperlaitw\LaravelFbMessenger\Contracts\Debug;
 
 use Carbon\Carbon;
 use Casperlaitw\LaravelFbMessenger\Events\Broadcast;
@@ -95,6 +95,14 @@ class Debug
     }
 
     /**
+     * @return string
+     */
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
+    /**
      * @param $status
      *
      * @return $this
@@ -102,6 +110,29 @@ class Debug
     public function setStatus($status)
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set error message.
+     *
+     * @param $error
+     *
+     * @return $this
+     */
+    public function setError($error)
+    {
+        $this->response = $error;
+        $this->status = 500;
 
         return $this;
     }

@@ -1,7 +1,7 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
-use Casperlaitw\LaravelFbMessenger\Debug;
+use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Debug;
 use Casperlaitw\LaravelFbMessenger\Messages\Greeting;
 use Casperlaitw\LaravelFbMessenger\Messages\User;
 use Illuminate\Broadcasting\BroadcastException;

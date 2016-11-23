@@ -10,7 +10,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr v-for="(item, key) in data">
+          <tr v-for="(item, key) in reverseData">
             <td @click="ShowRequest(key)">{{ key }}</td>
           </tr>
           </tbody>
@@ -23,6 +23,7 @@
   </div>
 </template>
 <script>
+  import _ from 'lodash';
   import Echo from 'laravel-echo';
   import stringify from 'json-stringify';
   import Panel from './Panel.vue';
@@ -44,6 +45,11 @@
         this.$refs.panel.clear();
       },
     },
+    computed: {
+      reverseData() {
+        return _(this.data).toPairs().orderBy(0, 'desc').fromPairs().value();
+      }
+    },
     mounted() {
       const echo = new Echo({
         broadcaster: 'pusher',
@@ -58,6 +64,7 @@
           response: [],
           status: [],
         };
+
         if (e.webhook !== null) {
           this.$set(this.data, e.id, Object.assign(item, {webhook: stringify(e.webhook, null, 2)}));
         }

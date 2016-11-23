@@ -2,7 +2,7 @@
 
 use Casperlaitw\LaravelFbMessenger\Contracts\DefaultHandler;
 use Casperlaitw\LaravelFbMessenger\Controllers\WebhookController;
-use Casperlaitw\LaravelFbMessenger\Debug;
+use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Debug;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;

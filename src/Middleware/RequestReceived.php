@@ -8,7 +8,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Middleware;
 
-use Casperlaitw\LaravelFbMessenger\Debug;
+use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Debug;
 
 /**
  * Class RequestReceived

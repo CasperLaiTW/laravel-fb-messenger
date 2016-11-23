@@ -1,6 +1,6 @@
 <?php
 
-use Casperlaitw\LaravelFbMessenger\Debug;
+use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Debug;
 use Casperlaitw\LaravelFbMessenger\Middleware\RequestReceived;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;

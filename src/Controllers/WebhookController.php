@@ -8,7 +8,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Controllers;
 
 use Casperlaitw\LaravelFbMessenger\Contracts\WebhookHandler;
-use Casperlaitw\LaravelFbMessenger\Debug;
+use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Debug;
 use Casperlaitw\LaravelFbMessenger\Messages\Receiver;
 use Casperlaitw\LaravelFbMessenger\Middleware\RequestReceived;
 use Illuminate\Contracts\Config\Repository;
