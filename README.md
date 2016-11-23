@@ -176,7 +176,7 @@ The debug route using [Pusher](https://pusher.com/)
 ### Publish script
 **If package updated, you need to run this script again. Keep your javascript is up-to-date**
 ```shell
-php artisan vendor:publish --provider="Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider" --tag="public"
+php artisan vendor:publish --provider="Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider" --tag="public --force"
 ```
 
 ### Open browser
