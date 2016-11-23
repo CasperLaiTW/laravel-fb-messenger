@@ -59,6 +59,6 @@ class HandlerTest extends TestCase
 
         $actual = $this->getPrivateProperty(Handler::class, 'debug')->getValue($this->handler);
         $this->assertEquals(500, $actual->getStatus());
-        $this->assertEquals(['message' => 'ERROR'], $actual->getResponse());
+        $this->assertEquals('ERROR', array_get($actual->getResponse(), 'message'));
     }
 }
