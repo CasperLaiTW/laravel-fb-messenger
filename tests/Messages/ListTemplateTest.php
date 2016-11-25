@@ -42,6 +42,7 @@ class ListTemplateTest extends TestCase
                     'type' => 'template',
                     'payload' => [
                         'template_type' => 'list',
+                        'top_element_style' => 'compact',
                         'elements' => $elementExpected,
                         'buttons' => [$this->button->toData()],
                     ],
@@ -50,6 +51,7 @@ class ListTemplateTest extends TestCase
         ];
 
         $actual = new ListTemplate($this->sender, $this->case);
+        $actual->setTopStyle(ListTemplate::STYLE_COMPACT);
         $actual->setButton($this->button);
         $this->assertEquals($expected, $actual->toData());
     }

@@ -35,6 +35,7 @@ class ListTransformerTest extends TestCase
 
         $expected = [
             'template_type' => 'list',
+            'top_element_style' => 'large',
             'elements' => $expectedCase,
             'buttons' => [$testButton->toData()]
         ];
@@ -52,6 +53,7 @@ class ListTransformerTest extends TestCase
             ->shouldReceive('getSender')->andReturn($testSender)
             ->shouldReceive('getCollections')->andReturn($elements)
             ->shouldReceive('getButton')->andReturn($testButton)
+            ->shouldReceive('getTopStyle')->andReturn('large')
             ->getMock();
 
         return $message;

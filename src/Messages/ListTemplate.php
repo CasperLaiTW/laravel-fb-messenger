@@ -20,9 +20,24 @@ use Casperlaitw\LaravelFbMessenger\Transformers\ListTransformer;
 class ListTemplate extends Template
 {
     /**
+     * Top style large
+     */
+    const STYLE_LATGE = 'large';
+
+    /**
+     * Top style compact
+     */
+    const STYLE_COMPACT = 'compact';
+
+    /**
      * @var Button
      */
     private $button;
+
+    /**
+     * @var string
+     */
+    private $topStyle = self::STYLE_LATGE;
 
     /**
      * ListTemplate constructor.
@@ -78,5 +93,29 @@ class ListTemplate extends Template
         $this->button = $value;
 
         return $this;
+    }
+
+    /**
+     * Set top style
+     *
+     * @param $style
+     *
+     * @return $this
+     */
+    public function setTopStyle($style)
+    {
+        $this->topStyle = $style;
+
+        return $this;
+    }
+
+    /**
+     * Get top style
+     *
+     * @return string
+     */
+    public function getTopStyle()
+    {
+        return $this->topStyle;
     }
 }

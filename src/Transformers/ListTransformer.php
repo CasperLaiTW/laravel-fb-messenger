@@ -28,6 +28,7 @@ class ListTransformer implements StructuredTransformer
     {
         return [
             'template_type' => 'list',
+            'top_element_style' => $message->getTopStyle(),
             'elements' => $message->getCollections()->toData(),
             'buttons' => [$message->getButton()->toData()],
         ];
