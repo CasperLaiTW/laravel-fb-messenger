@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.3"></a>
+# [1.2.3](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.2.2...v1.2.3) (2016-11-25)
+
+
+### Bug Fixes
+
+* Fix list template buttons empty runtime error ([a779f6e](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/a779f6e))
+
+
+### Features
+
+* Added list template compact style ([f1efc2a](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/f1efc2a))
+
+
+
 <a name="1.2.2"></a>
 # [1.2.2](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.2.1...v1.2.2) (2016-11-23)
 
