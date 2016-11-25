@@ -45,6 +45,33 @@ class ListTransformerTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function test_transform_without_buttons()
+    {
+        $testSender = str_random();
+        $testCase = [
+            new ListElement('title1', 'description2', 'image_url'),
+            new ListElement('title2', 'description2', 'image_url'),
+            new ListElement('title2', 'description2', 'image_url'),
+        ];
+        
+        $expectedCase = [];
+        foreach ($testCase as $case) {
+            $expectedCase[] = $case->toData();
+        }
+
+        $transformer = new ListTransformer();
+
+        $expected = [
+            'template_type' => 'list',
+            'top_element_style' => 'large',
+            'elements' => $expectedCase,
+        ];
+
+
+        $actual = $transformer->transform($this->createMessageMock($testCase, $testSender, null));
+        $this->assertEquals($expected, $actual);
+    }
+
     private function createMessageMock($testCase, $testSender, $testButton)
     {
         $elements = new ListElementCollection($testCase);

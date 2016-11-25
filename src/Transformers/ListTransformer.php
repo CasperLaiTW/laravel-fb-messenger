@@ -26,11 +26,10 @@ class ListTransformer implements StructuredTransformer
      */
     public function transform(Message $message)
     {
-        return [
+        return array_merge([
             'template_type' => 'list',
             'top_element_style' => $message->getTopStyle(),
             'elements' => $message->getCollections()->toData(),
-            'buttons' => [$message->getButton()->toData()],
-        ];
+        ], $message->getButton() !== null ? ['buttons' => [$message->getButton()->toData()]] : []);
     }
 }
