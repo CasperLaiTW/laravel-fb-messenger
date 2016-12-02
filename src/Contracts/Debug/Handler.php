@@ -69,7 +69,7 @@ class Handler implements ExceptionHandler
         ];
         $this->debug->setError($errors)->broadcast();
 
-        return $this->exceptionHandler->render($request, $e)->setContent('Got error.');
+        return $this->exceptionHandler->render($request, $e);
     }
 
     /**

@@ -47,9 +47,6 @@ class HandlerTest extends TestCase
     public function test_render()
     {
         $response = m::mock(Response::class);
-        $response->shouldReceive('setContent')
-            ->once()
-            ->andReturnNull();
         $this->exceptionHandler
             ->shouldReceive('render')
             ->andReturn($response);
