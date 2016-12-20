@@ -80,7 +80,7 @@ Finally, you can run `php artisan route:list` to check.
      'verify_token' => env('MESSENGER_VERIFY_TOKEN'),
      'app_token' => env('MESSENGER_APP_TOKEN'),
      'auto_typing' => true,
-     'handlers' => [App\YourHandler::class],
+     'handlers' => [App\DefaultHandler::class],
      'custom_url' => '/chatbot', // like this
      'postbacks' => [],
  ];
@@ -96,8 +96,11 @@ Handler **MUST BE** extends `BaseHandler`.
 ```php
 <?php
 
+namespace App;
+
 use Casperlaitw\LaravelFbMessenger\Contracts\BaseHandler;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
+use Casperlaitw\LaravelFbMessenger\Messages\Text;
 
 class DefaultHandler extends BaseHandler
 {
@@ -120,6 +123,10 @@ class DefaultHandler extends BaseHandler
 `$payload` support regex or string.
 
 ```php
+<?php
+
+namespace App;
+
 use Casperlaitw\LaravelFbMessenger\Contracts\PostbackHandler;
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
 use Casperlaitw\LaravelFbMessenger\Messages\Text;
