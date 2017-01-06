@@ -14,7 +14,7 @@ use Casperlaitw\LaravelFbMessenger\Messages\DomainWhitelisting;
  * Class DomainWhitelistingCommand
  * @package Casperlaitw\LaravelFbMessenger\Commands
  */
-class DomainWhitelistingCommand extends BaseCommand
+class DomainWhitelistCommand extends BaseCommand
 {
     /**
      * The name and signature of the console command.

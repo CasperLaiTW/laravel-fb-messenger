@@ -31,7 +31,6 @@ class DomainWhitelistingCommandTest extends TestCase
             '--domain' => 'https://example.com',
             '--delete' => true,
         ]);
-
     }
 
     private function command()
