@@ -83,18 +83,31 @@ class Bot
     protected function call($url, $data, $type = self::TYPE_POST)
     {
         try {
+            $options = [
+                'query' => [
+                    'access_token' => $this->token,
+                ],
+            ];
+
+            switch ($type) {
+                case self::TYPE_DELETE:
+                case self::TYPE_POST:
+                    $options = array_merge($options, [
+                        'headers' => [
+                            'Content-Type' => 'application/json'
+                        ],
+                        'body' => json_encode($data),
+                    ]);
+                    break;
+                case self::TYPE_GET:
+                    $options['query'] = array_merge($options['query'], $data);
+                    break;
+            }
+
             $response = $this->client->request(
                 $type,
                 $url,
-                [
-                    'headers' => [
-                        'Content-Type' => 'application/json'
-                    ],
-                    'body' => json_encode($data),
-                    'query' => [
-                        'access_token' => $this->token,
-                    ],
-                ]
+                $options
             );
 
             $this->debug($data, $response->getBody(), $response->getStatusCode());
