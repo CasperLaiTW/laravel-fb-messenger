@@ -92,7 +92,10 @@ class PersistentMenuCommand extends BaseCommand
      */
     private function send()
     {
-        $persistent = (new PersistentMenuMessage($this->buttons))->setDelete($this->option('delete'));
+        $persistent = new PersistentMenuMessage($this->buttons);
+        if ($this->option('delete')) {
+            $persistent->useDelete();
+        }
         $this->comment($this->handler->send($persistent)->getResponse());
     }
 

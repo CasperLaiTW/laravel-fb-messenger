@@ -43,7 +43,7 @@ class GetStartButtonCommand extends BaseCommand
 
         $startButton = new StartButton($payload);
         if ($deleteOption) {
-            $startButton->setDelete(true);
+            $startButton->useDelete();
         }
 
         $this->comment($this->handler->send($startButton)->getResponse());

@@ -9,6 +9,7 @@ namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
+use Casperlaitw\LaravelFbMessenger\Contracts\RequestType;
 
 /**
  * Class StartButton
@@ -16,7 +17,7 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
  */
 class StartButton extends Message implements ThreadInterface
 {
-    use Deletable;
+    use RequestType;
 
     /**
      * @var string
