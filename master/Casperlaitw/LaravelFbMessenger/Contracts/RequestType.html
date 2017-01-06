@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Casperlaitw\LaravelFbMessenger\Messages\Receiver | Laravel Facebook Messenger API</title>
+    <title>Casperlaitw\LaravelFbMessenger\Contracts\RequestType | Laravel Facebook Messenger API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Casperlaitw_LaravelFbMessenger_Messages_Receiver" data-root-path="../../../">
+    <body id="class" data-name="class:Casperlaitw_LaravelFbMessenger_Contracts_RequestType" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -69,32 +69,32 @@
 
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
-                <li><span class="label label-default">class</span></li>
+                <li><span class="label label-default">trait</span></li>
                                                             <li><a href="../../../Casperlaitw.html">Casperlaitw</a></li>
                                         <li><a href="../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li>
-                                        <li><a href="../../../Casperlaitw/LaravelFbMessenger/Messages.html">Messages</a></li>
+                                        <li><a href="../../../Casperlaitw/LaravelFbMessenger/Contracts.html">Contracts</a></li>
     
-                <li>Receiver</li>
+                <li>RequestType</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            Receiver
+            RequestType
                 
         </h1>
     </div>
 
-    <p>    class
-    <strong>Receiver</strong>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Messages/Receiver.php">View source</a>)
+    <p>    trait
+    <strong>RequestType</strong>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/RequestType.php">View source</a>)
 </p>
 
         
     
 
             <div class="description">
-            <p>Class Receiver</p>                    </div>
+            <p>Class RequestType</p>                    </div>
     
     
     
@@ -104,22 +104,42 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\$this">$this</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<abbr title="Illuminate\Http\Request">Request</abbr> $request, bool $filterSkip = true)
+                    <a href="#method_usePost">usePost</a>()
         
-                                            <p>Receiver constructor.</p>                </div>
+                                            <p>Use post type</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/ReceiveMessageCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection">ReceiveMessageCollection</abbr></a>
+                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\$this">$this</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getMessages">getMessages</a>()
+                    <a href="#method_useGet">useGet</a>()
         
-                                            <p>Get message collection</p>                </div>
+                                            <p>Use get type</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_useDelete">useDelete</a>()
+        
+                                            <p>Use delete type</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getCurlType">getCurlType</a>()
+        
+                                            <p>Get request type</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -129,10 +149,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Messages/Receiver.php#L41">line 41</a></div>
-        <code>                    
-    <strong>__construct</strong>(<abbr title="Illuminate\Http\Request">Request</abbr> $request, bool $filterSkip = true)
+                    <h3 id="method_usePost">
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/RequestType.php#L29">line 29</a></div>
+        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\$this">$this</abbr>
+    <strong>usePost</strong>()
         </code>
     </h3>
     <div class="details">
@@ -140,24 +160,18 @@
     
 
                     <div class="method-description">
-                                    <p>Receiver constructor.</p>                                </div>
+                                    <p>Use post type</p>                                </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
+            
+                            <h4>Return Value</h4>
 
                     <table class="table table-condensed">
-                    <tr>
-                <td><abbr title="Illuminate\Http\Request">Request</abbr></td>
-                <td>$request</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>bool</td>
-                <td>$filterSkip</td>
-                <td></td>
-            </tr>
-            </table>
+        <tr>
+            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
 
-            
             
             
                     </div>
@@ -165,10 +179,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getMessages">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Messages/Receiver.php#L95">line 95</a></div>
-        <code>                    <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/ReceiveMessageCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection">ReceiveMessageCollection</abbr></a>
-    <strong>getMessages</strong>()
+                    <h3 id="method_useGet">
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/RequestType.php#L41">line 41</a></div>
+        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\$this">$this</abbr>
+    <strong>useGet</strong>()
         </code>
     </h3>
     <div class="details">
@@ -176,14 +190,74 @@
     
 
                     <div class="method-description">
-                                    <p>Get message collection</p>                                </div>
+                                    <p>Use get type</p>                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../../Casperlaitw/LaravelFbMessenger/Collections/ReceiveMessageCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\ReceiveMessageCollection">ReceiveMessageCollection</abbr></a></td>
+            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_useDelete">
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/RequestType.php#L53">line 53</a></div>
+        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\$this">$this</abbr>
+    <strong>useDelete</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Use delete type</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCurlType">
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/RequestType.php#L65">line 65</a></div>
+        <code>                    string
+    <strong>getCurlType</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get request type</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
             <td></td>
         </tr>
     </table>
