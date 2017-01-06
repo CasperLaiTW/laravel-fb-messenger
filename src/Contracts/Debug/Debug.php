@@ -142,7 +142,9 @@ class Debug
      */
     public function broadcast()
     {
-        $this->dispatcher->fire(new Broadcast($this->id, $this->webhook, $this->request, $this->response, $this->status));
+        $this->dispatcher->fire(
+            new Broadcast($this->id, $this->webhook, $this->request, $this->response, $this->status)
+        );
 
         $this->webhook = $this->request = $this->response = $this->status = null;
     }
