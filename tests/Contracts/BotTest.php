@@ -29,8 +29,9 @@ class BotTest extends TestCase
 
     public function test_get_user()
     {
-        $user = new User('1031304140280126');
+        $user = new User('1282081671850626');
         $response = $this->bot->send($user);
+
         $this->assertEquals('Casper', $response['first_name']);
     }
 
