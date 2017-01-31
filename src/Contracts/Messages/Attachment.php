@@ -124,7 +124,7 @@ abstract class Attachment extends Message
     public function setAttachmentId($id)
     {
         $this->payload['attachment_id'] = $id;
-        unset($this->payload['url']);
+        unset($this->payload['url'], $this->payload['is_reusable']);
 
         return $this;
     }
