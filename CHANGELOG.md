@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.5"></a>
+## [1.2.5](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.2.4...v1.2.5) (2017-01-31)
+
+
+### Bug Fixes
+
+* If set attachment id reusable unnecessary ([23b6343](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/23b6343))
+
+
+
 <a name="1.2.4"></a>
 ## [1.2.4](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.2.3...v1.2.4) (2016-12-02)
 
