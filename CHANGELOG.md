@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.2.5...v1.3.0) (2017-02-09)
+
+
+### Bug Fixes
+
+* Fix wrong file name ([3e86ce8](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/3e86ce8))
+* Support laravel 5.4 ([315bee9](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/315bee9))
+
+
+### Features
+
+* Add domain whitelisting command ([d50edad](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/d50edad)), closes [#55](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/55)
+
+
+
 <a name="1.2.5"></a>
 ## [1.2.5](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.2.4...v1.2.5) (2017-01-31)
 
