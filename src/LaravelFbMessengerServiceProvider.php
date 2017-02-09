@@ -40,7 +40,7 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
         if ($this->app['config']->get('fb-messenger.debug')) {
             $this->app->extend(ExceptionHandler::class, function ($exceptionHandler, $app) {
                 $debug = $app->make(Debug::class);
-                return $app->make(Handler::class, ['exceptionHandler' => $exceptionHandler, 'debug' => $debug]);
+                return new Handler($exceptionHandler, $debug);
             });
         }
     }

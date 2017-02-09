@@ -116,10 +116,7 @@ class LaravelFbMessengerServiceProviderTest extends TestCase
             ->shouldReceive('make')
             ->with(Debug::class)
             ->once()
-            ->andReturn($debug)
-            ->shouldReceive('make')
-            ->with(Handler::class, ['exceptionHandler' => $exceptionHandler, 'debug' => $debug])
-            ->once();
+            ->andReturn($debug);
 
         $provider = m::mock(LaravelFbMessengerServiceProvider::class.'[mergeConfigFrom]', [$this->applicationMock]);
 
