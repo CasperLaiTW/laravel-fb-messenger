@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.3.0...v1.3.1) (2017-03-14)
+
+
+### Bug Fixes
+
+* Remove call button only use by itself. ([b2f786f](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/b2f786f)), closes [#65](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/65)
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.2.5...v1.3.0) (2017-02-09)
 
