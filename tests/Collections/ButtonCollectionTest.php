@@ -62,18 +62,6 @@ class ButtonCollectionTest extends TestCase
         $this->assertEquals($expected, $collection->getElements()[0]);
     }
 
-    public function test_more_than_one_buttons_with_call_button()
-    {
-        $this->expectException(OnlyUseByItselfException::class);
-
-        $fake = Factory::create();
-        $collection = new ButtonCollection();
-        $title = str_random();
-        $phone = $fake->phoneNumber;
-        $collection->addPostBackButton('POSTBACK');
-        $collection->addCallButton($title, $phone);
-    }
-
     public function test_add_share_button()
     {
         $collection = new ButtonCollection();
