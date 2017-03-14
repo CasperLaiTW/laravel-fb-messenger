@@ -187,8 +187,6 @@
                     
             {"type": "Class", "fromName": "Casperlaitw\\LaravelFbMessenger\\Exceptions", "fromLink": "Casperlaitw/LaravelFbMessenger/Exceptions.html", "link": "Casperlaitw/LaravelFbMessenger/Exceptions/NotOptionsException.html", "name": "Casperlaitw\\LaravelFbMessenger\\Exceptions\\NotOptionsException", "doc": "&quot;Class NotOptionsException&quot;"},
                     
-            {"type": "Class", "fromName": "Casperlaitw\\LaravelFbMessenger\\Exceptions", "fromLink": "Casperlaitw/LaravelFbMessenger/Exceptions.html", "link": "Casperlaitw/LaravelFbMessenger/Exceptions/OnlyUseByItselfException.html", "name": "Casperlaitw\\LaravelFbMessenger\\Exceptions\\OnlyUseByItselfException", "doc": "&quot;Class OnlyUseByItselfException&quot;"},
-                    
             {"type": "Class", "fromName": "Casperlaitw\\LaravelFbMessenger\\Exceptions", "fromLink": "Casperlaitw/LaravelFbMessenger/Exceptions.html", "link": "Casperlaitw/LaravelFbMessenger/Exceptions/OptionNotComparedException.html", "name": "Casperlaitw\\LaravelFbMessenger\\Exceptions\\OptionNotComparedException", "doc": "&quot;Class OptionNotComparedException&quot;"},
                     
             {"type": "Class", "fromName": "Casperlaitw\\LaravelFbMessenger\\Exceptions", "fromLink": "Casperlaitw/LaravelFbMessenger/Exceptions.html", "link": "Casperlaitw/LaravelFbMessenger/Exceptions/RequiredArgumentException.html", "name": "Casperlaitw\\LaravelFbMessenger\\Exceptions\\RequiredArgumentException", "doc": "&quot;Class RequiredArgumentException&quot;"},
