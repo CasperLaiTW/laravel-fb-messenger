@@ -52,6 +52,13 @@ class UrlButton extends Button
     private $fallback;
 
     /**
+     * Hide share
+     *
+     * @var bool
+     */
+    private $share = false;
+    
+    /**
      * UrlButton constructor.
      * @param $title
      * @param $url
@@ -100,7 +107,19 @@ class UrlButton extends Button
 
         return $this;
     }
+    
+    /**
+     * Hide share button
+     *
+     * @return $this
+     */
+    public function hideShareButton()
+    {
+        $this->share = true;
 
+        return $this;
+    }
+    
     /**
      * To array for send api
      *
@@ -119,6 +138,10 @@ class UrlButton extends Button
 
         if ($this->fallback !== null) {
             $data['fallback_url'] = $this->fallback;
+        }
+        
+        if ($this->share) {
+            $data['webview_share_button'] = 'hide';
         }
         return array_merge(parent::toData(), $data);
     }
