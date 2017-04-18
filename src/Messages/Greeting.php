@@ -8,28 +8,28 @@
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
-use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ProfileInterface;
 
 /**
  * Class Greeting
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class Greeting extends Message implements ThreadInterface
+class Greeting extends Message implements ProfileInterface
 {
     /**
-     * @var string
+     * @var array
      */
-    private $greeting;
+    private $greetings;
 
     /**
      * Greeting constructor.
      *
-     * @param $greeting
+     * @param array $greetings
      */
-    public function __construct($greeting)
+    public function __construct($greetings)
     {
         parent::__construct(null);
-        $this->greeting = $greeting;
+        $this->greetings = $greetings;
     }
 
     /**
@@ -40,10 +40,7 @@ class Greeting extends Message implements ThreadInterface
     public function toData()
     {
         return [
-            'setting_type' => 'greeting',
-            'greeting' => [
-                'text' => $this->greeting,
-            ],
+            'greeting' => $this->greetings,
         ];
     }
 }

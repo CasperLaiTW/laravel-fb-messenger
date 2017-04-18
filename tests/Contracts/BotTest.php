@@ -23,7 +23,8 @@ class BotTest extends TestCase
 
     public function test_send_success()
     {
-        $message = new Greeting(str_random());
+        $message = new Greeting(['locale' => 'default', 'text' => str_random()]);
+        $this->bot->setSecret('test_app_secret');
         $this->bot->send($message);
     }
 

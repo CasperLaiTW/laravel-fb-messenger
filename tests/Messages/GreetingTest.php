@@ -12,13 +12,15 @@ class GreetingTest extends TestCase
     {
         $greetingText = str_random();
         $expected = [
-            'setting_type'    => 'greeting',
             'greeting' => [
-                'text' => $greetingText,
-            ]
+                [
+                    'locale' => 'default',
+                    'text' => $greetingText,
+                ],
+            ],
         ];
 
-        $greeting = new Greeting($greetingText);
+        $greeting = new Greeting([['locale' => 'default', 'text' => $greetingText]]);
         $this->assertEquals($expected, $greeting->toData());
     }
 }

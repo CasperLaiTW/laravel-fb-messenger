@@ -19,6 +19,22 @@ class GreetingTextCommandTest extends TestCase
         ]);
     }
 
+    public function test_empty_greeting()
+    {
+        $commandTester = $this->createCommandTester('fb:greeting');
+        $commandTester->execute([]);
+
+        $this->assertEquals('Please input greeting'.PHP_EOL, $commandTester->getDisplay());
+    }
+
+    public function test_default_greeting()
+    {
+        $commandTester = $this->createCommandTester('fb:greeting');
+        $commandTester->execute([
+            '--greeting' => ['Hi'],
+        ]);
+    }
+
     private function command()
     {
         return GreetingTextCommand::class;
