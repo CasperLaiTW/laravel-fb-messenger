@@ -59,6 +59,7 @@ class WebhookHandler
      *
      * @param ReceiveMessageCollection $messages
      * @param Repository $config
+     * @param Debug $debug
      */
     public function __construct(
         ReceiveMessageCollection $messages,
@@ -68,7 +69,6 @@ class WebhookHandler
         $this->app = new Container();
         $this->messages = $messages;
         $this->config = $config;
-        $this->token = $this->config->get('fb-messenger.app_token');
         $this->debug = $debug;
     }
 
@@ -158,7 +158,10 @@ class WebhookHandler
      */
     protected function createBot($handler)
     {
-        $bot = $handler->createBot($this->token);
+        $bot = $handler->createBot(
+            $this->config->get('fb-messenger.app_token'),
+            $this->config->get('fb-messenger.app_secret')
+        );
         if ($this->config->get('fb-messenger.debug')) {
             $bot->debug($this->debug);
         }

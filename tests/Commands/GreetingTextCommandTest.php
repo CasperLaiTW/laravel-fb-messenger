@@ -14,7 +14,8 @@ class GreetingTextCommandTest extends TestCase
     {
         $commandTester = $this->createCommandTester('fb:greeting');
         $commandTester->execute([
-            'greeting' => 'Hello',
+            '--locale' => ['default', 'zh_TW'],
+            '--greeting' => ['Hi', 'Hi, zh_TW'],
         ]);
     }
 

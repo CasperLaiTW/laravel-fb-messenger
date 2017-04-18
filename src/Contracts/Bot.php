@@ -55,7 +55,7 @@ class Bot
     /**
      * @var null|string
      */
-    private $secret;
+    private $secret = null;
 
     /**
      * FbBotApp constructor.
@@ -81,7 +81,9 @@ class Bot
      */
     public function setSecret($secret)
     {
-        $this->secret = hash_hmac('sha256', $this->token, $secret);
+        if ($secret) {
+            $this->secret = hash_hmac('sha256', $this->token, $secret);
+        }
     }
 
     /**
