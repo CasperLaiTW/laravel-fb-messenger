@@ -31,6 +31,9 @@ abstract class BaseCommand extends Command
     public function __construct(CommandHandler $handler, Repository $config)
     {
         parent::__construct();
-        $this->handler = $handler->createBot($config->get('fb-messenger.app_token'));
+        $this->handler = $handler->createBot(
+            $config->get('fb-messenger.app_token'),
+            $config->get('fb-messenger.app_secret')
+        );
     }
 }

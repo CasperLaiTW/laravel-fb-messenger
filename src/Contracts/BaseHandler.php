@@ -26,12 +26,14 @@ abstract class BaseHandler implements HandlerInterface
      * Create bot to send API
      *
      * @param $token
+     * @param $secret
      *
      * @return $this
      */
-    public function createBot($token)
+    public function createBot($token, $secret = null)
     {
         $this->bot = new Bot($token);
+        $this->bot->setSecret($secret);
 
         return $this;
     }

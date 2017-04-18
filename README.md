@@ -36,6 +36,17 @@ php artisan vendor:publish --provider="Casperlaitw\LaravelFbMessenger\LaravelFbM
 
 ## Configuration 
 
+### Security
+
+Almost every API request with `access_token`, if you want to improved security in your app,
+you can use `appsecret_proof`. Please add `MESSENGER_APP_SECRET` to `.env` file and enable proof on all calls.
+*If you don't know how to get secret token and enabled proof, please checkout [Graph Api](https://developers.facebook.com/docs/graph-api/securing-requests)*
+
+`.env`
+```
+MESSENGER_APP_SECRET="APP SECRET TOKEN"
+```
+
 ### Token
 Add you token to `.env` file or modify `fb-messenger.php` config.
 

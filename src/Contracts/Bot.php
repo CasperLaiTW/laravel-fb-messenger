@@ -53,6 +53,11 @@ class Bot
     private $debug = null;
 
     /**
+     * @var null|string
+     */
+    private $secret;
+
+    /**
      * FbBotApp constructor.
      * @param string $token
      */
@@ -68,6 +73,15 @@ class Bot
     public function setDebug($debug)
     {
         $this->debug = $debug;
+    }
+
+    /**
+     * @param $secret
+     * @return $this
+     */
+    public function setSecret($secret)
+    {
+        $this->secret = hash_hmac('sha256', $this->token, $secret);
     }
 
     /**
@@ -88,6 +102,10 @@ class Bot
                     'access_token' => $this->token,
                 ],
             ];
+
+            if ($this->secret) {
+                $options['query']['appsecret_proof'] = $this->secret;
+            }
 
             switch ($type) {
                 case self::TYPE_DELETE:

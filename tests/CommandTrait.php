@@ -21,6 +21,9 @@ trait CommandTrait
             ->shouldReceive('get')
             ->with('fb-messenger.app_token')
             ->andReturn(getenv('MESSENGER_APP_TOKEN'))
+            ->shouldReceive('get')
+            ->with('fb-messenger.app_secret')
+            ->andReturn(getenv('MESSENGER_APP_SECRET'))
             ->getMock();
 
         $response = m::mock(HandleMessageResponse::class)->makePartial();
