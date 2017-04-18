@@ -85,6 +85,5 @@ class BotTest extends TestCase
         $actual = $this->getPrivateProperty(Bot::class, 'secret')->getValue($this->bot);
 
         $this->assertEquals($expected, $actual);
-
     }
 }
