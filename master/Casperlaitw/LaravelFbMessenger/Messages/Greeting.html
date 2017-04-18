@@ -25,9 +25,9 @@
                 <div id="control-panel">
                     <form action="#" method="GET">
                 <select id="version-switcher" name="version">
-                                            <option value="../../../../1.1/index.html" selected>1.1</option>
+                                            <option value="../../../../1.1/index.html">1.1</option>
                                             <option value="../../../../1.2/index.html">1.2</option>
-                                            <option value="../../../../master/index.html">master</option>
+                                            <option value="../../../../master/index.html" selected>master</option>
                                     </select>
             </form>
                 <form id="search-form" action="../../../search.html" method="GET">
@@ -88,7 +88,7 @@
 
     <p>    class
     <strong>Greeting</strong>        extends <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a>        implements
-        <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/ThreadInterface.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface">ThreadInterface</abbr></a>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Greeting.php">View source</a>)
+        <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/ProfileInterface.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\ProfileInterface">ProfileInterface</abbr></a>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Messages/Greeting.php">View source</a>)
 </p>
 
         
@@ -108,7 +108,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>($greeting)
+                    <a href="#method___construct">__construct</a>(array $greetings)
         
                                             <p>Greeting constructor.</p>                </div>
                 <div class="col-md-2"></div>
@@ -141,9 +141,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Greeting.php#L29">line 29</a></div>
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Messages/Greeting.php#L29">line 29</a></div>
         <code>                    
-    <strong>__construct</strong>($greeting)
+    <strong>__construct</strong>(array $greetings)
         </code>
     </h3>
     <div class="details">
@@ -157,8 +157,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td></td>
-                <td>$greeting</td>
+                <td>array</td>
+                <td>$greetings</td>
                 <td></td>
             </tr>
             </table>
@@ -172,7 +172,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getSender">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html#method_getSender"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Message.php#L35">line 35</a></div>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html#method_getSender"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/Messages/Message.php#L35">line 35</a></div>
         <code>                    mixed
     <strong>getSender</strong>()
         </code>
@@ -202,7 +202,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_toData">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Greeting.php#L40">line 40</a></div>
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Messages/Greeting.php#L40">line 40</a></div>
         <code>                    array
     <strong>toData</strong>()
         </code>
