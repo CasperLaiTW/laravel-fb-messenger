@@ -8,9 +8,9 @@
 namespace Casperlaitw\LaravelFbMessenger\Contracts\Messages;
 
 /**
- * Interface ThreadInterface
+ * Interface ProfileInterface
  * @package Casperlaitw\LaravelFbMessenger\Contracts\Messages
  */
-interface ThreadInterface
+interface ProfileInterface
 {
 }

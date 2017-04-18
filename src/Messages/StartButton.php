@@ -8,14 +8,14 @@
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
-use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ProfileInterface;
 use Casperlaitw\LaravelFbMessenger\Contracts\RequestType;
 
 /**
  * Class StartButton
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class StartButton extends Message implements ThreadInterface
+class StartButton extends Message implements ProfileInterface
 {
     use RequestType;
 

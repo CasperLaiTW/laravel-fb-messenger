@@ -9,7 +9,7 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\UserInterface;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
-use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ProfileInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Broadcasting\BroadcastException;
@@ -141,7 +141,7 @@ class Bot
     /**
      * Send message to API
      *
-     * If instance of ThreadInterface, auto turn to thread_settings endpoint
+     * If instance of ProfileInterface, auto turn to thread_settings endpoint
      *
      * @param Message $message
      * @param string $type
@@ -151,8 +151,8 @@ class Bot
      */
     public function send($message, $type = self::TYPE_POST)
     {
-        if ($message instanceof ThreadInterface) {
-            return $this->sendThreadSetting($message->toData(), $type);
+        if ($message instanceof ProfileInterface) {
+            return $this->sendProfile($message->toData(), $type);
         }
 
         if ($message instanceof UserInterface) {
@@ -173,16 +173,17 @@ class Bot
     }
 
     /**
-     * Send thread_settings endpoint
+     * Send messenger profile endpoint
      *
      * @param array $message
      * @param string $type
      *
      * @return HandleMessageResponse
+     * @throws \RuntimeException
      */
-    protected function sendThreadSetting($message, $type = self::TYPE_POST)
+    protected function sendProfile($message, $type = self::TYPE_POST)
     {
-        return new HandleMessageResponse($this->call('me/thread_settings', $message, $type));
+        return new HandleMessageResponse($this->call('me/messenger_profile', $message, $type));
     }
 
     /**

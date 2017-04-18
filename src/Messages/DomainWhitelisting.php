@@ -9,14 +9,14 @@
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
-use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ThreadInterface;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ProfileInterface;
 use Casperlaitw\LaravelFbMessenger\Contracts\RequestType;
 
 /**
  * Class DomainWhitelisting
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
-class DomainWhitelisting extends Message implements ThreadInterface
+class DomainWhitelisting extends Message implements ProfileInterface
 {
     use RequestType;
 
