@@ -26,8 +26,8 @@
                     <form action="#" method="GET">
                 <select id="version-switcher" name="version">
                                             <option value="../../../../1.1/index.html">1.1</option>
-                                            <option value="../../../../1.2/index.html" selected>1.2</option>
-                                            <option value="../../../../master/index.html">master</option>
+                                            <option value="../../../../1.2/index.html">1.2</option>
+                                            <option value="../../../../master/index.html" selected>master</option>
                                     </select>
             </form>
                 <form id="search-form" action="../../../search.html" method="GET">
@@ -87,7 +87,7 @@
     </div>
 
     <p>    class
-    <strong>Bot</strong>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Bot.php">View source</a>)
+    <strong>Bot</strong>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/Bot.php">View source</a>)
 </p>
 
         
@@ -151,6 +151,17 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
+                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setSecret">setSecret</a>($secret)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/HandleMessageResponse.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse">HandleMessageResponse</abbr></a>|array
                 </div>
                 <div class="col-md-8 type">
@@ -167,7 +178,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Bot.php#L59">line 59</a></div>
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/Bot.php#L64">line 64</a></div>
         <code>                    
     <strong>__construct</strong>(string $token)
         </code>
@@ -198,7 +209,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setDebug">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Bot.php#L68">line 68</a></div>
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/Bot.php#L73">line 73</a></div>
         <code>                    
     <strong>setDebug</strong>($debug)
         </code>
@@ -226,8 +237,46 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_setSecret">
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/Bot.php#L82">line 82</a></div>
+        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\$this">$this</abbr>
+    <strong>setSecret</strong>($secret)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$secret</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_send">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Bot.php#L134">line 134</a></div>
+        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/master/src/Contracts/Bot.php#L152">line 152</a></div>
         <code>                    <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/HandleMessageResponse.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse">HandleMessageResponse</abbr></a>|array
     <strong>send</strong>(<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a> $message, string $type = self::TYPE_POST)
         </code>
