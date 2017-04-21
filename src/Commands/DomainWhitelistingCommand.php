@@ -21,8 +21,8 @@ class DomainWhitelistingCommand extends BaseCommand
      *
      * @var string
      */
-    protected $signature = 'fb:whitelisting {--domain=* : Your domain url} {--d | delete : Delete the domain url} '.
-        '{--r | read : Read domain whitelising}';
+    protected $signature = 'fb:whitelisting {--domain=* : Your domain url} {--d | delete : Delete all domain whitelisting} '.
+        '{--r | read : Read domain whitelisting}';
 
     /**
      * The console command description.
@@ -76,7 +76,7 @@ class DomainWhitelistingCommand extends BaseCommand
         $command = new DomainWhitelisting($domains);
 
         if ($this->option('delete')) {
-            $command->setAction(DomainWhitelisting::TYPE_DELETE);
+            $command->setAction(DomainWhitelisting::TYPE_DELETE)->useDelete();
         }
 
         $this->comment($this->handler->send($command)->getResponse());

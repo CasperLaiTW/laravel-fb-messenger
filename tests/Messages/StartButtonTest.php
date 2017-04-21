@@ -12,13 +12,9 @@ class StartButtonTest extends TestCase
     {
         $payload = str_random();
         $expected = [
-            'setting_type'    => 'call_to_actions',
-            'thread_state'    => 'new_thread',
-            'call_to_actions' => [
-                [
-                    'payload' => $payload,
-                ],
-            ]
+            'get_started' => [
+                'payload' => $payload,
+            ],
         ];
 
         $startButton = new StartButton($payload);

@@ -43,12 +43,8 @@ class StartButton extends Message implements ProfileInterface
     public function toData()
     {
         return [
-            'setting_type' => 'call_to_actions',
-            'thread_state' => 'new_thread',
-            'call_to_actions' => [
-                [
-                    'payload' => $this->payload,
-                ],
+            'get_started' => [
+                'payload' => $this->payload,
             ],
         ];
     }

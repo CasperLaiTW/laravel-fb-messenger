@@ -123,7 +123,7 @@ class Bot
                     $options['query'] = array_merge($options['query'], $data);
                     break;
             }
-
+            
             $response = $this->client->request(
                 $type,
                 $url,

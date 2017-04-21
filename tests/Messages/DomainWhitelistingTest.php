@@ -28,11 +28,9 @@ class DomainWhitelistingTest extends \PHPUnit_Framework_TestCase
         $message->setAction(DomainWhitelisting::TYPE_DELETE);
 
         $this->assertArraySubset([
-            'setting_type' => 'domain_whitelisting',
-            'whitelisted_domains' => [
-                'https://example.com',
+            'fields' => [
+                'whitelisted_domains',
             ],
-            'domain_action_type' => 'remove',
         ], $message->toData());
     }
 
@@ -43,11 +41,9 @@ class DomainWhitelistingTest extends \PHPUnit_Framework_TestCase
         $message = new DomainWhitelisting($domains);
 
         $this->assertArraySubset([
-            'setting_type' => 'domain_whitelisting',
             'whitelisted_domains' => [
                 'https://example.com',
             ],
-            'domain_action_type' => 'add',
         ], $message->toData());
     }
 }

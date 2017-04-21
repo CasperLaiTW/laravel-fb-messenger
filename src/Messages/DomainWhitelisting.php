@@ -27,7 +27,7 @@ class DomainWhitelisting extends Message implements ProfileInterface
     /**
      * Delete type
      */
-    const TYPE_DELETE = 'remove';
+    const TYPE_DELETE = 'delete';
 
     /**
      * Read type
@@ -99,10 +99,16 @@ class DomainWhitelisting extends Message implements ProfileInterface
             ];
         }
 
+        if ($this->action === self::TYPE_DELETE) {
+            return [
+                'fields' => [
+                    'whitelisted_domains',
+                ],
+            ];
+        }
+
         return [
-            'setting_type' => 'domain_whitelisting',
             'whitelisted_domains' => $this->domains,
-            'domain_action_type' => $this->action,
         ];
     }
 }
