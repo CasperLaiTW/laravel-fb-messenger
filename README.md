@@ -31,7 +31,7 @@ In your `config/app.php` add  `Casperlaitw\LaravelFbMessenger\LaravelFbMessenger
 
 ### Publish Configuration
 ```shell
-php artisan vendor:publish --provider="Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider"
+php artisan vendor:publish --provider="Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider" --tag="config"
 ```
 
 ## Configuration 
@@ -59,26 +59,6 @@ Add you token to `.env` file or modify `fb-messenger.php` config.
 MESSENGER_VERIFY_TOKEN="By You Writing"
 MESSENGER_APP_TOKEN="Page Access Token"
 ...
-```
-
-### Auto Typing
-
-![Typing](https://cdn.rawgit.com/CasperLaiTW/laravel-fb-messenger/master/docs/images/typing.png)
-
-Auto typing is enabled by default.
-
-If you don't want to enable, set `auto_typing` to `false`
-
-```php
-return [
-    'verify_token' => env('MESSENGER_VERIFY_TOKEN'),
-    'app_token' => env('MESSENGER_APP_TOKEN'),
-    'auto_typing' => false,  // disabled
-    'handlers' => [App\YourHandler::class],
-    'postbacks' => [
-        App\StartupPostback::class,
-    ],
-];    
 ```
 
 ### Custom Url

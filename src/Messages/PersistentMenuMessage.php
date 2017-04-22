@@ -7,6 +7,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
+use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ProfileInterface;
 use Casperlaitw\LaravelFbMessenger\Contracts\RequestType;
@@ -20,19 +21,19 @@ class PersistentMenuMessage extends Message implements ProfileInterface
     use RequestType;
 
     /**
-     * @var
+     * @var array
      */
-    private $buttons;
+    private $menus;
 
     /**
      * PersistentMenuMessage constructor.
      *
-     * @param $buttons
+     * @param $menus
      */
-    public function __construct($buttons = [])
+    public function __construct($menus = [])
     {
         parent::__construct(null);
-        $this->buttons = $buttons;
+        $this->menus = $menus;
     }
 
     /**
@@ -41,13 +42,16 @@ class PersistentMenuMessage extends Message implements ProfileInterface
      */
     public function toData()
     {
-        $buttons = collect($this->buttons);
+        if ($this->type === Bot::TYPE_DELETE) {
+            return [
+                'fields' => [
+                    'persistent_menu',
+                ],
+            ];
+        }
+
         return [
-            'setting_type' => 'call_to_actions',
-            'thread_state' => 'existing_thread',
-            'call_to_actions' => $buttons->map(function (Button $item) {
-                return $item->toData();
-            })->toArray(),
+            'persistent_menu' => $this->menus,
         ];
     }
 }

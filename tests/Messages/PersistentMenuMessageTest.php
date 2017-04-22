@@ -1,8 +1,9 @@
 <?php
 
-use Casperlaitw\LaravelFbMessenger\Messages\Button;
+use Casperlaitw\LaravelFbMessenger\Facades\MessengerMenu;
 use Casperlaitw\LaravelFbMessenger\Messages\PersistentMenuMessage;
-use Mockery as m;
+use Casperlaitw\LaravelFbMessenger\PersistentMenu\Menu;
+use Illuminate\Container\Container;
 
 /**
  * User: casperlai
@@ -11,25 +12,89 @@ use Mockery as m;
  */
 class PersistentMenuMessageTest extends TestCase
 {
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
+
     public function test_to_data()
     {
-        $persistent = new PersistentMenuMessage([$this->getMessageButtonStub()]);
+        $menu = $this->getMenu();
+        require __DIR__ . '/../stub/menu.php';
+        $persistent = new PersistentMenuMessage($menu->getMenus());
         $expected = [
-            'setting_type' => 'call_to_actions',
-            'thread_state' => 'existing_thread',
-            'call_to_actions' => [[]],
+            'persistent_menu' => [
+                [
+                    'locale' => 'default',
+                    'call_to_actions' => [
+                        [
+                            'type' => 'postback',
+                            'title' => 'Test Button',
+                            'payload' => 'TEST_POSTBACK',
+                        ],
+                        [
+                            'type' => 'web_url',
+                            'title' => 'WebUrl',
+                            'url' => 'https://github.com/CasperLaiTW/laravel-fb-messenger',
+                        ],
+                        [
+                            'title' => 'SubMenu',
+                            'type' => 'nested',
+                            'call_to_actions' => [
+                                [
+                                    'type' => 'postback',
+                                    'title' => 'SubMenu-Button',
+                                    'payload' => 'TEST_SUB_BUTTON',
+                                ],
+                                [
+                                    'type' => 'web_url',
+                                    'title' => 'SubMenu-WebUrl',
+                                    'url' => 'https://github.com/CasperLaiTW/laravel-fb-messenger',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'locale' => 'zh_TW',
+                    'composer_input_disabled' => true,
+                    'call_to_actions' => [
+                        [
+                            'type' => 'postback',
+                            'title' => 'zh_TW Test Button',
+                            'payload' => 'TEST_POSTBACK',
+                        ],
+                        [
+                            'type' => 'postback',
+                            'title' => 'zh_TW Test Button',
+                            'payload' => 'TEST_POSTBACK',
+                        ],
+                        [
+                            'type' => 'postback',
+                            'title' => 'zh_TW Test Button',
+                            'payload' => 'TEST_POSTBACK',
+                        ],
+                    ],
+                ],
+            ],
         ];
-
         $this->assertEquals($expected, $persistent->toData());
     }
 
-    private function getMessageButtonStub()
+    /**
+     * @return Menu
+     */
+    protected function getMenu()
     {
-        $mock = m::mock(Button::class)
-            ->shouldReceive('toData')
-            ->andReturn([])
-            ->getMock();
+        $container = new Container();
 
-        return $mock;
+        $menu = new Menu();
+
+        $container->singleton(Menu::class, function () use ($menu) {
+            return $menu;
+        });
+
+        return $menu;
     }
 }
