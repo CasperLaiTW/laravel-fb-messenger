@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.1"></a>
+# [1.4.1](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.4.0...v1.4.1) (2017-04-22)
+
+
+### Features
+
+* Url button support disable share ([08b6958](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/08b6958)), closes [#66](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/66). by @youyi1314
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.3.1...v1.4.0) (2017-04-22)
 
