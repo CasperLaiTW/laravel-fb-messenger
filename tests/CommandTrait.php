@@ -14,7 +14,7 @@ use Symfony\Component\Console\Tester\CommandTester;
  */
 trait CommandTrait
 {
-    private function getArtisan()
+    protected function getArtisan($container = null)
     {
         $application = new Application();
         $configMock = m::mock(Repository::class)
@@ -34,7 +34,6 @@ trait CommandTrait
 
         $commandClass = $this->command();
         $command = new $commandClass($handler, $configMock);
-        $container = new Container();
         $command->setLaravel($container);
         $application->add($command);
 
@@ -43,7 +42,7 @@ trait CommandTrait
 
     private function createCommandTester($command)
     {
-        $artisan = $this->getArtisan();
+        $artisan = $this->getArtisan(new Container());
         $command = $artisan->find($command);
 
         return new CommandTester($command);
