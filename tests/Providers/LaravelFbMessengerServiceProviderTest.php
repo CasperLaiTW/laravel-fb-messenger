@@ -1,9 +1,9 @@
 <?php
 
 use ArrayAccess as Application;
-use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Handler;
 use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Debug;
 use Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider;
+use Casperlaitw\LaravelFbMessenger\Providers\MenuServiceProvider;
 use Casperlaitw\LaravelFbMessenger\Providers\RouteServiceProvider;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Debug\ExceptionHandler;
@@ -91,11 +91,14 @@ class LaravelFbMessengerServiceProviderTest extends TestCase
         $this->assertInstanceOf(LaravelFbMessengerServiceProvider::class, $this->serviceProvider);
     }
 
-    public function test_register_the_router()
+    public function test_register()
     {
         $this->applicationMock
             ->shouldReceive('register')
             ->with(RouteServiceProvider::class)
+            ->andReturnNull()
+            ->shouldReceive('register')
+            ->with(MenuServiceProvider::class)
             ->andReturnNull();
 
         $this->assertNull($this->serviceProvider->register());

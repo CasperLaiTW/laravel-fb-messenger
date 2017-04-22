@@ -1,6 +1,9 @@
 <?php
 
 use Casperlaitw\LaravelFbMessenger\Commands\PersistentMenuCommand;
+use Casperlaitw\LaravelFbMessenger\Facades\MessengerMenu;
+use Illuminate\Container\Container;
+use Mockery as m;
 
 /**
  * User: casperlai
@@ -9,7 +12,20 @@ use Casperlaitw\LaravelFbMessenger\Commands\PersistentMenuCommand;
  */
 class PersistentMenuCommandTest extends TestCase
 {
-    use CommandTrait;
+    use CommandTrait {
+        CommandTrait::getArtisan as getParentArtisan;
+    }
+
+    public function getArtisan()
+    {
+        $menu = $this->mockMenu();
+        $container = new Container();
+
+        $container->singleton(MessengerMenu::class, function () use ($menu) {
+            return $menu;
+        });
+        return $this->getParentArtisan($container);
+    }
 
     public function test_delete_api()
     {
@@ -19,118 +35,33 @@ class PersistentMenuCommandTest extends TestCase
         ]);
     }
     
-    public function test_arguments_api()
+    public function test_setting_api()
     {
         $commandTester = $this->createCommandTester('fb:menus');
-        $commandTester->execute([
-            '--type' => [
-                'postback',
-                'postback',
-                'web_url',
-            ],
-            '--name' => [
-                'Food',
-                'Dessert',
-                'Our website',
-            ],
-            '--url' => [
-                'GET_FOOD_MENU',
-                'GET_DESSERT_MENU',
-                'https://www.facebook.com',
-            ],
-        ]);
-    }
-    
-    public function test_empty_arguments()
-    {
-        $commandTester = $this->createCommandTester('fb:menus');
-        $commandTester->execute([
-        ], [
-            'interactive' => false,
-        ]);
-    }
-    
-    public function test_arguments_not_compare()
-    {
-        $commandTester = $this->createCommandTester('fb:menus');
-        $commandTester->execute([
-            '--type' => [
-                'postback',
-                'postback',
-                'web_url',
-            ],
-            '--name' => [
-                'Food',
-                'Dessert',
-                'Our website',
-            ],
-        ]);
-        $this->assertEquals('The options did not compare.', trim($commandTester->getDisplay()));
-    }
-    
-    public function test_limit_types()
-    {
-        $commandTester = $this->createCommandTester('fb:menus');
-        $commandTester->execute([
-            '--type' => [
-                'postback',
-                'postback',
-                'web_url',
-                'postback',
-                'postback',
-                'postback',
-            ],
-            '--name' => [
-                'Food',
-                'Dessert',
-                'Our website',
-                'Test1',
-                'Test2',
-                'Test3',
-            ],
-            '--url' => [
-                'GET_FOOD_MENU',
-                'GET_DESSERT_MENU',
-                'https://www.facebook.com',
-                'GET_FOOD_TEST_1',
-                'GET_FOOD_TEST_2',
-                'GET_FOOD_TEST_3',
-            ],
-        ]);
-    
-        $this->assertEquals('The menu buttons is limitd to 5', trim($commandTester->getDisplay()));
-    }
-    
-    public function test_button_type_error()
-    {
-        $commandTester = $this->createCommandTester('fb:menus');
-        $commandTester->execute([
-            '--type' => [
-                'fail_type',
-            ],
-            '--name' => [
-                'Food',
-            ],
-            '--url' => [
-                'GET_FOOD_MENU',
-            ],
-        ]);
-    
-        $this->assertEquals('Please check type, type only postback|web_url', trim($commandTester->getDisplay()));
+        $commandTester->execute([]);
     }
 
-    public function test_quiet_mode()
+    public function test_read_api()
     {
         $commandTester = $this->createCommandTester('fb:menus');
         $commandTester->execute([
-            '--quiet' => true
-        ], [
-            'interactive' => false,
+            '--read' => true,
         ]);
     }
 
     private function command()
     {
         return PersistentMenuCommand::class;
+    }
+
+    protected function mockMenu()
+    {
+        $mock = MessengerMenu::shouldReceive('getMenus')
+            ->andReturn([])
+            ->shouldReceive('isEmpty')
+            ->andReturn(true)
+            ->getMock();
+        
+        return $mock;
     }
 }
