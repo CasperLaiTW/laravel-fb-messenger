@@ -6,6 +6,7 @@
  */
 
 namespace Casperlaitw\LaravelFbMessenger\Commands;
+
 use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
 use Casperlaitw\LaravelFbMessenger\Contracts\CommandHandler;
 use Casperlaitw\LaravelFbMessenger\Facades\MessengerMenu;
@@ -43,7 +44,7 @@ class PersistentMenuCommand extends BaseCommand
         $persistentMenuMessage = new PersistentMenuMessage($menu->getMenus());
 
         if ($this->option('delete')) {
-           $persistentMenuMessage->useDelete();
+            $persistentMenuMessage->useDelete();
         }
 
         if ($this->option('read')) {
