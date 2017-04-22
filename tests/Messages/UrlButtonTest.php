@@ -53,4 +53,19 @@ class UrlButtonTest extends TestCase
 
         $this->assertEquals($expected, $button->toData());
     }
+
+    public function test_disable_share()
+    {
+        $button = new UrlButton('title', 'url');
+        $button->disableShare();
+
+        $expected = [
+            'type' => 'web_url',
+            'title' => 'title',
+            'url' => 'url',
+            'webview_share_button' => 'hide',
+        ];
+
+        $this->assertEquals($expected, $button->toData());
+    }
 }
