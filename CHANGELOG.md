@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.3.1...v1.4.0) (2017-04-22)
+
+
+### Bug Fixes
+
+* Fix check secret token ([c9d18c1](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/c9d18c1))
+* Fix messenger profile command ([87c6480](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/87c6480))
+* Move thread setting to messenger profile ([4ed1fc2](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/4ed1fc2))
+
+
+### Features
+
+* Define persistent menu at menu file ([552c162](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/552c162))
+* Support locale in greeting ([e4f8fc1](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/e4f8fc1))
+* Support securing requests ([713ad87](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/713ad87))
+
+
+
 <a name="1.3.1"></a>
 ## [1.3.1](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.3.0...v1.3.1) (2017-03-14)
 

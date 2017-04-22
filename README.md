@@ -34,6 +34,17 @@ In your `config/app.php` add  `Casperlaitw\LaravelFbMessenger\LaravelFbMessenger
 php artisan vendor:publish --provider="Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider" --tag="config"
 ```
 
+### Publish Menu Configure
+Support define persistent menu in file.
+
+Define persistent menu like laravel routes.
+
+[document](https://github.com/CasperLaiTW/laravel-fb-messenger/wiki/Commands#fbmenus)
+
+```shell
+php artisan vendor:publish --provider="Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider" --tag="menu"
+```
+
 ## Configuration 
 
 ### Security
