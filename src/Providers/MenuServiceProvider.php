@@ -18,7 +18,6 @@ class MenuServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        class_alias(MessengerMenu::class, 'Menu');
         $this->map();
     }
 

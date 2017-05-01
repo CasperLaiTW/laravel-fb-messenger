@@ -27,6 +27,12 @@ In your `config/app.php` add  `Casperlaitw\LaravelFbMessenger\LaravelFbMessenger
     Casperlaitw\LaravelFbMessenger\LaravelFbMessengerServiceProvider::class,
     ...
 ],
+
+'alias => [
+    ...
+    'Menu' => Casperlaitw\LaravelFbMessenger\Facades\MessengerMenu::class,
+    ...
+],
 ```
 
 ### Publish Configuration
