@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.2"></a>
+## [1.4.2](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.4.1...v1.4.2) (2017-05-01)
+
+
+### Bug Fixes
+
+* Remove auto alias ([12590bd](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/12590bd)), closes [#75](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/75)
+
+
+
 <a name="1.4.1"></a>
 # [1.4.1](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.4.0...v1.4.1) (2017-04-22)
 
