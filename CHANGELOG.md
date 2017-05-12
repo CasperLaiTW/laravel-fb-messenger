@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.3"></a>
+# [1.4.3](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.4.2...v1.4.3) (2017-05-12)
+
+
+### Features
+
+* Support pusher options ([47de081](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/47de081)), closes [#76](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/76)
+
+
+
 <a name="1.4.2"></a>
 ## [1.4.2](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.4.1...v1.4.2) (2017-05-01)
 
