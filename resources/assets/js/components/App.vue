@@ -51,11 +51,10 @@
       }
     },
     mounted() {
-      const echo = new Echo({
+      const echo = new Echo(Object.assign({
         broadcaster: 'pusher',
-        key: window.pusherKey,
         namespace: 'Casperlaitw.LaravelFbMessenger.Events',
-      });
+      }, window.pusherConfig));
 
       echo.channel('laravel-fb-messenger')
       .listen('Broadcast', (e) => {

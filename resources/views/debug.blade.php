@@ -14,7 +14,9 @@
     <div id="app">
     </div>
     <script>
-        window.pusherKey = '{{ env('PUSHER_KEY') }}';
+        window.pusherConfig = Object.assign({
+            key: '{{ config('broadcasting.connections.pusher.key') }}',
+        }, {!! json_encode(config('broadcasting.connections.pusher.options'))  !!});
     </script>
     <script src="/vendor/fb-messenger/dist.js"></script>
 </body>
