@@ -2461,9 +2461,9 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
 
-standard-version@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/standard-version/-/standard-version-3.0.0.tgz#dc1dc9f6ad3436e3ace8a9b050634d8a04762929"
+standard-version@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/standard-version/-/standard-version-4.0.0.tgz#e578cefd43ab7b02944bd7569525052eac1b9787"
   dependencies:
     chalk "^1.1.3"
     conventional-changelog "^1.1.0"
