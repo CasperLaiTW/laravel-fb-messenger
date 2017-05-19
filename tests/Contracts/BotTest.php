@@ -3,6 +3,7 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Debug;
 use Casperlaitw\LaravelFbMessenger\Messages\Greeting;
+use Casperlaitw\LaravelFbMessenger\Messages\MessengerCode;
 use Casperlaitw\LaravelFbMessenger\Messages\User;
 use Illuminate\Broadcasting\BroadcastException;
 use Illuminate\Events\Dispatcher;
@@ -86,5 +87,12 @@ class BotTest extends TestCase
         $actual = $this->getPrivateProperty(Bot::class, 'secret')->getValue($this->bot);
 
         $this->assertEquals($expected, $actual);
+    }
+
+    public function test_messenger_code_success()
+    {
+        $messenger = new MessengerCode();
+        $this->bot->setSecret('test_app_secret');
+        $this->bot->send($messenger);
     }
 }
