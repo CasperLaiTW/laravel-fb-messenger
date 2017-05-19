@@ -7,6 +7,8 @@
 [![Total Downloads](https://poser.pugx.org/casperlaitw/laravel-fb-messenger/downloads)](https://packagist.org/packages/casperlaitw/laravel-fb-messenger)
 [![Monthly Downloads](https://poser.pugx.org/casperlaitw/laravel-fb-messenger/d/monthly)](https://packagist.org/packages/casperlaitw/laravel-fb-messenger)
 
+This is a laravel package for Facebook Messenger Platform API.
+
 Easy to making your facebook messenger chatbot.
 
 ## Installation
