@@ -11,7 +11,7 @@ class MessengerCodeCommand extends BaseCommand
      *
      * @var string
      */
-    protected $signature = 'fb:code {--s|size= : Image size} {--r|ref= : Ref}';
+    protected $signature = 'fb:code {--s|size : Image size} {--r|ref : Ref}';
 
     /**
      * The console command description.
