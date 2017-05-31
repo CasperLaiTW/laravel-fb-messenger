@@ -31,6 +31,7 @@ class GenericTransformerTest extends TestCase
 
         $expected = [
             'template_type' => 'generic',
+            'image_aspect_ratio' => 'horizontal',
             'elements' => $expectedCase,
         ];
 
@@ -46,6 +47,7 @@ class GenericTransformerTest extends TestCase
         $message = m::mock(Template::class)
             ->shouldReceive('getSender')->andReturn($testSender)
             ->shouldReceive('getCollections')->andReturn($elements)
+            ->shouldReceive('getImageRatio')->andReturn('horizontal')
             ->getMock();
 
         return $message;

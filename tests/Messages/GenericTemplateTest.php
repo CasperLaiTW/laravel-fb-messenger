@@ -39,9 +39,10 @@ class GenericTemplateTest extends TestCase
                     'type' => 'template',
                     'payload' => [
                         'template_type' => 'generic',
-                        'elements' => $elementExpected
+                        'elements' => $elementExpected,
+                        'image_aspect_ratio' => 'horizontal',
                     ],
-                ]
+                ],
             ],
         ];
 
@@ -67,14 +68,43 @@ class GenericTemplateTest extends TestCase
                         'template_type' => 'generic',
                         'elements' => $elementExpected,
                         'sharable' => false,
+                        'image_aspect_ratio' => 'horizontal',
                     ],
-                ]
+                ],
             ],
         ];
 
         $actual = new GenericTemplate($this->sender, $this->case);
         $actual->disableShare();
 
+        $this->assertEquals($expected, $actual->toData());
+    }
+
+    public function test_image_ratio()
+    {
+        $elementExpected = [];
+        foreach ($this->case as $case) {
+            $elementExpected[] = $case->toData();
+        }
+        $expected = [
+            'recipient' => [
+                'id' => $this->sender,
+            ],
+            'message' => [
+                'attachment' => [
+                    'type' => 'template',
+                    'payload' => [
+                        'template_type' => 'generic',
+                        'elements' => $elementExpected,
+                        'image_aspect_ratio' => 'square',
+                    ],
+                ],
+            ],
+        ];
+
+        $actual = new GenericTemplate($this->sender, $this->case);
+        $actual->setImageRatio(GenericTemplate::IMAGE_SQUARE);
+        
         $this->assertEquals($expected, $actual->toData());
     }
 }
