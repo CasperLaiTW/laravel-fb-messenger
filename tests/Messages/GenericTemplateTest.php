@@ -104,7 +104,7 @@ class GenericTemplateTest extends TestCase
 
         $actual = new GenericTemplate($this->sender, $this->case);
         $actual->setImageRatio(GenericTemplate::IMAGE_SQUARE);
-        
+
         $this->assertEquals($expected, $actual->toData());
     }
 }

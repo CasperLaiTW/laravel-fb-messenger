@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.5"></a>
+# [1.4.5](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.4.4...v1.4.5) (2017-05-31)
+
+
+### Features
+
+* Add disable native share in template ([15babbd](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/15babbd))
+* Add image aspect ratio to generic template ([7309e5e](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/7309e5e))
+
+
+
 <a name="1.4.4"></a>
 # [1.4.4](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.4.3...v1.4.4) (2017-05-19)
 
