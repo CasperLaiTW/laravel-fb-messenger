@@ -7,9 +7,8 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Transformers;
 
-use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template;
 use Casperlaitw\LaravelFbMessenger\Exceptions\RequiredArgumentException;
-use pimax\Messages\StructuredMessage;
 
 /**
  * Class ButtonTransformer
@@ -20,12 +19,12 @@ class ButtonTransformer implements StructuredTransformer
     /**
      * Transform payload
      *
-     * @param Message $message
+     * @param Template $message
      *
      * @return array
      * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\RequiredArgumentException
      */
-    public function transform(Message $message)
+    public function transform(Template $message)
     {
         if (empty($message->getText())) {
             throw new RequiredArgumentException('Text is required');

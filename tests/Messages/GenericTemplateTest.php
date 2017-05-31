@@ -49,4 +49,32 @@ class GenericTemplateTest extends TestCase
 
         $this->assertEquals($expected, $actual->toData());
     }
+
+    public function test_disable_share()
+    {
+        $elementExpected = [];
+        foreach ($this->case as $case) {
+            $elementExpected[] = $case->toData();
+        }
+        $expected = [
+            'recipient' => [
+                'id' => $this->sender,
+            ],
+            'message' => [
+                'attachment' => [
+                    'type' => 'template',
+                    'payload' => [
+                        'template_type' => 'generic',
+                        'elements' => $elementExpected,
+                        'sharable' => false,
+                    ],
+                ]
+            ],
+        ];
+
+        $actual = new GenericTemplate($this->sender, $this->case);
+        $actual->disableShare();
+
+        $this->assertEquals($expected, $actual->toData());
+    }
 }

@@ -62,4 +62,36 @@ class ListTemplateTest extends TestCase
         $actual = new ListTemplate($this->sender, []);
         $actual->toData();
     }
+
+    public function test_disable_share()
+    {
+        $elementExpected = [];
+        foreach ($this->case as $case) {
+            $elementExpected[] = $case->toData();
+        }
+
+        $expected = [
+            'recipient' => [
+                'id' => $this->sender,
+            ],
+            'message' => [
+                'attachment' => [
+                    'type' => 'template',
+                    'payload' => [
+                        'template_type' => 'list',
+                        'top_element_style' => 'compact',
+                        'elements' => $elementExpected,
+                        'buttons' => [$this->button->toData()],
+                        'sharable' => false,
+                    ],
+                ],
+            ],
+        ];
+
+        $actual = new ListTemplate($this->sender, $this->case);
+        $actual->setTopStyle(ListTemplate::STYLE_COMPACT);
+        $actual->setButton($this->button);
+        $actual->disableShare();
+        $this->assertEquals($expected, $actual->toData());
+    }
 }

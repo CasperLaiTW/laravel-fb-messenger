@@ -6,7 +6,7 @@
  */
 
 use Casperlaitw\LaravelFbMessenger\Collections\ButtonCollection;
-use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template;
 use Casperlaitw\LaravelFbMessenger\Exceptions\RequiredArgumentException;
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
 use Casperlaitw\LaravelFbMessenger\Transformers\ButtonTransformer;
@@ -50,7 +50,7 @@ class ButtonTransformerTest extends TestCase
     {
         $collection = new ButtonCollection($testCase);
 
-        $message = m::mock(Message::class)
+        $message = m::mock(Template::class)
             ->shouldReceive('getSender')
             ->andReturn($testSender)
             ->shouldReceive('getText')

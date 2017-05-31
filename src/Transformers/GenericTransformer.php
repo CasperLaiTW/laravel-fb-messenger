@@ -7,8 +7,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Transformers;
 
-use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
-use pimax\Messages\StructuredMessage;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template;
 
 /**
  * Class GenericTransformer
@@ -19,11 +18,11 @@ class GenericTransformer implements StructuredTransformer
     /**
      * Transform payload
      *
-     * @param Message $message
+     * @param Template $message
      *
      * @return array
      */
-    public function transform(Message $message)
+    public function transform(Template $message)
     {
         return [
             'template_type' => 'generic',

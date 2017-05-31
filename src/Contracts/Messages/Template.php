@@ -25,6 +25,13 @@ abstract class Template extends Attachment
     protected $collections;
 
     /**
+     * User can use native share
+     *
+     * @var bool
+     */
+    private $share = true;
+
+    /**
      * Structured constructor.
      *
      * @param $sender
@@ -87,9 +94,25 @@ abstract class Template extends Attachment
      */
     public function toData()
     {
+        if (!$this->share) {
+            $this->setPayload(array_merge($this->getPayload(), [
+                'sharable' => false,
+            ]));
+        }
         return $this->makeQuickReply(parent::toData());
     }
 
+    /**
+     * Disable share
+     *
+     * @return $this
+     */
+    public function disableShare()
+    {
+        $this->share = false;
+
+        return $this;
+    }
 
     /**
      * Collection class name

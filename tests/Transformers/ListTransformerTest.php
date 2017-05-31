@@ -1,6 +1,6 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Collections\ListElementCollection;
-use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
+use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template;
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
 use Casperlaitw\LaravelFbMessenger\Messages\ListElement;
 use Casperlaitw\LaravelFbMessenger\Transformers\ListTransformer;
@@ -76,7 +76,7 @@ class ListTransformerTest extends TestCase
     {
         $elements = new ListElementCollection($testCase);
 
-        $message = m::mock(Message::class)
+        $message = m::mock(Template::class)
             ->shouldReceive('getSender')->andReturn($testSender)
             ->shouldReceive('getCollections')->andReturn($elements)
             ->shouldReceive('getButton')->andReturn($testButton)

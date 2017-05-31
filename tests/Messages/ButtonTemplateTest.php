@@ -56,4 +56,26 @@ class ButtonTemplateTest extends TestCase
 
         $this->assertEquals($expected, $this->case->getText());
     }
+
+    public function test_disable_share()
+    {
+        $expected = [
+            'recipient' => [
+                'id' => $this->sender,
+            ],
+            'message' => [
+                'attachment' => [
+                    'type' => 'template',
+                    'payload' => [
+                        'template_type' => 'button',
+                        'text' => $this->text,
+                        'buttons' => [],
+                        'sharable' => false,
+                    ],
+                ]
+            ],
+        ];
+        $this->case->disableShare();
+        $this->assertEquals($expected, $this->case->toData());
+    }
 }
