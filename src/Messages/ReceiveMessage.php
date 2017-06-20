@@ -11,6 +11,11 @@ namespace Casperlaitw\LaravelFbMessenger\Messages;
  * Class ReceiveMessage
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
+/**
+ * Class ReceiveMessage
+ *
+ * @package Casperlaitw\LaravelFbMessenger\Messages
+ */
 class ReceiveMessage
 {
 
@@ -48,6 +53,11 @@ class ReceiveMessage
      * @var array
      */
     private $attachments = [];
+
+    /**
+     * @var array
+     */
+    private $refrral = [];
 
     /**
      * Receive constructor.
@@ -202,5 +212,29 @@ class ReceiveMessage
     public function hasAttachments()
     {
         return count($this->attachments) > 0;
+    }
+
+    /**
+     * Set referral
+     *
+     * @param $referral
+     *
+     * @return $this
+     */
+    public function setReferral($referral)
+    {
+        $this->refrral = $referral;
+
+        return $this;
+    }
+
+    /**
+     * Get referral
+     *
+     * @return array
+     */
+    public function getReferral()
+    {
+        return $this->refrral;
     }
 }

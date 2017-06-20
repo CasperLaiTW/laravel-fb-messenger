@@ -57,6 +57,7 @@ class Receiver
             if (Arr::has($message, 'postback.payload') || Arr::has($message, 'message.quick_reply.payload')) {
                 $receiveMessage
                     ->setMessage(Arr::get($message, 'message.text'))
+                    ->setReferral(Arr::get($message, 'postback.referral', []))
                     ->setPostback(Arr::get(
                         $message,
                         'postback.payload',
@@ -69,10 +70,11 @@ class Receiver
             } else {
                 $receiveMessage
                     ->setMessage(Arr::get($message, 'message.text'))
+                    ->setReferral(Arr::get($message, 'referral', []))
                     ->setSkip(
                         Arr::has($message, 'delivery') ||
                         Arr::has($message, 'message.is_echo') ||
-                        (!Arr::has($message, 'message.text') && !Arr::has($message, 'message.attachments'))
+                        (!Arr::has($message, 'message.text') && !Arr::has($message, 'message.attachments') && !Arr::has($message, 'referral'))
                     )
                     ->setAttachments(Arr::get($message, 'message.attachments', []));
             }
