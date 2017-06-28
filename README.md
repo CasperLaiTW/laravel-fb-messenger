@@ -186,8 +186,8 @@ The debug route using [Pusher](https://pusher.com/)
   APP_DEBUG=true
   BROADCAST_DRIVER=pusher
   PUSHER_APP_ID=
-  PUSHER_KEY=
-  PUSHER_SECRET=
+  PUSHER_APP_KEY=
+  PUSHER_APP_SECRET=
 ```
 
 ### Publish script
