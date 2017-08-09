@@ -34,13 +34,14 @@ class ElementCollection extends BaseCollection
      * @param        $title
      * @param        $description
      * @param string $image
-     * @param string $url
      *
      * @return Element
+     * @internal param string $url
+     *
      */
-    public function addElement($title, $description, $image = '', $url = '')
+    public function addElement($title, $description, $image = '')
     {
-        $element = new Element($title, $description, $image, $url);
+        $element = new Element($title, $description, $image);
         $this->add($element);
 
         return $element;

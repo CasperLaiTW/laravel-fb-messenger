@@ -1,8 +1,9 @@
 <?php
-use Casperlaitw\LaravelFbMessenger\Collections\ListElementCollection;
+
+use Casperlaitw\LaravelFbMessenger\Collections\ElementCollection;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template;
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
-use Casperlaitw\LaravelFbMessenger\Messages\ListElement;
+use Casperlaitw\LaravelFbMessenger\Messages\Element;
 use Casperlaitw\LaravelFbMessenger\Transformers\ListTransformer;
 use Mockery as m;
 
@@ -19,9 +20,9 @@ class ListTransformerTest extends TestCase
     {
         $testSender = str_random();
         $testCase = [
-            new ListElement('title1', 'description2', 'image_url'),
-            new ListElement('title2', 'description2', 'image_url'),
-            new ListElement('title2', 'description2', 'image_url'),
+            new Element('title1', 'description2', 'image_url'),
+            new Element('title2', 'description2', 'image_url'),
+            new Element('title2', 'description2', 'image_url'),
         ];
 
         $testButton = new Button(Button::TYPE_WEB, 'title', 'http://www.google.com');
@@ -49,9 +50,9 @@ class ListTransformerTest extends TestCase
     {
         $testSender = str_random();
         $testCase = [
-            new ListElement('title1', 'description2', 'image_url'),
-            new ListElement('title2', 'description2', 'image_url'),
-            new ListElement('title2', 'description2', 'image_url'),
+            new Element('title1', 'description2', 'image_url'),
+            new Element('title2', 'description2', 'image_url'),
+            new Element('title2', 'description2', 'image_url'),
         ];
         
         $expectedCase = [];
@@ -74,7 +75,7 @@ class ListTransformerTest extends TestCase
 
     private function createMessageMock($testCase, $testSender, $testButton)
     {
-        $elements = new ListElementCollection($testCase);
+        $elements = new ElementCollection($testCase);
 
         $message = m::mock(Template::class)
             ->shouldReceive('getSender')->andReturn($testSender)

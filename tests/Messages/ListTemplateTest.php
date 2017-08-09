@@ -1,7 +1,7 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Exceptions\ListElementCountException;
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
-use Casperlaitw\LaravelFbMessenger\Messages\ListElement;
+use Casperlaitw\LaravelFbMessenger\Messages\Element;
 use Casperlaitw\LaravelFbMessenger\Messages\ListTemplate;
 
 /**
@@ -20,8 +20,8 @@ class ListTemplateTest extends TestCase
     {
         $this->sender = str_random();
         $this->case = [
-            new ListElement('title1', 'description1', 'image1'),
-            new ListElement('title2', 'description2', 'image2'),
+            new Element('title1', 'description1', 'image1'),
+            new Element('title2', 'description2', 'image2'),
         ];
         $this->button = new Button(Button::TYPE_POSTBACK, 'GET_MORE');
     }

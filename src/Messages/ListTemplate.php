@@ -8,7 +8,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
-use Casperlaitw\LaravelFbMessenger\Collections\ListElementCollection;
+use Casperlaitw\LaravelFbMessenger\Collections\ElementCollection;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template;
 use Casperlaitw\LaravelFbMessenger\Exceptions\ListElementCountException;
 use Casperlaitw\LaravelFbMessenger\Transformers\ListTransformer;
@@ -73,7 +73,7 @@ class ListTemplate extends Template
      */
     protected function collection()
     {
-        return ListElementCollection::class;
+        return ElementCollection::class;
     }
 
     /**

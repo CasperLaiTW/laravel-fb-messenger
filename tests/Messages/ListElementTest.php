@@ -1,7 +1,5 @@
 <?php
-use Casperlaitw\LaravelFbMessenger\Exceptions\DefaultActionInvalidTypeException;
-use Casperlaitw\LaravelFbMessenger\Messages\Button;
-use Casperlaitw\LaravelFbMessenger\Messages\ListElement;
+use Casperlaitw\LaravelFbMessenger\Messages\Element;
 use Casperlaitw\LaravelFbMessenger\Messages\UrlButton;
 
 /**
@@ -16,10 +14,10 @@ class ListElementTest extends TestCase
     {
         $button = new UrlButton('title', 'http://www.google.com');
 
-        $list = new ListElement('title', 'description', 'image');
+        $list = new Element('title', 'description', 'image');
         $list->setDefaultAction($button);
 
-        $actual = $this->getPrivateProperty(ListElement::class, 'defaultAction')->getValue($list);
+        $actual = $this->getPrivateProperty(Element::class, 'defaultAction')->getValue($list);
 
         $this->assertEquals($button, $actual);
     }
@@ -28,7 +26,7 @@ class ListElementTest extends TestCase
     {
         $button = new UrlButton('title', 'http://www.google.com');
 
-        $list = new ListElement('title', 'description', 'image');
+        $list = new Element('title', 'description', 'image');
         $list->setDefaultAction($button);
 
         $expected = [

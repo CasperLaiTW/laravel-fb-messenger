@@ -8,6 +8,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 use Casperlaitw\LaravelFbMessenger\Collections\ButtonCollection;
+use Casperlaitw\LaravelFbMessenger\Exceptions\DefaultActionInvalidTypeException;
 use pimax\Messages\MessageElement;
 
 /**
@@ -42,19 +43,26 @@ class Element
     private $buttons;
 
     /**
+     * Default action
+     *
+     * @var UrlButton
+     */
+    private $defaultAction;
+
+    /**
      * Element constructor.
      *
-     * @param $title
-     * @param $description
-     * @param $image
-     * @param $url
+     * @param        $title
+     * @param        $description
+     * @param string $image
+     *
+     * @internal param $url
      */
-    public function __construct($title, $description, $image = '', $url = '')
+    public function __construct($title, $description, $image = '')
     {
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
-        $this->url = $url;
         $this->buttons = new ButtonCollection;
     }
 
@@ -69,6 +77,20 @@ class Element
     }
 
     /**
+     * Set default action button
+     *
+     * @param UrlButton $button
+     * @return $this
+     * @throws DefaultActionInvalidTypeException
+     */
+    public function setDefaultAction(UrlButton $button)
+    {
+        $this->defaultAction = $button;
+
+        return $this;
+    }
+
+    /**
      * To array for send api
      *
      * @return array
@@ -76,11 +98,19 @@ class Element
     public function toData()
     {
         $button = $this->buttons()->isEmpty() ? [] : ['buttons' => $this->buttons->toData()];
-        return array_merge([
+
+        $data = array_merge([
             'title' => $this->title,
             'subtitle' => $this->description,
-            'item_url' => $this->url,
             'image_url' => $this->image,
         ], $button);
+
+        if ($this->defaultAction) {
+            $defaultActionData = $this->defaultAction->toData();
+            unset($defaultActionData['title']);
+            $data['default_action'] = $defaultActionData;
+        }
+
+        return $data;
     }
 }
