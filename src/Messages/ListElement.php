@@ -15,5 +15,4 @@ namespace Casperlaitw\LaravelFbMessenger\Messages;
  */
 class ListElement extends Element
 {
-
 }
