@@ -181,6 +181,10 @@ The debug route using [Pusher](https://pusher.com/)
 
 ![debug-route](https://cdn.rawgit.com/CasperLaiTW/laravel-fb-messenger/master/docs/images/debug-route.gif)
 
+### Install pusher
+
+Please follow [Laravel Broadcasting](https://laravel.com/docs/5.5/broadcasting#driver-prerequisites) document to install pusher package.
+
 ### Configure your `.env`
 ```
   APP_DEBUG=true
