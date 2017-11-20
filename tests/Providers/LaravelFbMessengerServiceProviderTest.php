@@ -121,6 +121,8 @@ class LaravelFbMessengerServiceProviderTest extends TestCase
             ->once()
             ->andReturn($debug);
 
+        $this->applicationMock->config['view']['paths'] = [];
+
         $provider = m::mock(LaravelFbMessengerServiceProvider::class.'[mergeConfigFrom]', [$this->applicationMock]);
 
         $provider->boot();
