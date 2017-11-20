@@ -31,11 +31,14 @@ class GetStartButtonCommand extends BaseCommand
 
     /**
      * Execute command
+     *
+     * @throws \Casperlaitw\LaravelFbMessenger\Exceptions\NotCreateBotException
      */
     public function handle()
     {
         $payload = $this->argument('payload');
         $deleteOption = $this->option('delete');
+
         if (!$deleteOption && empty($payload)) {
             $this->error('If you want to add start button, please input the payload');
             return;

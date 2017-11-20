@@ -7,6 +7,7 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Messages;
 
+use Casperlaitw\LaravelFbMessenger\Contracts\Bot;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message;
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\ProfileInterface;
 use Casperlaitw\LaravelFbMessenger\Contracts\RequestType;
@@ -42,6 +43,14 @@ class StartButton extends Message implements ProfileInterface
      */
     public function toData()
     {
+        if ($this->getCurlType() === Bot::TYPE_DELETE) {
+            return [
+                'fields' => [
+                    'get_started',
+                ],
+            ];
+        }
+
         return [
             'get_started' => [
                 'payload' => $this->payload,
