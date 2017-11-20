@@ -48,6 +48,17 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.4.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Casperlaitw\\LaravelFbMessenger\\LaravelFbMessengerServiceProvider"
+            ],
+            "aliases": {
+                "Menu": "Casperlaitw\\LaravelFbMessenger\\Facades\\MessengerMenu"
+            }
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }

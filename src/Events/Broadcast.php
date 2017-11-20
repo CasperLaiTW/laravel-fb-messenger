@@ -24,6 +24,9 @@ class Broadcast implements ShouldBroadcast
      */
     private $response;
 
+    /**
+     * @var
+     */
     private $status;
     /**
      * @var
