@@ -57,7 +57,7 @@ class ReceiveMessage
     /**
      * @var array
      */
-    private $refrral = [];
+    private $referral = [];
 
     /**
      * Receive constructor.
@@ -223,7 +223,7 @@ class ReceiveMessage
      */
     public function setReferral($referral)
     {
-        $this->refrral = $referral;
+        $this->referral = $referral;
 
         return $this;
     }
@@ -235,6 +235,6 @@ class ReceiveMessage
      */
     public function getReferral()
     {
-        return $this->refrral;
+        return $this->referral;
     }
 }
