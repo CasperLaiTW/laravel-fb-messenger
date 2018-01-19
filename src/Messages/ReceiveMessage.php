@@ -9,10 +9,6 @@ namespace Casperlaitw\LaravelFbMessenger\Messages;
 
 /**
  * Class ReceiveMessage
- * @package Casperlaitw\LaravelFbMessenger\Messages
- */
-/**
- * Class ReceiveMessage
  *
  * @package Casperlaitw\LaravelFbMessenger\Messages
  */
@@ -58,6 +54,11 @@ class ReceiveMessage
      * @var array
      */
     private $referral = [];
+
+    /**
+     * @var array
+     */
+    private $nlp = [];
 
     /**
      * Receive constructor.
@@ -236,5 +237,28 @@ class ReceiveMessage
     public function getReferral()
     {
         return $this->referral;
+    }
+
+    /**
+     * Set NLP
+     *
+     * @param $nlp
+     *
+     * @return $this
+     */
+    public function setNlp($nlp)
+    {
+        $this->nlp = $nlp;
+        return $this;
+    }
+
+    /**
+     * Get NLP
+     *
+     * @return array
+     */
+    public function getNlp()
+    {
+        return $this->nlp;
     }
 }

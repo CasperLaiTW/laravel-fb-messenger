@@ -76,7 +76,8 @@ class Receiver
                         Arr::has($message, 'message.is_echo') ||
                         (!Arr::has($message, 'message.text') && !Arr::has($message, 'message.attachments') && !Arr::has($message, 'referral'))
                     )
-                    ->setAttachments(Arr::get($message, 'message.attachments', []));
+                    ->setAttachments(Arr::get($message, 'message.attachments', []))
+                    ->setNlp(Arr::get($message, 'message.nlp', []));
             }
 
             $messages[] = $receiveMessage;
