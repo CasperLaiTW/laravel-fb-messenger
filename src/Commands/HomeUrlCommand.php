@@ -65,7 +65,6 @@ class HomeUrlCommand extends BaseCommand
      */
     private function addOrRemove()
     {
-
         $command = new HomeUrl(config('fb-messenger.home_url', []));
 
         if ($this->option('delete')) {
