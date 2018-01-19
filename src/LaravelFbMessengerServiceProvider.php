@@ -5,6 +5,7 @@ namespace Casperlaitw\LaravelFbMessenger;
 use Casperlaitw\LaravelFbMessenger\Commands\DomainWhitelistingCommand;
 use Casperlaitw\LaravelFbMessenger\Commands\GetStartButtonCommand;
 use Casperlaitw\LaravelFbMessenger\Commands\GreetingTextCommand;
+use Casperlaitw\LaravelFbMessenger\Commands\HomeUrlCommand;
 use Casperlaitw\LaravelFbMessenger\Commands\MessengerCodeCommand;
 use Casperlaitw\LaravelFbMessenger\Commands\PersistentMenuCommand;
 use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Debug;
@@ -84,6 +85,7 @@ class LaravelFbMessengerServiceProvider extends ServiceProvider
             PersistentMenuCommand::class,
             DomainWhitelistingCommand::class,
             MessengerCodeCommand::class,
+            HomeUrlCommand::class,
         ]);
     }
 }
