@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.5.0...v1.6.0) (2018-01-19)
+
+
+### Features
+
+* Add home url command ([6edf6fa](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/6edf6fa)), closes [#90](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/90)
+* Support NLP in receive message ([322711a](https://github.com/CasperLaiTW/laravel-fb-messenger/commit/322711a)), closes [#89](https://github.com/CasperLaiTW/laravel-fb-messenger/issues/89)
+
+
+
 <a name="1.4.7"></a>
 ## [1.4.7](https://github.com/CasperLaiTW/laravel-fb-messenger/compare/v1.4.6...v1.4.7) (2017-08-09)
 
