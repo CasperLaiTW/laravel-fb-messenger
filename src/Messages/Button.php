@@ -89,9 +89,9 @@ class Button implements MessageInterface
     {
         switch ($this->type) {
             case self::TYPE_SHARE:
-                return [
+                return array_merge([
                     'type' => $this->type,
-                ];
+                ], $this->extra);
             case self::TYPE_ACCOUNT_LINK:
                 return [
                     'type' => $this->type,

@@ -93,9 +93,13 @@ class ButtonCollection extends BaseCollection
      *
      * @return $this
      */
-    public function addShareButton()
+    public function addShareButton($shareContent = null)
     {
-        $this->add(new Button(Button::TYPE_SHARE, ''));
+        $button = new Button(Button::TYPE_SHARE, '');
+        if ($shareContent) {
+            $button->setExtra($shareContent);
+        }
+        $this->add($button);
 
         return $this;
     }
