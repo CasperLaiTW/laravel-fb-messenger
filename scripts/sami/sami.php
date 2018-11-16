@@ -18,7 +18,7 @@ $iterator = Finder::create()
     ->in($dir = __DIR__.'/project/src');
 
 $versions = GitVersionCollection::create($dir)
-    ->addFromTags('v1.4.*')
+    ->addFromTags('v1.6.*')
     ->add('1.3', '1.3')
     ->add('1.2', '1.2')
     ->add('1.1', '1.1');
