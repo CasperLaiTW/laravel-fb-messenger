@@ -25,20 +25,17 @@
                 <div id="control-panel">
                     <form action="#" method="GET">
                 <select id="version-switcher" name="version">
-                                            <option value="../../../../v1.4.0/index.html">v1.4.0</option>
-                                            <option value="../../../../v1.4.1/index.html">v1.4.1</option>
-                                            <option value="../../../../v1.4.2/index.html">v1.4.2</option>
-                                            <option value="../../../../v1.4.3/index.html">v1.4.3</option>
-                                            <option value="../../../../v1.4.4/index.html">v1.4.4</option>
-                                            <option value="../../../../v1.4.5/index.html">v1.4.5</option>
-                                            <option value="../../../../v1.4.6/index.html">v1.4.6</option>
-                                            <option value="../../../../v1.4.7/index.html">v1.4.7</option>
-                                            <option value="../../../../1.3/index.html">1.3</option>
-                                            <option value="../../../../1.2/index.html">1.2</option>
-                                            <option value="../../../../1.1/index.html" selected>1.1</option>
+                                            <option value="../../../../v1.6.0/index.html" data-version="v1.6.0">v1.6.0</option>
+                                            <option value="../../../../v1.6.1/index.html" data-version="v1.6.1">v1.6.1</option>
+                                            <option value="../../../../1.3/index.html" data-version="1.3">1.3</option>
+                                            <option value="../../../../1.2/index.html" data-version="1.2">1.2</option>
+                                            <option value="../../../../1.1/index.html" data-version="1.1">1.1</option>
                                     </select>
             </form>
-                <form id="search-form" action="../../../search.html" method="GET">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -78,11 +75,7 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">trait</span></li>
-                                                            <li><a href="../../../Casperlaitw.html">Casperlaitw</a></li>
-                                        <li><a href="../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li>
-                                        <li><a href="../../../Casperlaitw/LaravelFbMessenger/Messages.html">Messages</a></li>
-    
-                <li>Deletable</li>
+                        <li><a href="../../../Casperlaitw.html">Casperlaitw</a></li><li class="backslash">\</li><li><a href="../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li><li class="backslash">\</li><li><a href="../../../Casperlaitw/LaravelFbMessenger/Messages.html">Messages</a></li><li class="backslash">\</li><li>Deletable</li>
             </ol>
         </div>
                 <div id="page-content">
@@ -102,7 +95,7 @@
     
 
             <div class="description">
-            <p>Class Deleteable</p>                    </div>
+            <p>Class Deleteable</p>                                </div>
     
     
     
@@ -112,7 +105,7 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr>
+                    $this
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDelete">setDelete</a>($value)
@@ -138,8 +131,8 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_setDelete">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Deletable.php#L30">line 30</a></div>
-        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Deletable.php#L30">line 30</a></div>
+        <code>                    $this
     <strong>setDelete</strong>($value)
         </code>
     </h3>
@@ -148,7 +141,7 @@
     
 
                     <div class="method-description">
-                                    <p>Set delete flag</p>                                </div>
+                                    <p>Set delete flag</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -165,7 +158,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr></td>
+            <td>$this</td>
             <td></td>
         </tr>
     </table>
@@ -178,7 +171,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getCurlType">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Deletable.php#L41">line 41</a></div>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Messages/Deletable.php#L41">line 41</a></div>
         <code>                    string
     <strong>getCurlType</strong>()
         </code>
@@ -188,7 +181,7 @@
     
 
                     <div class="method-description">
-                                    <p>Transform to API http method</p>                                </div>
+                                    <p>Transform to API http method</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>

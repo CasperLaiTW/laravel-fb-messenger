@@ -25,20 +25,17 @@
                 <div id="control-panel">
                     <form action="#" method="GET">
                 <select id="version-switcher" name="version">
-                                            <option value="../../../../../v1.4.0/index.html" selected>v1.4.0</option>
-                                            <option value="../../../../../v1.4.1/index.html">v1.4.1</option>
-                                            <option value="../../../../../v1.4.2/index.html">v1.4.2</option>
-                                            <option value="../../../../../v1.4.3/index.html">v1.4.3</option>
-                                            <option value="../../../../../v1.4.4/index.html">v1.4.4</option>
-                                            <option value="../../../../../v1.4.5/index.html">v1.4.5</option>
-                                            <option value="../../../../../v1.4.6/index.html">v1.4.6</option>
-                                            <option value="../../../../../v1.4.7/index.html">v1.4.7</option>
-                                            <option value="../../../../../1.3/index.html">1.3</option>
-                                            <option value="../../../../../1.2/index.html">1.2</option>
-                                            <option value="../../../../../1.1/index.html">1.1</option>
+                                            <option value="../../../../../v1.6.0/index.html" data-version="v1.6.0">v1.6.0</option>
+                                            <option value="../../../../../v1.6.1/index.html" data-version="v1.6.1">v1.6.1</option>
+                                            <option value="../../../../../1.3/index.html" data-version="1.3">1.3</option>
+                                            <option value="../../../../../1.2/index.html" data-version="1.2">1.2</option>
+                                            <option value="../../../../../1.1/index.html" data-version="1.1">1.1</option>
                                     </select>
             </form>
-                <form id="search-form" action="../../../../search.html" method="GET">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -78,12 +75,7 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                                                            <li><a href="../../../../Casperlaitw.html">Casperlaitw</a></li>
-                                        <li><a href="../../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li>
-                                        <li><a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts.html">Contracts</a></li>
-                                        <li><a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages.html">Messages</a></li>
-    
-                <li>Attachment</li>
+                        <li><a href="../../../../Casperlaitw.html">Casperlaitw</a></li><li class="backslash">\</li><li><a href="../../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li><li class="backslash">\</li><li><a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts.html">Contracts</a></li><li class="backslash">\</li><li><a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages.html">Messages</a></li><li class="backslash">\</li><li>Attachment</li>
             </ol>
         </div>
                 <div id="page-content">
@@ -95,15 +87,15 @@
         </h1>
     </div>
 
-    <p>    class
-    <strong>Attachment</strong>        extends <a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php">View source</a>)
+    <p>abstract     class
+    <strong>Attachment</strong>        extends <a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php">View source</a>)
 </p>
 
         
     
 
             <div class="description">
-            <p>Class Attachment</p>                    </div>
+            <p>Class Attachment</p>                                </div>
     
     
             <h2>Constants</h2>
@@ -163,7 +155,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>($sender, $type, array $payload = array())
+                    <a href="#method___construct">__construct</a>($sender, $type, array $payload = [])
         
                                             <p>Attachment constructor.</p>                </div>
                 <div class="col-md-2"></div>
@@ -200,7 +192,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                    $this
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setPayload">setPayload</a>(array $payload)
@@ -210,7 +202,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                    $this
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_enableReuse">enableReuse</a>()
@@ -220,7 +212,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                    $this
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_disableReuse">disableReuse</a>()
@@ -230,7 +222,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                    $this
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setAttachmentId">setAttachmentId</a>($id)
@@ -246,9 +238,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php#L64">line 64</a></div>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php#L64">line 64</a></div>
         <code>                    
-    <strong>__construct</strong>($sender, $type, array $payload = array())
+    <strong>__construct</strong>($sender, $type, array $payload = [])
         </code>
     </h3>
     <div class="details">
@@ -256,7 +248,7 @@
     
 
                     <div class="method-description">
-                                    <p>Attachment constructor.</p>                                </div>
+                                    <p>Attachment constructor.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -287,7 +279,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getSender">
-        <div class="location">in <a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html#method_getSender"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Message.php#L35">line 35</a></div>
+        <div class="location">in <a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html#method_getSender"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Message.php#L35">line 35</a></div>
         <code>                    mixed
     <strong>getSender</strong>()
         </code>
@@ -297,7 +289,7 @@
     
 
                     <div class="method-description">
-                                    <p>Get sender id</p>                                </div>
+                                    <p>Get sender id</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -317,7 +309,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_toData">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php#L137">line 137</a></div>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php#L137">line 137</a></div>
         <code>                    array
     <strong>toData</strong>()
         </code>
@@ -327,7 +319,7 @@
     
 
                     <div class="method-description">
-                                    <p>To array for send api</p>                                </div>
+                                    <p>To array for send api</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -347,7 +339,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getPayload">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php#L77">line 77</a></div>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php#L77">line 77</a></div>
         <code>                    array
     <strong>getPayload</strong>()
         </code>
@@ -357,7 +349,7 @@
     
 
                     <div class="method-description">
-                                    <p>Get payload</p>                                </div>
+                                    <p>Get payload</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -377,8 +369,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setPayload">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php#L89">line 89</a></div>
-        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php#L89">line 89</a></div>
+        <code>                    $this
     <strong>setPayload</strong>(array $payload)
         </code>
     </h3>
@@ -387,7 +379,7 @@
     
 
                     <div class="method-description">
-                                    <p>Set Payload</p>                                </div>
+                                    <p>Set Payload</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -404,7 +396,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td>$this</td>
             <td></td>
         </tr>
     </table>
@@ -417,8 +409,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_enableReuse">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php#L100">line 100</a></div>
-        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php#L100">line 100</a></div>
+        <code>                    $this
     <strong>enableReuse</strong>()
         </code>
     </h3>
@@ -427,14 +419,14 @@
     
 
                     <div class="method-description">
-                                    <p>Enable reuse</p>                                </div>
+                                    <p>Enable reuse</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td>$this</td>
             <td></td>
         </tr>
     </table>
@@ -447,8 +439,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_disableReuse">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php#L111">line 111</a></div>
-        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php#L111">line 111</a></div>
+        <code>                    $this
     <strong>disableReuse</strong>()
         </code>
     </h3>
@@ -457,14 +449,14 @@
     
 
                     <div class="method-description">
-                                    <p>Disable reuse</p>                                </div>
+                                    <p>Disable reuse</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td>$this</td>
             <td></td>
         </tr>
     </table>
@@ -477,8 +469,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setAttachmentId">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php#L124">line 124</a></div>
-        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php#L124">line 124</a></div>
+        <code>                    $this
     <strong>setAttachmentId</strong>($id)
         </code>
     </h3>
@@ -487,7 +479,7 @@
     
 
                     <div class="method-description">
-                                    <p>Set attachment id</p>                                </div>
+                                    <p>Set attachment id</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -504,7 +496,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td>$this</td>
             <td></td>
         </tr>
     </table>

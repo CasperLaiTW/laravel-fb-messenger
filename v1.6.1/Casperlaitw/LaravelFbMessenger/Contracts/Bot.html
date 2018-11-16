@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Casperlaitw\LaravelFbMessenger\Contracts\Bot | Laravel Facebook Messenger API</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/sami.css">
+        <script src="../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Casperlaitw_LaravelFbMessenger_Contracts_Bot" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                    <form action="#" method="GET">
+                <select id="version-switcher" name="version">
+                                            <option value="../../../../v1.6.0/index.html" data-version="v1.6.0">v1.6.0</option>
+                                            <option value="../../../../v1.6.1/index.html" data-version="v1.6.1">v1.6.1</option>
+                                            <option value="../../../../1.3/index.html" data-version="1.3">1.3</option>
+                                            <option value="../../../../1.2/index.html" data-version="1.2">1.2</option>
+                                            <option value="../../../../1.1/index.html" data-version="1.1">1.1</option>
+                                    </select>
+            </form>
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">Laravel Facebook Messenger API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../Casperlaitw.html">Casperlaitw</a></li><li class="backslash">\</li><li><a href="../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li><li class="backslash">\</li><li><a href="../../../Casperlaitw/LaravelFbMessenger/Contracts.html">Contracts</a></li><li class="backslash">\</li><li>Bot</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Bot
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Bot</strong>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.6.1/src/Contracts/Bot.php">View source</a>)
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Class Bot</p>                                </div>
+    
+    
+            <h2>Constants</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td>TYPE_GET</td>
+                <td class="last">
+                    <p><em>Request type GET</em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>TYPE_POST</td>
+                <td class="last">
+                    <p><em>Request type POST</em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>TYPE_DELETE</td>
+                <td class="last">
+                    <p><em>Request type DELETE</em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_apiUrl">
+                                        protected                                        string
+                </td>
+                <td>$apiUrl</td>
+                <td class="last">FB Messenger API Url</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_token">
+                                        protected                                        null|string
+                </td>
+                <td>$token</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(string $token)
+        
+                                            <p>FbBotApp constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDebug">setDebug</a>($debug)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setSecret">setSecret</a>($secret)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_call">call</a>(string $url, array $data, string $type = self::TYPE_POST)
+        
+                                            <p>Request to API</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/HandleMessageResponse.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse">HandleMessageResponse</abbr></a>|array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_send">send</a>(<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a> $message, string $type = self::TYPE_POST)
+        
+                                            <p>Send message to API</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/HandleMessageResponse.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse">HandleMessageResponse</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_sendMessage">sendMessage</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/HandleMessageResponse.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse">HandleMessageResponse</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_sendProfile">sendProfile</a>(array $message, string $type = self::TYPE_POST)
+        
+                                            <p>Send messenger profile endpoint</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_sendUserApi">sendUserApi</a>($message)
+        
+                                            <p>Send user endpoint</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_debug">debug</a>($request, $response, $status)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.6.1/src/Contracts/Bot.php#L65">line 65</a></div>
+        <code>                    
+    <strong>__construct</strong>(string $token)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>FbBotApp constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$token</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setDebug">
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.6.1/src/Contracts/Bot.php#L74">line 74</a></div>
+        <code>                    
+    <strong>setDebug</strong>($debug)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$debug</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setSecret">
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.6.1/src/Contracts/Bot.php#L83">line 83</a></div>
+        <code>                    $this
+    <strong>setSecret</strong>($secret)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$secret</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_call">
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.6.1/src/Contracts/Bot.php#L100">line 100</a></div>
+        <code>            protected        array
+    <strong>call</strong>(string $url, array $data, string $type = self::TYPE_POST)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Request to API</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$url</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$type</td>
+                <td>Type of request (GET|POST|DELETE)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException">RuntimeException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_send">
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.6.1/src/Contracts/Bot.php#L155">line 155</a></div>
+        <code>                    <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/HandleMessageResponse.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse">HandleMessageResponse</abbr></a>|array
+    <strong>send</strong>(<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a> $message, string $type = self::TYPE_POST)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Send message to API</p>                    <p>If instance of ProfileInterface, auto turn to thread_settings endpoint</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$type</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/HandleMessageResponse.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse">HandleMessageResponse</abbr></a>|array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException">RuntimeException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_sendMessage">
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.6.1/src/Contracts/Bot.php#L177">line 177</a></div>
+        <code>            protected        <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/HandleMessageResponse.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse">HandleMessageResponse</abbr></a>
+    <strong>sendMessage</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/HandleMessageResponse.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse">HandleMessageResponse</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_sendProfile">
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.6.1/src/Contracts/Bot.php#L191">line 191</a></div>
+        <code>            protected        <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/HandleMessageResponse.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse">HandleMessageResponse</abbr></a>
+    <strong>sendProfile</strong>(array $message, string $type = self::TYPE_POST)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Send messenger profile endpoint</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$type</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/HandleMessageResponse.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\HandleMessageResponse">HandleMessageResponse</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException">RuntimeException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_sendUserApi">
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.6.1/src/Contracts/Bot.php#L203">line 203</a></div>
+        <code>            protected        array
+    <strong>sendUserApi</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Send user endpoint</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException">RuntimeException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_debug">
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.6.1/src/Contracts/Bot.php#L225">line 225</a></div>
+        <code>            protected        
+    <strong>debug</strong>($request, $response, $status)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$request</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$response</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$status</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

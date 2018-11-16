@@ -25,20 +25,17 @@
                 <div id="control-panel">
                     <form action="#" method="GET">
                 <select id="version-switcher" name="version">
-                                            <option value="../../../../../v1.4.0/index.html" selected>v1.4.0</option>
-                                            <option value="../../../../../v1.4.1/index.html">v1.4.1</option>
-                                            <option value="../../../../../v1.4.2/index.html">v1.4.2</option>
-                                            <option value="../../../../../v1.4.3/index.html">v1.4.3</option>
-                                            <option value="../../../../../v1.4.4/index.html">v1.4.4</option>
-                                            <option value="../../../../../v1.4.5/index.html">v1.4.5</option>
-                                            <option value="../../../../../v1.4.6/index.html">v1.4.6</option>
-                                            <option value="../../../../../v1.4.7/index.html">v1.4.7</option>
-                                            <option value="../../../../../1.3/index.html">1.3</option>
-                                            <option value="../../../../../1.2/index.html">1.2</option>
-                                            <option value="../../../../../1.1/index.html">1.1</option>
+                                            <option value="../../../../../v1.6.0/index.html" data-version="v1.6.0">v1.6.0</option>
+                                            <option value="../../../../../v1.6.1/index.html" data-version="v1.6.1">v1.6.1</option>
+                                            <option value="../../../../../1.3/index.html" data-version="1.3">1.3</option>
+                                            <option value="../../../../../1.2/index.html" data-version="1.2">1.2</option>
+                                            <option value="../../../../../1.1/index.html" data-version="1.1">1.1</option>
                                     </select>
             </form>
-                <form id="search-form" action="../../../../search.html" method="GET">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -78,12 +75,7 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                                                            <li><a href="../../../../Casperlaitw.html">Casperlaitw</a></li>
-                                        <li><a href="../../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li>
-                                        <li><a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts.html">Contracts</a></li>
-                                        <li><a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages.html">Messages</a></li>
-    
-                <li>Message</li>
+                        <li><a href="../../../../Casperlaitw.html">Casperlaitw</a></li><li class="backslash">\</li><li><a href="../../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li><li class="backslash">\</li><li><a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts.html">Contracts</a></li><li class="backslash">\</li><li><a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages.html">Messages</a></li><li class="backslash">\</li><li>Message</li>
             </ol>
         </div>
                 <div id="page-content">
@@ -95,16 +87,16 @@
         </h1>
     </div>
 
-    <p>    class
+    <p>abstract     class
     <strong>Message</strong>        implements
-        <a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/MessageInterface.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\MessageInterface">MessageInterface</abbr></a>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Message.php">View source</a>)
+        <a href="../../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/MessageInterface.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\MessageInterface">MessageInterface</abbr></a>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Message.php">View source</a>)
 </p>
 
         
     
 
             <div class="description">
-            <p>Class Message</p>                    </div>
+            <p>Class Message</p>                                </div>
     
     
     
@@ -150,7 +142,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Message.php#L26">line 26</a></div>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Message.php#L26">line 26</a></div>
         <code>                    
     <strong>__construct</strong>($sender)
         </code>
@@ -160,7 +152,7 @@
     
 
                     <div class="method-description">
-                                    <p>Message constructor.</p>                                </div>
+                                    <p>Message constructor.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -181,7 +173,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getSender">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Message.php#L35">line 35</a></div>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Message.php#L35">line 35</a></div>
         <code>                    mixed
     <strong>getSender</strong>()
         </code>
@@ -191,7 +183,7 @@
     
 
                     <div class="method-description">
-                                    <p>Get sender id</p>                                </div>
+                                    <p>Get sender id</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -211,7 +203,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_toData">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Message.php#L44">line 44</a></div>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.1/src/Contracts/Messages/Message.php#L44">line 44</a></div>
         <code>    abstract                array
     <strong>toData</strong>()
         </code>
@@ -221,7 +213,7 @@
     
 
                     <div class="method-description">
-                                    <p>To array for send api</p>                                </div>
+                                    <p>To array for send api</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>

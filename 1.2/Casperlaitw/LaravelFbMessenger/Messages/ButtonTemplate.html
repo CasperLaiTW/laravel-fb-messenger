@@ -25,20 +25,17 @@
                 <div id="control-panel">
                     <form action="#" method="GET">
                 <select id="version-switcher" name="version">
-                                            <option value="../../../../v1.4.0/index.html" selected>v1.4.0</option>
-                                            <option value="../../../../v1.4.1/index.html">v1.4.1</option>
-                                            <option value="../../../../v1.4.2/index.html">v1.4.2</option>
-                                            <option value="../../../../v1.4.3/index.html">v1.4.3</option>
-                                            <option value="../../../../v1.4.4/index.html">v1.4.4</option>
-                                            <option value="../../../../v1.4.5/index.html">v1.4.5</option>
-                                            <option value="../../../../v1.4.6/index.html">v1.4.6</option>
-                                            <option value="../../../../v1.4.7/index.html">v1.4.7</option>
-                                            <option value="../../../../1.3/index.html">1.3</option>
-                                            <option value="../../../../1.2/index.html">1.2</option>
-                                            <option value="../../../../1.1/index.html">1.1</option>
+                                            <option value="../../../../v1.6.0/index.html" data-version="v1.6.0">v1.6.0</option>
+                                            <option value="../../../../v1.6.1/index.html" data-version="v1.6.1">v1.6.1</option>
+                                            <option value="../../../../1.3/index.html" data-version="1.3">1.3</option>
+                                            <option value="../../../../1.2/index.html" data-version="1.2">1.2</option>
+                                            <option value="../../../../1.1/index.html" data-version="1.1">1.1</option>
                                     </select>
             </form>
-                <form id="search-form" action="../../../search.html" method="GET">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -78,11 +75,7 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                                                            <li><a href="../../../Casperlaitw.html">Casperlaitw</a></li>
-                                        <li><a href="../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li>
-                                        <li><a href="../../../Casperlaitw/LaravelFbMessenger/Messages.html">Messages</a></li>
-    
-                <li>ButtonTemplate</li>
+                        <li><a href="../../../Casperlaitw.html">Casperlaitw</a></li><li class="backslash">\</li><li><a href="../../../Casperlaitw/LaravelFbMessenger.html">LaravelFbMessenger</a></li><li class="backslash">\</li><li><a href="../../../Casperlaitw/LaravelFbMessenger/Messages.html">Messages</a></li><li class="backslash">\</li><li>ButtonTemplate</li>
             </ol>
         </div>
                 <div id="page-content">
@@ -95,14 +88,14 @@
     </div>
 
     <p>    class
-    <strong>ButtonTemplate</strong>        extends <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Messages/ButtonTemplate.php">View source</a>)
+    <strong>ButtonTemplate</strong>        extends <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a>        (<a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Messages/ButtonTemplate.php">View source</a>)
 </p>
 
         
     
 
             <div class="description">
-            <p>Class ButtonTemplate</p>                    </div>
+            <p>Class ButtonTemplate</p>                                </div>
     
             <h2>Traits</h2>
 
@@ -167,6 +160,27 @@
             </table>
 
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_quicks">
+                                        protected                                        <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/QuickReplyCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\QuickReplyCollection">QuickReplyCollection</abbr></a>
+                </td>
+                <td>$quicks</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#property_quicks"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_collections">
+                                        protected                                        <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/BaseCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\BaseCollection">BaseCollection</abbr></a>
+                </td>
+                <td>$collections</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#property_collections"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a></small></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
@@ -176,7 +190,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>($sender, string $text = &#039;&#039;, array $elements = array())
+                    <a href="#method___construct">__construct</a>($sender, string $text = &#039;&#039;, array $elements = [])
         
                                             <p>Button constructor.</p>                </div>
                 <div class="col-md-2"></div>
@@ -213,7 +227,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                    $this
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setPayload">setPayload</a>(array $payload)
@@ -223,7 +237,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                    $this
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_enableReuse">enableReuse</a>()
@@ -233,7 +247,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                    $this
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_disableReuse">disableReuse</a>()
@@ -243,7 +257,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                    $this
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setAttachmentId">setAttachmentId</a>($id)
@@ -263,7 +277,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr>
+                    $this
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_addQuick">addQuick</a>($quick)
@@ -288,7 +302,7 @@
                     array
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_makeQuickReply">makeQuickReply</a>($data = array())
+                    <a href="#method_makeQuickReply">makeQuickReply</a>($data = [])
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -296,7 +310,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+                    $this
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_add">add</a>($elements)
@@ -327,6 +341,16 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_collection">collection</a>()
+        
+                                            <p>Get button collection</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/ButtonTemplate.html"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\ButtonTemplate">ButtonTemplate</abbr></a>
                 </div>
                 <div class="col-md-8 type">
@@ -353,9 +377,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Messages/ButtonTemplate.php#L32">line 32</a></div>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Messages/ButtonTemplate.php#L32">line 32</a></div>
         <code>                    
-    <strong>__construct</strong>($sender, string $text = &#039;&#039;, array $elements = array())
+    <strong>__construct</strong>($sender, string $text = &#039;&#039;, array $elements = [])
         </code>
     </h3>
     <div class="details">
@@ -363,7 +387,7 @@
     
 
                     <div class="method-description">
-                                    <p>Button constructor.</p>                                </div>
+                                    <p>Button constructor.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -394,7 +418,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getSender">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html#method_getSender"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Message.php#L35">line 35</a></div>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Message.html#method_getSender"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Message">Message</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Message.php#L35">line 35</a></div>
         <code>                    mixed
     <strong>getSender</strong>()
         </code>
@@ -404,7 +428,7 @@
     
 
                     <div class="method-description">
-                                    <p>Get sender id</p>                                </div>
+                                    <p>Get sender id</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -424,7 +448,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_toData">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Messages/ButtonTemplate.php#L46">line 46</a></div>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Messages/ButtonTemplate.php#L46">line 46</a></div>
         <code>                    array
     <strong>toData</strong>()
         </code>
@@ -434,7 +458,7 @@
     
 
                     <div class="method-description">
-                                    <p>To array for send api</p>                                </div>
+                                    <p>To array for send api</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -463,7 +487,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getPayload">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_getPayload"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php#L77">line 77</a></div>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_getPayload"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php#L77">line 77</a></div>
         <code>                    array
     <strong>getPayload</strong>()
         </code>
@@ -473,7 +497,7 @@
     
 
                     <div class="method-description">
-                                    <p>Get payload</p>                                </div>
+                                    <p>Get payload</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -493,8 +517,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setPayload">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_setPayload"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php#L89">line 89</a></div>
-        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_setPayload"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php#L89">line 89</a></div>
+        <code>                    $this
     <strong>setPayload</strong>(array $payload)
         </code>
     </h3>
@@ -503,7 +527,7 @@
     
 
                     <div class="method-description">
-                                    <p>Set Payload</p>                                </div>
+                                    <p>Set Payload</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -520,7 +544,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td>$this</td>
             <td></td>
         </tr>
     </table>
@@ -533,8 +557,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_enableReuse">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_enableReuse"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php#L100">line 100</a></div>
-        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_enableReuse"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php#L100">line 100</a></div>
+        <code>                    $this
     <strong>enableReuse</strong>()
         </code>
     </h3>
@@ -543,14 +567,14 @@
     
 
                     <div class="method-description">
-                                    <p>Enable reuse</p>                                </div>
+                                    <p>Enable reuse</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td>$this</td>
             <td></td>
         </tr>
     </table>
@@ -563,8 +587,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_disableReuse">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_disableReuse"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php#L111">line 111</a></div>
-        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_disableReuse"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php#L111">line 111</a></div>
+        <code>                    $this
     <strong>disableReuse</strong>()
         </code>
     </h3>
@@ -573,14 +597,14 @@
     
 
                     <div class="method-description">
-                                    <p>Disable reuse</p>                                </div>
+                                    <p>Disable reuse</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td>$this</td>
             <td></td>
         </tr>
     </table>
@@ -593,8 +617,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setAttachmentId">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_setAttachmentId"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Attachment.php#L124">line 124</a></div>
-        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Attachment.html#method_setAttachmentId"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment">Attachment</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Attachment.php#L124">line 124</a></div>
+        <code>                    $this
     <strong>setAttachmentId</strong>($id)
         </code>
     </h3>
@@ -603,7 +627,7 @@
     
 
                     <div class="method-description">
-                                    <p>Set attachment id</p>                                </div>
+                                    <p>Set attachment id</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -620,7 +644,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td>$this</td>
             <td></td>
         </tr>
     </table>
@@ -633,7 +657,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_bootQuick">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_bootQuick"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Messages/Quickable.php#L26">line 26</a></div>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_bootQuick"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Messages/Quickable.php#L26">line 26</a></div>
         <code>                    
     <strong>bootQuick</strong>()
         </code>
@@ -643,7 +667,7 @@
     
 
                     <div class="method-description">
-                                    <p>Boot quick</p>                                </div>
+                                    <p>Boot quick</p>                                                </div>
                 <div class="tags">
             
             
@@ -654,8 +678,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addQuick">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_addQuick"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Messages/Quickable.php#L36">line 36</a></div>
-        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_addQuick"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Messages/Quickable.php#L36">line 36</a></div>
+        <code>                    $this
     <strong>addQuick</strong>($quick)
         </code>
     </h3>
@@ -679,7 +703,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Casperlaitw\LaravelFbMessenger\Messages\$this">$this</abbr></td>
+            <td>$this</td>
             <td></td>
         </tr>
     </table>
@@ -692,7 +716,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_isEmpty">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_isEmpty"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Messages/Quickable.php#L46">line 46</a></div>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_isEmpty"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Messages/Quickable.php#L46">line 46</a></div>
         <code>                    bool
     <strong>isEmpty</strong>()
         </code>
@@ -720,9 +744,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_makeQuickReply">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_makeQuickReply"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Messages/Quickable.php#L56">line 56</a></div>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/Quickable.html#method_makeQuickReply"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\Quickable">Quickable</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Messages/Quickable.php#L56">line 56</a></div>
         <code>                    array
-    <strong>makeQuickReply</strong>($data = array())
+    <strong>makeQuickReply</strong>($data = [])
         </code>
     </h3>
     <div class="details">
@@ -758,8 +782,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_add">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#method_add"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Template.php#L47">line 47</a></div>
-        <code>                    <abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#method_add"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Template.php#L47">line 47</a></div>
+        <code>                    $this
     <strong>add</strong>($elements)
         </code>
     </h3>
@@ -768,7 +792,7 @@
     
 
                     <div class="method-description">
-                                    <p>Add elements</p>                                </div>
+                                    <p>Add elements</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -785,7 +809,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\$this">$this</abbr></td>
+            <td>$this</td>
             <td></td>
         </tr>
     </table>
@@ -798,7 +822,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___call">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#method___call"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Template.php#L66">line 66</a></div>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#method___call"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Template.php#L66">line 66</a></div>
         <code>                    mixed
     <strong>__call</strong>($name, $arguments)
         </code>
@@ -841,7 +865,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getCollections">
-        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#method_getCollections"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a> at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Contracts/Messages/Template.php#L78">line 78</a></div>
+        <div class="location">in <a href="../../../Casperlaitw/LaravelFbMessenger/Contracts/Messages/Template.html#method_getCollections"><abbr title="Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template">Template</abbr></a> at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Contracts/Messages/Template.php#L78">line 78</a></div>
         <code>                    <a href="../../../Casperlaitw/LaravelFbMessenger/Collections/BaseCollection.html"><abbr title="Casperlaitw\LaravelFbMessenger\Collections\BaseCollection">BaseCollection</abbr></a>
     <strong>getCollections</strong>()
         </code>
@@ -851,7 +875,7 @@
     
 
                     <div class="method-description">
-                                    <p>Get collection</p>                                </div>
+                                    <p>Get collection</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -870,8 +894,38 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_collection">
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Messages/ButtonTemplate.php#L83">line 83</a></div>
+        <code>            protected        mixed
+    <strong>collection</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get button collection</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_setText">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Messages/ButtonTemplate.php#L61">line 61</a></div>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Messages/ButtonTemplate.php#L61">line 61</a></div>
         <code>                    <a href="../../../Casperlaitw/LaravelFbMessenger/Messages/ButtonTemplate.html"><abbr title="Casperlaitw\LaravelFbMessenger\Messages\ButtonTemplate">ButtonTemplate</abbr></a>
     <strong>setText</strong>(string $text)
         </code>
@@ -881,7 +935,7 @@
     
 
                     <div class="method-description">
-                                    <p>Set text</p>                                </div>
+                                    <p>Set text</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -911,7 +965,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getText">
-        <div class="location">at line         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/v1.4.0/src/Messages/ButtonTemplate.php#L73">line 73</a></div>
+        <div class="location">at         <a href="https://github.com/CasperLaiTW/laravel-fb-messenger/blob/1.2/src/Messages/ButtonTemplate.php#L73">line 73</a></div>
         <code>                    string
     <strong>getText</strong>()
         </code>
@@ -921,7 +975,7 @@
     
 
                     <div class="method-description">
-                                    <p>Get text</p>                                </div>
+                                    <p>Get text</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
