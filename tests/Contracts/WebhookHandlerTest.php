@@ -43,7 +43,7 @@ class WebhookHandlerTest extends TestCase
             ->andReturn(false);
         $dispatch = m::mock(Dispatcher::class);
         $dispatch
-            ->shouldReceive('fire')
+            ->shouldReceive('dispatch')
             ->andReturnNull();
         $this->debug = new Debug($dispatch);
     }

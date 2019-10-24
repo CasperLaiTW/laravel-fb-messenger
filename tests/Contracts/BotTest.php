@@ -50,7 +50,7 @@ class BotTest extends TestCase
     {
         $dispatch = m::mock(Dispatcher::class);
         $dispatch
-            ->shouldReceive('fire')
+            ->shouldReceive('dispatch')
             ->andReturnNull();
         $debug = new Debug($dispatch);
         $this->bot->setDebug($debug);
