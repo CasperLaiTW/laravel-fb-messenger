@@ -85,4 +85,16 @@ class Handler implements ExceptionHandler
             $this->exceptionHandler->renderForConsole($output, $e);
         }
     }
+
+    /**
+     * Determine if the exception should be reported.
+     *
+     * @param \Exception $e
+     *
+     * @return bool
+     */
+    public function shouldReport(Exception $e)
+    {
+        return true;
+    }
 }
