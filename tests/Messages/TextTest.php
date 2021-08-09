@@ -1,6 +1,7 @@
 <?php
 
 use Casperlaitw\LaravelFbMessenger\Messages\Text;
+use Illuminate\Support\Str;
 use pimax\Messages\Message;
 
 /**
@@ -12,8 +13,8 @@ class TextTest extends TestCase
 {
     public function test_to_data()
     {
-        $sender = str_random();
-        $message = str_random();
+        $sender = Str::random();
+        $message = Str::random();
         $expected = [
             'recipient' =>  [
                 'id' => $sender,

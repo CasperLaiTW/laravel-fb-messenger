@@ -1,5 +1,6 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Messages\Image;
+use Illuminate\Support\Str;
 
 /**
  * User: casperlai
@@ -10,8 +11,8 @@ class ImageTest extends TestCase
 {
     public function test_to_data()
     {
-        $sender = str_random();
-        $image = str_random();
+        $sender = Str::random();
+        $image = Str::random();
         $expected = [
             'recipient' => [
                 'id' => $sender,

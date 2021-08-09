@@ -1,5 +1,6 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Messages\QuickReply;
+use Illuminate\Support\Str;
 
 /**
  * Created by PhpStorm.
@@ -36,7 +37,7 @@ class QuickReplyTest extends TestCase
     {
         $title = 'Red';
         $payload = 'PAYLOAD_RED';
-        $image = str_random();
+        $image = Str::random();
 
         $expected = [
             'content_type' => 'text',

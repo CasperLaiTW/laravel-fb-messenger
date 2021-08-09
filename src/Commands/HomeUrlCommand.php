@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Casperlaitw\LaravelFbMessenger\Commands;
 
 use Casperlaitw\LaravelFbMessenger\Messages\HomeUrl;
+use Illuminate\Support\Arr;
 
 /**
  * Class HomeUrlCommand
@@ -49,7 +50,7 @@ class HomeUrlCommand extends BaseCommand
     {
         $command = new HomeUrl();
         $command->setAction(HomeUrl::TYPE_READ)->useGet();
-        $response = collect(array_get($this->handler->send($command)->getResponse(), 'data.0.home_url', []))
+        $response = collect(Arr::get($this->handler->send($command)->getResponse(), 'data.0.home_url', []))
             ->map(function ($item) {
                 return [$item];
             });

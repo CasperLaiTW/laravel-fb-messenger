@@ -2,6 +2,7 @@
 
 use Casperlaitw\LaravelFbMessenger\Messages\Element;
 use Casperlaitw\LaravelFbMessenger\Messages\GenericTemplate;
+use Illuminate\Support\Str;
 use pimax\Messages\StructuredMessage;
 
 /**
@@ -17,7 +18,7 @@ class GenericTemplateTest extends TestCase
 
     public function setUp()
     {
-        $this->sender = str_random();
+        $this->sender = Str::random();
         $this->case = [
             new Element('title1', 'description1'),
             new Element('title2', 'description2')

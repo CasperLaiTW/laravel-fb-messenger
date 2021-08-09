@@ -4,6 +4,7 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Handler;
 use Casperlaitw\LaravelFbMessenger\Contracts\Debug\Debug;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Events\Dispatcher;
+use Illuminate\Support\Arr;
 use Mockery as m;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -56,6 +57,6 @@ class HandlerTest extends TestCase
 
         $actual = $this->getPrivateProperty(Handler::class, 'debug')->getValue($this->handler);
         $this->assertEquals(500, $actual->getStatus());
-        $this->assertEquals('ERROR', array_get($actual->getResponse(), 'message'));
+        $this->assertEquals('ERROR', Arr::get($actual->getResponse(), 'message'));
     }
 }

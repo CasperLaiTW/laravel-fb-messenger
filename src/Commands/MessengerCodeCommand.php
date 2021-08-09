@@ -3,6 +3,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Commands;
 
 use Casperlaitw\LaravelFbMessenger\Messages\MessengerCode;
+use Illuminate\Support\Arr;
 
 class MessengerCodeCommand extends BaseCommand
 {
@@ -35,6 +36,6 @@ class MessengerCodeCommand extends BaseCommand
             $message->setRef($ref);
         }
 
-        $this->comment(array_get($this->handler->send($message), 'uri'));
+        $this->comment(Arr::get($this->handler->send($message), 'uri'));
     }
 }

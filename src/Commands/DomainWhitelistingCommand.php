@@ -9,6 +9,7 @@
 namespace Casperlaitw\LaravelFbMessenger\Commands;
 
 use Casperlaitw\LaravelFbMessenger\Messages\DomainWhitelisting;
+use Illuminate\Support\Arr;
 
 /**
  * Class DomainWhitelistingCommand
@@ -51,7 +52,7 @@ class DomainWhitelistingCommand extends BaseCommand
     {
         $command = new DomainWhitelisting();
         $command->setAction(DomainWhitelisting::TYPE_READ)->useGet();
-        $response = collect(array_get($this->handler->send($command)->getResponse(), 'data.0.whitelisted_domains', []))
+        $response = collect(Arr::get($this->handler->send($command)->getResponse(), 'data.0.whitelisted_domains', []))
             ->map(function ($item) {
                 return [$item];
             });

@@ -1,5 +1,6 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Messages\User;
+use Illuminate\Support\Str;
 
 /**
  * Created by PhpStorm.
@@ -12,7 +13,7 @@ class UserTest extends TestCase
 {
     public function test_to_data()
     {
-        $sender = str_random();
+        $sender = Str::random();
         $user = new User($sender);
 
         $this->assertEquals([], $user->toData());

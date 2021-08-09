@@ -1,5 +1,6 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Messages\Greeting;
+use Illuminate\Support\Str;
 
 /**
  * User: casperlai
@@ -10,7 +11,7 @@ class GreetingTest extends TestCase
 {
     public function test_to_data()
     {
-        $greetingText = str_random();
+        $greetingText = Str::random();
         $expected = [
             'greeting' => [
                 [
