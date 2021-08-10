@@ -5,6 +5,7 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template;
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
 use Casperlaitw\LaravelFbMessenger\Messages\Element;
 use Casperlaitw\LaravelFbMessenger\Transformers\ListTransformer;
+use Illuminate\Support\Str;
 use Mockery as m;
 
 /**
@@ -18,7 +19,7 @@ class ListTransformerTest extends TestCase
 {
     public function test_transform()
     {
-        $testSender = str_random();
+        $testSender = Str::random();
         $testCase = [
             new Element('title1', 'description2', 'image_url'),
             new Element('title2', 'description2', 'image_url'),
@@ -48,13 +49,13 @@ class ListTransformerTest extends TestCase
 
     public function test_transform_without_buttons()
     {
-        $testSender = str_random();
+        $testSender = Str::random();
         $testCase = [
             new Element('title1', 'description2', 'image_url'),
             new Element('title2', 'description2', 'image_url'),
             new Element('title2', 'description2', 'image_url'),
         ];
-        
+
         $expectedCase = [];
         foreach ($testCase as $case) {
             $expectedCase[] = $case->toData();

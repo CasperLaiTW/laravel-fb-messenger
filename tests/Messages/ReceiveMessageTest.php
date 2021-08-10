@@ -1,5 +1,6 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Messages\ReceiveMessage;
+use Illuminate\Support\Str;
 
 /**
  * User: casperlai
@@ -24,10 +25,10 @@ class ReceiveMessageTest extends TestCase
 
     public function setUp()
     {
-        $this->message = str_random();
-        $this->recipient = str_random();
-        $this->sender = str_random();
-        $this->postback = str_random();
+        $this->message = Str::random();
+        $this->recipient = Str::random();
+        $this->sender = Str::random();
+        $this->postback = Str::random();
         $this->attachments = [];
         $this->skip = true;
         $this->payload = false;

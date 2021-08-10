@@ -6,6 +6,7 @@ use Casperlaitw\LaravelFbMessenger\Messages\Greeting;
 use Casperlaitw\LaravelFbMessenger\Messages\MessengerCode;
 use Casperlaitw\LaravelFbMessenger\Messages\User;
 use Illuminate\Broadcasting\BroadcastException;
+use Illuminate\Support\Str;
 use Illuminate\Events\Dispatcher;
 use Mockery as m;
 
@@ -24,7 +25,7 @@ class BotTest extends TestCase
 
     public function test_send_success()
     {
-        $message = new Greeting(['locale' => 'default', 'text' => str_random()]);
+        $message = new Greeting(['locale' => 'default', 'text' => Str::random()]);
         $this->bot->setSecret('test_app_secret');
         $this->bot->send($message);
     }

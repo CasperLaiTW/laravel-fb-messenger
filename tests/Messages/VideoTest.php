@@ -1,5 +1,6 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Messages\Video;
+use Illuminate\Support\Str;
 use Faker\Factory;
 
 /**
@@ -12,7 +13,7 @@ class VideoTest extends TestCase
     public function test_to_data()
     {
         $faker = Factory::create();
-        $sender = str_random();
+        $sender = Str::random();
         $url = $faker->url;
 
         $actual = new Video($sender, $url);

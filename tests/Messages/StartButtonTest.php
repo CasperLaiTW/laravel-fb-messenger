@@ -1,5 +1,6 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Messages\StartButton;
+use Illuminate\Support\Str;
 
 /**
  * User: casperlai
@@ -10,7 +11,7 @@ class StartButtonTest extends TestCase
 {
     public function test_to_data()
     {
-        $payload = str_random();
+        $payload = Str::random();
         $expected = [
             'get_started' => [
                 'payload' => $payload,

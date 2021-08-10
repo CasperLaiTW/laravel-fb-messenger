@@ -3,6 +3,7 @@ use Casperlaitw\LaravelFbMessenger\Collections\ButtonCollection;
 use Casperlaitw\LaravelFbMessenger\Exceptions\OnlyUseByItselfException;
 use Casperlaitw\LaravelFbMessenger\Exceptions\ValidatorStructureException;
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
+use Illuminate\Support\Str;
 use Faker\Factory;
 use Mockery as m;
 
@@ -54,7 +55,7 @@ class ButtonCollectionTest extends TestCase
     {
         $fake = Factory::create();
         $collection = new ButtonCollection();
-        $title = str_random();
+        $title = Str::random();
         $phone = $fake->phoneNumber;
         $collection->addCallButton($title, $phone);
 
@@ -73,7 +74,7 @@ class ButtonCollectionTest extends TestCase
 
     public function test_add_account_link_button()
     {
-        $url = str_random();
+        $url = Str::random();
         $collection = new ButtonCollection();
         $collection->addAccountLinkButton($url);
         $expected = new Button(Button::TYPE_ACCOUNT_LINK, null, $url);

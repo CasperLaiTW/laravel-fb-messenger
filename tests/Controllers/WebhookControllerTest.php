@@ -7,6 +7,7 @@ use Illuminate\Contracts\Config\Repository;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Str;
 use Mockery as m;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -20,7 +21,7 @@ class WebhookControllerTest extends TestCase
     public function test_index_token_verify_pass_response_challenge_token()
     {
         $verifyToken = 'MY_VERIFY_TOKEN';
-        $challenge = str_random();
+        $challenge = Str::random();
         $request = m::mock(Request::class)
             ->shouldReceive('get')
             ->with('hub_mode')
@@ -55,7 +56,7 @@ class WebhookControllerTest extends TestCase
             ->getMock();
         $config = m::mock(Repository::class)
             ->shouldReceive('get')
-            ->andReturn(str_random())
+            ->andReturn(Str::random())
             ->getMock();
         $debug = m::mock(Debug::class);
 

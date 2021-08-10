@@ -2,6 +2,7 @@
 
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
 use Casperlaitw\LaravelFbMessenger\Messages\ButtonTemplate;
+use Illuminate\Support\Str;
 use Mockery as m;
 
 /**
@@ -13,13 +14,13 @@ class StructuredTest extends TestCase
 {
     public function test_call_method()
     {
-        $button = new ButtonTemplate(str_random(), str_random());
+        $button = new ButtonTemplate(Str::random(), Str::random());
         $this->assertTrue($button->validator($this->getMessageButtonMock()));
     }
 
     public function test_non_collection_method()
     {
-        $button = new ButtonTemplate(str_random(), str_random());
+        $button = new ButtonTemplate(Str::random(), Str::random());
         $button->getError();
     }
 

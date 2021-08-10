@@ -10,13 +10,14 @@ use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Template;
 use Casperlaitw\LaravelFbMessenger\Exceptions\RequiredArgumentException;
 use Casperlaitw\LaravelFbMessenger\Messages\Button;
 use Casperlaitw\LaravelFbMessenger\Transformers\ButtonTransformer;
+use Illuminate\Support\Str;
 use Mockery as m;
 
 class ButtonTransformerTest extends TestCase
 {
     public function test_transform()
     {
-        $testSender = str_random();
+        $testSender = Str::random();
         $testText = 'abc';
         $testCase = [
             new Button(Button::TYPE_POSTBACK, 'test1', 'test1'),

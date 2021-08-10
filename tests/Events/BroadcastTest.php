@@ -1,5 +1,6 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Events\Broadcast;
+use Illuminate\Support\Str;
 
 /**
  * Created by PhpStorm.
@@ -20,7 +21,7 @@ class BroadcastTest extends TestCase
     {
         parent::setUp();
 
-        $this->id = $this->response = $this->code = $this->webhook = $this->request = str_random();
+        $this->id = $this->response = $this->code = $this->webhook = $this->request = Str::random();
         $this->broadcast = new Broadcast($this->id, $this->webhook, $this->request, $this->response, $this->code);
     }
 

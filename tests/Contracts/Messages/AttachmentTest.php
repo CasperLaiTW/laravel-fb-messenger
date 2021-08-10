@@ -1,6 +1,7 @@
 <?php
 use Casperlaitw\LaravelFbMessenger\Contracts\Messages\Attachment;
 use Casperlaitw\LaravelFbMessenger\Exceptions\InvalidTypeException;
+use Illuminate\Support\Str;
 use Faker\Factory;
 use Mockery as m;
 
@@ -22,7 +23,7 @@ class AttachmentTest extends TestCase
     {
         parent::setUp();
         $this->faker = Factory::create();
-        $sender = str_random();
+        $sender = Str::random();
         $type = Attachment::TYPE_IMAGE;
         $image = $this->faker->url;
         $this->attachment = new AttachmentStub($sender, $type, ['url' => $image]);
@@ -57,7 +58,7 @@ class AttachmentTest extends TestCase
 
     public function test_set_attachment_id()
     {
-        $id = str_random();
+        $id = Str::random();
         $this->attachment->setAttachmentId($id);
 
         $this->assertEquals(['attachment_id' => $id], $this->attachment->getPayload());

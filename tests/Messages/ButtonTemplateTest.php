@@ -1,6 +1,7 @@
 <?php
 
 use Casperlaitw\LaravelFbMessenger\Messages\ButtonTemplate;
+use Illuminate\Support\Str;
 use Mockery as m;
 use pimax\Messages\StructuredMessage;
 
@@ -19,7 +20,7 @@ class ButtonTemplateTest extends TestCase
 
     public function setUp()
     {
-        $this->sender = str_random();
+        $this->sender = Str::random();
         $this->text = 'abc';
         $this->case = new ButtonTemplate($this->sender, $this->text);
     }
