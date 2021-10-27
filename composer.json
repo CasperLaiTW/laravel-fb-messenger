@@ -18,18 +18,18 @@
         }
     ],
     "require": {
-        "illuminate/support": "^5.4.0|^6.0.0",
-        "illuminate/routing": "^5.4.0|^6.0.0",
-        "illuminate/console": "^5.4.0|^6.0.0",
-        "illuminate/view": "^5.4.0|^6.0.0",
-        "illuminate/broadcasting": "^5.4.0|^6.0.0",
-        "illuminate/queue": "^5.4.0|^6.0.0",
-        "php": "^5.6|^7.0",
+        "illuminate/support": "^7.0|^8.0",
+        "illuminate/routing": "^7.0|^8.0",
+        "illuminate/console": "^7.0|^8.0",
+        "illuminate/view": "^7.0|^8.0",
+        "illuminate/broadcasting": "^7.0|^8.0",
+        "illuminate/queue": "^7.0|^8.0",
+        "php": "^7.2.5|^7.3|^8.0",
         "guzzlehttp/guzzle": "^6.0|^7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~5.0",
-        "nesbot/carbon": "^1.21",
+        "nesbot/carbon": "^1.21|^2.0",
         "satooshi/php-coveralls": "^2.0",
         "mockery/mockery": "^0.9.5",
         "fzaninotto/faker": "^1.6"

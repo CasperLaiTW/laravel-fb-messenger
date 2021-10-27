@@ -8,9 +8,9 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Contracts\Debug;
 
-use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Support\Arr;
+use Throwable;
 
 class Handler implements ExceptionHandler
 {
@@ -37,11 +37,12 @@ class Handler implements ExceptionHandler
     /**
      * Report or log an exception.
      *
-     * @param  \Exception  $e
+     * @param Throwable $e
      *
      * @return void
+     * @throws Throwable
      */
-    public function report(Exception $e)
+    public function report(Throwable $e)
     {
         if ($this->exceptionHandler !== null) {
             $this->exceptionHandler->report($e);
@@ -52,11 +53,11 @@ class Handler implements ExceptionHandler
      * Render an exception into an HTTP response.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \Exception $e
+     * @param  Throwable $e
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \UnexpectedValueException
      */
-    public function render($request, Exception $e)
+    public function render($request, Throwable $e)
     {
         $errors = [
             'message' => $e->getMessage(),
@@ -77,10 +78,10 @@ class Handler implements ExceptionHandler
      * Render an exception to the console.
      *
      * @param  \Symfony\Component\Console\Output\OutputInterface $output
-     * @param  \Exception $e
+     * @param  Throwable $e
      * @return void
      */
-    public function renderForConsole($output, Exception $e)
+    public function renderForConsole($output, Throwable $e)
     {
         if ($this->exceptionHandler !== null) {
             $this->exceptionHandler->renderForConsole($output, $e);
@@ -90,11 +91,11 @@ class Handler implements ExceptionHandler
     /**
      * Determine if the exception should be reported.
      *
-     * @param \Exception $e
+     * @param Throwable $e
      *
      * @return bool
      */
-    public function shouldReport(Exception $e)
+    public function shouldReport(Throwable $e)
     {
         return true;
     }
